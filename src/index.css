@@ -1,0 +1,277 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+  background-color:#14302f;
+  overflow-x: hidden;
+}
+/* HOME CSS///////////////////////////////////////////////////////////////////////////////////////////////////////// */
+.companytext{
+     font-size: 7vw;
+     text-align: center;
+     display: flex;
+     color: white;
+     justify-content: center;
+     font-weight: 600;
+    
+}
+.textcontainer{
+  position: relative;
+  top: 6vh;
+  z-index: 30;
+  
+}
+@media (max-width:640px) {
+  .textcontainer{
+    position: relative;
+    top:4vh;
+    z-index: 30;
+  }
+  .imagecontainer{
+    position: relative;
+    top:6vh;
+   
+  }
+}
+.imagecontainer{
+  display: grid;
+  place-items: center;
+}
+.box1{
+  width: 90%;
+}
+.imagecontainer{
+  top: 5vh;
+}
+
+.qwr{
+  scale: 1;
+  transition: all;
+  transition-duration: 300ms;
+}
+.row1{
+  width: 3vw;
+  height: 0.2vh;
+  background-color: #67f1ed;
+  transition: all;
+  position: relative;
+  transition-duration: 300ms;
+  z-index: 999;
+  
+}
+.row2{
+  display: inline-block;
+  position: relative;
+  transition: all;
+  transition-duration: 300ms;
+  top: -1.5vh;
+  width: 3vw;
+  height: 0.2vh;
+  background-color: #67f1ed;
+  z-index: 999;
+}
+.menu{
+  position: relative;
+  right: 3vw;
+}
+
+@media (max-width:640px) {
+  .row2{
+    display: inline-block;
+    position: relative;
+    top: -2vh;
+    width: 7vw;
+    height: 0.2vh;
+    background-color:#67f1ed;
+  }
+  .row1{
+    width: 7vw;
+  }
+  
+}
+.navclosed{
+ transform: translateX(100%);
+}
+.navbar{
+  position: relative;
+  border-radius: 2vw;
+   top: 4vh;
+   height: 90vh;
+   width: 100%;
+}
+.navopen{
+  transform: translateX(0%);
+}
+@media (max-width:640px){
+  .navcomponents{
+    max-width: 100%;
+
+  }
+}
+.image1{
+  width: 50%;
+}
+.image2{
+  width:50%;
+}
+.image3{
+  width: 65%;
+}
+.leftbutton{
+  top: 20vmin;
+  left: 2vw;
+  float:left;
+  transform: rotate(90deg);
+}
+.rightbutton{
+  top: 20vmin;
+  float:right;
+  right: 3vw;
+  transform: rotate(-90deg);
+}
+@media (max-width:640px){
+  .leftbutton , .rightbutton{
+    top: 3.3vh;
+  }
+  
+}
+.linktext{
+  font-size: 1.6vw;
+}
+@media (max-width:640px) {
+  .linktext{
+    font-size: 3vw;
+  }
+}
+.imgelogo{
+  width: 5vw;
+  
+}
+.colors{
+  background-color: #35858B;
+}
+.new{
+color: #67f1ed;
+}
+
+/* #072227 -dark
+#35858B - light1
+#4FBDBA -ligh2
+#AEFEFF -light3
+rgb(7, 34, 39)
+rgb(53, 133, 139)
+rgb(79, 189, 186)
+rgb(174, 254, 255) */
+.circle2{
+  position: relative;
+  transform: scale(22);
+  background-color: rgb(24, 73, 71);
+}
+.sectionmain{
+  width: 100vw;
+  height: 100vh;
+}
+.navslider{
+  width: 30%;
+  top: 3.2vh;
+  height: 90%;
+  z-index: 998;
+}
+
+@media (max-width:640px) {
+  .navslider{
+    width: 100%;
+    top: 3.2vh;
+    height: 90%;
+    z-index: 998;
+  }
+  .crousal{
+    top: 20vh;
+  }
+
+}
+.home{
+  width: 100vw;
+  height: 100vh;
+  
+}
+
+/* preprimart section css////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+.head-text-section{
+  font-size:6vw;
+  position: relative;
+  left: 2vw;
+}
+.head-text{
+  font-size: 6vw;
+  position: relative;
+  top: 25vh;
+}
+
+@media (max-width:640px) {
+  .head-text{
+    width: 100%;
+    font-size: 10vw;
+    text-align: center;
+    top: 5vh;
+    position: relative;
+
+  }
+  .head-text-section{
+
+  }
+  .gallery{
+     top: 13vh;
+  }
+}
+
+.books-slides{
+  width: 20%;
+  border: 2px solid white;
+  padding: 0.5vw;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  background-color: rgb(248, 225, 195);
+}
+.auto-scroll{
+  animation: h-scroll 10s infinite alternate-reverse ;
+}
+@keyframes h-scroll{
+  0%{
+    transform: translateX(0%);
+  }
+  100%{
+    transform: translateX(-60%);
+  }
+
+}
+.image-container-slides{
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+.Dimages{
+  padding: 1vw;
+  border:2px solid white;
+  background-color: cadetblue;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+.outer_container{
+  /* box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, 0.2); */
+}
+/* ONETOEIGHT /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+.onetoEight{
+   width: 100vw;
+   height: 100vh;
+}
+.scrolltab{
+  
+}
+/* 1to8 section //////////////////////////////////////////////////////////////////////////////////////////////// */
+
+.rounded-pink{
+  background-color: 		#ff89ff;
+}
