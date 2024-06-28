@@ -3,137 +3,81 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 export default function PrePrimary() {
-    let imagearray = [
-        "ALL IN ONE WRITING BOOK HARD BOUND.jpg",
-        "ALL IN ONE READING.jpg",
-        "ALL IN ONE WRITING BOOK HARD BOUND.jpg",
-        "AMAZING PICTURES B.jpg",
-        "AMAZING PICTURES  A.jpg",
-      "AMAZING PICTURES C.jpg",
-      "ART&CRAFT A.jpg",
-      "ART&CRAFT B.jpg",
-      "ART&CRAFT C.jpg",
-      "KIDS ACTIVITY A.jpg",
-      "KIDS ACTIVITY B.jpg",
-      "KIDS ACTIVITY C.jpg",
-    ];
-    let count=0;
-  let [Dimages,setDimages] =useState('ALL IN ONE WRITING BOOK HARD BOUND.jpg')
-  useEffect(() => {
-
-   let newimages =setInterval(()=>{
-    if (count==imagearray.length) {
-        count=0
-        setDimages(imagearray[count])
+  let [count,setcount] =useState(0)
+  let [amoutscroll,setamountscroll]=useState(0)
+  let left,right
+  right =  ()=>{
+    if (count<9) {
+      console.log(count,amoutscroll);
+      document.querySelector('.pre-books-gallery').style.transform =`translate(${-amoutscroll}%)`
+      setcount(++count)
+      setamountscroll(amoutscroll+=28)
     }
-    gsap.fromTo('.Dimages2',{
-        x:12000,
-    },{
-       x:0 
-    })
-            setDimages(imagearray[count])
-            count++
-    },2000)
-   
-    gsap.to(".rounded-white", {
-      scale: 27,
-     ease:"elastic.out",
-      duration: 1,
-      scrollTrigger: {
-        trigger: ".section-scroll",
-        // markers:true,
-        scrub: true,
-        start: "-30% top",
-        end: "top bottom",
-      },
-    });
-    gsap.to(".pre", {
-      backgroundColor: "aquamarine",
-      duration: 1,
-      scrollTrigger: {
-        trigger: ".section-scroll",
-        // markers:true,
-        start: "top top",
-        end: "top bottom",
-      },
-      scrub: true,
-    });
-   return ()=>clearInterval(newimages)
-  }, []);
-
+    else{
+      document.querySelector('.pre-books-gallery').style.transform =`translate(0%)`
+      // document.querySelector('.pre-books-gallery').style.transform =`translate(${-r_amount}%)`
+      setamountscroll(amoutscroll=0)
+    }
+    
+    
+  }
+   left = ()=>{
+    if (count>0) {
+      document.querySelector('.pre-books-gallery').style.transform =`translate(${amoutscroll}%)`
+      setcount(--count)
+      setamountscroll(amoutscroll-=28)
+    }
+    else{
+    document.querySelector('.pre-books-gallery').style.transform= `translate(0%)`
+    setamountscroll(0)
+    }   
+  }
+  useEffect(()=>{
+  
+    
+    
+  }
+  ,[])
   return (
     <>
-      <div className="relative pre h-full w-full  z-20 transition-all duration-700 flex flex-wrap ">
-        <div className="sm:w-1/2 max-sm:w-full sm:h-full gallery  absolute right-0 -z-10 ">
-          <div className="w-full sm:h-1/2">
-            <img
-              className="m-auto w-1/3 relative top-7 transition-all duration-300 Dimages2 "
-              src={Dimages}
-              alt="primarybooks"
-            />
+    <br />
+     <div className="preprimary-section">
+      <div className="w-full">
+      <div className="preprimary-text text-center">
+          PrePrimary Books
           </div>
-          <div className="w-full sm:h-1/2 max-sm:h-48  overflow-hidden outer_container ">
-            <div className="w-full h-full  flex justify-evenly  gap-7 auto-scroll   ">
-              <img
-                className="m-auto books-slides  relative top-7 "
-                src="KIDS ACTIVITY B.jpg"
-                alt="primarybooks"
-              />
-              <img
-                className="m-auto    books-slides relative top-7 "
-                src="AMAZING PICTURES B.jpg"
-                alt="primarybooks"
-              />
-              <img
-                className="m-auto   books-slides  relative top-7 "
-                src="MUSICAL RHYMES C.jpg"
-                alt="primarybooks"
-              />
-              <img
-                className="m-auto   books-slides  relative top-7 "
-                src="MY BOOK OF CURSIVE (CAPITAL LETTERS).jpg"
-                alt="primarybooks"
-              />
-              <img
-                className="m-auto   books-slides  relative top-7 "
-                src="ALL IN ONE READING.jpg"
-                alt="primarybooks"
-              />
-              <img
-                className="m-auto    books-slides relative top-7 "
-                src="ALL IN ONE WRITING BOOK HARD BOUND.jpg"
-                alt="primarybooks"
-              />
-              <img
-                className="m-auto   books-slides  relative top-7 "
-                src="KIDS ACTIVITY C.jpg"
-                alt="primarybooks"
-              />
-              <img
-                className="m-auto   books-slides  relative top-7 "
-                src="KIDS ACTIVITY A.jpg"
-                alt="primarybooks"
-              />
-              <img
-                className="m-auto   books-slides  relative top-7 "
-                src="AMAZING PICTURES C.jpg"
-                alt="primarybooks"
-              />
-              <img
-                className="m-auto   books-slides  relative top-7 "
-                src="AMAZING PICTURES  A.jpg"
-                alt="primarybooks"
-              />
+          <div className="">
+            <p className="pre-books-description p-3">"Welcome to Adisri Publications, where learning begins with our vibrant collection of pre-primary books. Designed to <b className="bg-yellow-300"> spark curiosity </b> and foster early literacy skills, our books are tailored to engage young minds through captivating stories,  <b className="bg-yellow-300"> interactive activities </b>, and colorful illustrations. Whether you're looking to introduce basic concepts like numbers and letters or encourage creativity through imaginative tales, our curated selection offers something for every young learner. Explore our range and embark on a journey of discovery with your child today."</p>
+          </div>
+          </div>
+          <div className="outer-container flex  justify-between  ">
+            <div className="m-auto ">
+          <svg onClick={left} className="cursor-pointer" xmlns="http://www.w3.org/2000/svg"  viewBox="0 -960 960 960" width="3vw" fill="#000"><path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z"/></svg>
+          </div>
+          <div className="flex  w-4/5 overflow-hidden m-auto">
+            <div className="flex pre-books-gallery transition-all duration-500 ">
+            <img  className="w-1/6 p-4 max-sm:p-1 border-2 border-white bg-emerald-800 " src="ALL IN ONE READING.jpg" alt=""  />
+            <img  className="w-1/6 p-4 max-sm:p-1 border-2 border-white bg-emerald-800 " src="ALL IN ONE WRITING BOOK HARD BOUND.jpg" alt=""  />
+            <img  className="w-1/6 p-4 max-sm:p-1 border-2 border-white bg-emerald-800 " src="AMAZING PICTURES  A.jpg" alt=""  />
+            <img  className="w-1/6 p-4 max-sm:p-1 border-2 border-white bg-emerald-800 " src="ART&CRAFT A.jpg" alt=""  />
+            <img  className="w-1/6 p-4 max-sm:p-1 border-2 border-white bg-emerald-800 " src="ALL IN ONE WRITING BOOK HARD BOUND.jpg" alt=""  />
+            <img  className="w-1/6 p-4 max-sm:p-1 border-2 border-white bg-emerald-800 " src="ART&CRAFT B.jpg" alt=""  />
+            <img  className="w-1/6 p-4 max-sm:p-1 border-2 border-white bg-emerald-800 " src="AMAZING PICTURES C.jpg" alt=""  />
+            <img  className="w-1/6 p-4 max-sm:p-1 border-2 border-white bg-emerald-800 " src="ART&CRAFT A.jpg" alt=""  />
+            <img  className="w-1/6 p-4 max-sm:p-1 border-2 border-white bg-emerald-800 " src="ALL IN ONE WRITING BOOK HARD BOUND.jpg" alt=""  />
+            <img  className="w-1/6 p-4 max-sm:p-1 border-2 border-white bg-emerald-800 " src="ART&CRAFT B.jpg" alt=""  />
+            <img  className="w-1/6 p-4 max-sm:p-1 border-2 border-white bg-emerald-800 " src="AMAZING PICTURES C.jpg" alt=""  />
+            {/* <img  className="w-1/6 p-4 border-2 border-white bg-emerald-800 " src="ART&CRAFT A.jpg" alt=""  /> */}
+            {/* <img  className="w-1/6 p-4 border-2 border-white bg-emerald-800 " src="ALL IN ONE WRITING BOOK HARD BOUND.jpg" alt=""  /> */}
+            {/* <img  className="w-1/6 p-4 border-2 border-white bg-emerald-800 " src="ART&CRAFT B.jpg" alt=""  />
+            <img  className="w-1/6 p-4 border-2 border-white bg-emerald-800 " src="AMAZING PICTURES C.jpg" alt=""  /> */}
             </div>
           </div>
-        </div>
-        <div className="w-20 h-20 -translate-x-full shadow-sm  shadow-black/40 absolute transition-all duration-700 rounded-white rounded-full bg-teal-200 -z-40  ">
-        </div>
-        <div className="head-text-section text-black w-1/2 h-full max-sm:h-1/2 max-sm:w-full ">
-        
-          <p className="head-text  "> Pre-Primary </p>
-        </div>
-      </div>
+          <div className="m-auto">
+          <svg onClick={right} className="rotate-180 cursor-pointer" xmlns="http://www.w3.org/2000/svg"  viewBox="0 -960 960 960" width="3vw" fill="#000"><path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z"/></svg>
+          </div>
+          </div>
+     </div>
     </>
   );
 }

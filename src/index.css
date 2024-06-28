@@ -7,52 +7,68 @@ body{
   margin: 0;
   box-sizing: border-box;
   font-family: "Josefin Sans", sans-serif;
-  background-color:#14302f;
+  background-color:white;
   overflow-x: hidden;
 }
 /* HOME CSS///////////////////////////////////////////////////////////////////////////////////////////////////////// */
-.companytext{
-     font-size: 7vw;
-     text-align: center;
-     display: flex;
-     color: white;
-     justify-content: center;
-     font-weight: 600;
-    
+.h-navbar{
+  width: 100%;
+  height: 8vmin;
+  border-bottom: 0px solid black;
+  position: sticky;
 }
+.image-logo{
+  width: 30%;
+  
+}
+.nav-text{
+  align-items: center;
+}
+.loginbutton{
+  align-items: center;
+  width: 10%;
+}
+.text-nav:hover{
+   background-color: #121212;
+   color: white;
+   scale: 1.2;   
+}
+.text-login{
+  font-size:0.8vw ;
+}
+.text-nav{
+  font-size: 0.8vw;
+}
+@media (max-width:640px){
+  .text-nav{
+    font-size: 1vw;
+  }
+}
+.brandtext{
+  font-size: 6vw;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+.welcome-text{
+  font-size: 4vw;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.auto-text-container{
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+}
+.deals-text{
+  font-size: 2vw;
+ 
+}
+
 .textcontainer{
   position: relative;
   top: 6vh;
   z-index: 30;
   
-}
-@media (max-width:640px) {
-  .textcontainer{
-    position: relative;
-    top:4vh;
-    z-index: 30;
-  }
-  .imagecontainer{
-    position: relative;
-    top:6vh;
-   
-  }
-}
-.imagecontainer{
-  display: grid;
-  place-items: center;
-}
-.box1{
-  width: 90%;
-}
-.imagecontainer{
-  top: 5vh;
-}
-
-.qwr{
-  scale: 1;
-  transition: all;
-  transition-duration: 300ms;
 }
 .row1{
   width: 3vw;
@@ -202,7 +218,18 @@ rgb(174, 254, 255) */
 }
 
 /* preprimart section css////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
-
+.preprimary-text{
+  font-size: 4vw;
+}
+.pre-books-description{
+  font-size: 1.2vw;
+}
+.pre-books-gallery{
+  gap: 10%;
+}
+.outer-container{
+  align-items: center;
+}
 .head-text-section{
   font-size:6vw;
   position: relative;
@@ -274,4 +301,7 @@ rgb(174, 254, 255) */
 
 .rounded-pink{
   background-color: 		#ff89ff;
+}
+.navbar-content{
+   top: 20vh;
 }

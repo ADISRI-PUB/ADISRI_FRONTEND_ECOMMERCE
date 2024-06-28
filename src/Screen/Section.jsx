@@ -32,11 +32,11 @@ export default function Section() {
       <div className="relative w-full newclass h-full bg-white  -z-10   ">
         <div ref={outer} className="w-full h-full   scrolltab ">
            <div className="w-full h-full overflow-hidden">
-            <PrePrimary />
+            {/* <PrePrimary /> */}
             </div>
             <div className="w-full h-full overflow-hidden">
 
-            <OnetoEight />
+            {/* <OnetoEight /> */}
             </div>
        
         </div>
