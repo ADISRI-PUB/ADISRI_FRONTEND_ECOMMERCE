@@ -14,10 +14,7 @@ function App() {
     <div className='home'>
      <Home/>
      </div>
-     <div className='home transition-all duration-700 section-scroll '>
-
-     <Section/>
-     </div>
+    
     </>
   )
 }

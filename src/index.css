@@ -28,6 +28,9 @@ body{
   align-items: center;
   width: 10%;
 }
+.navvv{
+  z-index: 999;
+}
 .text-nav:hover{
    background-color: #121212;
    color: white;
@@ -51,7 +54,6 @@ body{
 }
 .welcome-text{
   font-size: 4vw;
-  text-align: center;
   font-family: "Poppins", sans-serif;
 }
 
@@ -70,27 +72,7 @@ body{
   z-index: 30;
   
 }
-.row1{
-  width: 3vw;
-  height: 0.2vh;
-  background-color: #67f1ed;
-  transition: all;
-  position: relative;
-  transition-duration: 300ms;
-  z-index: 999;
-  
-}
-.row2{
-  display: inline-block;
-  position: relative;
-  transition: all;
-  transition-duration: 300ms;
-  top: -1.5vh;
-  width: 3vw;
-  height: 0.2vh;
-  background-color: #67f1ed;
-  z-index: 999;
-}
+
 .menu{
   position: relative;
   right: 3vw;
@@ -101,18 +83,44 @@ body{
     display: inline-block;
     position: relative;
     top: -2vh;
-    width: 7vw;
+    width: 6.5vw;
     height: 0.2vh;
-    background-color:#67f1ed;
+    background-color:black;
+    transition: all;
+    transition-duration: 200ms;
   }
   .row1{
-    width: 7vw;
+    transition: all;
+    transition-duration: 200ms;
+    position: relative;
+    top:1vh;
+    width: 6.5vw;
+    height: 0.2vh;
+    background-color:black;
   }
   
 }
-.navclosed{
- transform: translateX(100%);
+@media (max-width:300px)
+{
+  .navbar-small{
+    background-color: #ff89ff;
+  }
+  .row2{
+    display: inline-block;
+    position: relative;
+    top: -5vh;
+    width: 6.5vw;
+    height: 0.2vmax;
+    background-color:black;
+  }
+  .row1{
+    width: 6.5vw;
+    height:0.2vmax;
+    top: -1.9vh;
+  }
+   
 }
+
 .navbar{
   position: relative;
   border-radius: 2vw;
@@ -120,14 +128,32 @@ body{
    height: 90vh;
    width: 100%;
 }
-.navopen{
-  transform: translateX(0%);
-}
 @media (max-width:640px){
   .navcomponents{
     max-width: 100%;
 
   }
+}
+.small-navbar{
+  font-size: 3vw;
+}
+.small-navbar-component{
+  width: 100vw;
+}
+.nav-closed{
+  transform: translateY(-200%);
+}
+
+.s-navclosed{
+  transform: translateY(100vh);
+  
+}
+.s-navbaropen{
+  transform: translateY(0vh);
+ 
+}
+.logg{
+  align-items:center;
 }
 .image1{
   width: 50%;
@@ -222,9 +248,13 @@ rgb(174, 254, 255) */
   font-size: 4vw;
 }
 .pre-books-description{
+
   font-size: 1.2vw;
 }
 .pre-books-gallery{
+  gap: 10%;
+}
+.pre-books-gallery2{
   gap: 10%;
 }
 .outer-container{
@@ -250,8 +280,15 @@ rgb(174, 254, 255) */
     position: relative;
 
   }
+  .pre-books-description{
+
+    font-size: 2.1vw;
+  }
   .head-text-section{
 
+  }
+  .hr2{
+    background-color: #FCFFE0;
   }
   .gallery{
      top: 13vh;

@@ -22,50 +22,50 @@ export default function Crousal() {
 
   return (
     <>
-      <div className="  bg-black  flex   imagescontainer  transition-all duration-1000   ">
-        <div className="min-w-full im1 transition-all duration-500">
+      <div className="  bg-black  flex   imagescontainer  transition-all duration-1000  ">
+        <div className="min-w-full im1 transition-all z-10 duration-500">
           <img
             src="https://www.bookswagon.com/bannerimages/84_inr.jpg?v=5.2"
             alt=""
           />
         </div>
-        <div className="min-w-full im2">
+        <div className="min-w-full z-10  im2">
           <img
             src="https://www.bookswagon.com/bannerimages/85_inr.jpg?v=5.2"
             alt=""
           />
         </div>
-        <div className="min-w-full">
+        <div className="min-w-full z-10 ">
           <img
             src="https://www.bookswagon.com/bannerimages/80_inr.jpg?v=5.2"
             alt=""
           />
         </div>
-        <div className="min-w-full">
+        <div className="min-w-full z-10 ">
           <img
             src="https://www.bookswagon.com/bannerimages/79_inr.jpg?v=5.2"
             alt=""
           />
         </div>
-        <div className="min-w-full">
+        <div className="min-w-full z-10 ">
           <img
             src="https://www.bookswagon.com/bannerimages/83_inr.jpg?v=5.2"
             alt=""
           />
         </div>
-        <div className="min-w-full">
+        <div className="min-w-full z-10 ">
           <img
             src="https://www.bookswagon.com/bannerimages/85_inr.jpg?v=5.2"
             alt=""
           />
         </div>
-        <div className="min-w-full">
+        <div className="min-w-full z-10 ">
           <img
             src="https://www.bookswagon.com/bannerimages/84_inr.jpg?v=5.2"
             alt=""
           />
         </div>
-        <div className="min-w-full">
+        <div className="min-w-full z-10 ">
           <img
             src="https://www.bookswagon.com/bannerimages/84_inr.jpg?v=5.2"
             alt=""
