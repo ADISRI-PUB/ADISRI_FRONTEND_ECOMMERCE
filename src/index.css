@@ -342,3 +342,26 @@ rgb(174, 254, 255) */
 .navbar-content{
    top: 20vh;
 }
+/* ABOUT SECTION//////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+.abouttext{
+  font-size: 5vw;
+  text-align: center;
+}
+/* spped down on end the animation */
+.counting-container{
+  justify-items: center; /* Center items horizontally */
+  align-items: center; 
+}
+.counting-text{
+  font-size: 3vw;
+}
+.box1{
+  width: 20vw;
+  transition: all 300ms;
+}
+.box1:hover{
+  scale: 1.1;
+}
+.st-cover{
+  font-size: 2vw;
+}

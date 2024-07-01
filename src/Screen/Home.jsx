@@ -7,6 +7,7 @@ import Crousal from "../Components/Crousal";
 import OnetoEight from './OnetoEight'
 import PrePrimary from "./PrePrimary";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
+import AboutUS from "./AboutUS";
 gsap.registerPlugin(ScrollTrigger)
 export default function Home() {
   let count = 0;
@@ -186,6 +187,7 @@ export default function Home() {
         <div className="sections1 ">
           <PrePrimary />
           <OnetoEight/>
+          <AboutUS/>
         </div>
       </div>
     </>
