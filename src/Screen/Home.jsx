@@ -8,31 +8,16 @@ import OnetoEight from './OnetoEight'
 import PrePrimary from "./PrePrimary";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import AboutUS from "./AboutUS";
+import Clients from "../Components/Cilents";
+import Footer from "./Footer";
 gsap.registerPlugin(ScrollTrigger)
 export default function Home() {
   let count = 0;
   const element = useRef(null);
   useEffect(() => {
     let temp = element.current;
-    gsap.to('.pre-books',{
-      backgroundColor:"#FCFFE0",
-      scrollTrigger:{
-        // markers:true,
-        trigger:".sections1",
-        start:"-30% top",
-        end:"-30% -10%"
-      }
-    })
-
-    gsap.to('._sections2',{
-      backgroundColor:"#F4EEFF",
-      scrollTrigger:{
-        // markers:true,
-        trigger:"._sections2",
-        start:"-50% top",
-        end:"-50% -10%"
-      }
-    })
+   
+  
     const typed = new Typed(temp, {
       strings: [
         "Books",
@@ -134,12 +119,7 @@ export default function Home() {
             >
               1<sup>th</sup> TO 8<sup>th</sup>
             </Link>
-            <Link
-              to={"NULL"}
-              className=" text-nav rounded-full transition-all duration-200 p-3 "
-            >
-              CAREER
-            </Link>
+            
             <Link
               to={"NULL"}
               className=" text-nav rounded-full transition-all duration-200 p-3 "
@@ -168,7 +148,7 @@ export default function Home() {
      
       </div>
     
-      <div className="home-area z-20 bg-emerald-200 leading-snug">
+      <div className="home-area z-20  leading-snug">
       <div className="absolute navbar-small nav-closed z-20 transition-all duration-700 ">
         <Navbar/>
         </div>
@@ -181,13 +161,17 @@ export default function Home() {
           </div>
         </div>
         <br />
-        <div className="w-11/12 relative overflow-hidden m-auto z-10 ">
+        <div className=" ">
           <Crousal />
+          {/* <Clients/> */}
         </div>
         <div className="sections1 ">
           <PrePrimary />
           <OnetoEight/>
+          
           <AboutUS/>
+          
+          <Footer/>
         </div>
       </div>
     </>

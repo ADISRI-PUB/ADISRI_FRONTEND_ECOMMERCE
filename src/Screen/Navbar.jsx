@@ -27,12 +27,7 @@ export default function Navbar(){
             >
               1<sup>th</sup> TO 8<sup>th</sup>
             </Link>
-            <Link
-              to={"NULL"}
-              className="  small-navbar  rounded-full transition-all duration-200 p-3 block"
-            >
-              CAREER
-            </Link>
+         
             <Link
               to={"NULL"}
               className="small-navbar  rounded-full transition-all duration-200 p-3 block"

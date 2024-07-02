@@ -1,39 +1,9 @@
 import React, { useEffect, useState } from "react";
 import gsap from "gsap";
+import CrousalBooks from "../Components/CrousalBooks";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 export default function PrePrimary() {
-  let [count,setcount] =useState(0)
-  let [amoutscroll,setamountscroll]=useState(0)
-  let left2,right2
-  right2 =  ()=>{
-    if (count<7) {
-      console.log(count,amoutscroll);
-      setamountscroll(amoutscroll+=28)
-      setcount(++count)
-      document.querySelector('.pre-books-gallery2').style.transform =`translate(${-amoutscroll}%)`
-    }
-    else{
-      document.querySelector('.pre-books-gallery2').style.transform =`translate(0%)`
-      // document.querySelector('.pre-books-gallery').style.transform =`translate(${-r_amount}%)`
-      setamountscroll(0)
-      setcount(0)
-    }
-    
-    
-  }
-   left2 = ()=>{
-    if (count>0) {
-      setamountscroll(amoutscroll-=28)
-      document.querySelector('.pre-books-gallery2').style.transform =`translate(${-amoutscroll}%)`
-      setcount(--count)
-    }
-    else{
-    document.querySelector('.pre-books-gallery2').style.transform= `translate(0%)`
-    setamountscroll(0)
-    setcount(0)
-    }   
-  }
   useEffect(()=>{
   
     
@@ -42,8 +12,10 @@ export default function PrePrimary() {
   ,[])
   return (
     <>
-
-     <div className="preprimary-section _sections2 bg-cyan-200 p-4 transition-all duration-500 overflow-hidden">
+  <div className='h-20 new-space-color'>
+           
+           </div>
+     <div className="preprimary-section _sections2  p-4 transition-all duration-500 overflow-hidden">
       <div className="absolute overflow-hidden z-10 opacity-20">
       <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" fill="#a77afa" version="1.1" id="Capa_1" width="30vw"  viewBox="0 0 173.692 173.692" xmlSpace="preserve">
 <g>
@@ -63,33 +35,12 @@ export default function PrePrimary() {
             <p className="pre-books-description p-3">"Step into a world of wonder at our bookstore, where each book is a key to unlocking boundless imagination and endless learning for young readers. Our curated collection of 1st to 8th grade books is a treasure trove of stories, knowledge, and inspiration, carefully chosen to captivate and enrich young minds at every stage of their reading journey. Whether you're seeking thrilling adventures that transport you to distant realms, insightful stories that teach valuable life lessons, or educational resources that make learning engaging and fun, we have <b className="bg-yellow-400"> something extraordinary </b> waiting for you. Dive into the magic of storytelling with beloved classics, explore new horizons with innovative educational tools, and embark on adventures that ignite a lifelong passion for reading. Join us on this literary adventure and let the pages of our books become your gateway to endless possibilities."</p>
           </div>
           </div>
-          <div className="outer-container flex  justify-between  ">
-            <div className="m-auto ">
-          <svg onClick={left2} className="cursor-pointer" xmlns="http://www.w3.org/2000/svg"  viewBox="0 -960 960 960" width="3vw" fill="#000"><path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z"/></svg>
-          </div>
-          <div className="flex  w-4/5 overflow-hidden m-auto">
-            <div className="flex pre-books-gallery2 transition-all duration-500 z-20 ">
-            <img  className="w-1/6 p-4 max-sm:p-1 border-2 border-white   bg-orange-200 " src="AMAZING PICTURES C.jpg" alt=""  />
-            <img  className="w-1/6 p-4 max-sm:p-1 border-2 border-white   bg-orange-200 " src="ART&CRAFT A.jpg" alt=""  />
-            <img  className="w-1/6 p-4 max-sm:p-1 border-2 border-white   bg-orange-200 " src="ALL IN ONE WRITING BOOK HARD BOUND.jpg" alt=""  />
-            <img  className="w-1/6 p-4 max-sm:p-1 border-2 border-white   bg-orange-200 " src="ART&CRAFT B.jpg" alt=""  />
-            <img  className="w-1/6 p-4 max-sm:p-1 border-2 border-white   bg-orange-200 " src="AMAZING PICTURES C.jpg" alt=""  />
-            <img  className="w-1/6 p-4 max-sm:p-1 border-2 border-white    bg-orange-200" src="ALL IN ONE READING.jpg" alt=""  />
-            <img  className="w-1/6 p-4 max-sm:p-1 border-2 border-white   bg-orange-200 " src="ALL IN ONE WRITING BOOK HARD BOUND.jpg" alt=""  />
-            <img  className="w-1/6 p-4 max-sm:p-1 border-2 border-white   bg-orange-200 " src="AMAZING PICTURES  A.jpg" alt=""  />
-            <img  className="w-1/6 p-4 max-sm:p-1 border-2 border-white   bg-orange-200 " src="ART&CRAFT A.jpg" alt=""  />
-            <img  className="w-1/6 p-4 max-sm:p-1 border-2 border-white   bg-orange-200 " src="ALL IN ONE WRITING BOOK HARD BOUND.jpg" alt=""  />
-            <img  className="w-1/6 p-4 max-sm:p-1 border-2 border-white   bg-orange-200 " src="ART&CRAFT B.jpg" alt=""  />
-            {/* <img  className="w-1/6 p-4 border-2 border-white bg-emerald-800 " src="ART&CRAFT A.jpg" alt=""  /> */}
-            {/* <img  className="w-1/6 p-4 border-2 border-white bg-emerald-800 " src="ALL IN ONE WRITING BOOK HARD BOUND.jpg" alt=""  /> */}
-            {/* <img  className="w-1/6 p-4 border-2 border-white bg-emerald-800 " src="ART&CRAFT B.jpg" alt=""  />
-            <img  className="w-1/6 p-4 border-2 border-white bg-emerald-800 " src="AMAZING PICTURES C.jpg" alt=""  /> */}
-            </div>
-          </div>
-          <div className="m-auto">
-          <svg onClick={right2} className="rotate-180 cursor-pointer z-10" xmlns="http://www.w3.org/2000/svg"  viewBox="0 -960 960 960" width="3vw" fill="#000"><path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z"/></svg>
-          </div>
-          </div>
+         <div className="w-5/6 m-auto">
+         <div className='h-10 new-space-color'>
+           
+           </div>
+          <CrousalBooks slideshow={4} />
+         </div>
      </div>
     </>
   );

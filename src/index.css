@@ -242,6 +242,9 @@ rgb(174, 254, 255) */
   height: 100vh;
   
 }
+.home-area{
+  background-color:#F4EEFF;
+}
 
 /* preprimart section css////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 .preprimary-text{
@@ -344,8 +347,9 @@ rgb(174, 254, 255) */
 }
 /* ABOUT SECTION//////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 .abouttext{
-  font-size: 5vw;
+  font-size: 3vw;
   text-align: center;
+  
 }
 /* spped down on end the animation */
 .counting-container{
@@ -358,10 +362,82 @@ rgb(174, 254, 255) */
 .box1{
   width: 20vw;
   transition: all 300ms;
+  background-color: #e3d3ff;
+  border-radius: 10px ;
 }
 .box1:hover{
   scale: 1.1;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 .st-cover{
   font-size: 2vw;
+}
+
+.logo-brand-slider img{
+   width: 10%;
+}
+.logo-brand-slider{
+  display: flex;
+  gap: 5%;
+  animation: 12s slider infinite linear;
+  padding: 1%;
+ 
+}
+.our-clients2{
+  font-size: 2.3vw;
+  text-align: center;
+  color:  black;
+}
+.preprimary-section{
+  background-color: #F4EEFF;
+}
+.logos-brand{
+  width: 85%;
+  margin: auto;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  /* background-image: linear-gradient(to left 0px 40px, white); */
+  background-color: white;
+}
+.animated{
+  animation: 12s slider infinite linear;
+}
+@keyframes slider{
+  0%{
+    transform: translateX(0%);
+  }
+  100%{
+    transform: translateX(-280%);
+  }
+}
+.about-sections{
+  background-color: #F4EEFF;
+}
+.new-space-color{
+  background-color: #F4EEFF;
+}
+.our-clients{
+  font-size: 4vw;
+  text-align: center;
+}
+.logos-brand:before{
+   top: 0;
+   left: 0;
+   position: absolute;
+   width: 10%;
+   height: 100%;
+   background-image: linear-gradient(to left, rgba(255,255,255,0), white);
+   content: "";
+   z-index: 2;
+}
+.logos-brand::after{
+  top: 0;
+  right: 0;
+  position: absolute;
+  width: 10%;
+  height: 100%;
+  background-image: linear-gradient(to right , rgba(255,255,255,0),white);
+  content: "";
+  z-index: 2;
 }

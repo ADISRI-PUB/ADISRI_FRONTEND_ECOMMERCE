@@ -1,39 +1,10 @@
 import React, { useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import CrousalBooks from "../Components/CrousalBooks";
 gsap.registerPlugin(ScrollTrigger);
 export default function PrePrimary() {
-  let [count,setcount] =useState(0)
-  let [amoutscroll,setamountscroll]=useState(0)
-  let left,right
-  right =  ()=>{
-    if (count<7) {
-      console.log(count,amoutscroll);
-      setamountscroll(amoutscroll+=28)
-      setcount(++count)
-      document.querySelector('.pre-books-gallery').style.transform =`translate(${-amoutscroll}%)`
-    }
-    else{
-      document.querySelector('.pre-books-gallery').style.transform =`translate(0%)`
-      // document.querySelector('.pre-books-gallery').style.transform =`translate(${-r_amount}%)`
-      setamountscroll(0)
-      setcount(0)
-    }
-    
-    
-  }
-   left = ()=>{
-    if (count>0) {
-      setamountscroll(amoutscroll-=28)
-      document.querySelector('.pre-books-gallery').style.transform =`translate(${-amoutscroll}%)`
-      setcount(--count)
-    }
-    else{
-    document.querySelector('.pre-books-gallery').style.transform= `translate(0%)`
-    setamountscroll(0)
-    setcount(0)
-    }   
-  }
+  
   useEffect(()=>{
   
     
@@ -43,9 +14,9 @@ export default function PrePrimary() {
   return (
     <>
     <hr className="bg-bg-emerald-200 max-sm:h-3.5 sm:h-20 " />
-     <div className="preprimary-section pre-books bg-teal-300 p-4 transition-all duration-700">
-     <div className="absolute overflow-hidden z-10 opacity-20 right-0">
-     <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" fill="#828a3d" version="1.1" id="Capa_1" width="30vw"  viewBox="0 0 173.692 173.692" xmlSpace="preserve">
+     <div className="preprimary-section pre-books relative  bg-teal-300 p-4 transition-all duration-700">
+     <div className="absolute overflow-hidden z-10  opacity-20 top-0 right-20 ">
+     <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" fill="#a77afa" version="1.1" id="Capa_1" width="30vw"  viewBox="0 0 173.692 173.692" xmlSpace="preserve">
 <g>
 	<g>
 		<path d="M63.732,48.978c-3.357,0-6.853,0.936-10.09,2.219c2.729-2.164,5.283-4.714,6.968-7.645    c5.538-9.582,4.357-16.512-0.448-19.275c-4.796-2.769-11.385-0.342-16.923,9.25c-1.691,2.92-2.632,6.411-3.129,9.869    c-0.506-3.458-1.448-6.949-3.133-9.869c-5.533-9.582-12.126-12.025-16.917-9.25c-4.813,2.763-5.99,9.688-0.45,19.275    c1.68,2.914,4.237,5.481,6.978,7.65c-3.246-1.284-6.747-2.225-10.116-2.225C5.396,48.984,0,53.465,0,59.014    c0,5.546,5.401,10.03,16.473,10.025c3.369,0.005,6.866-0.919,10.116-2.222c-2.741,2.17-5.298,4.748-6.988,7.65    c-5.53,9.598-4.342,16.526,0.459,19.286c4.784,2.772,11.384,0.326,16.917-9.256c1.69-2.919,2.626-6.411,3.133-9.869    c0.509,3.453,1.45,6.95,3.137,9.858c5.529,9.588,12.124,12.039,16.915,9.267c4.805-2.766,5.981-9.699,0.443-19.291    c-1.674-2.92-4.23-5.48-6.969-7.65c3.236,1.291,6.732,2.227,10.095,2.218c11.084,0.009,16.479-4.476,16.479-10.021    C80.212,53.471,74.812,48.978,63.732,48.978z M44.122,65.955c-3.838,2.213-8.743,0.903-10.956-2.93    c-2.218-3.838-0.901-8.741,2.937-10.954c3.837-2.22,8.736-0.904,10.944,2.93C49.264,58.833,47.964,63.747,44.122,65.955z"/>
@@ -64,33 +35,12 @@ export default function PrePrimary() {
             <p className="pre-books-description p-3">"Welcome to Adisri Publications, where learning begins with our vibrant collection of pre-primary books. Designed to <b className="bg-yellow-300"> spark curiosity </b> and foster early literacy skills, our books are tailored to engage young minds through captivating stories,  <b className="bg-yellow-300"> interactive activities </b>, and colorful illustrations. Whether you're looking to introduce basic concepts like numbers and letters or encourage creativity through imaginative tales, our curated selection offers something for every young learner. Explore our range and embark on a journey of discovery with your child today."</p>
           </div>
           </div>
-          <div className="outer-container flex  justify-between  ">
-            <div className="m-auto ">
-          <svg onClick={left} className="cursor-pointer" xmlns="http://www.w3.org/2000/svg"  viewBox="0 -960 960 960" width="3vw" fill="#000"><path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z"/></svg>
-          </div>
-          <div className="flex  w-4/5 overflow-hidden m-auto z-10">
-            <div className="flex pre-books-gallery transition-all duration-500 ">
-            <img  className="w-1/6 p-4 max-sm:p-1 border-2 border-white bg-emerald-800 " src="ALL IN ONE READING.jpg" alt=""  />
-            <img  className="w-1/6 p-4 max-sm:p-1 border-2 border-white bg-emerald-800 " src="ALL IN ONE WRITING BOOK HARD BOUND.jpg" alt=""  />
-            <img  className="w-1/6 p-4 max-sm:p-1 border-2 border-white bg-emerald-800 " src="AMAZING PICTURES  A.jpg" alt=""  />
-            <img  className="w-1/6 p-4 max-sm:p-1 border-2 border-white bg-emerald-800 " src="ART&CRAFT A.jpg" alt=""  />
-            <img  className="w-1/6 p-4 max-sm:p-1 border-2 border-white bg-emerald-800 " src="ALL IN ONE WRITING BOOK HARD BOUND.jpg" alt=""  />
-            <img  className="w-1/6 p-4 max-sm:p-1 border-2 border-white bg-emerald-800 " src="ART&CRAFT B.jpg" alt=""  />
-            <img  className="w-1/6 p-4 max-sm:p-1 border-2 border-white bg-emerald-800 " src="AMAZING PICTURES C.jpg" alt=""  />
-            <img  className="w-1/6 p-4 max-sm:p-1 border-2 border-white bg-emerald-800 " src="ART&CRAFT A.jpg" alt=""  />
-            <img  className="w-1/6 p-4 max-sm:p-1 border-2 border-white bg-emerald-800 " src="ALL IN ONE WRITING BOOK HARD BOUND.jpg" alt=""  />
-            <img  className="w-1/6 p-4 max-sm:p-1 border-2 border-white bg-emerald-800 " src="ART&CRAFT B.jpg" alt=""  />
-            <img  className="w-1/6 p-4 max-sm:p-1 border-2 border-white bg-emerald-800 " src="AMAZING PICTURES C.jpg" alt=""  />
-            {/* <img  className="w-1/6 p-4 border-2 border-white bg-emerald-800 " src="ART&CRAFT A.jpg" alt=""  /> */}
-            {/* <img  className="w-1/6 p-4 border-2 border-white bg-emerald-800 " src="ALL IN ONE WRITING BOOK HARD BOUND.jpg" alt=""  /> */}
-            {/* <img  className="w-1/6 p-4 border-2 border-white bg-emerald-800 " src="ART&CRAFT B.jpg" alt=""  />
-            <img  className="w-1/6 p-4 border-2 border-white bg-emerald-800 " src="AMAZING PICTURES C.jpg" alt=""  /> */}
-            </div>
-          </div>
-          <div className="m-auto z-10">
-          <svg onClick={right} className="rotate-180 cursor-pointer" xmlns="http://www.w3.org/2000/svg"  viewBox="0 -960 960 960" width="3vw" fill="#000"><path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z"/></svg>
-          </div>
-          </div>
+          <div className="w-5/6 m-auto z-50 ">
+          <div className='h-10 new-space-color'>
+           
+           </div>
+          <CrousalBooks slideshow={4} />
+         </div>
      </div>
     </>
   );
