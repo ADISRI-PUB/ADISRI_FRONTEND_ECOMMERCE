@@ -23,7 +23,7 @@ export default function Navbar(){
             </Link>
             <Link
               to={"NULL"}
-              className=" small-navbar   p-3  block"
+              className=" small-navbar  transition-all duration-200  p-3  block"
             >
               1<sup>th</sup> TO 8<sup>th</sup>
             </Link>
@@ -36,7 +36,7 @@ export default function Navbar(){
             </Link>
             <Link
               to={"NULL"}
-              className="small-navbar logg justify-center bg-slate-400 flex  text-white transition-all duration-200 p-3 "
+              className=" logg justify-center bg-slate-400 flex  text-white transition-all duration-200 p-3 "
             >
           <svg
               xmlns="http://www.w3.org/2000/svg"

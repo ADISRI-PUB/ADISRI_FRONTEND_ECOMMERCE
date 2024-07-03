@@ -1,12 +1,15 @@
-import React, { useEffect } from "react";
-
+import React, { useEffect,Useref } from "react";
+import { useInView } from "react-intersection-observer";
 export default function Clients() {
+  let element
+
   useEffect(()=>{
-    document.querySelector('.logo-brand-slider').classList.add('animated')
-  },[])
+    element =document.querySelector('.logo-brand-slider')
+     document.querySelector('.logo-brand-slider').classList.add('animated')
+})
   return (
     <>
-      <div className="logos-brand">
+      <div  className="logos-brand sm:w-full max-sm:w-full">
         <div className="logo-brand-slider">
           <img src="THE NOVA SCHOOL.png" alt="" />
           <img src="AMANDEEP INTERNATIOAL SCHOOL.png" alt="" />

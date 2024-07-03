@@ -3,14 +3,14 @@ export default function Footer(){
     return(
         <>
          
-         <footer className="bg-white dark:bg-gray-900">
+         <footer className="">
     <div className="mx-auto w-full max-w-screen-xl">
         <div>
             <img className="m-auto" src="ADISRI LOGO 2.png" alt=""  />
         </div>
       <div className="grid grid-cols-2   gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
         <div className="">
-            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white ">Company</h2>
+            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase  ">Company</h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium ">
                 <li className="mb-4">
                     <a href="#" className=" hover:underline">About</a>
@@ -27,7 +27,7 @@ export default function Footer(){
             </ul>
         </div>
         <div>
-            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Help center</h2>
+            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase ">Help center</h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
                     <a href="#" className="hover:underline">Discord Server</a>
@@ -44,7 +44,7 @@ export default function Footer(){
             </ul>
         </div>
         <div>
-            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
+            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">Legal</h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
                     <a href="#" className="hover:underline">Privacy Policy</a>
@@ -58,7 +58,7 @@ export default function Footer(){
             </ul>
         </div>
         <div>
-            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Download</h2>
+            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase ">Download</h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
                     <a href="#" className="hover:underline">iOS</a>

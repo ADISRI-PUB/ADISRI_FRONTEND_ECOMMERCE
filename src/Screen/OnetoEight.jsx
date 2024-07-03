@@ -12,7 +12,7 @@ export default function PrePrimary() {
   ,[])
   return (
     <>
-  <div className='h-20 new-space-color'>
+  <div className='sm:h-20 new-space-color'>
            
            </div>
      <div className="preprimary-section _sections2  p-4 transition-all duration-500 overflow-hidden">

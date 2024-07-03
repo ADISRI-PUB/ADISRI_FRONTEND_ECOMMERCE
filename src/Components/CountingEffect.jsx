@@ -1,11 +1,27 @@
-import React, { useState, useEffect } from 'react';
-
+import React, { useState, useEffect, useRef } from 'react';
+import { useInView } from "react-intersection-observer";
 const CountingEffect = ({ finalCount,duration,name}) => {
+    // target  =useRef(null)
   let [count, setCount] = useState(0);
  let newdurations
+ const [timeoutStarted, setTimeoutStarted] = useState(false);
+  const { target, inView } = useInView({
+   
+    threshold: 0,
+  });
 
 
   useEffect(() => {
+    // let temp = target.current
+    if (inView && !timeoutStarted) {
+      const timeoutId = setTimeout(() => {
+        console.log('Timeout function executed after component entered viewport');
+      }, 1000);
+
+      setTimeoutStarted(true); 
+
+      return () => clearTimeout(timeoutId); 
+    }
    function newduration(){
     if (finalCount==5000 && count<5000) {
       setCount(count+=1)
@@ -44,10 +60,10 @@ const CountingEffect = ({ finalCount,duration,name}) => {
       return ()=>{
         clearInterval(settime)
       }
-  },[]);
+  },[inView,timeoutStarted]);
   return(
   <>
-    <p className='counting-text font-medium'>{Math.floor(count)}+</p>
+    <p ref={target} className='counting-text font-medium'>{Math.floor(count)}+</p>
   </>
   ) 
 };
