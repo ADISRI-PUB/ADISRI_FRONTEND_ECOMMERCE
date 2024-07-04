@@ -1,0 +1,198 @@
+.h-navbar{
+    width: 100%;
+    height: 8vmin;
+    border-bottom: 0px solid black;
+    position: sticky;
+  }
+  .image-logo{
+    width: 30%;
+    
+  }
+  .nav-text{
+    align-items: center;
+  }
+  .loginbutton{
+    align-items: center;
+    /* width: 10%; */
+   right: 1;
+    /* justify-self: center; */
+    /* background-color: #F4EEFF; */
+    
+  }
+  .navvv{
+    z-index: 999;
+  }
+  .text-nav:hover{
+     background-color: #121212;
+     color: white;
+     scale: 1.2;   
+  }
+  .active{
+    background-color: #121212;
+    color: white;
+    scale: 1.2;
+  }
+  .text-login{
+    font-size:0.8vw ;
+  }
+  .text-nav{
+    font-size: 0.8vw;
+  }
+  @media (max-width:640px){
+    .text-nav{
+      font-size: 1vw;
+    }
+  }
+  .brandtext{
+    font-size: 6vw;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+  }
+  .welcome-text{
+    font-size: 4vw;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .auto-text-container{
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+  }
+  .deals-text{
+    font-size: 2vw;
+   
+  }
+  
+  .textcontainer{
+    position: relative;
+    top: 6vh;
+    z-index: 30;
+    
+  }
+  
+  .menu{
+    position: relative;
+    right: -0.3vw;
+    width: 10vw;
+  }
+  .row1{
+    background-color: #121212;
+    height: 1px;
+    width: 80%;
+    margin: auto;
+    top: 30%;
+    margin-bottom: 2px;
+  }
+  .row2{
+    background-color: #121212;
+    height: 1px;
+    width: 80%;
+    margin-top: 10px;
+   
+  }
+  
+  @media (max-width:300px)
+  {
+    .navbar-small{
+     background-color: white;
+    }
+    
+  }
+  
+  .navbar{
+    position: relative;
+    border-radius: 2vw;
+     top: 4vh;
+     height: 90vh;
+     width: 100%;
+  }
+  @media (max-width:640px){
+    .navcomponents{
+      max-width: 100%;
+  
+    }
+  }
+  .small-navbar{
+    font-size: 3vw;
+  }
+  .small-navbar-component{
+    width: 100vw;
+  }
+  .nav-closed{
+    transform: translateY(-200%);
+  }
+
+ 
+  .logg{
+    align-items:center;
+  }
+
+  /* .leftbutton{
+    top: 20vmin;
+    left: 2vw;
+    float:left;
+    transform: rotate(90deg);
+  }
+  .rightbutton{
+    top: 20vmin;
+    float:right;
+    right: 3vw;
+    transform: rotate(-90deg);
+  } */
+  @media (max-width:640px){
+    .leftbutton , .rightbutton{
+      top: 3.3vh;
+    }
+    
+  }
+  .linktext{
+    font-size: 1.6vw;
+  }
+  @media (max-width:640px) {
+    .linktext{
+      font-size: 3vw;
+    }
+  }
+  .imgelogo{
+    width: 5vw;
+    
+  }
+  
+  .new{
+  color: #67f1ed;
+  }
+  
+  /* #072227 -dark
+  #35858B - light1
+  #4FBDBA -ligh2
+  #AEFEFF -light3
+  rgb(7, 34, 39)
+  rgb(53, 133, 139)
+  rgb(79, 189, 186)
+  rgb(174, 254, 255) */
+  
+  .sectionmain{
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  @media (max-width:640px) {
+    .navslider{
+      width: 100%;
+      top: 3.2vh;
+      height: 90%;
+      z-index: 998;
+    }
+    .crousal{
+      top: 20vh;
+    }
+  
+  }
+  .home{
+    width: 100vw;
+    height: 100vh;
+    
+  }
+  .home-area{
+    background-color:#F4EEFF;
+    z-index: 20;
+  }

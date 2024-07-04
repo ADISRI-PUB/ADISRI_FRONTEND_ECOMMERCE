@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
+import '../Css/Home.css'
 import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
 import Typed from "typed.js";
@@ -37,23 +38,23 @@ export default function Home() {
     };
   }, []);
  
-  const show = () => {
-    document.querySelector(".arrow-svg").classList.add("rotate-90");
-    document.querySelector(".arrow-svg").classList.remove("-rotate-90");
-    document.querySelector(".arrow-svg").setAttribute("fill", "#FFFFFF");
-    document.querySelector(".pop-up").classList.remove("hidden");
-    document.querySelector(".pop-up").classList.add("show");
-    let element = document.querySelector(".text-nav-about");
-    element.classList.add("active");
-    console.log(element);
-  };
-  const hide = () => {
-    document.querySelector(".arrow-svg").classList.remove("rotate-90");
-    document.querySelector(".arrow-svg").classList.add("-rotate-90");
-    document.querySelector(".pop-up").classList.add("hidden");
-    document.querySelector(".text-nav-about").classList.toggle("active");
-    document.querySelector(".pop-up").classList.remove("show");
-  };
+  // const show = () => {
+  //   document.querySelector(".arrow-svg").classList.add("rotate-90");
+  //   document.querySelector(".arrow-svg").classList.remove("-rotate-90");
+  //   document.querySelector(".arrow-svg").setAttribute("fill", "#FFFFFF");
+  //   document.querySelector(".pop-up").classList.remove("hidden");
+  //   document.querySelector(".pop-up").classList.add("show");
+  //   let element = document.querySelector(".text-nav-about");
+  //   element.classList.add("active");
+  //   console.log(element);
+  // };
+  // const hide = () => {
+  //   document.querySelector(".arrow-svg").classList.remove("rotate-90");
+  //   document.querySelector(".arrow-svg").classList.add("-rotate-90");
+  //   document.querySelector(".pop-up").classList.add("hidden");
+  //   document.querySelector(".text-nav-about").classList.toggle("active");
+  //   document.querySelector(".pop-up").classList.remove("show");
+  // };
 
   // sh21: " 0 0 5px white, 0 0 25px white, 0 0 50px white, 0 0 100px white, 0 0 200px white",
   return (
@@ -61,12 +62,8 @@ export default function Home() {
     
        {/* <Hnavbar/> */}
       <div className="home-area z-20  leading-snug">
-        <div className="w-3/5 m-auto z-20 absolute left-1/3 ">
-          <PopUp />
-        </div>
-        <div className="absolute navbar-small nav-closed z-20 transition-all duration-700 ">
-          <Navbar />
-        </div>
+       
+     
         <p className="welcome-text p-3 text-center  block ">Welcome To,</p>
         <p className="brandtext ">Adisri Publications</p>
         <div className="auto-text-container">
