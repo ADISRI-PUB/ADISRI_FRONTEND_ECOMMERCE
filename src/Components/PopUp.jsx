@@ -1,18 +1,22 @@
 import React from "react";
-
+import { Link } from 'react-router-dom'
 export default function PopUp() {
 
     const onmouse =()=>{
-      document.querySelector('.pop-up').classList.remove('hidden')
-      document.querySelector('.text-nav-about').classList.toggle('active')
+     
+        document.querySelector('.pop-up').classList.remove('hidden')
+        document.querySelector('.pop-up').classList.add('.show-popup')
+      
     }
     const nomouse =()=>{
         document.querySelector('.text-nav-about').classList.toggle('active')
-        document.querySelector('.pop-up').classList.add('hidden')
+        document.querySelector('.pop-up').classList.remove('.show-popup')
+         document.querySelector('.pop-up').classList.add('hidden') 
+        
     }
   return (
     <>
-      <div onMouseEnter={onmouse} onMouseLeave={nomouse} className="w-4/5   m-auto pop-up hidden transition-all duration-200 -z-10 ">
+      <div onMouseEnter={onmouse} onMouseLeave={nomouse} className="w-4/5   m-auto pop-up hidden transition-all duration-800 -z-10 ">
       <div className="grid grid-cols-3 grid-rows-1">
         <div className="p-4 bg-white ">
           <p>
@@ -23,8 +27,8 @@ export default function PopUp() {
             <a href=""> <li >Who We Are</li></a>
 
           <a href="">  <li> Our Distribution Centers</li></a>
-            <a href=""> <li> Jaico Journey</li></a>
-            <a href="https://drive.google.com/file/d/1_46HY9Y0bdyyTbkUIYupRLJ_0WAln0Ei/view?usp=sharing" download="catalog.pdf"> <li>Catalogue</li></a>
+            <a href=""> <li> Adisri Journey</li></a>
+            <a href="https://drive.google.com/file/d/1_46HY9Y0bdyyTbkUIYupRLJ_0WAln0Ei/view?usp=sharing" download="catalog.pdf"v target="_blank"> <li>Catalogue</li></a>
           </ul>
           <div className="h-12 bg-white">
 
@@ -36,7 +40,7 @@ export default function PopUp() {
             <b> Career </b>
           </p>
           <ul className="targets">
-          <a href="">  <li>Current Openings</li></a>
+          <Link to='/careers'>  <li>Current Openings</li></Link>
           </ul>
          
         </div>

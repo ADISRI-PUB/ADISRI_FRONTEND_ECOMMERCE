@@ -6,20 +6,7 @@ export default function Navbar(){
   const menuopen = () => {
        
       if (count == 0) {
-        gsap.fromTo(
-          ".small-navbar",
-          {
-            opacity: 0,
-            stagger: 0.2,
-            duration: 0.8,
-            delay: 0.2,
-          },
-          {
-            delay: 0.2,
-            stagger: 0.2,
-            opacity: 1,
-          }
-        );
+      
         document.querySelector(".row1").style.transform = "rotate(45deg)";
         document.querySelector(".row2").style.transform = "rotate(-45deg)";
         document.querySelector(".row2").style.top = "0vh";
@@ -28,17 +15,6 @@ export default function Navbar(){
         count++;
       } else {
         count = 0;
-        gsap.fromTo(
-          ".small-navbar",
-          {
-            opacity: 1,
-            stagger: 0.3,
-            duration: 0.9,
-          },
-          {
-            opacity: 0,
-          }
-        );
         document.querySelector(".navvv").style.transform =
           "translateY(-300%)";
         document.querySelector(".row1").style.transform = "rotate(0deg)";
@@ -51,12 +27,12 @@ export default function Navbar(){
     return(
         <>
      
-     <div className="navvv ">
+     <div className="navvv w-full   ">
      
-      <div className="text-center bg-white space-y-6 z-20 sm:hidden max-sm:visible small-navbar-component transition-all duration-500   ">
+      <div className="text-center bg-white w-full space-y-6  sm:hidden max-sm:visible small-navbar-component transition-all duration-500   ">
         <NavLink
               to="/"
-              className="  small-navbar  rounded-full transition-all duration-200 p-3 block z-50 "
+              className="  small-navbar   transition-all duration-200 p-3 block z-50 "
               onClick={menuopen}
             >
               HOME

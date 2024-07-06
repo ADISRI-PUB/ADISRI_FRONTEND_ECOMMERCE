@@ -74,21 +74,13 @@
     right: -0.3vw;
     width: 10vw;
   }
-  .row1{
-    background-color: #121212;
-    height: 1px;
-    width: 80%;
-    margin: auto;
-    top: 30%;
-    margin-bottom: 2px;
-  }
-  .row2{
-    background-color: #121212;
-    height: 1px;
-    width: 80%;
-    margin-top: 10px;
-   
-  }
+.row1{
+  background-color: black;
+
+}
+.row2{
+  background-color: black;
+}
   
   @media (max-width:300px)
   {

@@ -4,9 +4,9 @@ export default function Clients() {
   let element
 
   useEffect(()=>{
-    element =document.querySelector('.logo-brand-slider')
+  
      document.querySelector('.logo-brand-slider').classList.add('animated')
-})
+},[])
   return (
     <>
       <div  className="logos-brand sm:w-full max-sm:w-full">

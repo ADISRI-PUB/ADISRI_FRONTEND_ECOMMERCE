@@ -25,7 +25,7 @@ function Hnavbar() {
           );
           document.querySelector(".row1").style.transform = "rotate(45deg)";
           document.querySelector(".row2").style.transform = "rotate(-45deg)";
-          document.querySelector(".row2").style.top = "0vh";
+         document.querySelector(".row2").style.marginTop="0px"
           document.querySelector(".navbar-small").style.transform =
             "translateY(0%)";
           count++;
@@ -45,9 +45,8 @@ function Hnavbar() {
           document.querySelector(".navbar-small").style.transform =
             "translateY(-200%)";
           document.querySelector(".row1").style.transform = "rotate(0deg)";
-          document.querySelector(".row2").style.top = "1vh";
-          document.querySelector(".row2").style.mrgin = "0";
           document.querySelector(".row2").style.transform = "rotate(0deg)";
+          document.querySelector(".row2").style.marginTop ="12px"
         }
       };
       const show = () => {
@@ -63,8 +62,16 @@ function Hnavbar() {
       const hide = () => {
         document.querySelector(".arrow-svg").classList.remove("rotate-90");
         document.querySelector(".arrow-svg").classList.add("-rotate-90");
-        document.querySelector(".pop-up").classList.add("hidden");
-        document.querySelector(".text-nav-about").classList.toggle("active");
+        setTimeout(()=>{
+           if (document.querySelector('.pop-up').classList.contains('.show-popup')) {
+             clearInterval()
+           }
+           else{
+             document.querySelector(".text-nav-about").classList.toggle("active");
+             document.querySelector(".pop-up").classList.add("hidden");
+            }
+
+        },300)
         document.querySelector(".pop-up").classList.remove("show");
       };
       
@@ -76,7 +83,7 @@ function Hnavbar() {
     },[])
   return (
     <>
-    <div className=" relative w-full z-30 h-navbar  flex justify-between">
+    <div className=" z-50 w-full fixed h-navbar bg-white  flex justify-between">
         <img
           className=" float-start image-logo  sm:w-1/5 max-sm:w-1/4 "
           src="logo 2.jpg"
@@ -85,11 +92,11 @@ function Hnavbar() {
 
         <div
           onClick={menuopen}
-          className="float-end cursor-pointer menu z-30 sm:hidden max-sm:visible  relative"
+          className="float-end cursor-pointer menu z-30 sm:hidden max-sm:visible  relative  top-4 right-2 "
         >
-          <span className="row1 transition-all duration-200 inline-block absolute"></span>
-          <br />
-          <span className="row2 inline-block transition-all duration-200 absolute"></span>
+          <span className="row1 h-0.5  max-sm:w-6 transition-all duration-200   bg-black block"></span>
+       
+          <span className="row2 mt-3  h-0.5 w-6 transition-all duration-200 bg-black block "></span>
         </div>
 
         <div className="nav-content w-1/3 h-full  max-sm:hidden  ">
@@ -151,7 +158,7 @@ function Hnavbar() {
           </div>
         </div>
       </div>
-       
+       <br /><br />
       <Outlet/>
       
       </> 

@@ -14,13 +14,32 @@ import Footer from './Screen/Footer'
 import PopUp from './Components/PopUp'
 import Navbar from './Screen/Navbar'
 function App() {
- 
+  const show = () => {
+    document.querySelector(".arrow-svg").classList.add("rotate-90");
+    document.querySelector(".arrow-svg").classList.remove("-rotate-90");
+    document.querySelector(".arrow-svg").setAttribute("fill", "#FFFFFF");
+    document.querySelector(".pop-up").classList.remove("hidden");
+    document.querySelector(".pop-up").classList.add("show");
+    let element = document.querySelector(".text-nav-about");
+    element.classList.add("active");
+    console.log(element);
+  };
+  const hide = () => {
+    document.querySelector(".arrow-svg").classList.remove("rotate-90");
+    document.querySelector(".arrow-svg").classList.add("-rotate-90");
+    document.querySelector(".pop-up").classList.add("hidden");
+    document.querySelector(".text-nav-about").classList.toggle("active");
+    document.querySelector(".pop-up").classList.remove("show");
+  };
   
     return (
     <> 
     <BrowserRouter>
+    <div className='z-20  '>
     <Hnavbar/>
-    <div className="absolute text-black navbar-small nav-closed z-20 transition-all duration-700 ">    
+    </div>
+    <br />
+    <div className="absolute text-black navbar-small w-full nav-closed z-20 transition-all duration-700  ">    
       <Navbar/>
         </div>
  
