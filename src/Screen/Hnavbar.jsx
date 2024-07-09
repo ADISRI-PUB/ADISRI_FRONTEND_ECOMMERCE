@@ -83,20 +83,20 @@ function Hnavbar() {
     },[])
   return (
     <>
-    <div className=" z-50 w-full fixed h-navbar bg-white  flex justify-between">
+    <div className=" z-50 w-full fixed h-navbar bg-white  flex justify-between logg ">
         <img
-          className=" float-start image-logo  sm:w-1/5 max-sm:w-1/4 "
+          className=" float-start image-logo  sm:w-1/5 max-sm:w-2/3 flex logg "
           src="logo 2.jpg"
           alt=""
         />
 
         <div
           onClick={menuopen}
-          className="float-end cursor-pointer menu z-30 sm:hidden max-sm:visible  relative  top-4 right-2 "
+          className="float-end cursor-pointer menu z-30 sm:hidden max-sm:visible  relative  top-4 right-2  h-full"
         >
           <span className="row1 h-0.5  max-sm:w-6 transition-all duration-200   bg-black block"></span>
        
-          <span className="row2 mt-3  h-0.5 w-6 transition-all duration-200 bg-black block "></span>
+          <span className="row2 mt-3  h-0.5 max-sm:w-6 transition-all duration-200 bg-black block "></span>
         </div>
 
         <div className="nav-content w-1/3 h-full  max-sm:hidden  ">
@@ -104,21 +104,23 @@ function Hnavbar() {
             <NavLink 
               to="/"
               className="  text-nav rounded-full transition-all duration-300 p-3 "
-              onClick={menuopen}
+            
+              
+              
             >
               HOME
             </NavLink>
             <NavLink
               to="/preprimary"
               className=" text-nav rounded-full transition-all duration-300 p-3 "
-              onClick={menuopen}
+            
             >
               PREPRIMARY
             </NavLink>
             <NavLink
               to="/onetoeight"
               className=" text-nav rounded-full transition-all duration-200 p-3  "
-              onClick={menuopen}
+           
             >
               1<sup>th</sup> TO 8<sup>th</sup>
             </NavLink>
@@ -128,7 +130,7 @@ function Hnavbar() {
               onMouseEnter={show}
               onMouseLeave={hide}
               className=" text-nav text-nav-about rounded-full transition-all duration-200 p-3 flex space-x-2"
-              onClick={menuopen}
+            
             >
               <p>ABOUT US </p>
               <svg
@@ -144,8 +146,8 @@ function Hnavbar() {
           </div>
         </div>
       
-        <div onClick={menuopen} className="loginbutton   w-1/4  relative space-x-3 max-sm:hidden   ">
-          <div className=" w-2/3 flex top-4 relative  float-end">
+        <div  className="loginbutton   w-1/4  relative space-x-3 max-sm:hidden   ">
+          <div className=" w-2/3 flex logg top-4 relative  float-end">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 -960 960 960"
@@ -158,7 +160,7 @@ function Hnavbar() {
           </div>
         </div>
       </div>
-       <br /><br />
+       <br />
       <Outlet/>
       
       </> 

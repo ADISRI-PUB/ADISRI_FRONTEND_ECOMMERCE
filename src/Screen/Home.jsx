@@ -1,20 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import "../Css/Home.css";
-import Navbar from "./Navbar";
-import { Link } from "react-router-dom";
-import Typed from "typed.js";
 import Crousal from "../Components/Crousal";
-import OnetoEight from "./OnetoEight";
-import PrePrimary from "./PrePrimary";
 import CountingEffect from "../Components/CountingEffect";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import AboutUS from "./AboutUS";
 import CrousalBooks from "../Components/CrousalBooks";
 import Clients from "../Components/Cilents";
-import Footer from "./Footer";
-import PopUp from "../Components/PopUp";
-import Hnavbar from "./Hnavbar";
+
 gsap.registerPlugin(ScrollTrigger);
 export default function Home() {
   let count = 0;
@@ -22,22 +14,7 @@ export default function Home() {
   useEffect(() => {
     let temp = element.current;
 
-    const typed = new Typed(temp, {
-      strings: [
-        "Books",
-        "Primary Books",
-        "1th TO 8th Books",
-        "Best Series",
-        "School TextBooks",
-      ],
-      typeSpeed: 40,
-      loop: true,
-      showCursor: false,
-      autoInsertCss: true,
-    });
-    return () => {
-      typed.destroy();
-    };
+   
   }, []);
 
   
@@ -47,25 +24,15 @@ export default function Home() {
     <>
       {/* <Hnavbar/> */}
       <div className="home-area z-20  leading-snug">
-        <p className="welcome-text p-3 text-center  block ">Welcome To,</p>
+        {/* <p className="welcome-text p-3 text-center  block ">Welcome To,</p> */}
         <p className="brandtext ">Adisri Publications</p>
-        <div className="auto-text-container">
-          <div className="   m-auto flex">
-            <div className="w-1/2 ">
-            <div className="text-center inline deals-text float-end  ">We Deals In : </div>
-            </div>
-            <div className="w-1/2 ">
-            <p className="text-purple-400  deals-text" ref={element} />
-            </div>
-          </div>
-        </div>
+      
         <br />
-        <div className=" ">
+        <div className=" z-20 books-crousal-container  m-auto  w-full">
           <Crousal />
-          {/* <Clients/> */}
+    
         </div>
-        <div className="sections1 ">
-          {/* <PrePrimary /> */}
+        <div className="sections1  ">
           <div className="preprimary-section pre-books relative   p-4 transition-all duration-700">
             <div className="absolute overflow-hidden z-10  opacity-20 top-0 right-20 ">
               <svg
@@ -184,7 +151,7 @@ export default function Home() {
             <br />
 
             <div className="counting-container grid grid-cols-3 grid-rows-1 ">
-              <div className="box1   bg-green-200 p-3 text-center">
+              <div className="box1    p-3 text-center">
                 <div>
                   <p className="st-cover">Student covered</p>
                   <svg
@@ -201,7 +168,7 @@ export default function Home() {
                   <CountingEffect finalCount={20000} duration={1} />
                 </div>
               </div>
-              <div className="box1  bg-white p-3 text-center">
+              <div className="box1  p-3 text-center">
                 <div>
                   <p className="st-cover">Books Collection</p>
                   <svg
@@ -233,7 +200,7 @@ export default function Home() {
                   <CountingEffect finalCount={10000} duration={8} />
                 </div>
               </div>
-              <div className="box1  bg-white p-3 text-center">
+              <div className="box1   p-3 text-center">
                 <div>
                   <p className="st-cover"> Our Clients </p>
                   <svg
@@ -258,7 +225,9 @@ export default function Home() {
                 <p className="our-clients2 max-sm:text-xl">Our Clients</p>
               </div>
               <div className="sm:h-5 new-space-color"></div>
+              <div  >
               <Clients />
+              </div>
               <div className="sm:h-20 max-sm:h-12 new-space-color"></div>
             </div>
           </div>

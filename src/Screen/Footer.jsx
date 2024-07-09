@@ -6,7 +6,7 @@ export default function Footer(){
          <footer className="">
     <div className="mx-auto w-full max-w-screen-xl">
         <div>
-            <img className="m-auto" src="ADISRI LOGO 2.png" alt=""  />
+            <img className="m-auto max-sm:w-4/5" src="ADISRI LOGO 2.png" alt=""  />
         </div>
       <div className="grid grid-cols-2   gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
         <div className="">

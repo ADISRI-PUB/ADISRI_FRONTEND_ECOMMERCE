@@ -35,7 +35,7 @@ function Ionetoeight() {
  
   return (
     <>
-       <div>
+       <div className='w-1/6'>
         <FilterTAb Class={Class} Subject={Subject}/>
       </div>
     </>

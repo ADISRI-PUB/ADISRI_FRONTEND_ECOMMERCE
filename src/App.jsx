@@ -13,6 +13,8 @@ import Hnavbar from './Screen/Hnavbar'
 import Footer from './Screen/Footer'
 import PopUp from './Components/PopUp'
 import Navbar from './Screen/Navbar'
+import CareersScreen from './Screen/CareersScreen'
+import SingleBookpage from './Components/SingleBookpage'
 function App() {
   const show = () => {
     document.querySelector(".arrow-svg").classList.add("rotate-90");
@@ -35,11 +37,11 @@ function App() {
     return (
     <> 
     <BrowserRouter>
-    <div className='z-20  '>
+    <div className='z-20 '>
     <Hnavbar/>
     </div>
-    <br />
-    <div className="absolute text-black navbar-small w-full nav-closed z-20 transition-all duration-700  ">    
+   <br />
+    <div className="absolute text-black navbar-small w-full overflow-x-hidden  z-20 transition-all duration-700  ">    
       <Navbar/>
         </div>
  
@@ -48,9 +50,14 @@ function App() {
        </div>
     <Routes>
       <Route path='/' Component={Home}/>
-     <Route path='/preprimary' Component={IPrePrimary}/>
+     <Route path='/preprimary' Component={IPrePrimary}>
+     </Route>
      <Route path='/onetoeight' Component={Ionetoeight}/>
      <Route path='/aboutus' Component={Iaboutus}/> 
+
+     <Route path='/singlebook' Component={SingleBookpage}/>
+     <Route path='/careers' Component={CareersScreen}/> 
+     {/* <Route path='/careers/:id' Component={Career}/>  */}
     
      </Routes>
      

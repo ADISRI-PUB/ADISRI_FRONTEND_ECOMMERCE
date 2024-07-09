@@ -24,11 +24,18 @@ export default function IPrePrimary() {
  
   return (
     <>
-      <div className="flex">
-<div className="sm:w-1/5 max-sm:w-4/5">
+      <div className="sm:flex  ">
+<div className="sm:w-1/5 z-40 max-sm:absolute ">
         <FilterTAb Class={Class} setClass={setClass} setSubject={setSubject} Subject={Subject}/>
         </div>    
-      <ProdcutsCard/>
+        <div className=" w-full flex flex-wrap bg-purple-200 ">
+      <ProdcutsCard Price={120} title={'AMAZING PICTURES B'} source={'AMAZING PICTURES B.jpg'} />
+      <ProdcutsCard Price={130} title={'KIDS ACTIVITY C'} source={'KIDS ACTIVITY C.jpg'} />
+      <ProdcutsCard Price={100} title={'KIDS ACTIVITY B'} source={'KIDS ACTIVITY B.jpg'} />
+      <ProdcutsCard Price={160} title={'ALL IN ONE WRITING BOOK HARD BOUND'} source={'ALL IN ONE WRITING BOOK HARD BOUND.jpg'}/>
+      <ProdcutsCard Price={120} title={'AMAZING PICTURES B'} source={'AMAZING PICTURES B.jpg'} />
+      <ProdcutsCard Price={130} title={'KIDS ACTIVITY C'} source={'KIDS ACTIVITY C.jpg'} />
+      </div>
       </div>
     </>
   );
