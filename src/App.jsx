@@ -16,23 +16,7 @@ import Navbar from './Screen/Navbar'
 import CareersScreen from './Screen/CareersScreen'
 import SingleBookpage from './Components/SingleBookpage'
 function App() {
-  const show = () => {
-    document.querySelector(".arrow-svg").classList.add("rotate-90");
-    document.querySelector(".arrow-svg").classList.remove("-rotate-90");
-    document.querySelector(".arrow-svg").setAttribute("fill", "#FFFFFF");
-    document.querySelector(".pop-up").classList.remove("hidden");
-    document.querySelector(".pop-up").classList.add("show");
-    let element = document.querySelector(".text-nav-about");
-    element.classList.add("active");
-    console.log(element);
-  };
-  const hide = () => {
-    document.querySelector(".arrow-svg").classList.remove("rotate-90");
-    document.querySelector(".arrow-svg").classList.add("-rotate-90");
-    document.querySelector(".pop-up").classList.add("hidden");
-    document.querySelector(".text-nav-about").classList.toggle("active");
-    document.querySelector(".pop-up").classList.remove("show");
-  };
+ 
   
     return (
     <> 
@@ -45,9 +29,7 @@ function App() {
       <Navbar/>
         </div>
  
-    <div className="w-3/5 m-auto z-20 absolute left-1/3 ">
-    <PopUp />
-       </div>
+    <br />
     <Routes>
       <Route path='/' Component={Home}/>
      <Route path='/preprimary' Component={IPrePrimary}>

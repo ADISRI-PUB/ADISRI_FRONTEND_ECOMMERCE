@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import Home from './Home';
 import gsap from 'gsap';
 import '../Css/Home.css'
+import PopUp from '../Components/PopUp';
 function Hnavbar() {
   let count=0
     const menuopen = () => {
@@ -83,7 +84,7 @@ function Hnavbar() {
     },[])
   return (
     <>
-    <div className=" z-50 w-full fixed h-navbar bg-white  flex justify-between logg ">
+    <div className=" z-50 w-full fixed h-navbar bg-white  flex justify-between  ">
         <img
           className=" float-start image-logo  sm:w-1/5 max-sm:w-2/3 flex logg "
           src="logo 2.jpg"
@@ -160,7 +161,11 @@ function Hnavbar() {
           </div>
         </div>
       </div>
+      <div className='fixed w-3/5 m-auto top-20 right-12 z-50'>
+       <PopUp/>
+       </div>
        <br />
+
       <Outlet/>
       
       </> 
