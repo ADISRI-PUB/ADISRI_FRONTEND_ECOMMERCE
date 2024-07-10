@@ -44,3 +44,4 @@ export const careerDetailsReducers = (state ={career:[]},action)  =>{
         default: return state
     }
 }
+
