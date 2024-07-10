@@ -13,8 +13,11 @@ import Hnavbar from './Screen/Hnavbar'
 import Footer from './Screen/Footer'
 import PopUp from './Components/PopUp'
 import Navbar from './Screen/Navbar'
-import CareersScreen from './Screen/CareersScreen'
 import SingleBookpage from './Components/SingleBookpage'
+
+//kamal
+import CareersScreen from './Screen/CareersScreen'
+import SpecificCareer from './Screen/SpecificCareer'
 function App() {
  
   
@@ -40,6 +43,8 @@ function App() {
      <Route path='/singlebook' Component={SingleBookpage}/>
      <Route path='/careers' Component={CareersScreen}/> 
      {/* <Route path='/careers/:id' Component={Career}/>  */}
+     <Route path='/careers' Component={CareersScreen}/> 
+     <Route path='/careers/:id' Component={SpecificCareer}/> 
     
      </Routes>
      

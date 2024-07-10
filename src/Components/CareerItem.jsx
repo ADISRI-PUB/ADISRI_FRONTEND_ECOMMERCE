@@ -5,9 +5,9 @@ function CareerItem({career}) {
   return (
 
     <div className="bg-white shadow rounded overflow-hidden my-3 p-3">
-       <div class="flex justify-end px-4 pt-4">
+       <div className="flex justify-end px-4 pt-4">
       <div className="p-4">
-        <Link to={`http://localhost:8000/careers/${career.Carrer_Job_Id}`}>
+        <Link to={`/careers/${career.Carrer_Job_Id}`}>
           <h2 className="text-lg font-semibold">
             {career.Job_Title}
           </h2>

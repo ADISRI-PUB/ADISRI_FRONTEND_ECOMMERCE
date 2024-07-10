@@ -19,6 +19,7 @@
     "react-owl-carousel": "^2.3.3",
     "react-router-dom": "^6.24.0",
     "react-slick": "^0.30.2",
+    "redux-thunk": "^3.1.0",
     "typed.js": "^2.1.0"
   },
   "devDependencies": {
