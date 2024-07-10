@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { listCareers } from '../actions/careerActions';
 import CareerItem from '../Components/CareerItem'
-import gsap from 'gsap'
 import '../Css/CAREER.css'
 function CareersScreen() {
   const dispatch = useDispatch();
@@ -14,20 +13,7 @@ function CareersScreen() {
     dispatch(listCareers());
     
   }, [dispatch]);
-  gsap.fromTo('.svgg',{
-    transform:'rotate(360deg)',
-    scale:0,
-    duration:1,
-    x:-1000,
-    y:-1000
- },{
-  x:350,
-  transform:'rotate(-360deg)',
-  y:850+'%',
-  scale:16,
-  duration:1,
-  rotate:360
- })
+ 
   return (
     <div>
       {loading ? (
