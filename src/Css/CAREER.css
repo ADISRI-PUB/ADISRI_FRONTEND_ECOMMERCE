@@ -1,0 +1,53 @@
+:root {
+  --bgcareercolor: #E3FEF7;
+  --bgcomponentcareer: #a7e7d8;
+}
+.career-section {
+  background-color: var(--bgcareercolor);
+  width: 100vw;
+  height: 100vh;
+}
+.working-with-container {
+  font-size: 4vw;
+  text-align: center;
+  width: 100%;
+  font-weight: 300;
+  align-items: center;
+}
+.text1 , .text2{
+      background-color: var(--bgcomponentcareer);
+      color: black;
+}
+.opening-text{
+    font-size: 2vw;
+}
+.items-section{
+  background-color: var(--bgcomponentcareer);
+}
+.job-title{
+   font-size: 1vw;
+}
+@media (max-width:640px){
+    
+    .work-with-container{
+        font-size: 10vw;
+    }
+    .description{
+        font-size: 10vw;
+    }
+    .svgggg{
+        width: 10vw;
+    }
+    .opening-text{
+        font-size: 4vw;
+    }
+    .job-title{
+        font-size: 2vw;
+    }
+}
+.description{
+    font-size: 1vw;
+}
+.svgggg{
+    width: 1.4vw;
+}

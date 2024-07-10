@@ -15,6 +15,7 @@ function SpecificCareer() {
   }, [dispatch, id]);
 
   return (
+    <>
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
       {loading ? (
         <p>Loading...</p>
@@ -34,6 +35,7 @@ function SpecificCareer() {
         </div>
       )}
     </div>
+    </>
   );
 }
 
