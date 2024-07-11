@@ -1,6 +1,8 @@
 :root {
   --bgcareercolor: #E3FEF7;
   --bgcomponentcareer: #a7e7d8;
+  --2bgcareercolor:	#dcf0fa;
+  --2bgcomponentcareer:	#84cdee;
 }
 .career-section {
   background-color: var(--bgcareercolor);
@@ -51,3 +53,28 @@
 .svgggg{
     width: 1.4vw;
 }
+.svg-container{
+    top: -32vh;
+    
+}
+@media (max-width:640px){
+    .svg-container{
+        top: -2vmin;
+    }
+
+}
+.loader {
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid;
+    border-color: #000 #0000;
+    animation: l1 1s infinite;
+  }
+  @keyframes l1 {to{transform: rotate(.5turn)}}
+  .specific-section-career{
+    background-color: var(--2bgcareercolor);
+  }
+  .career-card{
+    background-color: var(--2bgcomponentcareer);
+  }
