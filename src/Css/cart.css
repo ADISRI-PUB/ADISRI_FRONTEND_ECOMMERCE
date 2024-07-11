@@ -1,0 +1,6 @@
+.products{
+    background-color: white;
+}
+.products:nth-child(odd){
+  background-color: rgb(255, 237, 255);
+}

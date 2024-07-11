@@ -27,7 +27,7 @@ export default function Navbar(){
     return(
         <>
      
-     <div className="navvv w-full   ">
+     <div className="navvv w-full relative    ">
      
       <div className="text-center bg-white w-full space-y-6  sm:hidden max-sm:visible small-navbar-component transition-all duration-500   ">
         <NavLink

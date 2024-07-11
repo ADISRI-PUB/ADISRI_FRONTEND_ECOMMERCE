@@ -21,6 +21,7 @@
   /* background-color: #F4EEFF; */
 }
 .navvv {
+  position: relative;
   z-index: 999;
 }
 .text-nav:hover {
