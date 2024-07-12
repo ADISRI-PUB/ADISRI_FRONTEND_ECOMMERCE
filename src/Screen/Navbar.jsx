@@ -1,65 +1,66 @@
+import React from "react";
+import { NavLink } from "react-router-dom";
 
-import React from "react"
-import { NavLink } from "react-router-dom"
-export default function Navbar(){
-  let count=0
+import { logout } from "../actions/UserActions";
+import { Link } from "react-router-dom";
+
+function Navbar() {
+
+  //Ankush
+  let count = 0;
   const menuopen = () => {
-       
-      if (count == 0) {
-      
-        document.querySelector(".row1").style.transform = "rotate(45deg)";
-        document.querySelector(".row2").style.transform = "rotate(-45deg)";
-        document.querySelector(".row2").style.top = "0vh";
-        document.querySelector(".navvv").style.transform =
-          "translateY(0%)";
-        count++;
-      } else {
-        count = 0;
-        document.querySelector(".navvv").style.transform =
-          "translateY(-300%)";
-        document.querySelector(".row1").style.transform = "rotate(0deg)";
-        document.querySelector(".row2").style.top = "1vh";
-        document.querySelector(".row2").style.mrgin = "0";
-        document.querySelector(".row2").style.transform = "rotate(0deg)";
-      }
-    };
-     
-    return(
-        <>
-     
-     <div className="navvv w-full relative    ">
-     
-      <div className="text-center bg-white w-full space-y-6  sm:hidden max-sm:visible small-navbar-component transition-all duration-500   ">
-        <NavLink
-              to="/"
-              className="  small-navbar   transition-all duration-200 p-3 block z-50 "
-              onClick={menuopen}
-            >
-              HOME
-            </NavLink>
-            <NavLink
-              to="/preprimary"
-              className="   small-navbar transition-all duration-200 p-3 block"
-              onClick={menuopen}
-            >
-              PREPRIMARY
-            </NavLink>
-            <NavLink
-              to="/onetoeight"
-              className=" small-navbar  transition-all duration-200  p-3  block"
-              onClick={menuopen}
-            >
-              1<sup>th</sup> TO 8<sup>th</sup>
-            </NavLink>
-         
-            <NavLink
-              to="/aboutus"
-              className="small-navbar  rounded-full transition-all duration-200 p-3 block"
-              onClick={menuopen}
-            >
-              ABOUT US
-            </NavLink>
-            <NavLink
+    if (count == 0) {
+      document.querySelector(".row1").style.transform = "rotate(45deg)";
+      document.querySelector(".row2").style.transform = "rotate(-45deg)";
+      document.querySelector(".row2").style.top = "0vh";
+      document.querySelector(".navvv").style.transform = "translateY(0%)";
+      count++;
+    } else {
+      count = 0;
+      document.querySelector(".navvv").style.transform = "translateY(-300%)";
+      document.querySelector(".row1").style.transform = "rotate(0deg)";
+      document.querySelector(".row2").style.top = "1vh";
+      document.querySelector(".row2").style.mrgin = "0";
+      document.querySelector(".row2").style.transform = "rotate(0deg)";
+    }
+  };
+
+  return (
+    <>
+      <div className="navvv w-full relative ">
+        <div className="text-center bg-white w-full space-y-6  sm:hidden max-sm:visible small-navbar-component transition-all duration-500   ">
+          <NavLink
+            to="/"
+            className="  small-navbar   transition-all duration-200 p-3 block z-50 "
+            onClick={menuopen}
+          >
+            HOME
+          </NavLink>
+          <NavLink
+            to="/preprimary"
+            className="   small-navbar transition-all duration-200 p-3 block"
+            onClick={menuopen}
+          >
+            PREPRIMARY
+          </NavLink>
+
+          <NavLink
+            to="/onetoeight"
+            className=" small-navbar  transition-all duration-200  p-3  block"
+            onClick={menuopen}
+          >
+            1<sup>th</sup> TO 8<sup>th</sup>
+          </NavLink>
+
+          <NavLink
+            to="/aboutus"
+            className="small-navbar  rounded-full transition-all duration-200 p-3 block"
+            onClick={menuopen}
+          >
+            ABOUT US
+          </NavLink>
+
+          <NavLink
               to="/login"
               className=" logg justify-center bg-slate-400 flex  text-white transition-all duration-200 p-3 "
               onClick={menuopen}
@@ -75,10 +76,10 @@ export default function Navbar(){
             </svg>
                 <p className=""> Login/Signup</p>
             </NavLink>
-            
         </div>
-        
       </div>
-        </>
-    )
+    </>
+  );
 }
+
+export default Navbar;

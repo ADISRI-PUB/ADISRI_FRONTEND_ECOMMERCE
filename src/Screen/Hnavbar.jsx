@@ -5,7 +5,18 @@ import Home from "./Home";
 import gsap from "gsap";
 import "../Css/Home.css";
 import PopUp from "../Components/PopUp";
+import { useDispatch, useSelector } from "react-redux";
+
 function Hnavbar() {
+  //KAMAL
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+  const dispatch = useDispatch();
+  const logoutHandler = () => {
+    dispatch(logout());
+  };
+
+  //ANKUSH
   let count = 0;
   const menuopen = () => {
     if (count == 0) {
@@ -73,12 +84,6 @@ function Hnavbar() {
     document.querySelector(".pop-up").classList.remove("show");
   };
 
-
-        },300)
-        document.querySelector(".pop-up").classList.remove("show");
-      };
-      
-
   return (
     <>
       <div className=" z-50 w-full fixed h-navbar bg-white  flex justify-between   ">
@@ -140,71 +145,137 @@ function Hnavbar() {
 
         <div className="loginbutton    w-1/4 flex justify-center  relative space-x-3 max-sm:hidden   ">
           <div className="w-1/2  flex  float-end ">
-          <Link className="w-full" to='/cart'>
-            <span
-              style={{ left: "25%", bottom: "15%" }}
-              className="w-6 h-6 m-auto z-10  rounded-full absolute bg-black text-white text-center"
-            >
-              5
-            </span>
-            <svg
-              className="m-auto cursor-pointer relative z-0"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlnsXlink="http://www.w3.org/1999/xlink"
-              width="40px"
-              version="1.1"
-              id="Layer_1"
-              viewBox="0 0 505 505"
-              xmlSpace="preserve"
-            >
-              <circle
-                style={{ fill: "#FD8469" }}
-                cx="252.5"
-                cy="252.5"
-                r="252.5"
-              />
-              <path
-                style={{ fill: "#324A5E" }}
-                d="M381.6,265.9c-3.1,0-5.7-2.5-5.7-5.7c0-72.6-55.4-131.6-123.4-131.6s-123.4,59-123.4,131.6  c0,3.1-2.5,5.7-5.7,5.7s-5.7-2.5-5.7-5.7c0-78.8,60.4-142.9,134.7-142.9s134.7,64.1,134.7,142.9  C387.2,263.4,384.7,265.9,381.6,265.9z"
-              />
-              <path
-                style={{ fill: "#FFD05B" }}
-                d="M384.7,259.1c-122.6,27.7-244.4,4.2-264.3,0c-1.3-0.3-2.5,0.9-2.3,2.3l24.2,128  c2.4,12.9,13.8,22.3,26.9,22.3h166.7c13.2,0,24.5-9.4,26.9-22.3l24.2-128C387.2,259.9,386,258.8,384.7,259.1z"
-              />
-              <path
-                style={{ fill: "#F9B54C" }}
-                d="M383.8,278.1l3.2-16.8c0.3-1.4-1-2.5-2.3-2.2c-122.6,27.7-244.4,4.2-264.3,0  c-1.3-0.3-2.5,0.9-2.3,2.3l3.2,16.8C143.5,282.7,263.2,305.1,383.8,278.1z"
-              />
-              <g>
-                <path
-                  style={{ fill: "#CED5E0" }}
-                  d="M236.2,133.2c0,0-28.9,32.8-13.4,72.9l9.5-9.5l10.1,9.5c0,0-12-44.4,8.7-64.7"
+            <Link className="w-full" to="/cart">
+              <span
+                style={{ left: "25%", bottom: "15%" }}
+                className="w-6 h-6 m-auto z-10  rounded-full absolute bg-black text-white text-center"
+              >
+                5
+              </span>
+              <svg
+                className="m-auto cursor-pointer relative z-0"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+                width="40px"
+                version="1.1"
+                id="Layer_1"
+                viewBox="0 0 505 505"
+                xmlSpace="preserve"
+              >
+                <circle
+                  style={{ fill: "#FD8469" }}
+                  cx="252.5"
+                  cy="252.5"
+                  r="252.5"
                 />
                 <path
-                  style={{ fill: "#CED5E0" }}
-                  d="M268.8,133.2c0,0,28.9,32.8,13.4,72.9l-9.5-9.5l-10.1,9.5c0,0,12-44.4-8.7-64.7"
-                />
-              </g>
-              <g>
-                <path
-                  style={{ fill: "#E6E9EE" }}
-                  d="M306.9,120.6c-1.2,13.6,21,35.9-24.6,24.6c-13.2-3.3-29.7-11-29.7-24.6s16.5-21.5,29.7-24.6   C328.1,85.1,307.7,111,306.9,120.6z"
+                  style={{ fill: "#324A5E" }}
+                  d="M381.6,265.9c-3.1,0-5.7-2.5-5.7-5.7c0-72.6-55.4-131.6-123.4-131.6s-123.4,59-123.4,131.6  c0,3.1-2.5,5.7-5.7,5.7s-5.7-2.5-5.7-5.7c0-78.8,60.4-142.9,134.7-142.9s134.7,64.1,134.7,142.9  C387.2,263.4,384.7,265.9,381.6,265.9z"
                 />
                 <path
-                  style={{ fill: "#E6E9EE" }}
-                  d="M198.1,120.6c1.2,13.6-21,35.9,24.6,24.6c13.2-3.3,29.7-11,29.7-24.6S235.9,99.1,222.7,96   C176.9,85.1,197.3,111,198.1,120.6z"
+                  style={{ fill: "#FFD05B" }}
+                  d="M384.7,259.1c-122.6,27.7-244.4,4.2-264.3,0c-1.3-0.3-2.5,0.9-2.3,2.3l24.2,128  c2.4,12.9,13.8,22.3,26.9,22.3h166.7c13.2,0,24.5-9.4,26.9-22.3l24.2-128C387.2,259.9,386,258.8,384.7,259.1z"
                 />
-              </g>
-              <circle
-                style={{ fill: "#FFFFFF" }}
-                cx="252.5"
-                cy="120.8"
-                r="20.6"
-              />
-            </svg>
+                <path
+                  style={{ fill: "#F9B54C" }}
+                  d="M383.8,278.1l3.2-16.8c0.3-1.4-1-2.5-2.3-2.2c-122.6,27.7-244.4,4.2-264.3,0  c-1.3-0.3-2.5,0.9-2.3,2.3l3.2,16.8C143.5,282.7,263.2,305.1,383.8,278.1z"
+                />
+                <g>
+                  <path
+                    style={{ fill: "#CED5E0" }}
+                    d="M236.2,133.2c0,0-28.9,32.8-13.4,72.9l9.5-9.5l10.1,9.5c0,0-12-44.4,8.7-64.7"
+                  />
+                  <path
+                    style={{ fill: "#CED5E0" }}
+                    d="M268.8,133.2c0,0,28.9,32.8,13.4,72.9l-9.5-9.5l-10.1,9.5c0,0,12-44.4-8.7-64.7"
+                  />
+                </g>
+                <g>
+                  <path
+                    style={{ fill: "#E6E9EE" }}
+                    d="M306.9,120.6c-1.2,13.6,21,35.9-24.6,24.6c-13.2-3.3-29.7-11-29.7-24.6s16.5-21.5,29.7-24.6   C328.1,85.1,307.7,111,306.9,120.6z"
+                  />
+                  <path
+                    style={{ fill: "#E6E9EE" }}
+                    d="M198.1,120.6c1.2,13.6-21,35.9,24.6,24.6c13.2-3.3,29.7-11,29.7-24.6S235.9,99.1,222.7,96   C176.9,85.1,197.3,111,198.1,120.6z"
+                  />
+                </g>
+                <circle
+                  style={{ fill: "#ffffff" }}
+                  cx="252.5"
+                  cy="120.8"
+                  r="20.6"
+                />
+              </svg>
             </Link>
           </div>
-          <div className=" w-1/2 flex logg  relative justify-center ">
+          {userInfo ? (
+            <div className="relative inline-block text-left">
+              <div>
+                <button
+                  type="button"
+                  className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  id="options-menu"
+                  aria-haspopup="true"
+                  aria-expanded="true"
+                >
+                  {userInfo.name}
+                  <svg
+                    className="-mr-1 ml-2 h-5 w-5"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                <div
+                  className="py-1"
+                  role="menu"
+                  aria-orientation="vertical"
+                  aria-labelledby="options-menu"
+                >
+                  <Link
+                    to="/profile"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                    role="menuitem"
+                  >
+                    Profile
+                  </Link>
+                  <a
+                    href="#"
+                    onClick={logoutHandler}
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                    role="menuitem"
+                  >
+                    Logout
+                  </a>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className=" w-1/2 flex logg  relative justify-center ">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 -960 960 960"
+                width="2vw"
+                fill="#000"
+              >
+                <path d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q53 0 100-15.5t86-44.5q-39-29-86-44.5T480-280q-53 0-100 15.5T294-220q39 29 86 44.5T480-160Zm0-360q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0-60Zm0 360Z" />
+              </svg>
+              <a href="/SignIn" className="cursor-pointer text-login">
+                Login/signUp
+              </a>
+            </div>
+          )}
+          {/* <div className=" w-1/2 flex logg  relative justify-center ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 -960 960 960"
@@ -213,8 +284,8 @@ function Hnavbar() {
             >
               <path d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q53 0 100-15.5t86-44.5q-39-29-86-44.5T480-280q-53 0-100 15.5T294-220q39 29 86 44.5T480-160Zm0-360q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0-60Zm0 360Z" />
             </svg>
-            <p className="cursor-pointer text-login">Login/signUp</p>
-          </div>
+            <a href="/SignIn" className="cursor-pointer text-login">Login/signUp</a>
+          </div> */}
         </div>
       </div>
       <div className="fixed w-3/5 m-auto top-20 right-12 z-50">
