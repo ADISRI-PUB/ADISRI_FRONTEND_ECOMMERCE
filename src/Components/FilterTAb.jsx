@@ -86,11 +86,11 @@ function FilterTAb({Class,Subject,setSubject ,setClass}) {
    }
   return (
     <>
-     <div className=' '>  
-     <button className='bg-slate-200 p-2 rounded-md buttons transition-all duration-300 sm:hidden' onClick={open}>  
+     <div className=' z-50 '>  
+     <button className=' p-2 rounded-md buttons transition-all duration-300 sm:hidden' onClick={open}>  
      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg>
      </button>
-          <div className="selection-section slide-bar   p-4 overflow-hidden relative max-sm:-translate-x-full  transition-all duration-400 bg-purple-100" >
+          <div className="selection-section slide-bar   p-4 overflow-hidden relative max-sm:-translate-x-full  transition-all duration-400 " >
       
           <p className="text-lg ">Class</p>
 

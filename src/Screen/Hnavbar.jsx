@@ -73,6 +73,10 @@ function Hnavbar() {
     document.querySelector(".pop-up").classList.remove("show");
   };
 
+
+       
+      
+
   return (
     <>
       <div className=" z-50 w-full fixed h-navbar bg-white  flex justify-between   ">

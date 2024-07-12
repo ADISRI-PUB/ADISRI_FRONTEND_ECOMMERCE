@@ -1,9 +1,19 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../Css/IPrePrimary.css";
+import { useDispatch, useSelector } from 'react-redux';
 import gsap from "gsap";
 import FilterTAb from "../Components/FilterTAb";
 import ProdcutsCard from "../Components/ProdcutsCard";
-export default function IPrePrimary() {
+
+import { listProducts } from '../actions/ProductsActions'
+
+
+function IPrePrimary() {
+  const dispatch = useDispatch();
+  const productsList = useSelector(state => state.productList);
+  const { error, loading, products = [] } = productsList;
+
+
   const [Class, setClass] = useState([
     { id: 1, name: "Play", isChecked: false },
     { id: 2, name: "Nursery", isChecked: false },
@@ -21,22 +31,46 @@ export default function IPrePrimary() {
     { id: 12, name: "Evs", isChecked: false },
     { id: 13, name: "Counting", isChecked: false },
   ]);
- 
+
+
+  useEffect(() => {
+    dispatch(listProducts());
+  }, [dispatch]);
+
   return (
     <>
-      <div className="sm:flex  ">
-<div className="sm:w-1/5 z-40 max-sm:absolute ">
-        <FilterTAb Class={Class} setClass={setClass} setSubject={setSubject} Subject={Subject}/>
-        </div>    
-        <div className=" w-full flex flex-wrap bg-purple-200 ">
-      <ProdcutsCard Price={120} title={'AMAZING PICTURES B'} source={'AMAZING PICTURES B.jpg'} />
-      <ProdcutsCard Price={130} title={'KIDS ACTIVITY C'} source={'KIDS ACTIVITY C.jpg'} />
-      <ProdcutsCard Price={100} title={'KIDS ACTIVITY B'} source={'KIDS ACTIVITY B.jpg'} />
-      <ProdcutsCard Price={160} title={'ALL IN ONE WRITING BOOK HARD BOUND'} source={'ALL IN ONE WRITING BOOK HARD BOUND.jpg'}/>
-      <ProdcutsCard Price={120} title={'AMAZING PICTURES B'} source={'AMAZING PICTURES B.jpg'} />
-      <ProdcutsCard Price={130} title={'KIDS ACTIVITY C'} source={'KIDS ACTIVITY C.jpg'} />
+    <div className="relative">
+      <div>
+    
+      </div>
+      <div className="sm:flex primary-sections">
+        <div className="sm:w-1/6 z-40 max-sm:absolute primarysection1 max-sm:-translate-x-full">
+          <FilterTAb
+            Class={Class}
+            setClass={setClass}
+            setSubject={setSubject}
+            Subject={Subject}
+            />
+            </div>
+        <div className="sm:w-5/6 max-sm:11/12 gap-10  primarysection22 sm:grid sm:grid-cols-4 ">
+          {
+            products.map(product=>{
+              return(
+              <div key={product.Product_Id} className="p-5 w-full">
+              <ProdcutsCard product={product} />
+              <br />
+              </div>
+              
+              )
+            })
+          } 
+        </div>
+
       </div>
       </div>
     </>
   );
 }
+
+export default IPrePrimary;
+

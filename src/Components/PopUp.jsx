@@ -36,7 +36,7 @@ export default function PopUp() {
         </div>
         <div className="bg-purple-100 p-4">
           <p>
-            {" "}
+            {" "} 
             <b> Career </b>
           </p>
           <ul className="targets">
