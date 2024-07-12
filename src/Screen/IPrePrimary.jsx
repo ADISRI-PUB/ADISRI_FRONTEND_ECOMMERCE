@@ -39,25 +39,34 @@ function IPrePrimary() {
 
   return (
     <>
-      <div className="sm:flex  ">
-        <div className="sm:w-1/5 z-40 max-sm:absolute ">
+    <div className="relative">
+      <div>
+    
+      </div>
+      <div className="sm:flex primary-sections">
+        <div className="sm:w-1/6 z-40 max-sm:absolute primarysection1 max-sm:-translate-x-full">
           <FilterTAb
             Class={Class}
             setClass={setClass}
             setSubject={setSubject}
             Subject={Subject}
-          />
-        </div>
-        <div className=" w-full flex flex-wrap bg-purple-200 ">
+            />
+            </div>
+        <div className="sm:w-5/6 max-sm:11/12 gap-10  primarysection22 sm:grid sm:grid-cols-4 ">
           {
             products.map(product=>{
-              <div key={product.Product_Id} className="col-span-1">
+              return(
+              <div key={product.Product_Id} className="p-5 w-full">
               <ProdcutsCard product={product} />
+              <br />
               </div>
+              
+              )
             })
           } 
         </div>
 
+      </div>
       </div>
     </>
   );

@@ -69,14 +69,12 @@ function Hnavbar() {
         document.querySelector(".text-nav-about").classList.toggle("active");
         document.querySelector(".pop-up").classList.add("hidden");
       }
-    }, 300);
+    }, 200);
     document.querySelector(".pop-up").classList.remove("show");
   };
 
 
-        },300)
-        document.querySelector(".pop-up").classList.remove("show");
-      };
+       
       
 
   return (
@@ -140,68 +138,68 @@ function Hnavbar() {
 
         <div className="loginbutton    w-1/4 flex justify-center  relative space-x-3 max-sm:hidden   ">
           <div className="w-1/2  flex  float-end ">
-          <Link className="w-full" to='/cart'>
-            <span
-              style={{ left: "25%", bottom: "15%" }}
-              className="w-6 h-6 m-auto z-10  rounded-full absolute bg-black text-white text-center"
-            >
-              5
-            </span>
-            <svg
-              className="m-auto cursor-pointer relative z-0"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlnsXlink="http://www.w3.org/1999/xlink"
-              width="40px"
-              version="1.1"
-              id="Layer_1"
-              viewBox="0 0 505 505"
-              xmlSpace="preserve"
-            >
-              <circle
-                style={{ fill: "#FD8469" }}
-                cx="252.5"
-                cy="252.5"
-                r="252.5"
-              />
-              <path
-                style={{ fill: "#324A5E" }}
-                d="M381.6,265.9c-3.1,0-5.7-2.5-5.7-5.7c0-72.6-55.4-131.6-123.4-131.6s-123.4,59-123.4,131.6  c0,3.1-2.5,5.7-5.7,5.7s-5.7-2.5-5.7-5.7c0-78.8,60.4-142.9,134.7-142.9s134.7,64.1,134.7,142.9  C387.2,263.4,384.7,265.9,381.6,265.9z"
-              />
-              <path
-                style={{ fill: "#FFD05B" }}
-                d="M384.7,259.1c-122.6,27.7-244.4,4.2-264.3,0c-1.3-0.3-2.5,0.9-2.3,2.3l24.2,128  c2.4,12.9,13.8,22.3,26.9,22.3h166.7c13.2,0,24.5-9.4,26.9-22.3l24.2-128C387.2,259.9,386,258.8,384.7,259.1z"
-              />
-              <path
-                style={{ fill: "#F9B54C" }}
-                d="M383.8,278.1l3.2-16.8c0.3-1.4-1-2.5-2.3-2.2c-122.6,27.7-244.4,4.2-264.3,0  c-1.3-0.3-2.5,0.9-2.3,2.3l3.2,16.8C143.5,282.7,263.2,305.1,383.8,278.1z"
-              />
-              <g>
-                <path
-                  style={{ fill: "#CED5E0" }}
-                  d="M236.2,133.2c0,0-28.9,32.8-13.4,72.9l9.5-9.5l10.1,9.5c0,0-12-44.4,8.7-64.7"
+            <Link className="w-full" to="/cart">
+              <span
+                style={{ left: "25%", bottom: "15%" }}
+                className="w-6 h-6 m-auto z-10  rounded-full absolute bg-black text-white text-center"
+              >
+                5
+              </span>
+              <svg
+                className="m-auto cursor-pointer relative z-0"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+                width="40px"
+                version="1.1"
+                id="Layer_1"
+                viewBox="0 0 505 505"
+                xmlSpace="preserve"
+              >
+                <circle
+                  style={{ fill: "#FD8469" }}
+                  cx="252.5"
+                  cy="252.5"
+                  r="252.5"
                 />
                 <path
-                  style={{ fill: "#CED5E0" }}
-                  d="M268.8,133.2c0,0,28.9,32.8,13.4,72.9l-9.5-9.5l-10.1,9.5c0,0,12-44.4-8.7-64.7"
-                />
-              </g>
-              <g>
-                <path
-                  style={{ fill: "#E6E9EE" }}
-                  d="M306.9,120.6c-1.2,13.6,21,35.9-24.6,24.6c-13.2-3.3-29.7-11-29.7-24.6s16.5-21.5,29.7-24.6   C328.1,85.1,307.7,111,306.9,120.6z"
+                  style={{ fill: "#324A5E" }}
+                  d="M381.6,265.9c-3.1,0-5.7-2.5-5.7-5.7c0-72.6-55.4-131.6-123.4-131.6s-123.4,59-123.4,131.6  c0,3.1-2.5,5.7-5.7,5.7s-5.7-2.5-5.7-5.7c0-78.8,60.4-142.9,134.7-142.9s134.7,64.1,134.7,142.9  C387.2,263.4,384.7,265.9,381.6,265.9z"
                 />
                 <path
-                  style={{ fill: "#E6E9EE" }}
-                  d="M198.1,120.6c1.2,13.6-21,35.9,24.6,24.6c13.2-3.3,29.7-11,29.7-24.6S235.9,99.1,222.7,96   C176.9,85.1,197.3,111,198.1,120.6z"
+                  style={{ fill: "#FFD05B" }}
+                  d="M384.7,259.1c-122.6,27.7-244.4,4.2-264.3,0c-1.3-0.3-2.5,0.9-2.3,2.3l24.2,128  c2.4,12.9,13.8,22.3,26.9,22.3h166.7c13.2,0,24.5-9.4,26.9-22.3l24.2-128C387.2,259.9,386,258.8,384.7,259.1z"
                 />
-              </g>
-              <circle
-                style={{ fill: "#FFFFFF" }}
-                cx="252.5"
-                cy="120.8"
-                r="20.6"
-              />
-            </svg>
+                <path
+                  style={{ fill: "#F9B54C" }}
+                  d="M383.8,278.1l3.2-16.8c0.3-1.4-1-2.5-2.3-2.2c-122.6,27.7-244.4,4.2-264.3,0  c-1.3-0.3-2.5,0.9-2.3,2.3l3.2,16.8C143.5,282.7,263.2,305.1,383.8,278.1z"
+                />
+                <g>
+                  <path
+                    style={{ fill: "#CED5E0" }}
+                    d="M236.2,133.2c0,0-28.9,32.8-13.4,72.9l9.5-9.5l10.1,9.5c0,0-12-44.4,8.7-64.7"
+                  />
+                  <path
+                    style={{ fill: "#CED5E0" }}
+                    d="M268.8,133.2c0,0,28.9,32.8,13.4,72.9l-9.5-9.5l-10.1,9.5c0,0,12-44.4-8.7-64.7"
+                  />
+                </g>
+                <g>
+                  <path
+                    style={{ fill: "#E6E9EE" }}
+                    d="M306.9,120.6c-1.2,13.6,21,35.9-24.6,24.6c-13.2-3.3-29.7-11-29.7-24.6s16.5-21.5,29.7-24.6   C328.1,85.1,307.7,111,306.9,120.6z"
+                  />
+                  <path
+                    style={{ fill: "#E6E9EE" }}
+                    d="M198.1,120.6c1.2,13.6-21,35.9,24.6,24.6c13.2-3.3,29.7-11,29.7-24.6S235.9,99.1,222.7,96   C176.9,85.1,197.3,111,198.1,120.6z"
+                  />
+                </g>
+                <circle
+                  style={{ fill: "#FFFFFF" }}
+                  cx="252.5"
+                  cy="120.8"
+                  r="20.6"
+                />
+              </svg>
             </Link>
           </div>
           <div className=" w-1/2 flex logg  relative justify-center ">
