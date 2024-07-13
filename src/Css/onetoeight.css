@@ -1,0 +1,19 @@
+:root{
+    --onetorightbackcolor:#dbfbff;
+    --oneotoeightcontentcolor:#A6E3E9;
+    --onetoeightcontent2color:#DEFCFC;
+   --test: #ffe2ad;
+}
+
+.onetoeight-sections{
+    background-color: var(--onetorightbackcolor);
+}
+.onetoeightsectionfilter{
+    background-color: var(--onetoeightcontent2color);
+}
+.onetoeightproductcard{
+    background-color: var(--onetorightbackcolor);
+}
+#onetoeight{
+ background-color: #CBF1F5;
+}

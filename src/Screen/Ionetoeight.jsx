@@ -1,7 +1,35 @@
-import React,{useState} from 'react'
-import FilterTAb from '../Components/FilterTAb';
 
+import FilterTAb from '../Components/FilterTAb';
+import React, { useEffect, useRef, useState } from "react";
+import "../Css/IPrePrimary.css";
+import "../Css/onetoeight.css"
+import { useDispatch, useSelector } from 'react-redux';
+import ProdcutsCard from "../Components/ProdcutsCard";
+import axios from "axios";
+import { listProducts } from '../actions/ProductsActions'
 function Ionetoeight() {
+  const [filterbook, setFilterbook] =useState([])
+  const dispatch = useDispatch();
+  const productsList = useSelector(state => state.productList);
+  const { error, loading, products = [] } = productsList;
+  let [API ,setApi] =useState('')
+  useEffect(() => {
+    dispatch(listProducts());
+    // fetching the data for filter option /////////////////////////////////////////////////////////
+    const fetchData =async()=>{
+
+      try {
+        data  = await axios(`http://localhost:8000/products/product/?${API}`)
+        console.log(data.data);
+        setFilterbook(data.data)
+
+      } catch (error) {
+        console.log('cant get the data',error);
+      }
+
+    }
+    fetchData()
+  }, [dispatch,API]);
   const [Class, setClass] = useState([
     { id: 1, name: "1", isChecked: false },
     { id: 2, name: "2", isChecked: false },
@@ -35,8 +63,49 @@ function Ionetoeight() {
  
   return (
     <>
-       <div className='w-1/6'>
-        <FilterTAb Class={Class} Subject={Subject}/>
+        <div className="relative onetoeight-sections">
+      <div>
+    
+      </div>
+      <div className="sm:flex onetoeight-sections">
+        <div className="sm:w-1/6 z-40  onetoeightsectionfilter max-sm:w-full max-sm:h-full">
+          <FilterTAb
+            Class={Class}
+            setClass={setClass}
+            setSubject={setSubject}
+            Subject={Subject}
+            API={API}
+            setApi={setApi}
+            />
+            </div>
+        <div className="sm:w-5/6 max-sm:w-full  card-container ">
+          {
+            API===''?
+            products.map(product=>{
+               return(
+               <div key={product.Product_Id} className="p-5  onetoeightproductcard ">
+               <ProdcutsCard product={product} id={0} />
+               <br />
+               </div>
+               
+               )
+             })
+            : filterbook.map(product=>{
+              return(
+              <div key={product.Product_Id} className="p-5 ">
+              <ProdcutsCard product={product} id={0} />
+              <br />
+              </div>
+              
+              )
+            })
+          } 
+
+         
+        </div>
+
+      </div>
+     
       </div>
     </>
   )

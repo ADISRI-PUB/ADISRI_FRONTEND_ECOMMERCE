@@ -9,18 +9,17 @@ export default function PopUp() {
       
     }
     const nomouse =()=>{
-        document.querySelector('.text-nav-about').classList.toggle('active')
+
         document.querySelector('.pop-up').classList.remove('.show-popup')
          document.querySelector('.pop-up').classList.add('hidden') 
         
     }
   return (
     <>
-      <div onMouseEnter={onmouse} onMouseLeave={nomouse} className="w-4/5   m-auto pop-up hidden transition-all duration-800 -z-10 ">
-      <div className="grid grid-cols-3 grid-rows-1">
+      <div onMouseEnter={onmouse} onMouseLeave={nomouse} className="w-4/5    m-auto pop-up hidden transition-all duration-800   ">
+      <div className="grid grid-cols-3 grid-rows-1 ">
         <div className="p-4 bg-white ">
           <p>
-            {" "}
             <b> About Us </b>
           </p>
           <ul className="targets">
@@ -36,7 +35,6 @@ export default function PopUp() {
         </div>
         <div className="bg-purple-100 p-4">
           <p>
-            {" "} 
             <b> Career </b>
           </p>
           <ul className="targets">
