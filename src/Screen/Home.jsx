@@ -6,7 +6,9 @@ import Crousal from "../Components/Crousal";
 import CountUp from 'react-countup';
 import CrousalBooks from "../Components/CrousalBooks";
 import Clients from "../Components/Cilents";
-export default function Home() {
+
+
+export default function Home({token}) {
   const [startCount,setStartcount]=useState(false)
   let count = 0;
   const element = useRef(null);
