@@ -43,8 +43,10 @@ INSTALLED_APPS = [
     'Products',
     'Careers',
     'Order',
+    'OAuth',
     #Framework
     'rest_framework',
+    'rest_framework.authtoken',
     'corsheaders',
 ]
 
@@ -82,6 +84,12 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'Backend.wsgi.application'
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.TokenAuthentication",
+    ],
+}
+
 
 
 # Database
