@@ -22,7 +22,7 @@ function CareersScreen() {
         <p>{error}</p>
       ) : (
         <div className=' career-section realtive '>
-          <div className='z-10  absolute  -top-52 w-full h-full  '>
+          <div className='z-10   w-full fixed svg-container '>
           <svg className='m-auto' xmlns="http://www.w3.org/2000/svg" version="1.0" width="90vw"viewBox="0 0 1280.000000 640.000000" preserveAspectRatio="xMidYMid meet">
 <g transform="translate(0.000000,640.000000) scale(0.100000,-0.100000)" fill="#a7e7d8" stroke="none">
 <path d="M5668 4220 c-29 -29 -30 -34 -26 -94 6 -95 34 -132 147 -190 82 -42 116 -49 75 -16 -8 8 -27 33 -41 57 -23 40 -25 49 -18 122 8 89 0 113 -45 136 -42 22 -58 19 -92 -15z"/>
@@ -56,7 +56,7 @@ function CareersScreen() {
 "At ADISRI Publications, we pride ourselves on fostering a dynamic and <b className='text1  rounded-xl sm:p-1'> supportive working environment </b> where creativity and innovation thrive. Joining our team means not only gaining access to exciting opportunities in the publishing industry but also enjoying a range of benefits designed to support your <b className=' rounded-xl sm:p-1 text2'> professional growth</b> and well-being. From competitive compensation packages to flexible work arrangements and ongoing learning opportunities, we are committed to nurturing talent and empowering our employees to reach their full potential."</p>
            </div>
            
-           <div className='p-3 opening-text text-center  leading-loose '>
+           <div className='p-3 opening-text text-center relative z-30  leading-loose '>
 
             <h1>Current Opening </h1>
            </div>

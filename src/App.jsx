@@ -18,9 +18,12 @@ import SingleBookpage from './Components/SingleBookpage'
 //kamal
 import CareersScreen from './Screen/CareersScreen'
 import SpecificCareer from './Screen/SpecificCareer'
+import Cartsection from './Components/Cartsection'
+import SignIn from './Screen/SignIn'
+
+
 function App() {
  
-  
     return (
     <> 
     <BrowserRouter>
@@ -28,7 +31,7 @@ function App() {
     <Hnavbar/>
     </div>
    <br />
-    <div className="absolute text-black navbar-small w-full overflow-x-hidden  z-20 transition-all duration-700  ">    
+    <div className="absolute text-black navbar-small w-full overflow-x-hidden  z-40 transition-all duration-700  ">    
       <Navbar/>
         </div>
  
@@ -39,13 +42,11 @@ function App() {
      </Route>
      <Route path='/onetoeight' Component={Ionetoeight}/>
      <Route path='/aboutus' Component={Iaboutus}/> 
-
      <Route path='/singlebook' Component={SingleBookpage}/>
      <Route path='/careers' Component={CareersScreen}/> 
-     {/* <Route path='/careers/:id' Component={Career}/>  */}
-     <Route path='/careers' Component={CareersScreen}/> 
      <Route path='/careers/:id' Component={SpecificCareer}/> 
-    
+     <Route path='/cart' Component={Cartsection}/>
+     <Route path='/SignIn' Component={SignIn}/>
      </Routes>
      
      <Footer/>
