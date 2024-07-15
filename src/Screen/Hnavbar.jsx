@@ -52,31 +52,26 @@ function Hnavbar({ profile, logout }) {
     }
   };
   const show = () => {
-    document.querySelector(".arrow-svg").classList.add("rotate-90");
-    document.querySelector(".arrow-svg").classList.remove("-rotate-90");
-    document.querySelector(".arrow-svg").setAttribute("fill", "#FFFFFF");
+   
     document.querySelector(".pop-up").classList.remove("hidden");
-    document.querySelector(".pop-up").classList.add("show");
-    let element = document.querySelector(".text-nav-about");
-    element.classList.add("active");
-    console.log(element);
+   
+
   };
   const hide = () => {
-    document.querySelector(".arrow-svg").classList.remove("rotate-90");
-    document.querySelector(".arrow-svg").classList.add("-rotate-90");
-    setTimeout(() => {
+    let popup= setTimeout(() => {
       if (document.querySelector(".pop-up").classList.contains(".show-popup")) {
-        clearInterval();
+        clearInterval(popup);
       } else {
-        document.querySelector(".text-nav-about").classList.toggle("active");
+        document.querySelector('.pop-up').classList.add('hidden')
         document.querySelector(".pop-up").classList.add("hidden");
       }
-    }, 200);
+    }, 160);
     document.querySelector(".pop-up").classList.remove("show");
   };
 
   return (
     <>
+    
       <div className=" z-50 w-full fixed h-navbar bg-white  flex justify-between   ">
         <img
           className=" float-start image-logo  sm:w-1/5 max-sm:w-2/3 flex logg  "
@@ -96,20 +91,21 @@ function Hnavbar({ profile, logout }) {
         <div className="nav-content w-1/3 h-full  max-sm:hidden  ">
           <div className="flex justify-between nav-text h-full ">
             <NavLink
+             
               to="/"
-              className="  text-nav rounded-full transition-all duration-300 p-3 "
+              className={({isActive})=> isActive ?"bg-homebutton rounded-full p-3 transition-all duration-200":" "}
             >
               HOME
             </NavLink>
             <NavLink
               to="/preprimary"
-              className=" text-nav rounded-full transition-all duration-300 p-3 "
+              className={({isActive})=> isActive ? "bg-primarybutton p-3 rounded-full transition-all duration-200":"bg-white "}
             >
               PREPRIMARY
             </NavLink>
             <NavLink
               to="/onetoeight"
-              className=" text-nav rounded-full transition-all duration-200 p-3  "
+              className={({isActive})=> isActive ? "bg-onetoeightbutton  active p-3 rounded-full transition-all duration-200":"bg-white"}
             >
               1<sup>th</sup> TO 8<sup>th</sup>
             </NavLink>
@@ -118,18 +114,10 @@ function Hnavbar({ profile, logout }) {
               to="/aboutus"
               onMouseEnter={show}
               onMouseLeave={hide}
-              className=" text-nav text-nav-about rounded-full transition-all duration-200 p-3 flex space-x-2"
+              className={({isActive})=> isActive ?"text-nav-about  bg-aboutusbutton rounded-full transition-all duration-200 p-3 space-x-2 flex ":"bg-white "}
             >
-              <p>ABOUT US </p>
-              <svg
-                className="-rotate-90 arrow-svg  transition-all duration-500"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 -960 960 960"
-                width="1vw"
-                fill="#FFFFFF"
-              >
-                <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" />
-              </svg>
+              <span>ABOUT US</span>
+             
             </NavLink>
           </div>
         </div>
@@ -231,7 +219,6 @@ function Hnavbar({ profile, logout }) {
         <PopUp />
       </div>
       <div className="sm:h-3"></div>
-
       <Outlet />
     </>
   );
