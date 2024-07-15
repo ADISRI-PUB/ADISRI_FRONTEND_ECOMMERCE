@@ -19,9 +19,11 @@ import SingleBookpage from './Components/SingleBookpage'
 import CareersScreen from './Screen/CareersScreen'
 import SpecificCareer from './Screen/SpecificCareer'
 import Cartsection from './Components/Cartsection'
+import SignIn from './Screen/SignIn'
+
+
 function App() {
  
-  
     return (
     <> 
     <BrowserRouter>
@@ -40,14 +42,11 @@ function App() {
      </Route>
      <Route path='/onetoeight' Component={Ionetoeight}/>
      <Route path='/aboutus' Component={Iaboutus}/> 
-
      <Route path='/singlebook' Component={SingleBookpage}/>
-     <Route path='/careers' Component={CareersScreen}/> 
-     {/* <Route path='/careers/:id' Component={Career}/>  */}
      <Route path='/careers' Component={CareersScreen}/> 
      <Route path='/careers/:id' Component={SpecificCareer}/> 
      <Route path='/cart' Component={Cartsection}/>
-    
+     <Route path='/SignIn' Component={SignIn}/>
      </Routes>
      
      <Footer/>

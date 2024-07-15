@@ -5,6 +5,8 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import { careerListReducers,careerDetailsReducers } from './reducers/careerReducers'
 import { productDetailsReducers,productListReducers } from './reducers/ProductsReducers'
 
+
+
 const reducer = combineReducers({
     //CAREES
     careerList: careerListReducers,
@@ -15,8 +17,10 @@ const reducer = combineReducers({
 
 })
 
-const initialState = {
 
+
+const initialState = {
+    
 }
 
 const middleware = [thunk]
