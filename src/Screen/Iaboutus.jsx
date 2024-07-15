@@ -1,8 +1,13 @@
 import React from 'react'
-
+import '../Css/About.css'
 function Iaboutus() {
   return (
-    <div>Iaboutus</div>
+    <>
+    <br />
+     <div>
+       ABOUT US 
+     </div>
+    </>
   )
 }
 
