@@ -3,3 +3,27 @@
     --aboutuscontent1:#c0fff0;
     --aboutuscontent2:#a1ffe9;
 }
+.text-container{
+    font-size: 6.5vw;
+    font-weight: 100;
+}
+.text-container h5{
+    font-size: 1.5vw;
+    font-weight: 400;
+}
+.image-border{
+    width: 20vw;
+
+}
+.image-side-container{
+
+}
+.rightside {
+    width: 45%;
+}
+.rightside p{
+    font-size: 1vw;
+}
+.leftside p{
+    font-size: 1vw;
+}

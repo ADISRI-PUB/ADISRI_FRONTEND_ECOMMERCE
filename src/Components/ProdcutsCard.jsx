@@ -24,7 +24,7 @@ function ProdcutsCard({product,id}) {
 
   return (
     <>
-    
+    <Link to={`/singlebook/${product.Product_Id}`}>
     <section id='newcolor' className="max-sm:w-1/2 m-auto rounded-lg ">
 
      
@@ -42,6 +42,7 @@ function ProdcutsCard({product,id}) {
             </div>
         </section>
     </section>
+    </Link>
 
      {/* <div className='cards bg-purple-200 p-5 '>
          <div className=' bg-violet-400  w-full  rounded-xl '>
