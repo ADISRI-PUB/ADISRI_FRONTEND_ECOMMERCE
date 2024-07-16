@@ -9,50 +9,52 @@ function SingleBookpage() {
   const history = useNavigate()
   const { id } = useParams()
   const productDetails=useSelector(state => state.productDetails)
-  const {loading,error,product=[]}=productDetails
-  let [DynamicImage,setDynamicimage]=useState('')
+  let {loading,error,product=[]}=productDetails
+  const [dynamic ,setdynamicimage] =useState('')
+ 
   const handleimage=(e)=>{
     let img =e.target
-    let change = img.getAttribute('src')
-    setDynamicimage(change)
-    
+    document.querySelector('#frontpage').setAttribute('src',`${img.getAttribute('src')}`)
   }
+  
   const whitecolor =()=>{
     document.querySelector('#emoji').setAttribute('fill','#000')
   }
   const blackcolor =()=>{
     document.querySelector('#emoji').setAttribute('fill',"#FFF")   
+  
   }
+  
+  
   useEffect(()=>{
-    console.log(product);
     dispatch(listProductsDetails(id))
-    setDynamicimage(`http://127.0.0.1:8000/${product.Cover_Image}`)
     
-  }
-, [dispatch,id])
+
+    
+  },[dispatch,id])
 
   return (
     <>
     <br />
-    <div className='w-full h-full bg-blue-200 flex gap-5'>
+    <div key={product.Product_Id} className='w-full h-full bg-blue-200 flex gap-5'>
            
          <div className="font-sans bg-blue-100 w-full  ">
             <div className="p-4   mx-auto">
                 <div className="grid items-start gap-10 grid-cols-2 lg:grid-cols-5   p-6 rounded-lg ">
-                    <div className="lg:col-span-2 max-sm:col-span-3   top-0 text-center sm:w-1/2 max-sm:w-3/4 max-sm:m-auto ">
+                    <div  className="lg:col-span-2 max-sm:col-span-3   top-0 text-center sm:w-1/2 max-sm:w-3/4 max-sm:m-auto ">
 
                         <div className="px-2 py-6 rounded-lg shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative bg-white">
-                        <img className='rounded-xl ' src={DynamicImage}  alt='coverimage' />
+                        <img  id='frontpage' className='rounded-xl ' src={product.Cover_Image} alt='coverimage' />
                             <button type="button" className="absolute top-4 right-4">
                               
                             </button>
                         </div>
                         <div className="mt-6 flex  justify-center gap-6 mx-auto  ">
-                            <div onClick={(e)=>handleimage(e)} className="w-20 h-16 flex items-center bg-white justify-center rounded-lg p-4 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] cursor-pointer">
-                                <img id='Dynamichange' src={`http://127.0.0.1:8000/${product.Cover_Image}`} alt="Product2"  />
+                            <div onClick={handleimage} className="w-20 h-16 flex items-center bg-white justify-center rounded-lg p-4 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] cursor-pointer">
+                                <img id='Dynamichange' src={product.Cover_Image} alt="Product2"  />
                             </div>
-                            <div onClick={(e)=>handleimage(e)} className="w-20 h-16 flex items-center bg-white justify-center rounded-lg p-4 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] cursor-pointer">
-                                <img id='Dynamichange' src={`http://127.0.0.1:8000/${product.Back_Image}`} alt="Product2"  />
+                            <div onClick={handleimage} className="w-20 h-16 flex items-center bg-white justify-center rounded-lg p-4 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] cursor-pointer">
+                                <img  id='Dynamichange' src={product.Back_Image} alt="Product2"  />
                             </div>
                            
                         </div>
