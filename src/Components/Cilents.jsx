@@ -2,7 +2,7 @@ import React, { useEffect,useRef } from "react";
 export default function Clients() {
     setTimeout(()=>{
       document.querySelector('.logo-brand-slider').classList.add('animated')
-    },2000)
+    },1000)
   return (
     <>
       <div  className="logos-brand sm:w-full max-sm:w-full">

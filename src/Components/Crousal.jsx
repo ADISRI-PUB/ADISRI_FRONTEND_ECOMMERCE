@@ -79,7 +79,7 @@ export default function Crousal({slideshow}) {
       <div>
       <img
        className="h-full w-full"
-            src="https://www.bookswagon.com/bannerimages/81_inr.jpg?v=5.3"
+            src="banner 1-5 (I).jpg"
             alt=""
           />
       </div>
@@ -93,7 +93,7 @@ export default function Crousal({slideshow}) {
       <div>
       <img
        className="h-full w-full"
-            src="https://www.bookswagon.com/bannerimages/81_inr.jpg?v=5.3"
+            src="banner 1-5 (II).jpg"
             alt=""
           />
       </div>

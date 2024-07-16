@@ -3,10 +3,12 @@ import { googleLogout, useGoogleLogin } from '@react-oauth/google'
 import axios from 'axios'
 import Hnavbar from '../Screen/Hnavbar'
 import Home from '../Screen/Home'
+import App from '../App';
 
+export let Logindata 
 function SignIn() {
   const [user, setUser] = useState(null);
-  const [profile, setProfile] = useState(null);
+const [profile, setProfile] = useState(null);
   const [token, setToken] = useState(null);
 
   const login = useGoogleLogin({
@@ -55,7 +57,7 @@ function SignIn() {
     } else {
       console.log('sending data to django');
 
-      const profileData = {
+    const profileData = {
         name: profile['name'],
         email: profile['email'],
         username: profile['id']
@@ -88,6 +90,7 @@ function SignIn() {
         }
       );
     }
+    Logindata=profile
   }, [profile]);
 
 

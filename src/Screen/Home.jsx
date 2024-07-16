@@ -40,12 +40,13 @@ export default function Home({token}) {
   return (
     <>
       {/* <Hnavbar/> */}
+     <br />
       <div className="home-area z-20  leading-snug">
         {/* <p className="welcome-text p-3 text-center  block ">Welcome To,</p> */}
-        <p className="brandtext ">Adisri Publications</p>
       
-        <br />
+      
         <div className=" z-20 books-crousal-container  m-auto  w-full">
+        <img src="BANNER  UPPER.jpg" alt=""  />
           <Crousal />
     
         </div>
@@ -219,7 +220,8 @@ export default function Home({token}) {
                 <CountUp end={5000} duration={6} enableScrollSpy/>+
                 </div>
               </div>
-              <div className="box1   p-3 text-center">
+              <div className="box1  h-full   p-3 text-center flex logg justify-center">
+                <div>
                 <div>
                   <p className="st-cover"> Our Clients </p>
                   <svg
@@ -237,6 +239,7 @@ export default function Home({token}) {
               +
                 </div>
               </div>
+            </div>
             </div>
                    
             <br />

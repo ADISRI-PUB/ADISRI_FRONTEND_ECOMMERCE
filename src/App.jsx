@@ -22,7 +22,7 @@ import Cartsection from './Components/Cartsection'
 import SignIn from './Screen/SignIn'
 
 
-function App() {
+function App({profile,logout}) {
  
     return (
     <> 
@@ -42,7 +42,7 @@ function App() {
      </Route>
      <Route path='/onetoeight' Component={Ionetoeight}/>
      <Route path='/aboutus' Component={Iaboutus}/> 
-     <Route path='/singlebook' Component={SingleBookpage}/>
+     <Route path='/singlebook/:id' Component={SingleBookpage}/>
      <Route path='/careers' Component={CareersScreen}/> 
      <Route path='/careers/:id' Component={SpecificCareer}/> 
      <Route path='/cart' Component={Cartsection}/>
