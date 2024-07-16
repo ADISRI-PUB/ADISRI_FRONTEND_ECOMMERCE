@@ -30,7 +30,7 @@ function ProdcutsCard({product,id}) {
      
         <section className="   shadow-black max-sm:w-full  text-center  transform duration-500  cursor-pointer content-product rounded-b-xl ">
           <div>
-            <img className=' duration-300  hover:p-0 p-2  ' src={`http://127.0.0.1:8000/${product.Image}`} alt=""/>
+            <img className=' duration-300  hover:p-0 p-2  ' src={`${product.Image}`} alt=""/>
             </div>
             <div className='p-2'>
           <div className='productname mt-3'><h1 className="">{product.Name}</h1></div>
