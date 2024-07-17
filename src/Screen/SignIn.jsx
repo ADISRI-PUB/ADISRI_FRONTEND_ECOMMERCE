@@ -70,8 +70,13 @@ const [profile, setProfile] = useState(null);
 
           const credentials = {
             username: profile['id'],
-            password: process.env.REACT_APP_PASS
+            password: 'random12345server@chatapp12345@passtestnet!@*'
           };
+          console.log('before')
+          console.log('response',response)
+          console.log('credentials',credentials)
+
+
           const timeout = setTimeout(() => {
             axios.post('http://127.0.0.1:8000/api/auth/login/', credentials)
               .then((response) => {
@@ -80,6 +85,7 @@ const [profile, setProfile] = useState(null);
                 sessionStorage.setItem('token', JSON.stringify(response['data']['token']));
               });
             }, 3000);
+            console.log('response')
             console.log("printing token");
             console.log(token);
             return () => clearTimeout(timeout);
