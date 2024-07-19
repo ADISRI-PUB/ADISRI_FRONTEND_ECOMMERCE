@@ -6,7 +6,6 @@ import {useNavigate, useLocation } from 'react-router-dom'
 import axios from 'axios'
 import Hnavbar from '../Screen/Hnavbar'
 import Home from '../Screen/Home'
-import { login } from '../actions/UserActions'
 
 function SignIn() {
   //kamal
@@ -22,19 +21,25 @@ const [profile, setProfile] = useState(null);
   });
   console.log('login:', login);
   console.log('user:', user);
+  const [flag,setFlag]=useState(false)
 
   //fetch the token and the profile data from the local storage  , And set them into the state repectively
-  useEffect(() => {
+  // const checkprofile =()=>{
 
-    const stroedProfile = localStorage.getItem("profile")
-    const storedToken = localStorage.getItem('token')
+  //   const stroedProfile = localStorage.getItem("profile")
+  //   const storedToken = localStorage.getItem('token')
 
-    if (storedToken && stroedProfile){
-      history('/')
+  //   if (storedToken && stroedProfile){
+  //     history('/')
+  //     setFlag(true)
 
-    }
+  //   }
+  // }
+  // useEffect(() => {
+  // checkprofile()
+  
 
-  },[history,redirect]);
+  // },[history,flag]);
 
 
 
@@ -58,6 +63,7 @@ const [profile, setProfile] = useState(null);
           }
         );
     }
+   
   }, [user]);
 
 
@@ -100,10 +106,11 @@ const [profile, setProfile] = useState(null);
                 localStorage.setItem('token', JSON.stringify(response['data']['token']));
                 
               });
-            }, 3000);
+            });
             console.log('response')
             console.log("printing token");
             console.log(token);
+            history('/')
             return () => clearTimeout(timeout);
             
         },
@@ -112,104 +119,56 @@ const [profile, setProfile] = useState(null);
         }
       );
     }
-    
+   
   }, [profile]);
 
   //kamal
 
   return (
-    <div>
-     
-       <div className="flex items-center min-h-screen p-4 bg-gray-100 lg:justify-center">
-      <div
-        className="flex flex-col overflow-hidden bg-white rounded-md shadow-lg max md:flex-row md:flex-1 lg:max-w-screen-md"
-      >
-        <div
-          className="p-4 py-6 text-white bg-blue-500 md:w-80 md:flex-shrink-0 md:flex md:flex-col md:items-center md:justify-evenly"
-        >
-          
-          <p className="flex flex-col items-center justify-center mt-10 text-center">
-            <span>Don't have an account?</span>
-            <a href="#" className="underline">Get Started!</a>
-          </p>
-          <p className="mt-6 text-sm text-center text-gray-300">
-            Read our <a href="#" className="underline">terms</a> and <a href="#" className="underline">conditions</a>
-          </p>
-        </div>
-        <div className="p-5 bg-white md:flex-1">
-          <h3 className="my-4 text-2xl font-semibold text-gray-700">Account Login</h3>
-          <form action="#" className="flex flex-col space-y-5">
-            <div className="flex flex-col space-y-1">
-              <label htmlFor="email" className="text-sm font-semibold text-gray-500">Email address</label>
-              <input
-                type="email"
-                id="email"
-                autoFocus
-                className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
-              />
-            </div>
-            <div className="flex flex-col space-y-1">
-              <div className="flex items-center justify-between">
-                <label htmlFor="password" className="text-sm font-semibold text-gray-500">Password</label>
-                <a href="#" className="text-sm text-blue-600 hover:underline focus:text-blue-800">Forgot Password?</a>
-              </div>
-              <input
-                type="password"
-                id="password"
-                className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
-              />
-            </div>
-            <div className="flex items-center space-x-2">
-              <input
-                type="checkbox"
-                id="remember"
-                className="w-4 h-4 transition duration-300 rounded focus:ring-2 focus:ring-offset-0 focus:outline-none focus:ring-blue-200"
-              />
-              <label htmlFor="remember" className="text-sm font-semibold text-gray-500">Remember me</label>
-            </div>
-            <div>
-              <button
-                type="submit"
-                className="w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-blue-500 rounded-md shadow hover:bg-blue-600 focus:outline-none focus:ring-blue-200 focus:ring-4"
-              >
-                Log in
-              </button>
-            </div>
-            <div className="flex flex-col space-y-5">
-              <span className="flex items-center justify-center space-x-2">
-                <span className="h-px bg-gray-400 w-14"></span>
-                <span className="font-normal text-gray-500">or login with</span>
-                <span className="h-px bg-gray-400 w-14"></span>
-              </span>
-
-              <div className="flex flex-col space-y-4">
-                <a
-                  className="flex items-center justify-center px-4 py-2 space-x-2 transition-colors duration-300 border border-gray-800 rounded-md group hover:bg-gray-800 focus:outline-none"
-                  onClick={login}
-                  
-                >
-                  <span>
-                    <svg
-                      className="w-5 h-5 text-gray-800 fill-current group-hover:text-white"
-                      viewBox="0 0 16 16"
-                      version="1.1"
-                      aria-hidden="true"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
-                      ></path>
-                    </svg>
-                  </span>
-                  <span className="text-sm font-medium text-gray-800 group-hover:text-white">Google</span>
-                </a>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div> 
-    
+    <div  className='relative'>
+      
+      
+       <div className=' relative w-screen sm:h-screen flex '>
+        <img className='w-3/6 opacity-45 absolute ' src="pngegg (14)1.png" alt="backgroundimage"/>
+       
+         <div className='w-3/5 max-sm:w-full h-2/4 rounded-xl sm:bg-black/10 sm:backdrop-blur-sm border-2 border-white m-auto flex logg justify-center relative z-20 '>
+           <div className='w-4/5 sm:flex max-sm:w-11/12    '>
+           <div className='w-1/2  sm:border-r-2 max-sm:w-full sm:border-white '>
+             <img className='w-1/2 max-sm:w-1/2  m-auto' src="ADISRI LOGO.jpg" alt="companylogo"  />
+             </div>
+             <div className='w-1/2 m-auto  max-sm:w-full'>
+             <button
+              onClick={login}
+  aria-label="Sign in with Google"
+  className="flex items-center m-auto bg-black/5 border border-button-border-light rounded-full p-0.5 pr-4"
+>
+  <div className="flex items-center justify-center bg-white w-9 h-9 rounded-full">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5">
+      <path
+        d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+        className="fill-google-logo-blue"
+      ></path>
+      <path
+        d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+        class="fill-google-logo-green"
+      ></path>
+      <path
+        d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+        className="fill-google-logo-yellow"
+      ></path>
+      <path
+        d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+        className="fill-google-logo-red"
+      ></path>
+    </svg>
+  </div>
+  <span className="text-sm text-google-text-gray tracking-wider">Sign with Google</span>
+</button>  
+             </div>
+           </div>
+         </div>
+       </div>  
+    <br />
   </div>
     
   )

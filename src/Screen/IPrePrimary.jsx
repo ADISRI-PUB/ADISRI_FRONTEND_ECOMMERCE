@@ -35,6 +35,7 @@ function IPrePrimary() {
 
 let data
   useEffect(() => {
+    
     dispatch(listProducts());
     // fetching the data for filter option /////////////////////////////////////////////////////////
     const fetchData =async()=>{

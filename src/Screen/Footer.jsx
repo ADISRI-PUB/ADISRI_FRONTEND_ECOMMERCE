@@ -1,37 +1,34 @@
 import React from "react";
+import { Link } from "react-router-dom";
 export default function Footer(){
     return(
         <>
          
-         <footer className="">
-    <div className="mx-auto w-full max-w-screen-xl">
+         <footer className="relative">
+    <div className="mx-auto  max-w-screen-xl">
         <div>
             <img className="m-auto max-sm:w-4/5" src="ADISRI LOGO 2.png" alt=""  />
         </div>
-      <div className="grid grid-cols-2   gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
+        <div className="w-4/5 m-auto ">
+      <div className="grid grid-cols-2   gap-8 px-4 py-6 lg:py-8 md:grid-cols-3">
         <div className="">
             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase  ">Company</h2>
-            <ul className="text-gray-500 dark:text-gray-400 font-medium ">
+            <ul className="text-gray-500 dark:text-gray-400  font-medium ">
                 <li className="mb-4">
-                    <a href="#" className=" hover:underline">About</a>
+                    <Link to='/aboutus' className=" hover:underline">About</Link>
                 </li>
                 <li className="mb-4">
-                    <a href="#" className="hover:underline">Careers</a>
+                    <Link to='/careers' className="hover:underline">Careers</Link>
                 </li>
                 <li className="mb-4">
-                    <a href="#" className="hover:underline">Brand Center</a>
+                    <a className="hover:underline decoration-none">Brand Center :Noida</a>
                 </li>
-                <li className="mb-4">
-                    <a href="#" className="hover:underline">Blog</a>
-                </li>
+            
             </ul>
         </div>
         <div>
             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase ">Help center</h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                <li className="mb-4">
-                    <a href="#" className="hover:underline">Discord Server</a>
-                </li>
                 <li className="mb-4">
                     <a href="#" className="hover:underline">Twitter</a>
                 </li>
@@ -58,24 +55,12 @@ export default function Footer(){
             </ul>
         </div>
         <div>
-            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase ">Download</h2>
-            <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                <li className="mb-4">
-                    <a href="#" className="hover:underline">iOS</a>
-                </li>
-                <li className="mb-4">
-                    <a href="#" className="hover:underline">Android</a>
-                </li>
-                <li className="mb-4">
-                    <a href="#" className="hover:underline">Windows</a>
-                </li>
-                <li className="mb-4">
-                    <a href="#" className="hover:underline">MacOS</a>
-                </li>
-            </ul>
+           
+        
         </div>
     </div>
-    <div className="px-4 py-6 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
+    </div>
+    <div className="px-4 py-6 bg-gray-100 w-4/5 m-auto dark:bg-gray-700 md:flex md:items-center md:justify-between">
         <span className="text-sm text-gray-500 dark:text-gray-300 sm:text-center">© 2024 <a href="https://flowbite.com/">Adirsir | Publications™</a>. All Rights Reserved.
         </span>
         <div className="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse">

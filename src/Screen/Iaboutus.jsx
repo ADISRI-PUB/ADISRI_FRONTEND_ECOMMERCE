@@ -60,7 +60,7 @@ function Iaboutus() {
           alt=""
           srcset=""
         />
-        <div className=" absolute  image-side-container">
+        <div className=" absolute -z-20  image-side-container">
           <img
             className="image-border rotate-180 "
             src="pngegg (3) (1).png"
@@ -68,11 +68,11 @@ function Iaboutus() {
           />
         </div>
         <div className="text-container w-full text-center ">
-          <h1 className=" w-4/5 m-auto  sm:flex max-sm:block justify-center">
-            <p className="adisri">
+          <h1 className=" w-4/5 m-auto   max-sm:block justify-center">
+            <p className="adisri inline m-auto">
               ADISRI<sup className="register">&#xae;</sup>{" "}
             </p>{" "}
-            | <p className="publication"> PUBLICATIONS</p>{" "}
+            | <p className="publication inline m-auto"> PUBLICATIONS</p>{" "}
           </h1>
           <h5 className="border-b-2 border-gray-300 w-3/5 m-auto">
             "Education is not the learning of facts, but the training of the

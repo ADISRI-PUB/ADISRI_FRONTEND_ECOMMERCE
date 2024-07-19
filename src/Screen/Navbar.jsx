@@ -2,27 +2,49 @@
 import React from "react"
 import { NavLink } from "react-router-dom"
 export default function Navbar(){
-  let count=0
+  let count = 0;
   const menuopen = () => {
-       
-      if (count == 0) {
-      
-        document.querySelector(".row1").style.transform = "rotate(45deg)";
-        document.querySelector(".row2").style.transform = "rotate(-45deg)";
-        document.querySelector(".row2").style.top = "0vh";
-        document.querySelector(".navvv").style.transform =
-          "translateY(0%)";
-        count++;
-      } else {
-        count = 0;
-        document.querySelector(".navvv").style.transform =
-          "translateY(-300%)";
-        document.querySelector(".row1").style.transform = "rotate(0deg)";
-        document.querySelector(".row2").style.top = "1vh";
-        document.querySelector(".row2").style.mrgin = "0";
-        document.querySelector(".row2").style.transform = "rotate(0deg)";
-      }
-    };
+    if (count == 0) {
+      gsap.fromTo(
+        ".small-navbar",
+        {
+          opacity: 0,
+          stagger: 0.2,
+          duration: 0.8,
+          delay: 0.2,
+        },
+        {
+          delay: 0.2,
+          stagger: 0.2,
+          opacity: 1,
+        }
+      );
+      document.querySelector(".row1").style.transform = "rotate(45deg)";
+      document.querySelector(".row2").style.transform = "rotate(-45deg)";
+      document.querySelector(".row2").style.marginTop = "0px";
+      document.querySelector(".navbar-small").style.transform =
+        "translateY(0%)";
+      count++;
+    } else {
+      count = 0;
+      gsap.fromTo(
+        ".small-navbar",
+        {
+          opacity: 1,
+          stagger: 0.3,
+          duration: 0.9,
+        },
+        {
+          opacity: 0,
+        }
+      );
+      document.querySelector(".navbar-small").style.transform =
+        "translateY(-200%)";
+      document.querySelector(".row1").style.transform = "rotate(0deg)";
+      document.querySelector(".row2").style.transform = "rotate(0deg)";
+      document.querySelector(".row2").style.marginTop = "12px";
+    }
+  };
      
     return(
         <>
