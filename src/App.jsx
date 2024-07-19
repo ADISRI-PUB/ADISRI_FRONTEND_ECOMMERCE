@@ -45,8 +45,9 @@ function App({profile,logout}) {
      <Route path='/singlebook/:id' Component={SingleBookpage}/>
      <Route path='/careers' Component={CareersScreen}/> 
      <Route path='/careers/:id' Component={SpecificCareer}/> 
-     <Route path='/cart' Component={Cartsection}/>
+     <Route path='/cart/:id?' Component={Cartsection}/>
      <Route path='/SignIn' Component={SignIn}/>
+     
      </Routes>
      
      <Footer/>

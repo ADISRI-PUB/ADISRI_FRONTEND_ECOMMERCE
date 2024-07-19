@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
-import Home from "./Home";
 import gsap from "gsap";
 import "../Css/Home.css";
 import PopUp from "../Components/PopUp";
@@ -11,6 +10,8 @@ function Hnavbar({ profile, logout }) {
   const  [imageprofile,setimageProfile] =useState('pngegg (14).png')
   const [signintext,setsignintext] =useState('Login/Signup')
   let count = 0;
+  const items = useSelector((state)=>state.cart)
+  const {cartItems} =items
   useEffect(()=>{
          if (profile) {
           setimageProfile(profile["picture"])
@@ -86,15 +87,16 @@ function Hnavbar({ profile, logout }) {
   return (
     <>
       <div className=" z-50 w-full fixed h-navbar bg-white/50 backdrop-blur-sm border-b-2 border-white  flex justify-between   ">
-        <img
-          className=" float-start image-logo  sm:w-1/5 max-sm:w-2/3 flex logg  "
+       <Link to='/' className="float-start image-logo  sm:w-1/5 max-sm:w-2/3"> <img
+          className="    "
           src="ADISRI LOGO 2.png"
           alt=""
         />
+        </Link>
 
         <div
           onClick={menuopen}
-          className="float-end cursor-pointer menu z-30 sm:hidden max-sm:visible  relative  top-4 right-2  h-full"
+          className="float-end cursor-pointer menu z-30 sm:hidden max-sm:visible  relative  top-4 right-2  "
         >
           <span className="row1 h-0.5  max-sm:w-6 transition-all duration-200   bg-black block"></span>
 
@@ -157,7 +159,7 @@ function Hnavbar({ profile, logout }) {
                 style={{ left: "25%", bottom: "15%" }}
                 className="w-6 h-6 m-auto z-10  rounded-full absolute bg-black text-white text-center"
               >
-                5
+                 {cartItems.length}
               </span>
               <svg
                 className="m-auto cursor-pointer relative z-0"
@@ -217,7 +219,7 @@ function Hnavbar({ profile, logout }) {
             </Link>
           </div>
           
-          <div className=" w-1/2 flex logg gap-3 relative justify-center bg-blue-200 ">
+          <div className=" w-1/2 flex logg gap-3 relative justify-center p-3 ">
           {
             profile ?(
               <>
@@ -231,13 +233,33 @@ function Hnavbar({ profile, logout }) {
                
               </>
             ):(
-              <Link to='/SignIn'>
-              <div className="flex items-center justify-center  bg-gray-100 ">
-        <button className="flex items-center bg-white  border border-gray-300 rounded-lg shadow-md px-6 py-2 text-sm font-medium text-gray-800  hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
-            <svg className="h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="800px" height="800px" viewBox="-0.5 0 48 48" version="1.1"> <title>Google-color</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Icons" stroke="none" strokeWidth="1" fill="none" fill-rule="evenodd"> <g id="Color-" transform="translate(-401.000000, -860.000000)"> <g id="Google" transform="translate(401.000000, 860.000000)"> <path d="M9.82727273,24 C9.82727273,22.4757333 10.0804318,21.0144 10.5322727,19.6437333 L2.62345455,13.6042667 C1.08206818,16.7338667 0.213636364,20.2602667 0.213636364,24 C0.213636364,27.7365333 1.081,31.2608 2.62025,34.3882667 L10.5247955,28.3370667 C10.0772273,26.9728 9.82727273,25.5168 9.82727273,24" id="Fill-1" fill="#FBBC05"> </path> <path d="M23.7136364,10.1333333 C27.025,10.1333333 30.0159091,11.3066667 32.3659091,13.2266667 L39.2022727,6.4 C35.0363636,2.77333333 29.6954545,0.533333333 23.7136364,0.533333333 C14.4268636,0.533333333 6.44540909,5.84426667 2.62345455,13.6042667 L10.5322727,19.6437333 C12.3545909,14.112 17.5491591,10.1333333 23.7136364,10.1333333" id="Fill-2" fill="#EB4335"> </path> <path d="M23.7136364,37.8666667 C17.5491591,37.8666667 12.3545909,33.888 10.5322727,28.3562667 L2.62345455,34.3946667 C6.44540909,42.1557333 14.4268636,47.4666667 23.7136364,47.4666667 C29.4455,47.4666667 34.9177955,45.4314667 39.0249545,41.6181333 L31.5177727,35.8144 C29.3995682,37.1488 26.7323182,37.8666667 23.7136364,37.8666667" id="Fill-3" fill="#34A853"> </path> <path d="M46.1454545,24 C46.1454545,22.6133333 45.9318182,21.12 45.6113636,19.7333333 L23.7136364,19.7333333 L23.7136364,28.8 L36.3181818,28.8 C35.6879545,31.8912 33.9724545,34.2677333 31.5177727,35.8144 L39.0249545,41.6181333 C43.3393409,37.6138667 46.1454545,31.6490667 46.1454545,24" id="Fill-4" fill="#4285F4"> </path> </g> </g> </g> </svg>
-            <span>Continue with Google</span>
-        </button>
-    </div>
+              <Link to='/SignIn' className="p-3">
+              <button
+  aria-label="Sign in with Google"
+  class="flex items-center bg-black/5 border border-button-border-light rounded-full p-0.5 pr-4"
+>
+  <div className="flex items-center justify-center bg-white w-9 h-9 rounded-full">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5">
+      <path
+        d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+        className="fill-google-logo-blue"
+      ></path>
+      <path
+        d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+        class="fill-google-logo-green"
+      ></path>
+      <path
+        d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+        className="fill-google-logo-yellow"
+      ></path>
+      <path
+        d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+        className="fill-google-logo-red"
+      ></path>
+    </svg>
+  </div>
+  <span className="text-sm text-google-text-gray tracking-wider">Sign with Google</span>
+</button>
               </Link>
             )
           }
@@ -250,8 +272,9 @@ function Hnavbar({ profile, logout }) {
       <div className="fixed w-3/5 m-auto top-20 right-12 z-50">
         <PopUp />
       </div>
-      <div className="sm:h-3"></div>
-      <Outlet />
+      <div className="sm:h-5 max-sm:relative max-sm:-top-3"></div>
+      {/* <Outlet /> */}
+      
     </>
   );
 }
