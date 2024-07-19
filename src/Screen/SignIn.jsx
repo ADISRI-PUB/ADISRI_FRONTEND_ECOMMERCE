@@ -1,33 +1,47 @@
+//singin
 import React, { useState, useEffect } from 'react';
 import { googleLogout, useGoogleLogin } from '@react-oauth/google'
+import { useDispatch,useSelector } from 'react-redux'
+import {useNavigate, useLocation } from 'react-router-dom'
 import axios from 'axios'
 import Hnavbar from '../Screen/Hnavbar'
 import Home from '../Screen/Home'
-import App from '../App';
 
-export let Logindata 
 function SignIn() {
+  //kamal
   const [user, setUser] = useState(null);
 const [profile, setProfile] = useState(null);
   const [token, setToken] = useState(null);
-
+  const dispatch = useDispatch()
+  const history = useNavigate()
+  const redirect =location.search ? location.search.split('=')[1] : '/'
   const login = useGoogleLogin({
     onSuccess: (codeResponse) => setUser(codeResponse),
     onError: (error) => console.log('login failed:', error)
   });
+  console.log('login:', login);
+  console.log('user:', user);
+  const [flag,setFlag]=useState(false)
 
-  useEffect(() => {
-    const stroedProfile = sessionStorage.getItem('profile');
-    const storedToken = sessionStorage.getItem('token');
+  //fetch the token and the profile data from the local storage  , And set them into the state repectively
+  // const checkprofile =()=>{
 
-    if (storedToken){
-      setToken(storedToken);
-    }
-    if (stroedProfile){
-      setProfile(JSON.parse(stroedProfile));
-    }
+  //   const stroedProfile = localStorage.getItem("profile")
+  //   const storedToken = localStorage.getItem('token')
 
-  },[]);
+  //   if (storedToken && stroedProfile){
+  //     history('/')
+  //     setFlag(true)
+
+  //   }
+  // }
+  // useEffect(() => {
+  // checkprofile()
+  
+
+  // },[history,flag]);
+
+
 
   useEffect(() => {
     if (user) {
@@ -42,19 +56,24 @@ const [profile, setProfile] = useState(null);
           (response) => {
             console.log('changes');
             setProfile(response['data']);
-            sessionStorage.setItem('profile', JSON.stringify(response['data']));
+            localStorage.setItem('profile', JSON.stringify(response['data']));
           },
           (error) => {
             console.log(error);
           }
         );
     }
+   
   }, [user]);
+
+
 
   useEffect(() => {
     if (profile === null) {
       console.log('profile null');
-    } else {
+    } 
+
+    else {
       console.log('sending data to django');
 
     const profileData = {
@@ -68,20 +87,30 @@ const [profile, setProfile] = useState(null);
       axios.post('http://127.0.0.1:8000/api/auth/register/', profileData).then(
         (response) => {
 
+          
           const credentials = {
             username: profile['id'],
-            password: process.env.REACT_APP_PASS
+            password: 'random12345server@chatapp12345@passtestnet!@*'
           };
+          
+          console.log('before')
+          console.log('response',response)
+          console.log('credentials',credentials)
+
+
           const timeout = setTimeout(() => {
             axios.post('http://127.0.0.1:8000/api/auth/login/', credentials)
               .then((response) => {
                 console.log(response['data']);
                 setToken(response['data']['token']);
-                sessionStorage.setItem('token', JSON.stringify(response['data']['token']));
+                localStorage.setItem('token', JSON.stringify(response['data']['token']));
+                
               });
-            }, 3000);
+            });
+            console.log('response')
             console.log("printing token");
             console.log(token);
+            history('/')
             return () => clearTimeout(timeout);
             
         },
@@ -90,28 +119,15 @@ const [profile, setProfile] = useState(null);
         }
       );
     }
-    Logindata=profile
+   
   }, [profile]);
 
-
-  const logout = () => {
-    googleLogout();
-    sessionStorage.removeItem('profile');
-    sessionStorage.removeItem('token');
-    setProfile(null);
-  }
-
+  //kamal
 
   return (
     <div  className='relative'>
-      <br />
-    {profile ? (
-      <div>
-        <Hnavbar  profile={profile} logout={logout} />
-        <Home token={token}/>
-      </div>
-    ) : (
-      <>
+      
+      
        <div className=' relative w-screen sm:h-screen flex '>
         <img className='w-3/6 opacity-45 absolute ' src="pngegg (14)1.png" alt="backgroundimage"/>
        
@@ -151,9 +167,7 @@ const [profile, setProfile] = useState(null);
              </div>
            </div>
          </div>
-       </div>
-     </>
-    )}
+       </div>  
     <br />
   </div>
     

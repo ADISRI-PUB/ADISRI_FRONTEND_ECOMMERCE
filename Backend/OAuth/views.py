@@ -8,6 +8,7 @@ from django.contrib.auth.hashers import make_password
 
 
 class RegisterNewUser(APIView):
+    
     def post(self,request):
         username = request.data.get("username")
         email = request.data.get("email")
@@ -16,7 +17,7 @@ class RegisterNewUser(APIView):
         try:
             user  = User.objects.create_user(
                 username = username,
-                password = passphrase,
+                password = "random12345server@chatapp12345@passtestnet!@*",
                 email = email,
                 first_name = name,
             )

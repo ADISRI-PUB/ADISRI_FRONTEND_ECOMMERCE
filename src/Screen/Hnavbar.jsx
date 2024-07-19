@@ -1,29 +1,49 @@
+//Hnavbar
 import React, { useEffect, useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { googleLogout } from "@react-oauth/google";
 import gsap from "gsap";
 import "../Css/Home.css";
 import PopUp from "../Components/PopUp";
 import { useDispatch, useSelector } from "react-redux";
-import { Logindata} from "./SignIn";
-function Hnavbar({ profile, logout }) {
-  const  [imageprofile,setimageProfile] =useState('pngegg (14).png')
-  const [signintext,setsignintext] =useState('Login/Signup')
+
+function Hnavbar() {
+  //kamal
+  const [profile, setProfile] = useState(null);
+  const [token, setToken] = useState(null);
+  const [userInfo, setuserInfo] = useState(null);
+ const [flag ,setflag] =useState(false)
+let timer= setInterval(()=>{
+  const stroedProfile = localStorage.getItem("profile");
+    const storedToken = localStorage.getItem("token");
+
+    if (storedToken && stroedProfile) {
+      setToken(storedToken)
+      setProfile(stroedProfile)
+      const setuserInfo = "Yes";
+      console.log("home ", stroedProfile, storedToken);
+      setflag(true)
+      console.log(profile);
+      clearInterval(timer)
+      
+    }
+ },100)
+  useEffect(() => {
+  }, [flag]);
+const logout=()=>{
+   googleLogout()
+   localStorage.removeItem('profile')
+   localStorage.removeItem('token')
+   setProfile(null)
+   setToken(null)
+   setflag(false)
+}
+  //kamal
   let count = 0;
   const items = useSelector((state)=>state.cart)
   const {cartItems} =items
-  useEffect(()=>{
-         if (profile) {
-          setimageProfile(profile["picture"])
-          setsignintext('Logout')
-    console.log(Logindata);
-          console.log(profile);
-         }
-         else{
-          setimageProfile('pngegg (14).png')
-          setsignintext('Login/signup')
-         }
-  },[profile])
+  
   const menuopen = () => {
     if (count == 0) {
       gsap.fromTo(
@@ -221,16 +241,19 @@ function Hnavbar({ profile, logout }) {
           
           <div className=" w-1/2 flex logg gap-3 relative justify-center p-3 ">
           {
-            profile ?(
+            flag  ?(
               <>
-                 <div className="logo">
-                  {/* <img className="w-1/4" src={profile["picture"]} alt={profile["name"]} />
-                  <h2>Welcome, {profile["name"]}!</h2> */}
+                <div className="logo">
+                  <img
+                    className="w-1/4"
+                    // src={profile["picture"]}
+                    // alt={profile["name"]}
+                  />
+                  <h2>Welcome,!</h2>
                 </div>
                 <div className="profile-info">
-                  <button onClick={logout}>Logout</button>
+                  <button className="bg-blue-200" onClick={logout}>Logout</button>
                 </div>
-               
               </>
             ):(
               <Link to='/SignIn' className="p-3">
@@ -261,11 +284,8 @@ function Hnavbar({ profile, logout }) {
   <span className="text-sm text-google-text-gray tracking-wider">Sign with Google</span>
 </button>
               </Link>
-            )
-          }
-         
+            )}
             
-           
           </div>
         </div>
       </div>
