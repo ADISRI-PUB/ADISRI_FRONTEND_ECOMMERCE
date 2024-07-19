@@ -1,21 +1,16 @@
-//singin
 import React, { useState, useEffect } from 'react';
 import { googleLogout, useGoogleLogin } from '@react-oauth/google'
-import { useDispatch,useSelector } from 'react-redux'
-import {useNavigate, useLocation } from 'react-router-dom'
 import axios from 'axios'
 import Hnavbar from '../Screen/Hnavbar'
 import Home from '../Screen/Home'
-import { login } from '../actions/UserActions'
 
+
+export let Logindata 
 function SignIn() {
-  //kamal
   const [user, setUser] = useState(null);
 const [profile, setProfile] = useState(null);
   const [token, setToken] = useState(null);
-  const dispatch = useDispatch()
-  const history = useNavigate()
-  const redirect =location.search ? location.search.split('=')[1] : '/'
+
   const login = useGoogleLogin({
     onSuccess: (codeResponse) => setUser(codeResponse),
     onError: (error) => console.log('login failed:', error)
@@ -26,15 +21,17 @@ const [profile, setProfile] = useState(null);
   //fetch the token and the profile data from the local storage  , And set them into the state repectively
   useEffect(() => {
 
-    const stroedProfile = localStorage.getItem("profile")
-    const storedToken = localStorage.getItem('token')
+    const stroedProfile = sessionStorage.getItem('profile');
+    const storedToken = sessionStorage.getItem('token');
 
-    if (storedToken && stroedProfile){
-      history('/')
-
+    if (storedToken){
+      setToken(storedToken);
+    }
+    if (stroedProfile){
+      setProfile(JSON.parse(stroedProfile));
     }
 
-  },[history,redirect]);
+  },[]);
 
 
 
@@ -51,7 +48,7 @@ const [profile, setProfile] = useState(null);
           (response) => {
             console.log('changes');
             setProfile(response['data']);
-            localStorage.setItem('profile', JSON.stringify(response['data']));
+            sessionStorage.setItem('profile', JSON.stringify(response['data']));
           },
           (error) => {
             console.log(error);
@@ -97,8 +94,7 @@ const [profile, setProfile] = useState(null);
               .then((response) => {
                 console.log(response['data']);
                 setToken(response['data']['token']);
-                localStorage.setItem('token', JSON.stringify(response['data']['token']));
-                
+                sessionStorage.setItem('token', JSON.stringify(response['data']['token']));
               });
             }, 3000);
             console.log('response')
@@ -112,14 +108,26 @@ const [profile, setProfile] = useState(null);
         }
       );
     }
-    
+    Logindata=profile
   }, [profile]);
 
-  //kamal
+
+  const logout = () => {
+    googleLogout();
+    sessionStorage.removeItem('profile');
+    sessionStorage.removeItem('token');
+    setProfile(null);
+  }
+
 
   return (
     <div>
-     
+    {profile ? (
+      <div>
+        <Hnavbar  profile={profile} logout={logout} />
+        <Home token={token}/>
+      </div>
+    ) : (
        <div className="flex items-center min-h-screen p-4 bg-gray-100 lg:justify-center">
       <div
         className="flex flex-col overflow-hidden bg-white rounded-md shadow-lg max md:flex-row md:flex-1 lg:max-w-screen-md"
@@ -209,7 +217,7 @@ const [profile, setProfile] = useState(null);
         </div>
       </div>
     </div> 
-    
+    )}
   </div>
     
   )
@@ -217,4 +225,132 @@ const [profile, setProfile] = useState(null);
 
 export default SignIn
 
+
+
+
+//userActions.js
+import axios from 'axios'
+import { 
+    USER_LOGIN_REQUEST,
+    USER_LOGIN_FAIL,
+    USER_LOGIN_SUCCESS,
+
+    USER_REGISTER_REQUEST,
+    USER_REGISTER_FAIL,
+    USER_REGISTER_SUCCESS,
+
+    USER_LOGOUT,
+ } from '../constants/UserConstants'
+
+
+export const login =(profileData)=> async(dispatch) => {
+    try{
+        console.log('lag to raha')
+
+    
+        dispatch({
+            type : USER_LOGIN_REQUEST
+        })
+        const config = {
+            headers :{
+                'Content-type' : 'application/json'
+            }
+        }
+
+        const { data } = await axios.get(
+            'http://127.0.0.1:8000/api/auth/register/', 
+            profileData,
+            config
+          );
+       
+        dispatch({
+            type : USER_LOGIN_SUCCESS,
+            payload : data['data']
+        })
+
+        localStorage.setItem('userInfo', JSON.stringify(data['data']))
+        console.log("ha bhai ha")
+    }
+    catch(error){
+        dispatch({type : USER_LOGIN_FAIL,
+                  payload : error.response && error.response.data.detail
+                  ?error.response.data.detail
+                  :error.message
+    })
+    }
+}
+
+
+
+export const logout=()=>(dispatch)=>{
+    localStorage.removeItem('userInfo')
+    dispatch({type : USER_LOGOUT})
+    
+}
+
+export const register =(name,email,id)=> async (dispatch) => {
+    try{
+        dispatch({
+            type : USER_REGISTER_REQUEST
+        })
+        const config = {
+            headers :{
+                'Content-type' : 'application/json'
+            }
+        }
+        const {data} = await axios.post(
+            '/users/register/',
+            {'name':name,'email': email, 'password': password},
+            config
+        )
+        console.log(data)
+
+        dispatch({
+            type : USER_REGISTER_SUCCESS,
+            payload : data
+        })
+        dispatch({
+            type : USER_LOGIN_SUCCESS,
+            payload : data
+        })
+
+        localStorage.setItem('userInfo', JSON.stringify(data))
+    }
+    catch(error){
+        dispatch({type : USER_REGISTER_FAIL,
+                  payload : error.response && error.response.data.detail
+                  ?error.response.data.detail
+                  :error.message
+    })
+    }
+}
+
+
+
+
+
+// <div className=" w-1/2 flex logg gap-3 relative justify-center bg-blue-200 ">
+// {
+//   userInfo ?(
+//     <>
+//        <div className="logo">
+//         {/* <img className="w-1/4" src={profile["picture"]} alt={profile["name"]} />
+//         <h2>Welcome, {profile["name"]}!</h2> */}
+//       </div>
+//       <div className="profile-info">
+//         <button onClick={logout}>Logout</button>
+//       </div>
+     
+//     </>
+//   ):(
+//     <Link to='/SignIn'>
+//     <div className="flex items-center justify-center  bg-gray-100 ">
+// <button className="flex items-center bg-white  border border-gray-300 rounded-lg shadow-md px-6 py-2 text-sm font-medium text-gray-800  hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+//   <svg className="h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="800px" height="800px" viewBox="-0.5 0 48 48" version="1.1"> <title>Google-color</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Icons" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd"> <g id="Color-" transform="translate(-401.000000, -860.000000)"> <g id="Google" transform="translate(401.000000, 860.000000)"> <path d="M9.82727273,24 C9.82727273,22.4757333 10.0804318,21.0144 10.5322727,19.6437333 L2.62345455,13.6042667 C1.08206818,16.7338667 0.213636364,20.2602667 0.213636364,24 C0.213636364,27.7365333 1.081,31.2608 2.62025,34.3882667 L10.5247955,28.3370667 C10.0772273,26.9728 9.82727273,25.5168 9.82727273,24" id="Fill-1" fill="#FBBC05"> </path> <path d="M23.7136364,10.1333333 C27.025,10.1333333 30.0159091,11.3066667 32.3659091,13.2266667 L39.2022727,6.4 C35.0363636,2.77333333 29.6954545,0.533333333 23.7136364,0.533333333 C14.4268636,0.533333333 6.44540909,5.84426667 2.62345455,13.6042667 L10.5322727,19.6437333 C12.3545909,14.112 17.5491591,10.1333333 23.7136364,10.1333333" id="Fill-2" fill="#EB4335"> </path> <path d="M23.7136364,37.8666667 C17.5491591,37.8666667 12.3545909,33.888 10.5322727,28.3562667 L2.62345455,34.3946667 C6.44540909,42.1557333 14.4268636,47.4666667 23.7136364,47.4666667 C29.4455,47.4666667 34.9177955,45.4314667 39.0249545,41.6181333 L31.5177727,35.8144 C29.3995682,37.1488 26.7323182,37.8666667 23.7136364,37.8666667" id="Fill-3" fill="#34A853"> </path> <path d="M46.1454545,24 C46.1454545,22.6133333 45.9318182,21.12 45.6113636,19.7333333 L23.7136364,19.7333333 L23.7136364,28.8 L36.3181818,28.8 C35.6879545,31.8912 33.9724545,34.2677333 31.5177727,35.8144 L39.0249545,41.6181333 C43.3393409,37.6138667 46.1454545,31.6490667 46.1454545,24" id="Fill-4" fill="#4285F4"> </path> </g> </g> </g> </svg>
+//   <span>Continue with Google</span>
+// </button>
+// </div>
+//     </Link>
+//   )
+// }
 
