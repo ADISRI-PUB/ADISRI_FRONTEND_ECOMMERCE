@@ -36,7 +36,7 @@ function App({profile,logout}) {
     <div className='w-12 max-sm:w-10 fixed z-50 cartsvg bottom-10 right-10 max-sm:right-5  ' >
     <div className=" flex  float-end relative ">
             <Link className="w-full  " to="/cart">
-    <img className='' src="https://e7.pngegg.com/pngimages/264/321/png-clipart-shopping-cart-computer-icons-symbol-shopping-cart-angle-orange.png" alt="" />
+    <img className='' src="pngegg (14) 6.png" alt="" />
               <span
                 style={{ left: "25%", bottom: "15%" }}
                 className="w-6 h-6 m-auto top-10 max-sm:top-8 -right-4  z-10 absolute text-lg  bg-red-500 rounded-full  text-black text-center"
