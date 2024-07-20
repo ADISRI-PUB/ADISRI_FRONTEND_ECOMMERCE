@@ -193,8 +193,8 @@ const logout=()=>{
                   />
                   </div>
                   
-                <div className="profile-info     p-2 w-full flex logg m-auto  justify-center rounded-full bg-zinc-700 hover:bg-blue-200 hover:text-black trainsition-all duration-200 text-white">
-                  <button className="" onClick={logout}>Logout</button>
+                <div  className="profile-info  cursor-pointer   p-2 w-full flex logg m-auto  justify-center rounded-full bg-zinc-700 hover:bg-blue-200 hover:text-black trainsition-all duration-500 text-white" onClick={logout}>
+                  <button className="" >Logout</button>
                   </div>
                 </div>
               

@@ -53,21 +53,21 @@ function Iaboutus() {
   return (
     <>
       <br />
-      <div className="about-container relative  ">
+      <div className="about-container relative   ">
         <img
-          className="absolute right-0 opacity-30 -z-20"
+          className="absolute right-0 opacity-30 z-20"
           src="pngegg (7).png"
           alt=""
           srcset=""
         />
-        <div className=" absolute -z-20  image-side-container">
+        <div className=" absolute z-10  image-side-container">
           <img
             className="image-border rotate-180 "
             src="pngegg (3) (1).png"
             alt=""
           />
         </div>
-        <div className="text-container w-full text-center ">
+        <div className="text-container w-full text-center relative z-20 ">
           <h1 className=" w-4/5 m-auto   max-sm:block justify-center">
             <p className="adisri inline m-auto">
               ADISRI<sup className="register">&#xae;</sup>{" "}

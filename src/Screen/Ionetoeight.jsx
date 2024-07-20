@@ -118,7 +118,7 @@ import React from 'react'
 function Ionetoeight() {
   return (
      <>
-       <div className='w-screen'>
+       <div className='w-screen bg-blue-100'>
      <img className='w-1/3 m-auto opacity-70' src="pngegg (14).png" alt="cooming soon"  />
 
 

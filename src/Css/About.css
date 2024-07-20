@@ -27,3 +27,6 @@
 .leftside p{
     font-size: 1vw;
 }
+.about-container{
+    background: var(--aboutusbackground);
+}
