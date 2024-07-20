@@ -131,7 +131,7 @@ const [profile, setProfile] = useState(null);
        <div className=' relative w-screen sm:h-screen flex '>
         <img className='w-3/6 opacity-45 absolute ' src="pngegg (14)1.png" alt="backgroundimage"/>
        
-         <div className='w-3/5 max-sm:w-full h-2/4 rounded-xl sm:bg-black/10 sm:backdrop-blur-sm border-2 border-white m-auto flex logg justify-center relative z-20 '>
+         <div className='w-3/5 max-sm:w-full h-2/4 rounded-xl sm:bg-black/5 sm:backdrop-blur-sm border-2 border-white m-auto flex logg justify-center relative z-20 '>
            <div className='w-4/5 sm:flex max-sm:w-11/12    '>
            <div className='w-1/2  sm:border-r-2 max-sm:w-full sm:border-white '>
              <img className='w-1/2 max-sm:w-1/2  m-auto' src="ADISRI LOGO.jpg" alt="companylogo"  />

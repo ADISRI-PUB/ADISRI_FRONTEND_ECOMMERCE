@@ -40,7 +40,7 @@ export default function Home({token}) {
   return (
     <>
       {/* <Hnavbar/> */}
-      <div className="sm:visible max-sm:hidden"> <br /></div>
+      <div className="h-3"></div>
       <div className="home-area z-20  leading-snug">
         {/* <p className="welcome-text p-3 text-center  block ">Welcome To,</p> */}
       

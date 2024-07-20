@@ -12,24 +12,29 @@ function Hnavbar() {
   //kamal
   const [profile, setProfile] = useState(null);
   const [token, setToken] = useState(null);
-  const [userInfo, setuserInfo] = useState(null);
  const [flag ,setflag] =useState(false)
-let timer= setInterval(()=>{
+
+ const timer = setInterval(()=>{
   const stroedProfile = localStorage.getItem("profile");
     const storedToken = localStorage.getItem("token");
 
     if (storedToken && stroedProfile) {
+
       setToken(storedToken)
-      setProfile(stroedProfile)
+      setProfile(JSON.parse(stroedProfile))
       const setuserInfo = "Yes";
-      console.log("home ", stroedProfile, storedToken);
-      setflag(true)
-      console.log(profile);
+      // console.log("home ", stroedProfile, storedToken);
+      
       clearInterval(timer)
+      setflag(true)
       
     }
- },100)
-  useEffect(() => {
+    
+ },1000)
+
+ 
+
+  useEffect(() => { 
   }, [flag]);
 const logout=()=>{
    googleLogout()
@@ -41,8 +46,8 @@ const logout=()=>{
 }
   //kamal
   let count = 0;
-  const items = useSelector((state)=>state.cart)
-  const {cartItems} =items
+  // const items = useSelector((state)=>state.cart)
+  // const {cartItems} =items
   
   const menuopen = () => {
     if (count == 0) {
@@ -106,7 +111,7 @@ const logout=()=>{
 
   return (
     <>
-      <div className=" z-50 w-full fixed h-navbar bg-white/50 backdrop-blur-sm border-b-2 border-white  flex justify-between   ">
+      <div className=" z-50 w-full fixed h-navbar bg-white/50 backdrop-blur-sm border-b-2 border-white  flex justify-between  max-sm:p-0 max-sm:h-max ">
        <Link to='/' className="float-start image-logo  sm:w-1/5 max-sm:w-2/3"> <img
           className="    "
           src="ADISRI LOGO 2.png"
@@ -172,94 +177,33 @@ const logout=()=>{
           </div>
         </div>
 
-        <div className="loginbutton    w-1/4 flex justify-center  relative space-x-3 max-sm:hidden   ">
-          <div className="w-1/2  flex  float-end ">
-            <Link className="w-full" to="/cart">
-              <span
-                style={{ left: "25%", bottom: "15%" }}
-                className="w-6 h-6 m-auto z-10  rounded-full absolute bg-black text-white text-center"
-              >
-                 {cartItems.length}
-              </span>
-              <svg
-                className="m-auto cursor-pointer relative z-0"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlnsXlink="http://www.w3.org/1999/xlink"
-                width="40px"
-                version="1.1"
-                id="Layer_1"
-                viewBox="0 0 505 505"
-                xmlSpace="preserve"
-              >
-                <circle
-                  style={{ fill: "#FD8469" }}
-                  cx="252.5"
-                  cy="252.5"
-                  r="252.5"
-                />
-                <path
-                  style={{ fill: "#324A5E" }}
-                  d="M381.6,265.9c-3.1,0-5.7-2.5-5.7-5.7c0-72.6-55.4-131.6-123.4-131.6s-123.4,59-123.4,131.6  c0,3.1-2.5,5.7-5.7,5.7s-5.7-2.5-5.7-5.7c0-78.8,60.4-142.9,134.7-142.9s134.7,64.1,134.7,142.9  C387.2,263.4,384.7,265.9,381.6,265.9z"
-                />
-                <path
-                  style={{ fill: "#FFD05B" }}
-                  d="M384.7,259.1c-122.6,27.7-244.4,4.2-264.3,0c-1.3-0.3-2.5,0.9-2.3,2.3l24.2,128  c2.4,12.9,13.8,22.3,26.9,22.3h166.7c13.2,0,24.5-9.4,26.9-22.3l24.2-128C387.2,259.9,386,258.8,384.7,259.1z"
-                />
-                <path
-                  style={{ fill: "#F9B54C" }}
-                  d="M383.8,278.1l3.2-16.8c0.3-1.4-1-2.5-2.3-2.2c-122.6,27.7-244.4,4.2-264.3,0  c-1.3-0.3-2.5,0.9-2.3,2.3l3.2,16.8C143.5,282.7,263.2,305.1,383.8,278.1z"
-                />
-                <g>
-                  <path
-                    style={{ fill: "#CED5E0" }}
-                    d="M236.2,133.2c0,0-28.9,32.8-13.4,72.9l9.5-9.5l10.1,9.5c0,0-12-44.4,8.7-64.7"
-                  />
-                  <path
-                    style={{ fill: "#CED5E0" }}
-                    d="M268.8,133.2c0,0,28.9,32.8,13.4,72.9l-9.5-9.5l-10.1,9.5c0,0,12-44.4-8.7-64.7"
-                  />
-                </g>
-                <g>
-                  <path
-                    style={{ fill: "#E6E9EE" }}
-                    d="M306.9,120.6c-1.2,13.6,21,35.9-24.6,24.6c-13.2-3.3-29.7-11-29.7-24.6s16.5-21.5,29.7-24.6   C328.1,85.1,307.7,111,306.9,120.6z"
-                  />
-                  <path
-                    style={{ fill: "#E6E9EE" }}
-                    d="M198.1,120.6c1.2,13.6-21,35.9,24.6,24.6c13.2-3.3,29.7-11,29.7-24.6S235.9,99.1,222.7,96   C176.9,85.1,197.3,111,198.1,120.6z"
-                  />
-                </g>
-                <circle
-                  style={{ fill: "#FFFFFF" }}
-                  cx="252.5"
-                  cy="120.8"
-                  r="20.6"
-                />
-              </svg>
-            </Link>
-          </div>
+        <div className="loginbutton   w-1/4 justify-center  relative space-x-3 max-sm:hidden   ">
           
-          <div className=" w-1/2 flex logg gap-3 relative justify-center p-3 ">
+          
+          <div className=" w-full  logg   justify-center p-2  ">
           {
             flag  ?(
               <>
-                <div className="logo">
+                <div className="w-4/5 grid grid-cols-2 ">
+                <div className="w-full">
                   <img
-                    className="w-1/4"
-                    // src={profile["picture"]}
-                    // alt={profile["name"]}
+                    className="  bg-blue-200 w-2/6 rounded-full m-auto"
+                     src={profile.picture}
+                     alt={profile.name}
                   />
-                  <h2>Welcome,!</h2>
+                  </div>
+                  
+                <div className="profile-info     p-2 w-full flex logg m-auto  justify-center rounded-full bg-zinc-700 hover:bg-blue-200 hover:text-black trainsition-all duration-200 text-white">
+                  <button className="" onClick={logout}>Logout</button>
+                  </div>
                 </div>
-                <div className="profile-info">
-                  <button className="bg-blue-200" onClick={logout}>Logout</button>
-                </div>
+              
               </>
             ):(
-              <Link to='/SignIn' className="p-3">
+              <Link to='/SignIn' className="p-3 flex  justify-center">
               <button
   aria-label="Sign in with Google"
-  class="flex items-center bg-black/5 border border-button-border-light rounded-full p-0.5 pr-4"
+  className="flex logg bg-black/5 border border-button-border-light  rounded-full p-0.5 pr-4"
 >
   <div className="flex items-center justify-center bg-white w-9 h-9 rounded-full">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5">
