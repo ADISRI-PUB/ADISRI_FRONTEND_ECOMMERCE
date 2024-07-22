@@ -1,5 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
+import { Link } from "react-router-dom";
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
      return(
@@ -41,43 +42,55 @@ export default function CrousalBooks({slideshow}) {
     <div className="slider-container p-3 ">
     <Slider {...settings} >
       <div className=" ">
+      <Link to='/preprimary'>  
       <img
        className="w-4/5 m-auto  "
             src="ALL IN ONE READING.jpg"
             alt=""
           />
+          </Link>
       </div>
       <div>
+        <Link to='/preprimary'>
       <img
        className="w-4/5 m-auto"
-            src="ALL IN ONE WRITING BOOK HARD BOUND.jpg"
-            alt=""
-          />
+       src="ALL IN ONE WRITING BOOK HARD BOUND.jpg"
+       alt=""
+       />
+       </Link>
       </div>
       <div>
+        <Link to='/preprimary'>
       <img className="w-4/5 m-auto"
             src="AMAZING PICTURES  A.jpg"
             alt=""
-          />
+            />
+            </Link>
       </div>
       <div>
+      <Link to='/preprimary'>
       <img className="w-4/5 m-auto"
             src="ART&CRAFT A.jpg"
             alt=""
-          />
+            />
+            </Link>
       </div>
       <div>
+      <Link to='/preprimary'>
       <img 
            className="w-4/5 m-auto"
-            src="ALL IN ONE WRITING BOOK HARD BOUND.jpg"
-            alt=""
-          />
+           src="ALL IN ONE WRITING BOOK HARD BOUND.jpg"
+           alt=""
+           />
+           </Link>
       </div>
       <div>
+      <Link to='/preprimary'>
       <img className="w-4/5 m-auto"
             src="AMAZING PICTURES C.jpg"
             alt=""
-          />
+            />
+            </Link>
       </div>
     </Slider>
     </div>

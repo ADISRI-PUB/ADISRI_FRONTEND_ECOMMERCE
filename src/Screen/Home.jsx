@@ -185,7 +185,7 @@ export default function Home({token}) {
                   </svg>
                 </div>
                 <div className="counting1" style={{fontSize:"2.5vw"}}>
-                 <CountUp end={20000} duration={6} enableScrollSpy/>+
+                 <CountUp end={50000} duration={6} enableScrollSpy/>+
                 </div>
               </div>
               <div className="box1  p-3 text-center">
@@ -217,7 +217,7 @@ export default function Home({token}) {
                   </svg>
                 </div>
                 <div className="counting1" style={{fontSize:"2.5vw"}} >
-                <CountUp end={5000} duration={6} enableScrollSpy/>+
+                <CountUp end={1000} duration={6} enableScrollSpy/>+
                 </div>
               </div>
               <div className="box1  h-full   p-3 text-center flex logg justify-center">
