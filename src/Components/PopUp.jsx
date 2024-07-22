@@ -27,7 +27,7 @@ export default function PopUp() {
 
           <a href="">  <li> Our Distribution Centers</li></a>
             <a href=""> <li> Adisri Journey</li></a>
-            <a href="https://drive.google.com/file/d/1_46HY9Y0bdyyTbkUIYupRLJ_0WAln0Ei/view?usp=sharing" download="catalog.pdf"v target="_blank"> <li>Catalogue</li></a>
+            <a href="https://drive.google.com/file/d/1_46HY9Y0bdyyTbkUIYupRLJ_0WAln0Ei/view?usp=sharing" download="catalog.pdf" target="_blank"> <li>Catalogue</li></a>
           </ul>
           <div className="h-12 bg-white">
 
@@ -44,7 +44,7 @@ export default function PopUp() {
         </div>
         <div className="p-4 bg-white">
           <p>
-            {" "}
+        
             <b> Contact Us </b>
           </p>
           <ul className="targets">

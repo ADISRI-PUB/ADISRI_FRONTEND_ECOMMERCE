@@ -239,7 +239,7 @@ export default function Home({token}) {
               +
                 </div>
               </div>
-            </div>
+            </div> 
             </div>
                    
             <br />

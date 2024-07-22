@@ -42,7 +42,7 @@ let data
 
       try {
         data  = await axios(`http://localhost:8000/products/product/?${API}`)
-        console.log(data.data);
+        // console.log(data.data);
         setFilterbook(data.data)
 
       } catch (error) {
