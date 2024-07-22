@@ -79,7 +79,7 @@ function FilterTAb({Class,Subject,setSubject ,setClass,API ,setApi}) {
       
     
     };
-    console.log(API);
+    // console.log(API);
     let count=0
     const  open =()=>{
       if (count==0) {

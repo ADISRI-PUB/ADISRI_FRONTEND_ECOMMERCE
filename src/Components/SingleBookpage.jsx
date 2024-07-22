@@ -89,7 +89,7 @@ function SingleBookpage() {
                       <br />
                         <div>
                            <ul>
-                             <li className=''> <b>Class </b>:&nbsp;{product.Class} </li>
+                             <li > <b>Class </b>:&nbsp;{product.Class} </li>
                              <li> <b>Author</b>:{product.Author} </li>
                              <li> <b>ISBN</b>:{product.Isbn} </li>
                              <li> <b>Subject</b>:{product.Subject} </li>
