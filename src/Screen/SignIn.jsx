@@ -84,7 +84,7 @@ const [profile, setProfile] = useState(null);
 
       console.log(profileData);
 
-      axios.post('http://127.0.0.1:8000/api/auth/register/', profileData).then(
+      axios.post('/data/api/auth/register/', profileData).then(
         (response) => {
 
           
@@ -99,7 +99,7 @@ const [profile, setProfile] = useState(null);
 
 
           const timeout = setTimeout(() => {
-            axios.post('http://127.0.0.1:8000/api/auth/login/', credentials)
+            axios.post('/data/api/auth/login/', credentials)
               .then((response) => {
                 console.log(response['data']);
                 setToken(response['data']['token']);

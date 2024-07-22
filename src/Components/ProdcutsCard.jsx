@@ -36,8 +36,8 @@ function ProdcutsCard({product,id}) {
           <div className='productname mt-3'><h1 className="">{product.Name}</h1></div>
           <div className='flex mt-3 max-sm:flex-wrap'>
             <div className='w-1/2 max-sm:w-full flex justify-center max-sm:m-auto'>
-            <button className="p-2  mb-3  float-start w-1/2 cart-button text-black rounded-full ">View...</button></div>
-            <h2 className="font-semibold w-1/2 max-sm:w-full  prodcut-price flex logg justify-center  mb-3"> <span className='float-end '>&#x20b9;{product.Price}/-</span></h2>
+            <button className="p-2  mb-3  float-start w-1/2 max-sm:w-1/2 cart-button text-black rounded-ful productname max-sm:p-1 max-sm:rounded-lg ">View...</button></div>
+            <h2 className="font-semibold w-1/2 max-sm:w-full  prodcut-price flex logg justify-center  mb-3 productname"> <span className='float-end '>&#x20b9;{product.Price}/-</span></h2>
             </div>
             </div>
         </section>
