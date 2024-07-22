@@ -13,6 +13,7 @@ function IPrePrimary() {
   const dispatch = useDispatch();
   const productsList = useSelector(state => state.productList);
   const { error, loading, products = [] } = productsList;
+
   let [API ,setApi] =useState('')
 
   const [Class, setClass] = useState([
@@ -24,8 +25,8 @@ function IPrePrimary() {
   const [Subject, setSubject] = useState([
     { id: 5, name: "All", isChecked: false },
     { id: 6, name: "English", isChecked: false },
-    { id: 7, name: "Hindi", isChecked: false },
-    { id: 8, name: "Math", isChecked: false },
+    { id: 7, name: "Hindi", isChecked: false }, 
+    { id: 8, name: "Math", isChecked: false }, 
     { id: 9, name: "Coloring", isChecked: false },
     { id: 10, name: "Picture", isChecked: false },
     { id: 11, name: "Poem", isChecked: false },
@@ -41,7 +42,7 @@ let data
     const fetchData =async()=>{
 
       try {
-        data  = await axios(`http://localhost:8000/products/product/?${API}`)
+        data  = await axios.get(`/data/products/product/?${API}`)
         // console.log(data.data);
         setFilterbook(data.data)
 

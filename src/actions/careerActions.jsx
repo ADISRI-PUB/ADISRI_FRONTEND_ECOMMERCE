@@ -16,7 +16,7 @@ export const listCareers =()=> async (dispatch)=>{
     try{
         dispatch({type :CAREER_LIST_REQUEST})
 
-        const {data} = await axios.get('http://localhost:8000/careers/')
+        const {data} = await axios.get('/data/careers/')
 
         console.log('Fetched Data:', data);
         dispatch({
@@ -43,7 +43,7 @@ export const listCareers =()=> async (dispatch)=>{
 export const listCareersDetails =(id)=>async(dispatch)=>{
     try{
         dispatch({type : CAREER_DETAILS_REQUEST})
-        const {data}= await axios.get(`http://localhost:8000/careers/${id}`)
+        const {data}= await axios.get(`/data/careers/${id}`)
         dispatch({type : CAREER_DETAILS_SUCCESS,
                   payload : data})
     }
