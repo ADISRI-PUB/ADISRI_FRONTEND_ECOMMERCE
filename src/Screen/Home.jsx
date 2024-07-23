@@ -170,10 +170,10 @@ export default function Home({token}) {
             <br />
             <br />
 
-            <div className="counting-container logg justify-center grid grid-cols-3 grid-rows-1 ">
-              <div className="box1  h-full   p-3 text-center max-sm:flex max-sm:flex-wrap logg justify-center">
+            <div className="counting-container logg justify-center max-sm:space-y-5 grid grid-cols-3 max-sm:grid-cols-1  sm:grid-rows-1 ">
+              <div className="box1  h-full max-sm:w-4/5   p-3 text-center max-sm:flex max-sm:flex-wrap logg justify-center">
                 <div>
-                  <p className="st-cover">Student covered</p>
+                  <p className="st-cover max-sm:text-lg">Student covered</p>
                   <svg className="m-auto w-1/4" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" viewBox="0 0 512 512" xmlSpace="preserve">
 <circle style={{fill:"#88C5CC"}} cx="256" cy="256" r="256"/>
 <path style={{fill:"#80B9BF"}} d="M456,225.936c0-0.644-2.54-1.788-4.884-2.252L268.388,200.16c-6.724-1.312-17.812-1.452-24.536-0.14  l-182.94,23.184C58.62,223.656,56,224.228,56,224.956v2.048V228v1.056v0.992v1.136v0.576v0.344v1.132v0.296v0.272v1.476v0.296V236  l104.38,257.468C189.928,505.384,222.184,512,256,512c114.376,0,211.2-75.02,244.036-178.524L456,225.936z"/>
@@ -191,13 +191,13 @@ export default function Home({token}) {
 </g>
 </svg>
                 </div>
-                <div className="counting1" style={{fontSize:"2.5vw"}}>
+                <div className="counting1 max-sm:text-lg sm:text-3xl  w-full" >
                  <CountUp end={50000} duration={6} enableScrollSpy/>+
                 </div>
               </div>
-              <div className="box1 h-full  p-3 text-center max-sm:flex max-sm:flex-wrap logg justify-center">
+              <div className="box1 max-sm:w-4/5 p-3 max-sm:space-y-5 text-center max-sm:flex max-sm:flex-wrap logg justify-center">
                 <div>
-                  <p className="st-cover">Books Collection</p>
+                  <p className="st-cover max-sm:text-lg">Books Collection</p>
                   <svg className="w-1/4 m-auto" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" viewBox="0 0 512 512" xmlSpace="preserve">
 <circle style={{fill:"#F2CF61"}} cx="256" cy="256" r="256"/>
 <path style={{fill:"#233540"}} d="M112,106.332c0,13.2,10.8,24,24,24h188h24v24c0,0,0,148,0,200c0,4-4,8-8,8c-52-0.024-204,0-204,0  c-13.2,0-24-10.8-24-24v-184V106.332z"/>
@@ -215,7 +215,7 @@ export default function Home({token}) {
 	<rect x="212" y="234.32" style={{fill:"#F5F5F5"}} width="80" height="8"/>
 	<rect x="192" y="234.32" style={{fill:"#F5F5F5"}} width="104" height="8"/>
 </g>
-<path style={{fill:"#233540;"}} d="M184,178.332c0,13.2,10.8,24,24,24h176h24v24c0,0,0,148,0,200c0,4-4,8-8,8c-52-0.024-192,0-192,0  c-13.2,0-24-10.8-24-24v-184V178.332z"/>
+<path style={{fill:"#233540"}} d="M184,178.332c0,13.2,10.8,24,24,24h176h24v24c0,0,0,148,0,200c0,4-4,8-8,8c-52-0.024-192,0-192,0  c-13.2,0-24-10.8-24-24v-184V178.332z"/>
 <rect x="224" y="202.332" style={{fill:"#1C2A33"}} width="8" height="232"/>
 <path style={{fill:"#406A80"}} d="M408,162.332c0-4-4-8-8-8s-16,0-16,0H208c-13.2,0-24,10.8-24,24s10.8,24,24,24h176h24  C408,202.332,408,172.332,408,162.332z"/>
 <rect x="224" y="154.332" style={{fill:"#395F73"}} width="8" height="48"/>
@@ -228,15 +228,15 @@ export default function Home({token}) {
 </g>
 </svg>
                 </div>
-                <div className="counting1" style={{fontSize:"2.5vw"}} >
+                <div className="counting1 max-sm:text-lg sm:text-3xl  w-full">
                 <CountUp end={1000} duration={6} enableScrollSpy/>+
                 </div>
               </div>
-              <div className="box1  h-full   p-3 text-center flex logg justify-center">
+              <div className="box1  h-full max-sm:h-4/5 max-sm:w-4/5   p-3 text-center flex logg justify-center">
                 <div>
                 <div>
-                  <p className="st-cover"> Our Clients </p>
-                  <svg className="w-1/4 m-auto" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" height="100px" width="100px" version="1.1" id="Layer_1" viewBox="0 0 508 508" xml:space="preserve">
+                  <p className="st-cover max-sm:text-lg "> Our Clients </p>
+                  <svg className="w-1/4 m-auto" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" height="100px" width="100px" version="1.1" id="Layer_1" viewBox="0 0 508 508" xmlSpace="preserve">
 <circle style={{fill:"#FD8469"}} cx="254" cy="254" r="254"/>
 <path style={{fill:"#F9B54C"}} d="M328.4,354c0,2.8-0.4,6-2.4,7.6c-4.8,4.8-12.8,5.2-18,0.4l-2.8-2.4c3.6,3.2,3.6,8.8,0.4,12.4  l-8.8,8.8c-3.2,3.2-8.8,3.2-12,0l-5.6-5.6c3.6,3.6,3.6,10,0,13.2l-4.8,4.4c-3.6,3.2-9.2,3.2-12.8,0l-4.4-4.4c2.4,2.4,2.4,6.4,0,8.8  l-4.8,4.8c-2.4,2.4-6.4,2.4-8.8,0l-11.2-6c0,0-0.4,0-0.8-0.4l-4-11.6c-0.8-2.4,0-5.2,1.6-6.8c3.6-3.6,3.6-8.8,0-12.4l-5.2-5.2  c-3.2-3.2-8-3.6-11.6-0.8l-3.2,2.8l4.4-4.4c4.4-4,4.4-10.8,0-15.2l-4-4c-4.4-4.4-10.8-4.4-15.2,0l-5.2,5.2c3.6-3.6,3.6-9.6,0-13.2  l-6.4-6.4c-3.6-3.6-9.2-3.6-12.8-0.4l-15.6,13.6l0,0c2-2.8,1.6-6.4-0.4-8.8l-4.8-4.8c-2.8-2.8-6.8-2.8-9.6,0l-0.8,0.8  c-4-3.6-7.6-6.4-10.4-9.2l37.2-86.4c10.8,0,30.4-0.8,45.6-10c12.8-8,29.6-4.8,37.6,7.2c-1.6,0.8-3.2,1.6-4.8,2.4  c-10.4,6.8-23.6,11.2-34,14c-8.4,2.4-14.4,9.6-15.2,18.4c-0.4,8.8-2.8,18-4.8,24c-1.6,4.8,0.4,9.6,4.8,12.4c2.4,1.2,4.8,2,7.6,2  c3.6,0,6.8-1.2,9.6-3.6c9.6-8.4,23.2-21.6,22-27.6c0,0,12.8,2,15.6-1.2c0,0,63.2,48.8,78,78.4l0,0  C327.2,344.8,328.4,349.6,328.4,354z"/>
 <g>
@@ -262,7 +262,7 @@ export default function Home({token}) {
 </g>
 </svg>
                 </div>
-                <div className="counting1 text-3xl" style={{fontSize:"2.5vw"}}>
+                <div className="counting1 max-sm:text-lg sm:text-3xl" >
                 <CountUp end={10000} duration={6} enableScrollSpy/>
               +
                 </div>
