@@ -148,7 +148,7 @@ const logout=()=>{
                   : ""
               }
             >
-              PREPRIMARY
+              PRE-PRIMARY
             </NavLink>
             <NavLink
               to="/onetoeight"
@@ -158,7 +158,7 @@ const logout=()=>{
                   : ""
               }
             >
-              1<sup>th</sup> TO 8<sup>th</sup>
+              1<sup>st</sup> TO 8<sup>th</sup>
             </NavLink>
 
             <NavLink

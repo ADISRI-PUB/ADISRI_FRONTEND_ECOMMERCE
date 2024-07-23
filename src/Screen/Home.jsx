@@ -123,7 +123,7 @@ export default function Home({token}) {
             </div>
             <div className="w-full leading-loose ">
               <div className="preprimary-text text-center">
-                1<sup>th</sup> TO 8<sup>th</sup>
+                1<sup>st</sup> TO 8<sup>th</sup>
               </div>
               <div className="w-4/5 m-auto">
                 <p className="pre-books-description p-3">
@@ -170,8 +170,8 @@ export default function Home({token}) {
             <br />
             <br />
 
-            <div className="counting-container logg justify-center max-sm:space-y-5 grid grid-cols-3 max-sm:grid-cols-1  sm:grid-rows-1 ">
-              <div className="box1  h-full max-sm:w-4/5   p-3 text-center max-sm:flex max-sm:flex-wrap logg justify-center">
+            <div className="counting-container  justify-center max-sm:space-y-5 grid grid-cols-3 max-sm:grid-cols-1  sm:grid-rows-1 ">
+              <div className="box1  h-full max-sm:w-4/5  space-y-4   p-3 text-center max-sm:flex max-sm:flex-wrap logg justify-center">
                 <div>
                   <p className="st-cover max-sm:text-lg">Student covered</p>
                   <svg className="m-auto w-1/4" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" viewBox="0 0 512 512" xmlSpace="preserve">
@@ -191,7 +191,7 @@ export default function Home({token}) {
 </g>
 </svg>
                 </div>
-                <div className="counting1 max-sm:text-lg sm:text-3xl  w-full" >
+                <div className="counting1 max-sm:text-lg sm:text-4xl  w-full" >
                  <CountUp end={50000} duration={6} enableScrollSpy/>+
                 </div>
               </div>
@@ -228,7 +228,7 @@ export default function Home({token}) {
 </g>
 </svg>
                 </div>
-                <div className="counting1 max-sm:text-lg sm:text-3xl  w-full">
+                <div className="counting1 max-sm:text-lg sm:text-4xl  w-full  p-3">
                 <CountUp end={1000} duration={6} enableScrollSpy/>+
                 </div>
               </div>
@@ -262,7 +262,7 @@ export default function Home({token}) {
 </g>
 </svg>
                 </div>
-                <div className="counting1 max-sm:text-lg sm:text-3xl" >
+                <div className="counting1 max-sm:text-lg sm:text-4xl p-3" >
                 <CountUp end={10000} duration={6} enableScrollSpy/>
               +
                 </div>
