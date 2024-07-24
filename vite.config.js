@@ -7,7 +7,7 @@ export default defineConfig({
   server:{
     port:3000,
     proxy:{
-      "/data":"http://127.0.0.1:8000",
+      "/data":"http://13.127.187.14",
     },
   }
 })
