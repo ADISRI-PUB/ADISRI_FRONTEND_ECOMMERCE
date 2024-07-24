@@ -31,7 +31,7 @@ export default function Clients() {
           <img src="NANKI PUBLIC SCHOOL.png" alt="" />
           <img src="nutan vidya mandir.png" alt="" />
           <img src="NAV JEEVAN ACADEMY SEN. SEC. SCHOOL.png" alt="" />
-          <img src="nutan vidya mandir.png" alt="" />
+          <img src="nutan vidya mandir.png" alt="" /> 
           <img src="rama devi international school.png" alt="" />
           <img src="SHAHEED UDHAM SINGH PRI. PUB. SCHOOL.png" alt="" />
           <img src="SSK PUBLIC SCHOOL.png" alt="" />
