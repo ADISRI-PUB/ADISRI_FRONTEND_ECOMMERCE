@@ -4,8 +4,6 @@ import { googleLogout, useGoogleLogin } from '@react-oauth/google'
 import { useDispatch,useSelector } from 'react-redux'
 import {useNavigate, useLocation } from 'react-router-dom'
 import axios from 'axios'
-import Hnavbar from '../Screen/Hnavbar'
-import Home from '../Screen/Home'
 
 function SignIn() {
   //kamal
