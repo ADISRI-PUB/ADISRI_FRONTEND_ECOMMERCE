@@ -1,4 +1,4 @@
 [[redirects]]
 from ="*"
-to="http://13.127.187.14/:splat"
+to="http://13.127.187.14/data/:splat"
 status =200
