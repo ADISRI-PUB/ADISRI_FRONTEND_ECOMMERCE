@@ -1,0 +1,4 @@
+[[redirects]]
+from ="*"
+to="http://13.127.187.14/:splat"
+status =200
