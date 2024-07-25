@@ -1,4 +1,4 @@
 [[redirects]]
-from ="*"
-to="http://43.204.145.177/:splat"
+from ="http://43.204.145.177/data/prducts/product"
+to="http://43.204.145.177/products/product:splat"
 status =200
