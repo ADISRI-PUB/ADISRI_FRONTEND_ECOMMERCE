@@ -8,7 +8,10 @@ import axios from "axios";
 import { listProducts } from '../actions/ProductsActions'
 
 
+
 function IPrePrimary() {
+
+  const BASE_URL = import.meta.env.VITE_URL
   const [filterbook, setFilterbook] =useState([])
   const dispatch = useDispatch();
   const productsList = useSelector(state => state.productList);
@@ -42,7 +45,7 @@ let data
     const fetchData =async()=>{
 
       try {
-        data  = await axios.get(`/data/products/product/?${API}`)
+        data  = await axios.get(`${BASE_URL}/data/products/product/?${API}`)
         // console.log(data.data);
         setFilterbook(data.data)
 

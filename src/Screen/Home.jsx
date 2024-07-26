@@ -26,7 +26,7 @@ export default function Home({token}) {
     document.querySelector(".pop-up").classList.add("show");
     let element = document.querySelector(".text-nav-about");
     element.classList.add("active");
-    console.log(element);
+    
   };
   const hide = () => {
     document.querySelector(".arrow-svg").classList.remove("rotate-90");

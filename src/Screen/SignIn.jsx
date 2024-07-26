@@ -6,6 +6,7 @@ import {useNavigate, useLocation } from 'react-router-dom'
 import axios from 'axios'
 
 function SignIn() {
+  const BASE_URL = import.meta.env.VITE_URL 
   //kamal
   const [user, setUser] = useState(null);
 const [profile, setProfile] = useState(null);
@@ -17,8 +18,7 @@ const [profile, setProfile] = useState(null);
     onSuccess: (codeResponse) => setUser(codeResponse),
     onError: (error) => console.log('login failed:', error)
   });
-  console.log('login:', login);
-  console.log('user:', user);
+  
   const [flag,setFlag]=useState(false)
 
   //fetch the token and the profile data from the local storage  , And set them into the state repectively
@@ -52,7 +52,7 @@ const [profile, setProfile] = useState(null);
         })
         .then(
           (response) => {
-            console.log('changes');
+            
             setProfile(response['data']);
             localStorage.setItem('profile', JSON.stringify(response['data']));
           },
@@ -68,11 +68,11 @@ const [profile, setProfile] = useState(null);
 
   useEffect(() => {
     if (profile === null) {
-      console.log('profile null');
+      console.log(' ');
     } 
 
     else {
-      console.log('sending data to django');
+      
 
     const profileData = {
         name: profile['name'],
@@ -80,9 +80,9 @@ const [profile, setProfile] = useState(null);
         username: profile['id']
       };
 
-      console.log(profileData);
+      
 
-      axios.post('/data/api/auth/register/', profileData).then(
+      axios.post(`${BASE_URL}/data/api/auth/register/`, profileData).then(
         (response) => {
 
           
@@ -91,23 +91,19 @@ const [profile, setProfile] = useState(null);
             password: 'random12345server@chatapp12345@passtestnet!@*'
           };
           
-          console.log('before')
-          console.log('response',response)
-          console.log('credentials',credentials)
+         
 
 
           const timeout = setTimeout(() => {
-            axios.post('/data/api/auth/login/', credentials)
+            axios.post(`${BASE_URL}/data/api/auth/login/`, credentials)
               .then((response) => {
-                console.log(response['data']);
+                
                 setToken(response['data']['token']);
                 localStorage.setItem('token', JSON.stringify(response['data']['token']));
                 
               });
             });
-            console.log('response')
-            console.log("printing token");
-            console.log(token);
+            
             history('/')
             return () => clearTimeout(timeout);
             
@@ -141,14 +137,14 @@ const [profile, setProfile] = useState(null);
   className="flex items-center m-auto bg-black/5 border border-button-border-light rounded-full p-0.5 pr-4"
 >
   <div className="flex items-center justify-center bg-white w-9 h-9 rounded-full">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-5 h-5">
       <path
         d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
         className="fill-google-logo-blue"
       ></path>
       <path
         d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
-        class="fill-google-logo-green"
+        className="fill-google-logo-green"
       ></path>
       <path
         d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
