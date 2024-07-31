@@ -4,7 +4,7 @@ function WriteToUs() {
   return (
     
       <div className='w-full '>
-        <br /> <br />
+       
     <section className="bg-white  dark:bg-gray-900">      
     <div className="container px-6 py-12 mx-auto ">
         
