@@ -52,13 +52,13 @@ function Iaboutus() {
   }, []);
   return (
     <>
-      <br />
+      <br /><br />
       <div className="about-container relative   ">
         <img
           className="absolute right-0 opacity-30 z-20"
           src="pngegg (7).png"
           alt=""
-          srcset=""
+         
         />
         <div className=" absolute z-10  image-side-container">
           <img

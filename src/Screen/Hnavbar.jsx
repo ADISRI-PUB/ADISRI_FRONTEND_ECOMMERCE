@@ -5,50 +5,31 @@ import { Link } from "react-router-dom";
 import { googleLogout } from "@react-oauth/google";
 import gsap from "gsap";
 import "../Css/Home.css";
+import { logout } from "../actions/UserAction";
 import PopUp from "../Components/PopUp";
 import { useDispatch, useSelector } from "react-redux";
-
+import { useNavigate } from "react-router-dom";
 function Hnavbar() {
   //kamal
-  const [profile, setProfile] = useState(null);
-  const [token, setToken] = useState(null);
  const [flag ,setflag] =useState(false)
-
- const timer = setInterval(()=>{
-  const stroedProfile = localStorage.getItem("profile");
-    const storedToken = localStorage.getItem("token");
-
-    if (storedToken && stroedProfile) {
-
-      setToken(storedToken)
-      setProfile(JSON.parse(stroedProfile))
-      const setuserInfo = "Yes";
-      // console.log("home ", stroedProfile, storedToken);
-      
-      clearInterval(timer)
-      setflag(true)
-      
-    }
-    
- },1000)
-
- 
+ const home =useNavigate()
+//  ANKUSH WORK //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ const dispatch =useDispatch()
+ let {userprofile} =useSelector((state)=>state.user)
 
   useEffect(() => { 
-  
-  }, [flag]);
-const logout=()=>{
-   googleLogout()
-   localStorage.removeItem('profile')
-   localStorage.removeItem('token')
-   setProfile(null)
-   setToken(null)
-   setflag(false)
-}
+    if(Object.keys(userprofile).length!=0){
+   setflag(true)
+    home("/")
+    }
+    else{
+         setflag(false)
+    }
+  }, [userprofile]);
+ 
   //kamal
   let count = 0;
-  // const items = useSelector((state)=>state.cart)
-  // const {cartItems} =items
+  
   
   const menuopen = () => {
     if (count == 0) {
@@ -189,12 +170,16 @@ const logout=()=>{
                 <div className="w-full">
                   <img
                     className="  bg-blue-200 w-2/6 rounded-full m-auto"
-                     src={profile.picture}
-                     alt={profile.name}
+                     src={userprofile.picture}
+                     alt={userprofile.name}
                   />
                   </div>
                   
-                <div  className="profile-info  cursor-pointer   p-2 w-full flex logg m-auto  justify-center rounded-full bg-zinc-700 hover:bg-blue-200 hover:text-black trainsition-all duration-500 text-white" onClick={logout}>
+                <div  className="profile-info  cursor-pointer   p-2 w-full flex logg m-auto  justify-center rounded-full bg-zinc-700 hover:bg-blue-200 hover:text-black trainsition-all duration-500 text-white" onClick={()=>{
+                   googleLogout()
+                  dispatch(logout())
+                  setflag(false)}
+                }>
                   <button  >Logout</button>
                   </div>
                 </div>

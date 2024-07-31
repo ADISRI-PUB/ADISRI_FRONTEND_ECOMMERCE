@@ -31,5 +31,14 @@ body{
 .slick-prev::before,.slick-next::before{
   display:none; 
    }
+   input[type="number"] {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
 /* preprimart section css////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */

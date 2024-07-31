@@ -40,6 +40,7 @@ export default function Home({token}) {
   return (
     <>
       {/* <Hnavbar/> */}
+      <br />
       <div className="h-3"></div>
       <div className="home-area z-20  leading-snug">
         {/* <p className="welcome-text p-3 text-center  block ">Welcome To,</p> */}
@@ -161,7 +162,7 @@ export default function Home({token}) {
             </p>
             <br />
             <p className="w-4/5 m-auto text-2xl max-sm:text-sm ">
-              Adisri Publications™,an ever evolving name in the sphere of
+              Adisri Publications&#174;,an ever evolving name in the sphere of
               educational publishing in india, We offer enjoyable learning
               opportunities and memorable reading experience as we strive to
               imporve the quality of education of the student through reading,

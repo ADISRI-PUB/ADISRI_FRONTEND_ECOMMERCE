@@ -63,6 +63,7 @@
  
 //   return (
 //     <>
+<br />
 //         <div className="relative onetoeight-sections">
 //       <div>
     
@@ -118,6 +119,7 @@ import React from 'react'
 function Ionetoeight() {
   return (
      <>
+     <br />
        <div className='w-screen bg-blue-100'>
      <img className='w-1/3 m-auto opacity-70' src="pngegg (14).png" alt="cooming soon"  />
 

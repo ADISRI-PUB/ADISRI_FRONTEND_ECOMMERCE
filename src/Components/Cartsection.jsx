@@ -40,18 +40,18 @@ function Cartsection() {
 
   return (
     <>
-      <br />
+      <br /><br />
       {flag ? (
         
-          <div className="bg-purple-100 p-3  sm:flex  ">
+          <div className="bg-purple-200 p-3  sm:flex sm:h-screen  ">
             <div className="w-3/5 max-sm:w-full">
       
               {cart.map((books, index) => {
                 return (
-                  <div key={index} className="full relative products">
+                  <div key={index} className="full relative products   rounded-md space-y-3">
                     <div
                       
-                      className="absolute top-4 right-3 bg-pink-300 cursor-pointer rounded-full p-3 "
+                      className="absolute top-4 right-3 bg-white cursor-pointer rounded-full p-3 "
                       onClick={() => removeFromCartHandler(books.product)}
                     >
                       <svg
@@ -91,7 +91,7 @@ function Cartsection() {
                             }}
                           >
                             <svg
-                              className="bg-purple-100"
+                              className="bg-white"
                               xmlns="http://www.w3.org/2000/svg"
                               height="24px"
                               viewBox="0 -960 960 960"
@@ -111,12 +111,12 @@ function Cartsection() {
                             }}
                           >
                             <svg
-                              className="bg-purple-100"
+                              className="bg-white"
                               xmlns="http://www.w3.org/2000/svg"
                               height="24px"
                               viewBox="0 -960 960 960"
                               width="24px"
-                              fill="#000000"
+                              fill="#000"
                             >
                               <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
                             </svg>
@@ -130,8 +130,8 @@ function Cartsection() {
                 );
               })}
             </div>
-            <div className="w-2/5  p-4 rounded-xl h-96 max-sm:w-full right-0  logg flex justify-center ">
-              <div className="bg-purple-200 border-2 border-white rounded-xl  h-full grid grid-rows-4 w-full   ">
+            <div className="w-2/5 p-4 rounded-xl h-96 max-sm:w-full right-0  logg flex justify-center ">
+              <div className="cart-section2  bg-purple-300 border-2 border-white rounded-xl  h-full grid grid-rows-4 w-full   ">
                 <h1 className="text-xl grid grid-cols-2  justify-center  m-auto">
                   {" "}
                   <p className=" "> Total MRP &nbsp;&nbsp; </p>
@@ -156,19 +156,20 @@ function Cartsection() {
                   <p>:&#x20B9;{Price} </p>{" "}
                 </h1>
 
-                <button className="w-1/2 m-auto  overflow-hidden space-x-2 rounded-full text-center justify-center cursor-pointer p-4 hover:bg-purple-600 bg-purple-400 transition-all duration-200 flex">
+                <Link to="/checkout">  <button className="w-1/2 m-auto transition-all duration-300  overflow-hidden space-x-2 rounded-full text-center justify-center hover:bg-purple-400 cursor-pointer p-4  bg-white  flex">
                   <svg
                     className=""
                     xmlns="http://www.w3.org/2000/svg"
                     height="24px"
                     viewBox="0 -960 960 960"
                     width="24px"
-                    fill="#FFFFFF"
+                    fill="#000"
                   >
                     <path d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm0-80h480v-400H240v400Zm240-120q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80ZM240-160v-400 400Z" />
                   </svg>
-                  <span className="text-white">Checkout</span>
+                  <span className="text-black">Checkout</span>
                 </button>
+                  </Link>
                 <br />
               </div>
             </div>
