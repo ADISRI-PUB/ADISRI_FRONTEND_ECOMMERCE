@@ -8,13 +8,18 @@ import axios from "axios";
 import { listProducts } from "../actions/ProductsActions";
 
 const BASE_URL = import.meta.env.VITE_URL 
-
 function IPrePrimary() {
-  const [filterbook, setFilterbook] = useState([]);
+
+ 
+
+
+  
+  const [filterbook, setFilterbook] =useState([])
+
   const dispatch = useDispatch();
   const productsList = useSelector((state) => state.productList);
   const { error, loading, products = [] } = productsList;
-
+// console.log(products);
   let [API, setApi] = useState("");
   let [loader, setLoader] = useState(true);
   const [Class, setClass] = useState([
@@ -47,6 +52,7 @@ function IPrePrimary() {
     }
 
     // fetching the data for filter option /////////////////////////////////////////////////////////
+   
     const fetchData = async () => {
       try {
          
@@ -69,7 +75,7 @@ function IPrePrimary() {
 
   return (
     <>
-    <br />
+ 
       <div className="relative primary-sections">
         <div></div>
         <div className="sm:flex primary-sections">
@@ -133,7 +139,7 @@ function IPrePrimary() {
             )}
           </div>
         </div>
-        <div className="sm:w-5/6 max-sm:w-full  card-container ">{}</div>
+     
       </div>
     </>
   );

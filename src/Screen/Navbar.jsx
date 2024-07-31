@@ -2,6 +2,7 @@
 import React,{useEffect ,useState} from "react"
 import { NavLink } from "react-router-dom"
 import { googleLogout } from "@react-oauth/google";
+import { Link } from "react-router-dom";
 export default function Navbar(){
   const [profile, setProfile] = useState(null);
       const [token, setToken] = useState(null);
@@ -23,7 +24,17 @@ export default function Navbar(){
       
    },1000)
   
+   const opendropdown =()=>{
    
+       document.querySelector('.list-dropdown').classList.toggle('hidden')
+       if ( document.querySelector('#aboutsvg').classList.contains('rotate-90')) {
+        document.querySelector('#aboutsvg').classList.replace('rotate-90','-rotate-90')
+       }
+       else{
+        document.querySelector('#aboutsvg').classList.replace('-rotate-90','rotate-90')
+       }
+      
+   }
   
     useEffect(() => { 
     }, [flag]);
@@ -38,17 +49,19 @@ export default function Navbar(){
 
   let count = 0;
   const menuopen = () => {
+
     if (count == 0) {
       gsap.fromTo(
         ".small-navbar",
         {
           opacity: 0,
+          x:-1000,
           stagger: 0.2,
           duration: 0.8,
-          delay: 0.2,
+         
         },
         {
-          delay: 0.2,
+          x:0,
           stagger: 0.2,
           opacity: 1,
         }
@@ -58,25 +71,16 @@ export default function Navbar(){
       document.querySelector(".row2").style.marginTop = "0px";
       document.querySelector(".navbar-small").style.transform =
         "translateY(0%)";
-      count++;
-    } else {
-      count = 0;
-      gsap.fromTo(
-        ".small-navbar",
-        {
-          opacity: 1,
-          stagger: 0.3,
-          duration: 0.9,
-        },
-        {
-          opacity: 0,
-        }
-      );
-      document.querySelector(".navbar-small").style.transform =
+        count++;
+      } else {
+        count = 0;
+        
+        
+        document.querySelector(".navbar-small").style.transform =
         "translateY(-200%)";
-      document.querySelector(".row1").style.transform = "rotate(0deg)";
-      document.querySelector(".row2").style.transform = "rotate(0deg)";
-      document.querySelector(".row2").style.marginTop = "12px";
+        document.querySelector(".row1").style.transform = "rotate(0deg)";
+        document.querySelector(".row2").style.transform = "rotate(0deg)";
+        document.querySelector(".row2").style.marginTop = "12px";
     }
   };
      
@@ -98,7 +102,7 @@ export default function Navbar(){
               className="   small-navbar transition-all duration-200 p-3 block"
               onClick={menuopen}
             >
-              PREPRIMARY
+              PRE-PRIMARY
             </NavLink>
             <NavLink
               to="/onetoeight"
@@ -108,13 +112,36 @@ export default function Navbar(){
               1<sup>st</sup> TO 8<sup>th</sup>
             </NavLink>
          
-            <NavLink
-              to="/aboutus"
-              className="small-navbar  rounded-full transition-all duration-200 p-3 block"
-              onClick={menuopen}
+            <p
+              className="small-navbar logg   flex transition-all duration-200 p-3 justify-center"
+              onClick={opendropdown}
             >
-              ABOUT US
-            </NavLink>
+              ABOUT US 
+              <svg className="transition-all duration-200 rotate-90 ml-2 " xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" fill="#000000" height="8px" width="8px" version="1.1" id="aboutsvg" viewBox="0 0 330 330" xmlSpace="preserve">
+<path id="XMLID_222_" d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001  c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213  C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606  C255,161.018,253.42,157.202,250.606,154.389z"/>
+</svg>
+
+            </p>
+            <div className="list-dropdown  hidden">
+           <div className="grid grid-cols-3 text-xs  ">
+               <ul className="bg-pink-200"> <span className=" text-sm block"> About us</span>
+                <li className="p-1">Who we are</li>
+                <li className="p-1">Our Distribution Center</li>
+                <Link to='/journey' onClick={menuopen} className="p-1">Adisri Journey</Link>
+                <a href="https://drive.google.com/file/d/1_46HY9Y0bdyyTbkUIYupRLJ_0WAln0Ei/view?usp=sharing" download="Adisricatalogue.pdf" target="_blank"> <li className="p-1">Catalogue</li></a>
+               </ul>
+               <ul className="border-l-2 border-slate-100"> <span className=" text-sm block">Career </span>
+                <Link to='/careers' onClick={menuopen} className="flex logg justify-center p-1">Current Opening</Link>
+                
+                
+               </ul>
+               <ul className="border-l-2 border-slate-100 bg-pink-200"> <span className=" text-sm block" >Contact us</span>
+                <Link to='/contact' onClick={menuopen} className="p-1 flex logg justify-center">Write To Us</Link>
+                
+                
+               </ul>
+           </div>
+           </div>
 
             {
                 flag ?(
