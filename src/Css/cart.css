@@ -1,6 +1,13 @@
-.products{
-    background-color: white;
+:root{
+  --main-cart-container:#FFF0F0;
+  --main-cart-section1:#EBD4D4;
+  --main-cart-section2:#ffcaca;
+  --main-cart-section3:#3F4E4F;
 }
-.products:nth-child(odd){
-  background-color: rgb(255, 237, 255);
+
+.products{
+  background-color: rgb(255, 223, 255);
+}
+.cart-section2{
+
 }

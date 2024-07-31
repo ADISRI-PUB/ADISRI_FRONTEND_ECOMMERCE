@@ -15,15 +15,20 @@ import Footer from './Screen/Footer'
 import PopUp from './Components/PopUp'
 import Navbar from './Screen/Navbar'
 import SingleBookpage from './Components/SingleBookpage'
-
+import WriteToUs from './Screen/WriteToUs'
 //kamal
 import CareersScreen from './Screen/CareersScreen'
 import SpecificCareer from './Screen/SpecificCareer'
 import Cartsection from './Components/Cartsection'
 import SignIn from './Screen/SignIn'
+<<<<<<< HEAD
+import Journey from './Screen/Journey'
+import Checkout from './Screen/Checkout'
+=======
 
 
 
+>>>>>>> 00fea66a77a2ee10133605ba931645aecdde2131
 function App({profile,logout}) {
   const items = useSelector((state)=>state.cart)
   const {cartItems} =items
@@ -54,7 +59,7 @@ function App({profile,logout}) {
       <br /><br /> <br />
       <Navbar/>
         </div>
-<br /> <br />
+<br />
     <Routes>
       <Route path='/' Component={Home}/>
      <Route path='/preprimary' Component={IPrePrimary}>
@@ -65,7 +70,10 @@ function App({profile,logout}) {
      <Route path='/careers' Component={CareersScreen}/> 
      <Route path='/careers/:id' Component={SpecificCareer}/> 
      <Route path='/cart/:id?' Component={Cartsection}/>
+     <Route path='/checkout' Component={Checkout}/>
      <Route path='/SignIn' Component={SignIn}/>
+     <Route path='/journey' Component={Journey}/>
+     <Route path='/contact' Component={WriteToUs}/>
      
      </Routes>
      

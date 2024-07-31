@@ -32,6 +32,7 @@ export default function CrousalBooks({slideshow}) {
     speed: 500,
     slidesToShow: slideshow,
     slidesToScroll: 1,
+
     autoplaySpeed: 1600,
      cssEase: "linear",
      nextArrow: <SampleNextArrow/>,

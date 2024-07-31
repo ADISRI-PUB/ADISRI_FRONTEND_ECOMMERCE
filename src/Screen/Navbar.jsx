@@ -105,7 +105,7 @@ export default function Navbar(){
               className=" small-navbar  transition-all duration-200  p-3  block"
               onClick={menuopen}
             >
-              1<sup>th</sup> TO 8<sup>th</sup>
+              1<sup>st</sup> TO 8<sup>th</sup>
             </NavLink>
          
             <NavLink
