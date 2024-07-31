@@ -98,7 +98,7 @@ export default function Navbar(){
               className="   small-navbar transition-all duration-200 p-3 block"
               onClick={menuopen}
             >
-              PREPRIMARY
+              PRE-PRIMARY
             </NavLink>
             <NavLink
               to="/onetoeight"

@@ -55,14 +55,10 @@ function Iaboutus() {
       <br /><br />
       <div className="about-container relative   ">
         <img
-          className="absolute right-0 opacity-30 z-20"
+          className="absolute right-0 opacity-30 z-10"
           src="pngegg (7).png"
           alt=""
-<<<<<<< HEAD
          
-=======
-          srcSet=""
->>>>>>> 00fea66a77a2ee10133605ba931645aecdde2131
         />
         <div className=" absolute z-10  image-side-container">
           <img
@@ -78,19 +74,19 @@ function Iaboutus() {
             </p>{" "}
             | <p className="publication inline m-auto"> PUBLICATIONS</p>{" "}
           </h1>
-          <h5 className="border-b-2 border-gray-300 w-3/5 m-auto">
+          <h5 className="border-b-2 border-gray-300 w-3/5 max-sm:w-4/5 m-auto ">
             "Education is not the learning of facts, but the training of the
             mind to think."
           </h5>
         </div>
         <br />
-        <div className="w-3/5 m-auto ">
+        <div className="w-3/5 max-sm:w-4/5 m-auto ">
           <div className="w-full sm:flex">
             <div className="leftside sm:w-1/4 max-sm:w-1/3 max-sm:m-auto p-4 ">
               <p className="float-end sm:rounded-full p-2 max-sm:p-1 sm:bg-red-200 max-sm:font-bold">
                 OUR PRODUCT
               </p>
-              <img src="pngegg (6).png" alt="" />
+              <img className="relative z-20" src="pngegg (6).png" alt="" />
             </div>
             <div className="rightside flex justify-center w-full m-auto logg">
               <p>
@@ -105,7 +101,7 @@ function Iaboutus() {
             </div>
           </div>
         </div>
-        <div className="w-3/5 m-auto ">
+        <div className="w-3/5 max-sm:w-4/5 m-auto ">
           <div className="w-full flex max-sm:flex-wrap-reverse ">
             <div className="rightside flex justify-center w-full m-auto logg ">
               <p>
