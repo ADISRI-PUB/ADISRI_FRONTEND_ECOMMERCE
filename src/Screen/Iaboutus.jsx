@@ -58,11 +58,7 @@ function Iaboutus() {
           className="absolute right-0 opacity-30 z-20"
           src="pngegg (7).png"
           alt=""
-<<<<<<< HEAD
          
-=======
-          srcSet=""
->>>>>>> 00fea66a77a2ee10133605ba931645aecdde2131
         />
         <div className=" absolute z-10  image-side-container">
           <img
