@@ -354,3 +354,111 @@ export const register =(name,email,id)=> async (dispatch) => {
 //   )
 // }
 
+// import axios from "axios";
+// import {
+//   USER_PROFILE_FAILED,
+//   USER_PROFILE_SUCCESS,
+//   USER_PROFILE_LOGOUT,
+//   USER_PROFILE_CREATION,
+// } from "../constants/UserConstants";
+
+// const BASE_URL = import.meta.env.VITE_URL
+
+// export const profilecreation = () => async (dispatch) => {
+
+//   dispatch({
+//     type: USER_PROFILE_CREATION,
+//   });
+
+//   let setProfile, settoken;
+
+//   let API = localStorage.getItem("userAPI");
+
+//   await axios
+//     .get(
+//       `https://www.googleapis.com/oauth2/v1/userinfo?alt=json&access_token=${API}`,
+//       {
+//         headers: {
+//           "Content-Type": "application/json",
+//           Authorization: `Bearer ${API}`,
+//         },
+//       }
+//     )
+//     .then(
+//       (response) => {
+//         setProfile = response["data"];
+//       },
+//       (error) => {
+//         dispatch({
+//           type: USER_PROFILE_FAILED,
+//         });
+//       }
+//     );
+
+
+
+//   const profileData = {
+//     name: setProfile["name"],
+//     email: setProfile["email"],
+//     username: setProfile["id"],
+//   };
+
+  
+//   console.log(profileData);
+
+
+//   if (setProfile === null) {
+//     // console.log('profile null');
+//   } else {
+
+//     const config = {
+//       headers :{
+//           'Content-type' : 'application/json'
+//       }
+//   }
+
+//     const {post_resister} = await axios.post(
+//       '/users/register/',
+//       {'name':name,'email': email, 'password': password},
+//       config
+//   )
+//         // console.log('before')
+//         // console.log('response',response)
+//         // console.log('credentials',credentials)
+
+//         await axios
+//           .post("/data/api/auth/login/", credentials)
+//           .then((response) => {
+//             // console.log(response['data']);
+//             settoken = response["data"]["token"];
+//           });
+
+//         // console.log('response')
+//         // console.log("printing token");
+//         // console.log(settoken);
+//         // history('/')
+//         let data = {
+//           setProfile,
+//           settoken,
+//         };
+
+//         dispatch({
+//           type: USER_PROFILE_SUCCESS,
+//           payload: data,
+//         });
+
+//         return () => clearTimeout(timeout);
+//       },
+//       (error) => {
+//         // console.log(error);
+//       }
+//     );
+//   }
+// };
+
+
+// export const logout = () => (dispatch) => {
+//   dispatch({
+//     type: USER_PROFILE_LOGOUT,
+//   });
+// };

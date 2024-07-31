@@ -7,6 +7,7 @@ import ProdcutsCard from "../Components/ProdcutsCard";
 import axios from "axios";
 import { listProducts } from "../actions/ProductsActions";
 
+const BASE_URL = import.meta.env.VITE_URL 
 
 function IPrePrimary() {
   const [filterbook, setFilterbook] = useState([]);
@@ -49,7 +50,7 @@ function IPrePrimary() {
     const fetchData = async () => {
       try {
          
-        data = await axios.get(`/data/products/product/?${API}`);
+        data = await axios.get(`${BASE_URL}/data/products/product/?${API}`);
         // console.log(data.data);
         setFilterbook(data.data);
       } catch (error) {
