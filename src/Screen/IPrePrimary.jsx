@@ -7,8 +7,15 @@ import ProdcutsCard from "../Components/ProdcutsCard";
 import axios from "axios";
 import { listProducts } from "../actions/ProductsActions";
 
+
 function IPrePrimary() {
+<<<<<<< HEAD
   const [filterbook, setFilterbook] = useState([]);
+=======
+
+  const BASE_URL = import.meta.env.VITE_URL
+  const [filterbook, setFilterbook] =useState([])
+>>>>>>> 00fea66a77a2ee10133605ba931645aecdde2131
   const dispatch = useDispatch();
   const productsList = useSelector((state) => state.productList);
   const { error, loading, products = [] } = productsList;
@@ -35,6 +42,7 @@ function IPrePrimary() {
 
   let data;
   useEffect(() => {
+<<<<<<< HEAD
     let flag = products;
     if (flag.length == 0) {
       dispatch(listProducts());
@@ -42,6 +50,22 @@ function IPrePrimary() {
         
         setLoader(false);
       }, 500);
+=======
+    
+    dispatch(listProducts());
+    // fetching the data for filter option /////////////////////////////////////////////////////////
+    const fetchData =async()=>{
+
+      try {
+        data  = await axios.get(`${BASE_URL}/data/products/product/?${API}`)
+        // console.log(data.data);
+        setFilterbook(data.data)
+
+      } catch (error) {
+        console.log('cant get the data',error);
+      }
+
+>>>>>>> 00fea66a77a2ee10133605ba931645aecdde2131
     }
 
     // fetching the data for filter option /////////////////////////////////////////////////////////

@@ -21,8 +21,14 @@ import CareersScreen from './Screen/CareersScreen'
 import SpecificCareer from './Screen/SpecificCareer'
 import Cartsection from './Components/Cartsection'
 import SignIn from './Screen/SignIn'
+<<<<<<< HEAD
 import Journey from './Screen/Journey'
 import Checkout from './Screen/Checkout'
+=======
+
+
+
+>>>>>>> 00fea66a77a2ee10133605ba931645aecdde2131
 function App({profile,logout}) {
   const items = useSelector((state)=>state.cart)
   const {cartItems} =items

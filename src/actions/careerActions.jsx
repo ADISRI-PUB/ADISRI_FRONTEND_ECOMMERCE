@@ -11,14 +11,14 @@ import {
     CAREER_DETAILS_FAIL,
  } from '../constants/careerConstants'
 
+const BASE_URL = import.meta.env.VITE_URL 
+
 
 export const listCareers =()=> async (dispatch)=>{
     try{
         dispatch({type :CAREER_LIST_REQUEST})
 
-        const {data} = await axios.get('/data/careers/')
-
-        console.log('Fetched Data:', data);
+        const {data} = await axios.get(`${BASE_URL}/data/careers/`)
         dispatch({
             type : CAREER_LIST_SUCCESS,
             payload : data
@@ -43,7 +43,7 @@ export const listCareers =()=> async (dispatch)=>{
 export const listCareersDetails =(id)=>async(dispatch)=>{
     try{
         dispatch({type : CAREER_DETAILS_REQUEST})
-        const {data}= await axios.get(`/data/careers/${id}`)
+        const {data}= await axios.get(`${BASE_URL}/data/careers/${id}`)
         dispatch({type : CAREER_DETAILS_SUCCESS,
                   payload : data})
     }

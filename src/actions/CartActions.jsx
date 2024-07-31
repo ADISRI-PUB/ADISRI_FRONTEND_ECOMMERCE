@@ -5,10 +5,11 @@ import { CART_ADD_ITEM ,
          CART_REMOVE_ITEM,
     } from '../constants/CartConstants'
 
+const BASE_URL = import.meta.env.VITE_URL
 
 export const addToCart =(id,qty)=>async(dispatch,getState)=>{
-    const {data}=await axios.get(`/data/products/${id}`)
-    console.log('fetch APi Data ',data)
+    const {data}=await axios.get(`${BASE_URL}/data/products/${id}`)
+  
 
     dispatch({
         type: CART_ADD_ITEM,

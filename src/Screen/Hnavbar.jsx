@@ -173,6 +173,7 @@ function Hnavbar() {
                      src={userprofile.picture}
                      alt={userprofile.name}
                   />
+                  
                   </div>
                   
                 <div  className="profile-info  cursor-pointer   p-2 w-full flex logg m-auto  justify-center rounded-full bg-zinc-700 hover:bg-blue-200 hover:text-black trainsition-all duration-500 text-white" onClick={()=>{

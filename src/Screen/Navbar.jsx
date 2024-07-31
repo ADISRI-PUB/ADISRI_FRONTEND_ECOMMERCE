@@ -125,6 +125,7 @@ export default function Navbar(){
                       className="  bg-blue-200 w-2/6 rounded-full m-auto"
                        src={profile.picture}
                        alt={profile.name}
+                       
                     />
                     </div>
                     
