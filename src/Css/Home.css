@@ -447,3 +447,8 @@ p + ul li:hover {
 .logo-footer {
   max-width: 5vw;
 }
+
+/* navbar login button  */
+.loginbuttons{
+  width: 1vw;
+}

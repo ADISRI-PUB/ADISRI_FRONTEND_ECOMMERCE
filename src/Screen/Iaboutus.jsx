@@ -52,7 +52,6 @@ function Iaboutus() {
   }, []);
   return (
     <>
-      <br /><br />
       <div className="about-container relative   ">
         <img
           className="absolute right-0 opacity-30 z-10"

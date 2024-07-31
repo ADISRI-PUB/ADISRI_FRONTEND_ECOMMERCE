@@ -40,8 +40,8 @@ export default function Home({token}) {
   return (
     <>
       {/* <Hnavbar/> */}
-      <br />
-      <div className="h-3"></div>
+     
+    
       <div className="home-area z-20  leading-snug">
         {/* <p className="welcome-text p-3 text-center  block ">Welcome To,</p> */}
       

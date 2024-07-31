@@ -4,6 +4,7 @@ import gsap from 'gsap'
 import Home from './Screen/Home'
 // ankush
 import { useSelector } from 'react-redux'
+import Headroom from 'react-headroom'
 import { BrowserRouter } from 'react-router-dom'
 import { Route ,Routes } from 'react-router-dom'
 import IPrePrimary from './Screen/IPrePrimary'
@@ -48,16 +49,18 @@ function App({profile,logout}) {
             </Link>
           </div>
     </div>
-    <Hnavbar/>
+   
     <div className="absolute text-black bg-white navbar-small w-full overflow-x-hidden  z-40 transition-all duration-700  ">    
       <br /><br /> <br />
       <Navbar/>
         </div>
-<br />
+   
+  
+       <Headroom className='relative z-50'><Hnavbar/></Headroom>
     <Routes>
       <Route path='/' Component={Home}/>
-     <Route path='/preprimary' Component={IPrePrimary}>
-     </Route>
+     <Route path='/preprimary' Component={IPrePrimary}/>
+    
      <Route path='/onetoeight' Component={Ionetoeight}/>
      <Route path='/aboutus' Component={Iaboutus}/> 
      <Route path='/singlebook/:id' Component={SingleBookpage}/>

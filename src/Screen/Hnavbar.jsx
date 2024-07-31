@@ -32,6 +32,12 @@ function Hnavbar() {
   
   
   const menuopen = () => {
+    if (document.querySelector('.list-dropdown').classList.contains('hidden')) {  
+    }
+    else{
+      document.querySelector('.list-dropdown').classList.add('hidden')
+    }
+    
     if (count == 0) {
       gsap.fromTo(
         ".small-navbar",
@@ -49,7 +55,7 @@ function Hnavbar() {
       );
       document.querySelector(".row1").style.transform = "rotate(45deg)";
       document.querySelector(".row2").style.transform = "rotate(-45deg)";
-      document.querySelector(".row2").style.marginTop = "0px";
+      document.querySelector(".row2").style.marginTop = "-1px";
       document.querySelector(".navbar-small").style.transform =
         "translateY(0%)";
       count++;
@@ -93,9 +99,10 @@ function Hnavbar() {
 
   return (
     <>
-      <div className=" z-50 w-full fixed h-navbar bg-white/50 backdrop-blur-sm border-b-2 border-white  flex justify-between  max-sm:p-0 max-sm:h-max ">
-       <Link to='/' className="float-start image-logo  sm:w-1/5 max-sm:w-2/3"> <img
-          className="    "
+    <div className="block ">
+      <div className=" z-50 w-full sticky top-0  h-navbar bg-white/50 backdrop-blur-sm border-b-2 border-white  flex justify-between  max-sm:p-0 max-sm:h-max ">
+       <Link to='/' className="float-start image-logo  sm:min-w-36 sm:max-w-96 min-w-32 max-sm:w-2/3"> <img
+          className=""
           src="ADISRI LOGO 2.png"
           alt=""
         />
@@ -103,11 +110,13 @@ function Hnavbar() {
 
         <div
           onClick={menuopen}
-          className="float-end cursor-pointer menu z-30 sm:hidden max-sm:visible  relative  top-4 right-2  "
+          className="float-end cursor-pointer menu z-30 sm:hidden max-sm:visible  relative  rounded-lg top-1 right-2 flex logg justify-center  "
         >
+           <div className="">
           <span className="row1 h-0.5  max-sm:w-6 transition-all duration-200   bg-black block"></span>
 
           <span className="row2 mt-3  h-0.5 max-sm:w-6 transition-all duration-200 bg-black block "></span>
+          </div>
         </div>
 
         <div className="nav-content w-1/3 h-full  max-sm:hidden  ">
@@ -156,13 +165,15 @@ function Hnavbar() {
             >
               <span>ABOUT US</span>
             </NavLink>
+           
+           
           </div>
         </div>
 
-        <div className="loginbutton   w-1/4 justify-center  relative space-x-3 max-sm:hidden   ">
+        <div className="loginbutton   w-1/4 justify-center flex logg  relative space-x-3 max-sm:hidden   ">
           
           
-          <div className=" w-full  logg   justify-center p-2  ">
+          <div className="   justify-center   ">
           {
             flag  ?(
               <>
@@ -187,10 +198,10 @@ function Hnavbar() {
               
               </>
             ):(
-              <Link to='/SignIn' className="p-3 flex  justify-center">
+              <Link to='/SignIn' className="transition-all duration-200 flex hover:scale-125  loginbuttons    justify-center ">
               <button
-  aria-label="Sign in with Google"
-  className="flex logg bg-black/5 border border-button-border-light  rounded-full p-0.5 pr-4"
+  aria-label="Sign in with Google "
+  className="flex logg bg-black/5  border border-button-border-light  rounded-full p-0.5 pr-4 "
 >
   <div className="flex items-center justify-center bg-white w-9 h-9 rounded-full">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-5 h-5">
@@ -212,7 +223,7 @@ function Hnavbar() {
       ></path>
     </svg>
   </div>
-  <span className="text-sm text-google-text-gray tracking-wider">Sign with Google</span>
+  <span className="text-sm text-google-text-gray tracking-wider">Sign/Google </span>
 </button>
               </Link>
             )}
@@ -223,7 +234,7 @@ function Hnavbar() {
       <div className="fixed w-3/5 m-auto top-20 right-12 z-50">
         <PopUp />
       </div>
-      <div className="sm:h-5 max-sm:relative max-sm:-top-3"></div>
+      </div>
       
     </>
   );
