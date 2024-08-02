@@ -76,7 +76,7 @@ function IPrePrimary() {
   return (
     <>
  
-      <div className="relative primary-sections">
+      <div className="relative primary-sections min-h-screen">
         <div></div>
         <div className="sm:flex primary-sections">
           <div className="sm:w-1/6 z-40  primarysection1 max-sm:w-full max-sm:h-full">
@@ -89,7 +89,7 @@ function IPrePrimary() {
               setApi={setApi}
             />
           </div>
-          <div className="sm:w-5/6 sm:p-10  max-sm:w-full  card-container ">
+          <div className="sm:w-5/6 sm:p-10     max-sm:w-full  card-container ">
             {API === "" ? (
               loader ? (
                 <div className=" grid grid-cols-1 sm:col-span-4 ">
