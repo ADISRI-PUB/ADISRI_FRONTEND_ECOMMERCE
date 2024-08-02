@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 function Checkout() {
     let data =useSelector(state => state.cart.cartItems)
     //  console.log(data);
-     let symbol=`&#x20b9;`
     const [Price,setPrice] =useState('')
 
     const [shipping,setShipping]  =useState(50)
@@ -25,12 +25,13 @@ function Checkout() {
        <div className='absolute right-12 '>
               <img src="pngegg (17)90.png" alt=""  />
        </div>
+       <form className='w-full  flex  logg' >
 <div className="grid sm:px-10 col-span-2  w-3/5 max-sm:w-full  m-auto lg:px-20 xl:px-32 relative  ">
   <div className="mt-10 bg-white/20 border-2 border-white rounded-xl text-white backdrop-blur-sm px-4 pt-8 lg:mt-0">
     <p className="text-xl font-medium">Shipping Details</p>
     <p className="text-gray-200">Complete your order by providing your Shipping details.</p>
     <div className="">
-      <label htmlFor="email" className="mt-4 mb-2 block text-sm font-medium">Phone</label>
+      <label htmlFor="email" className="mt-4 mb-2 block text-sm font-medium">Phone*</label>
       <div className="relative">
         <input type="number" id="email" name="email" className="w-full rounded-md border border-gray-200 text-black px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500" placeholder="XXXXX-XXXXX" required />
         <div className="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3 opacity-50 text-black">
@@ -48,7 +49,7 @@ function Checkout() {
       </div>
     
     
-      <label htmlFor="billing-address" className="mt-4 mb-2 block text-sm font-medium">Billing Address</label>
+      <label htmlFor="billing-address" className="mt-4 mb-2 block text-sm font-medium">Billing Address*</label>
       <div className="flex flex-col sm:flex-row">
         <div className="relative flex-shrink-0 sm:w-7/12">
           <input type="text" id="billing-address" name="billing-address" className="w-full rounded-md border border-gray-200 text-black px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500" placeholder="Street Address" required />
@@ -87,9 +88,10 @@ function Checkout() {
         <p className="text-2xl font-semibold">&#x20b9;{Price+shipping}/-</p>
       </div> */}
     </div>
-    <button className="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white">Continue</button>
+  <Link to='/ordersummary'>  <button type='submit' className="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white">Continue</button></Link>
   </div>
 </div>
+</form>
 
     </div>
   )

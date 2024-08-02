@@ -42,7 +42,7 @@ function SingleBookpage() {
   return (
     <>
     <br />
-    <div key={product.Product_Id} className='w-full h-full bg-blue-200 flex gap-5'>
+    <div key={product.Product_Id} className='w-full min-h-screen bg-blue-200 flex gap-5'>
            
          <div className="font-sans bg-blue-100 w-full  ">
             <div className="p-4   mx-auto">

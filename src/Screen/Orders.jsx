@@ -9,6 +9,7 @@ function Orders() {
   useEffect(() => {});
   return (
     <>
+    <div className="min-h-screen">
       <h1 className="User-name ml-10 font-bold leading-loose max-sm:text-xl">
         {" "}
         Your Orders
@@ -24,7 +25,7 @@ function Orders() {
         <h4 className=" ">Order on :Sunday 3 Aug ,2024</h4>
         <h5 className="">Total Amount :&#x20B9;360/- </h5>
       </div>
-      <div className="w-4/5 max-sm:w-full order-detials m-auto border-t p-2">
+      <div className="w-4/5 max-sm:w-full order-detials m-auto border-t p-2 border-b">
         {/* <div className='col-span-2 space-x-10 flex w-4/5 m-auto' >
             <img className='w-1/5' src="KIDS ACTIVITY C.jpg" alt="ProductPhoto"  />
             <div className=' grid logg '>
@@ -60,6 +61,7 @@ function Orders() {
             </button>
           </Link>
         </div>
+      </div>
       </div>
     </>
     // <>

@@ -13,6 +13,20 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
     }
+    .checked-shipment{
+        width: 70%;
+    }
+    .circles-shipment{
+        width: 2vw;
+        height: 2vw;
+    }
+    .element{
+        top: 18px;
+    }
+    .info-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr ;
+    }
  } 
 @media ((min-width:640px) and (max-width:1041px)){
     .info-container{
@@ -23,11 +37,24 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
     } 
+    .shipping-page{
+        height: max-content;
+    }
+    .checked-shipment{
+        width: 80%;
+    }
+    .circles-shipment{
+        width: 2vw;
+        height: 2vw;
+    }
+    .element{
+        top: 7px;
+    }
 }
 @media (max-width:640px){
     .info-contianer{
       display: grid;
-      grid-template-columns: 1;
+      grid-template-columns: 1fr;
     }
     .confirm-text {
       font-size: 5vw;
@@ -41,6 +68,19 @@
     .order-detials{
         display: grid;
         grid-template-columns: 1fr;
+    }
+    .checked-shipment{
+        width: 100%;
+    }
+    .circles-shipment{
+        width: 4vw;
+        height: 4vw;
+    }
+    .checked-shipment-container{
+        font-size: 2vw;
+    }
+    .element{
+        top: 7px;
     }
   }
  

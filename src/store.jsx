@@ -12,7 +12,7 @@ import {
 } from "./reducers/ProductsReducers";
 import { cartReducer } from "./reducers/CartReducers";
 import { userReducer } from "./reducers/UserReducer";
-// import { addLoginData } from './reducers/UserReducers'
+import { orderCreateReducer,orderDetailsReducer } from './reducers/OrderReducers'
 
 const reducer = combineReducers({
   //CAREES
@@ -24,7 +24,10 @@ const reducer = combineReducers({
 
   //CART
   cart: cartReducer,
-  user:userReducer
+  user:userReducer,
+  //Order
+  orderCreate : orderCreateReducer ,
+  orderDetails: orderDetailsReducer,
   //User
   // addLogin:addLoginData
 });
@@ -32,15 +35,20 @@ const reducer = combineReducers({
 const cartItemsFromStorage = localStorage.getItem("cartItems")
   ? JSON.parse(localStorage.getItem("cartItems"))
   : []; 
-  
+const shippingAddressfromStorage = localStorage.getItem('shippingAddress') ?
+      JSON.parse(localStorage.getItem('shippingAddress')) :{}
+
 //   ANKUSH WORK
 const PreUserProfile =localStorage.getItem('profile')?JSON.parse(localStorage.getItem('profile')):{};
 const Pretoken =localStorage.getItem('token')?JSON.parse(localStorage.getItem('token')):'';
 // const userInfoFromStorage = localStorage.getItem('userInfo') ?
 //        JSON.parse(localStorage.getItem('userInfo')) :null
 
+
 const initialState = {
-  cart: { cartItems: cartItemsFromStorage },
+  cart: { cartItems: cartItemsFromStorage,
+         shippingAddress : shippingAddressfromStorage
+   },
 // ANKUSH WORK//////////////////////////////////////////////////////////////////////////////////////////////////////////////
   user:{
     

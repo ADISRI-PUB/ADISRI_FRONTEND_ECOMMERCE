@@ -76,7 +76,7 @@ function IPrePrimary() {
   return (
     <>
  
-      <div className="relative primary-sections">
+      <div className="relative primary-sections min-h-screen">
         <div></div>
         <div className="sm:flex primary-sections">
           <div className="sm:w-1/6 z-40  primarysection1 max-sm:w-full max-sm:h-full">

@@ -3,7 +3,7 @@ import React from 'react'
 function WriteToUs() {
   return (
     
-      <div className='w-full '>
+      <div className='w-full min-h-screen'>
        
     <section className="bg-zinc-800">      
     <div className="container px-6 py-12 mx-auto ">

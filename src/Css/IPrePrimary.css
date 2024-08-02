@@ -51,7 +51,7 @@
     gap: 50px;
     grid-template-columns: 1fr 1fr 1fr 1fr ;
     grid-template-rows: auto;
-    height: 100vh;
+   
   }
 }
 
