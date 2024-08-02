@@ -9,7 +9,9 @@ function Cartsection() {
   const location = useLocation();
   const productId = id;
   const dispatch = useDispatch();
-
+  const userlogin = useSelector(state => state.user)
+  const {userprofile} = userlogin
+  const history = useNavigate()
   const cart = useSelector((state) => state.cart.cartItems);
    const [Quantity, setquantity] = useState(1);
  const [Price ,setPrice]=useState(0)
@@ -37,7 +39,16 @@ function Cartsection() {
    
     dispatch(removeFromCart(id));
   };
+const handlecheckout = ()=>{
+  if(Object.keys(userprofile).length === 0){
 
+    history(`/SignIn`)
+  }
+  else{
+    history(`/checkout`)
+
+  }
+}
   return (
     <>
      
@@ -156,7 +167,9 @@ function Cartsection() {
                   <p>:&#x20B9;{Price} </p>{" "}
                 </h1>
 
-                <Link to="/checkout">  <button className="w-1/2 m-auto transition-all duration-300  overflow-hidden space-x-2 rounded-full text-center justify-center hover:bg-purple-400 cursor-pointer p-4  bg-white  flex">
+                 <button
+                 onClick ={handlecheckout}
+                  className="w-1/2 m-auto transition-all duration-300  overflow-hidden space-x-2 rounded-full text-center justify-center hover:bg-purple-400 cursor-pointer p-4  bg-white  flex">
                   <svg
                     className=""
                     xmlns="http://www.w3.org/2000/svg"
@@ -169,7 +182,8 @@ function Cartsection() {
                   </svg>
                   <span className="text-black">Checkout</span>
                 </button>
-                  </Link>
+                  
+
                 <br />
               </div>
             </div>
