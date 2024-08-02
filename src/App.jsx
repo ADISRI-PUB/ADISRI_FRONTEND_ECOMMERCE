@@ -24,6 +24,7 @@ import Cartsection from './Components/Cartsection'
 import SignIn from './Screen/SignIn'
 import Journey from './Screen/Journey'
 import Checkout from './Screen/Checkout'
+import Orders from './Screen/Orders'
 function App({profile,logout}) {
   const items = useSelector((state)=>state.cart)
   const {cartItems} =items
@@ -71,6 +72,7 @@ function App({profile,logout}) {
      <Route path='/SignIn' Component={SignIn}/>
      <Route path='/journey' Component={Journey}/>
      <Route path='/contact' Component={WriteToUs}/>
+     <Route path='/myorders' Component={Orders}/>
      
      </Routes>
      

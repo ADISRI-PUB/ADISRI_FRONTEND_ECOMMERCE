@@ -16,7 +16,12 @@ function Hnavbar() {
 //  ANKUSH WORK //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  const dispatch =useDispatch()
  let {userprofile} =useSelector((state)=>state.user)
+  const handleprofile =()=>{
+ 
 
+   document.querySelector('#profilearrow').classList.toggle('rotate-180')
+   document.querySelector(".drop-down").classList.toggle('hidden')
+  }
   useEffect(() => { 
     if(Object.keys(userprofile).length!=0){
    setflag(true)
@@ -170,38 +175,60 @@ function Hnavbar() {
           </div>
         </div>
 
-        <div className="loginbutton   w-1/4 justify-center flex logg  relative space-x-3 max-sm:hidden   ">
+        <div className="loginbutton   w-1/4  flex logg justify-center relative  max-sm:hidden   ">
           
           
-          <div className="   justify-center   ">
+          <div className="  w-full justify-center   ">
           {
             flag  ?(
               <>
-                <div className="w-4/5 grid grid-cols-2 ">
-                <div className="w-full">
+                <div className="w-4/5 flex justify-center  ">
+                <div className="space-x-3 flex   ">
+                <div  className=" trainsition-all duration-500  space-x-2 relative cursor-pointer bg-blue-400 rounded-lg    flex logg m-auto  justify-center  hover:bg-blue-200 text-black  " onClick={()=>{
+                  handleprofile() 
+                }
+                }>
+                  {/* <h6 style={{fontSize:"0.8vw"}}>{(userprofile.name).split(" ")[0]}</h6>
+                  <svg id="profilearrow" className="rotate-90" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg> */}
+                  <button id="dropdownInformationButton" data-dropdown-toggle="dropdownInformation" className="text-white relative  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center   " type="button">{(userprofile.name).split(" ")[0]}<svg className=" transition-all duration-200 w-2.5 h-2.5 ms-3 " id="profilearrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+<path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"  d="m1 1 4 4 4-4"/>
+</svg>
+              
+                <div className=" transition-all duration-150 translate-y-12 w-full drop-down rounded-lg -top-1 left-0 bg-blue-100 absolute hidden text-black" >
+                  <ul className="  ">
+                    <li className=" transition-all duration-200 border-b-2 p-1 flex border-white hover:bg-blue-300 space-x-1 "> <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#000"><path d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q53 0 100-15.5t86-44.5q-39-29-86-44.5T480-280q-53 0-100 15.5T294-220q39 29 86 44.5T480-160Zm0-360q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0-60Zm0 360Z"/></svg> <span>My Profile</span></li>
+                    <Link to='/myorders' className=" transition-all duration-200 border-b-2 p-2 border-white hover:bg-blue-300 flex space-x-1 "> <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#000"><path d="M160-160v-516L82-846l72-34 94 202h464l94-202 72 34-78 170v516H160Zm240-280h160q17 0 28.5-11.5T600-480q0-17-11.5-28.5T560-520H400q-17 0-28.5 11.5T360-480q0 17 11.5 28.5T400-440ZM240-240h480v-358H240v358Zm0 0v-358 358Z"/></svg> <span> Orders</span></Link>
+                 
+                  <li onClick={()=>{
+                         googleLogout()
+                        dispatch(logout())
+                        setflag(false)
+                  }} className=" transition-all duration-200 p-2 hover:bg-blue-300 flex space-x-1  "> <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#000"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg><span> Sign Out</span></li>
+                 
+                    
+               
+                  </ul>
+                  
+               </div>
+</button>
+                  </div> 
                   <img
-                    className="  bg-blue-200 w-2/6 rounded-full m-auto"
+                    className=" w-10  h-10  bg-blue-200  rounded-full "
                      src={userprofile.picture}
                      alt={userprofile.name}
                   />
-                  
+                     
                   </div>
                   
-                <div  className="profile-info  cursor-pointer   p-2 w-full flex logg m-auto  justify-center rounded-full bg-zinc-700 hover:bg-blue-200 hover:text-black trainsition-all duration-500 text-white" onClick={()=>{
-                   googleLogout()
-                  dispatch(logout())
-                  setflag(false)}
-                }>
-                  <button  >Logout</button>
-                  </div>
+            
                 </div>
               
               </>
             ):(
-              <Link to='/SignIn' className="transition-all duration-200 flex hover:scale-125  loginbuttons    justify-center ">
+              <Link to='/SignIn' className="transition-all duration-200 flex hover:scale-125  loginbuttons    m-auto   ">
               <button
   aria-label="Sign in with Google "
-  className="flex logg bg-black/5  border border-button-border-light  rounded-full p-0.5 pr-4 "
+  className="flex logg bg-black text-white    rounded-full p-0.5 pr-4  "
 >
   <div className="flex items-center justify-center bg-white w-9 h-9 rounded-full">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-5 h-5">
@@ -223,7 +250,7 @@ function Hnavbar() {
       ></path>
     </svg>
   </div>
-  <span className="text-sm text-google-text-gray tracking-wider">Sign/Google </span>
+  <span className="text-sm text-google-text-gray tracking-wider ml-2">Sign/Google </span>
 </button>
               </Link>
             )}

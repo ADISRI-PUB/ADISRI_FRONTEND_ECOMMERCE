@@ -54,7 +54,7 @@
     width: 1.4vw;
 }
 .svg-container{
-    top: -32vh;
+     top: -10vh; 
     
 }
 @media (max-width:640px){

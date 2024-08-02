@@ -40,7 +40,7 @@ function Cartsection() {
 
   return (
     <>
-      <br /><br />
+     
       {flag ? (
         
           <div className="bg-purple-200 p-3  sm:flex sm:h-screen  ">

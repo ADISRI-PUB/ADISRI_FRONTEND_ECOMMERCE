@@ -53,7 +53,7 @@ export default function Home({token}) {
         </div>
         <div className="sections1  ">
           <div className="preprimary-section pre-books relative   p-4 transition-all duration-700">
-            <div className="absolute overflow-hidden z-10  opacity-20 top-0 right-20 ">
+            <div className="absolute overflow-hidden z-0  opacity-20 top-0 right-20 ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 xmlnsXlink="http://www.w3.org/1999/xlink"
