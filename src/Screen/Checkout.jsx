@@ -27,8 +27,8 @@ function Checkout() {
        </div>
 <div className="grid sm:px-10 col-span-2  w-3/5 max-sm:w-full  m-auto lg:px-20 xl:px-32 relative  ">
   <div className="mt-10 bg-white/20 border-2 border-white rounded-xl text-white backdrop-blur-sm px-4 pt-8 lg:mt-0">
-    <p className="text-xl font-medium">Payment Details</p>
-    <p className="text-gray-200">Complete your order by providing your Billing details.</p>
+    <p className="text-xl font-medium">Shipping Details</p>
+    <p className="text-gray-200">Complete your order by providing your Shipping details.</p>
     <div className="">
       <label htmlFor="email" className="mt-4 mb-2 block text-sm font-medium">Phone</label>
       <div className="relative">
@@ -66,7 +66,7 @@ function Checkout() {
       </div>
 
       {/* <!-- Total --> */}
-      <div className="mt-6 border-t border-b py-2">
+      {/* <div className="mt-6 border-t border-b py-2">
         <div className="flex items-center justify-between">
           <p className="text-sm font-medium text-white">Subtotal</p>
           <p className="font-semibold  text-white">&#x20b9;{Price}/-</p>
@@ -81,13 +81,13 @@ function Checkout() {
           
             </p>
         </div>
-      </div>
-      <div className="mt-6 flex items-center justify-between">
+      </div> */}
+      {/* <div className="mt-6 flex items-center justify-between">
         <p className="text-sm font-medium ">Total</p>
         <p className="text-2xl font-semibold">&#x20b9;{Price+shipping}/-</p>
-      </div>
+      </div> */}
     </div>
-    <button className="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white">Place Order</button>
+    <button className="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white">Continue</button>
   </div>
 </div>
 

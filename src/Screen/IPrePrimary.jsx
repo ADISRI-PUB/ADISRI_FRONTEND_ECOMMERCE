@@ -89,7 +89,7 @@ function IPrePrimary() {
               setApi={setApi}
             />
           </div>
-          <div className="sm:w-5/6 sm:p-10  max-sm:w-full  card-container ">
+          <div className="sm:w-5/6 sm:p-10     max-sm:w-full  card-container ">
             {API === "" ? (
               loader ? (
                 <div className=" grid grid-cols-1 sm:col-span-4 ">

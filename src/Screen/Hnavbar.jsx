@@ -21,7 +21,11 @@ function Hnavbar() {
 
    document.querySelector('#profilearrow').classList.toggle('rotate-180')
    document.querySelector(".drop-down").classList.toggle('hidden')
+   document.querySelector(".drop-down").classList.toggle('show')
+   document.querySelector(".click").classList.toggle("hidden")
   }
+  
+ 
   useEffect(() => { 
     if(Object.keys(userprofile).length!=0){
    setflag(true)
@@ -104,6 +108,9 @@ function Hnavbar() {
 
   return (
     <>
+    <div onClick={handleprofile} className="w-screen h-screen bg-transparent absolute click  hidden">
+
+    </div>
     <div className="block ">
       <div className=" z-50 w-full sticky top-0  h-navbar bg-white/50 backdrop-blur-sm border-b-2 border-white  flex justify-between  max-sm:p-0 max-sm:h-max ">
        <Link to='/' className="float-start image-logo  sm:min-w-36 sm:max-w-96 min-w-32 max-sm:w-2/3"> <img
