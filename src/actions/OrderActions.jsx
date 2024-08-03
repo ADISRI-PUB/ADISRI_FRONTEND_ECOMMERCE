@@ -7,7 +7,7 @@ import {
     ORDER_DETAILS_REQUEST,
     ORDER_DETAILS_SUCCESS,
     ORDER_DETAILS_FAIL,
-} from '../constants/orderConstants'
+} from '../constants/OrderConstants'
 import { CART_CLEAR_ITEMS } from '../constants/CartConstants'
 const BASE_URL = import.meta.env.VITE_URL 
 
@@ -20,12 +20,12 @@ export const createOrder =(order)=> async (dispatch,getState) => {
 
         const {
             user : {token},
+            
         }=getState()
-
         const config = {
             headers :{
                 'Content-type' : 'application/json',
-                'Authorization' :  `Bearer ${token.Pretoken}`
+                'Authorization' :  `Bearer ${token}`
             }
         }
         const {data} = await axios.post(
@@ -33,7 +33,7 @@ export const createOrder =(order)=> async (dispatch,getState) => {
             order,
             config
         )
-        const access = token.Pretoken
+        const access = token
 
         const data2 ={
             ...data,
@@ -79,14 +79,14 @@ export const getOrderDetails =(id)=> async (dispatch,getState) => {
         const config = {
             headers :{
                 'Content-type' : 'application/json',
-                'Authorization' :  `Bearer ${token.Pretoken}`
+                'Authorization' :  `Bearer ${token}`
             }
         }
-        const {data} = await axios.get(
+        const {data} = await axios.get( 
             `${BASE_URL}/data/order/${id}/`,
             config
         )
-        const access = token.Pretoken
+        const access = token
         const data2 ={
             ...data,
             access:access,
