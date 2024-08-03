@@ -27,6 +27,7 @@ import Checkout from './Screen/Checkout'
 import Orders from './Screen/Orders'
 import TrackOrder from './Components/TrackOrder'
 import OrderSummary from './Screen/OrderSummary'
+import MyProfile from './Screen/MyProfile'
 function App({profile,logout}) {
   const items = useSelector((state)=>state.cart)
   const {cartItems} =items
@@ -76,6 +77,7 @@ function App({profile,logout}) {
      <Route path='/myorders' Component={Orders}/>
      <Route path='/trackorder/:id?' Component={TrackOrder}/>
      <Route path='/ordersummary' Component={OrderSummary}/>
+     <Route path='/myprofile' Component={MyProfile}/>
      
      </Routes>
      
