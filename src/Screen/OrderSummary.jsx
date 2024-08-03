@@ -1,8 +1,44 @@
-import React from 'react'
-import {useSelector} from 'react-redux'
+import React,{useState,useEffect} from 'react'
+import { useNavigate } from 'react-router-dom'
+import {useSelector,useDispatch} from 'react-redux'
 import '../Css/Order.css'
+import { ORDER_CREATE_RESET } from '../constants/OrderConstants'
+import { createOrder } from '../actions/OrderActions'
+
 function OrderSummary() {
-    const {userprofile} =useSelector(state =>state.user)
+  const history=useNavigate()
+  const orderCreate= useSelector(state=>state.orderCreate)
+  const {order,error,success} = orderCreate
+  const dispatch = useDispatch()
+  const {userprofile} =useSelector(state =>state.user)
+
+
+  const cart= useSelector(state => state.cart)
+  cart.itemsPrice = cart.cartItems.reduce((acc, item) =>acc+item.price * item.qty,0).toFixed(2)
+  cart.ShippingPrice = (cart.itemsPrice>1999 ? 0 : 50 ).toFixed(2)
+  cart.TaxPrice = Number((0.082)*cart.itemsPrice).toFixed(2)
+  cart.ToatalPrice = (Number(cart.TaxPrice) +Number(cart.ShippingPrice)+Number(cart.itemsPrice)).toFixed(2)
+
+  useEffect(()=>{
+    if(success){
+        history(`/trackorder/${order.Order_Id}`)
+        dispatch({type:ORDER_CREATE_RESET})
+
+    }
+},[success,history])
+
+const placeorder =()=>{
+  dispatch(createOrder({
+      orderItems:cart.cartItems,
+      shippingAddress: cart.shippingAddress,
+      paymentMethod: cart.paymentMethod,
+      itemsPrice:cart.itemsPrice,
+      ShippingPrice:cart.ShippingPrice,
+      TaxPrice : cart.TaxPrice,
+      ToatalPrice : cart.ToatalPrice
+  }))
+}
+    
   return (
     <div className='min-h-screen shipping-page'>
       <h1 className='User-name p-10'>Thanks For Ordering !</h1>
@@ -27,26 +63,26 @@ function OrderSummary() {
                  </div>
              </div>
              <div className=' w-full bg-blue-300'>
-             <div class="flex justify-center  md:flex-row flex-col items-stretch w-full space-y-4 md:space-y-0 md:space-x-6 xl:space-x-8">
-        <div class="flex flex-col px-4 py-6 md:p-6 xl:p-8 w-full bg-gray-50 space-y-6">
-          <h3 class="text-xl font-semibold leading-5 text-gray-800">Summary</h3>
-          <div class="flex justify-center items-center w-full space-y-4 flex-col border-gray-200 border-b pb-4">
-            <div class="flex justify-between w-full">
-              <p class="text-baseleading-4 text-gray-800">Subtotal</p>
-              <p class="text-base  leading-4 text-gray-600">&#x20B9;56.00</p>
+             <div className="flex justify-center  md:flex-row flex-col items-stretch w-full space-y-4 md:space-y-0 md:space-x-6 xl:space-x-8">
+        <div className="flex flex-col px-4 py-6 md:p-6 xl:p-8 w-full bg-gray-50 space-y-6">
+          <h3 className="text-xl font-semibold leading-5 text-gray-800">Summary</h3>
+          <div className="flex justify-center items-center w-full space-y-4 flex-col border-gray-200 border-b pb-4">
+            <div className="flex justify-between w-full">
+              <p className="text-baseleading-4 text-gray-800">Subtotal</p>
+              <p className="text-base  leading-4 text-gray-600">&#x20B9;56.00</p>
             </div>
-            <div class="flex justify-between items-center w-full">
-              <p class="text-base  leading-4 text-gray-800">Discount <span class="bg-gray-200 p-1 text-xs font-medium  leading-3 text-gray-800">STUDENT</span></p>
-              <p class="text-base leading-4 text-gray-600">-&#x20B9;28.00 (50%)</p>
+            <div className="flex justify-between items-center w-full">
+              <p className="text-base  leading-4 text-gray-800">Discount <span className="bg-gray-200 p-1 text-xs font-medium  leading-3 text-gray-800">STUDENT</span></p>
+              <p className="text-base leading-4 text-gray-600">-&#x20B9;28.00 (50%)</p>
             </div>
-            <div class="flex justify-between items-center w-full">
-              <p class="text-base  leading-4 text-gray-800">Shipping</p>
-              <p class="text-base  leading-4 text-gray-600">&#x20B9;8.00</p>
+            <div className="flex justify-between items-center w-full">
+              <p className="text-base  leading-4 text-gray-800">Shipping</p>
+              <p className="text-base  leading-4 text-gray-600">&#x20B9;8.00</p>
             </div>
           </div>
-          <div class="flex justify-between items-center w-full">
-            <p class="text-base  font-semibold leading-4 text-gray-800">Total</p>
-            <p class="text-base  font-semibold leading-4 text-gray-600">&#x20B9;36.00</p>
+          <div className="flex justify-between items-center w-full">
+            <p className="text-base  font-semibold leading-4 text-gray-800">Total</p>
+            <p className="text-base  font-semibold leading-4 text-gray-600">&#x20B9;36.00</p>
           </div>
         </div>
       
@@ -81,7 +117,7 @@ function OrderSummary() {
         </div>
          </div>
          <div className=' m-auto w-3/4'>
-           <button className='transition-all duration-200 hover:bg-gray-800 p-4 w-full text-white bg-gray-700 '>ORDER</button>
+           <button onClick={placeorder} disabled={cart.cartItems===0} className='transition-all duration-200 hover:bg-gray-800 p-4 w-full text-white bg-gray-700 '>ORDER</button>
          </div>
     </div>
     </div>
