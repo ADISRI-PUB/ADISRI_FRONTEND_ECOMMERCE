@@ -455,3 +455,18 @@ p + ul li:hover {
 .profilelogo{
   width: 2vw;
 }
+
+/* crousal  */
+
+@media (max-width:640px){
+  .bookcrousal{
+    font-size: 3vw;
+    padding: 2px;
+  }
+
+}
+@media (min-width:641px){
+  .bookcrousal{
+    font-size: 1vw;
+  }
+}

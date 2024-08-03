@@ -94,9 +94,9 @@ export default function Home({token}) {
                 </p>
               </div>
             </div>
-            <div className="w-5/6 m-auto z-50 ">
-              <div className="h-10 new-space-color"></div>
-              <CrousalBooks slideshow={4} />
+            <div className="w-5/6 max-sm:w-full m-auto z-50 ">
+           
+              <CrousalBooks />
             </div>
           </div>
           {/* <OnetoEight /> */}
@@ -148,8 +148,8 @@ export default function Home({token}) {
                 </p>
               </div>
             </div>
-            <div className="w-5/6 m-auto">
-              <div className="h-10 new-space-color"></div>
+            <div className=" w-5/6 max-sm:w-full m-auto z-50">
+            
               <CrousalBooks slideshow={4} />
             </div>
           </div>
