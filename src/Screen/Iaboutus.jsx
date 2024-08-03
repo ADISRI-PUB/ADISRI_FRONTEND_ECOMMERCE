@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import "../Css/About.css";
 import gsap from "gsap";
+
 function Iaboutus() {
+
   useEffect(() => {
     gsap.fromTo(
       ".adisri",

@@ -30,7 +30,6 @@ import OrderSummary from './Screen/OrderSummary'
 function App({profile,logout}) {
   const items = useSelector((state)=>state.cart)
   const {cartItems} =items
-
   useEffect(()=>{
        document.querySelector('.cartsvg').classList.remove('carticons')
        document.querySelector('.cartsvg').classList.add('carticons')
