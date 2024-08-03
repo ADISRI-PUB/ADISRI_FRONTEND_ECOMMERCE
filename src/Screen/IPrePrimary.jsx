@@ -6,13 +6,11 @@ import FilterTAb from "../Components/FilterTAb";
 import ProdcutsCard from "../Components/ProdcutsCard";
 import axios from "axios";
 import { listProducts } from "../actions/ProductsActions";
-
+import { useNavigate } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 const BASE_URL = import.meta.env.VITE_URL 
 function IPrePrimary() {
-
- 
-
-
+   
   
   const [filterbook, setFilterbook] =useState([])
 

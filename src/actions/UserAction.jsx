@@ -5,7 +5,7 @@ import {
   USER_PROFILE_LOGOUT,
   USER_PROFILE_CREATION,
 } from "../constants/UserConstants";
-
+import { useNavigate } from "react-router-dom";
 const BASE_URL = import.meta.env.VITE_URL;
 
 export const profilecreation = () => async (dispatch) => {
@@ -76,6 +76,8 @@ export const profilecreation = () => async (dispatch) => {
       type: USER_PROFILE_SUCCESS,
       payload: data,
     });
+   let path = useNavigate()
+   path("/")
   } catch (error) {
     console.error("Profile creation failed:", error);
     dispatch({

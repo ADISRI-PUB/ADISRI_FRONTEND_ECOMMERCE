@@ -10,6 +10,7 @@ export const userReducer =(state={user:{}},action)=>{
             case USER_PROFILE_SUCCESS:  
             localStorage.setItem('token', JSON.stringify(action.payload.settoken));
             localStorage.setItem("profile", JSON.stringify(action.payload.setProfile));
+            
                 return{
                     ...state,
                     userprofile:action.payload.setProfile,

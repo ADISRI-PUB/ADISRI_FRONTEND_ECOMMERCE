@@ -35,16 +35,16 @@ function Orders() {
             </div>
           </div> */}
         <div className="sm:col-span-2">
-          <div class="m-10 space-x-3 w-80 max-sm:w-60 flex  rounded-lg border-2 border-gray-100 p-3 shadow-lg shadow-gray-200">
+          <div className="m-10 space-x-3 w-80 max-sm:w-60 flex  rounded-lg border-2 border-gray-100 p-3 shadow-lg shadow-gray-200">
             <div className="w-2/5">
                <img src="KIDS ACTIVITY BOOK B.jpg" alt="" />
             </div>
             <div className="w-3/5 "> 
-              <p class="text-lg font-bold">Kids Activity C</p>
-              <p class="text-sm font-semibold text-gray-500"></p>
-              <p class="mt-3 text-4xl font-bold">&#x20B9;180</p>
-              <ul class="mt-4 space-y-2 font-semibold">
-                <li class="flex items-center space-x-4">
+              <p className="text-lg font-bold">Kids Activity C</p>
+              <p className="text-sm font-semibold text-gray-500"></p>
+              <p className="mt-3 text-4xl font-bold">&#x20B9;180</p>
+              <ul className="mt-4 space-y-2 font-semibold">
+                <li className="flex items-center space-x-4">
                   <span>Quantity : 2</span>
                 </li>
               </ul>

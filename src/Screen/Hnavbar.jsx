@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 function Hnavbar() {
   //kamal
  const [flag ,setflag] =useState(false)
- const home =useNavigate()
+  const home =useNavigate()
 //  ANKUSH WORK //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  const dispatch =useDispatch()
  let {userprofile} =useSelector((state)=>state.user)
@@ -27,9 +27,14 @@ function Hnavbar() {
   
  
   useEffect(() => { 
-    if(Object.keys(userprofile).length!=0){
+    if(Object.keys(userprofile).length!=0  ){
    setflag(true)
-    home("/")
+   let path = window.location.pathname
+
+     if (path=='/SignIn') {
+       
+        home("/")
+     }
     }
     else{
          setflag(false)
