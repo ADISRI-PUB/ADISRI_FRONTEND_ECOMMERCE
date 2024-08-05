@@ -9,6 +9,10 @@ import {
     ORDER_DETAILS_SUCCESS,
     ORDER_DETAILS_FAIL,
 
+    ORDER_ALL_DETAILS_REQUEST,
+    ORDER_ALL_DETAILS_SUCCESS,
+    ORDER_ALL_DETAILS_FAIL,
+
 } from '../constants/OrderConstants'
 
 
@@ -46,3 +50,18 @@ export const orderCreateReducer = (state={},action)=>{
 
 }
 
+
+
+export const orderAllDetailsReducer = (state={orderAll:[]},action)=>{
+    switch(action.type){
+        case ORDER_ALL_DETAILS_REQUEST:
+            return {...state,loading : true}
+        case ORDER_ALL_DETAILS_SUCCESS :
+            return {loading : false, orderAll:action.payload}
+        case ORDER_ALL_DETAILS_FAIL :
+            return {loading : false , error : action.payload}
+        default :
+            return state
+
+    }
+}

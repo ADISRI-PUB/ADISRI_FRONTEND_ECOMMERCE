@@ -1,8 +1,21 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React,{useState,useEffect} from 'react'
+import { useParams,useNavigate } from 'react-router-dom'
+import { useDispatch,useSelector } from 'react-redux'
+import { getOrderDetails } from '../actions/OrderActions'
 import '../Css/Order.css'
+
 function TrackOrder() {
+  const {id}=useParams()
+  
+  const history=useNavigate()
+  const orderDetails= useSelector(state=>state.orderDetails)
+  const{order,error,loading}=orderDetails
+  const dispatch=useDispatch()
   const {userprofile} =useSelector(state=>state.user)
+  useEffect(()=>{
+      dispatch(getOrderDetails(id))
+},[dispatch])
+
   return (
     <div className='min-h-screen'>
  <h1  className='ml-2 max-sm:ml-0 p-4 font-semibold confirm-text '>
@@ -42,14 +55,18 @@ function TrackOrder() {
       <br />
      </div>
      <div>
-      <p className='leading-loose ml-8  w-4/5 m-auto border-slate-200 order-id'>Order ID : #45096</p>
+      <p className='leading-loose ml-8  w-4/5 m-auto border-slate-200 order-id'>Order ID : {order ? order.Order_Id : " "}</p>
       <a className='ml-20 max-sm:ml-10 border-b  cursor-pointer ' >View Invoice</a>
       <br />
       <br />
       <div className=' p-4 leading-loose border-b gap-20 border-slate-200 info-container max-sm:space-y-10'>
          <div>
                         <p className='font-medium'>Delivery Address</p>
-                        <p>D-258, Sector 63, Noida, Uttar Pradesh 201301</p>
+                        <p>Address : {order ? order['shippingAddress']['Address'] : " "}</p>
+                        <p>City : {order ? order['shippingAddress']['City'] : " "}</p>
+                        <p>Postal COde  : {order ? order['shippingAddress']['PostalCode'] : " "}</p>
+
+
           </div>
          <div>
                         <p className='font-medium'>Billing  Address</p>
@@ -76,25 +93,25 @@ function TrackOrder() {
      <div>
        
      </div>
+    <p>
+      {/* {order.orderItems.map((item,index)=>{
+        item.Name
+      })} */}
+    </p>
      <div className='p-4'>
 
-     <a href="#" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-    <img class="w-1/5 max-sm:w-4/5" src="KIDS ACTIVITY C.jpg" alt=""/>
-    <div class="flex flex-col justify-between p-4 leading-normal">
-        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">KIDS ACTIVITY C</h5>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Quantity :2</p>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Price :180/-</p>
-=======
      <a href="#" className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-    <img className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="KIDS ACTIVITY C.jpg" alt=""/>
+    <img className="w-1/5 max-sm:w-4/5" src="KIDS ACTIVITY C.jpg" alt=""/>
     <div className="flex flex-col justify-between p-4 leading-normal">
         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">KIDS ACTIVITY C</h5>
         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Quantity :2</p>
         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Price :180/-</p>
 
+
     </div>
-</a>
-     </div>
+    </a>
+    </div>
+
     </div>
   )
 }

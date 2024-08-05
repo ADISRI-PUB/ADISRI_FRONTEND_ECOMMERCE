@@ -1,14 +1,18 @@
-import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect,useState } from "react";
+import { useSelector,useDispatch } from "react-redux";
+import { useParams,useNavigate } from 'react-router-dom'
 import gsap from "gsap";
 import { Link } from "react-router-dom";
 import "../Css/Order.css";
 function Orders() {
+
+  const orderAllDetails = useSelector((state) => state.orderAllDetails);
+  const {orderAll,error,success}=orderAllDetails
   const { userprofile } = useSelector((state) => state.user);
 
-  useEffect(() => {});
   return (
     <>
+    <p>{orderAll.acess}</p>
     <div className="min-h-screen">
       <h1 className="User-name ml-10 font-bold leading-loose max-sm:text-xl">
         {" "}
@@ -46,6 +50,7 @@ function Orders() {
               <ul className="mt-4 space-y-2 font-semibold">
                 <li className="flex items-center space-x-4">
                   <span>Quantity : 2</span>
+                  
                 </li>
               </ul>
             </div>
