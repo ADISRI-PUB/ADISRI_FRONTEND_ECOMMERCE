@@ -77,8 +77,7 @@ function TrackOrder() {
        
      </div>
      <div className='p-4'>
-        
-<<<<<<< HEAD
+
      <a href="#" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
     <img class="w-1/5 max-sm:w-4/5" src="KIDS ACTIVITY C.jpg" alt=""/>
     <div class="flex flex-col justify-between p-4 leading-normal">
@@ -92,7 +91,7 @@ function TrackOrder() {
         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">KIDS ACTIVITY C</h5>
         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Quantity :2</p>
         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Price :180/-</p>
->>>>>>> 04847ed442899f1035113d6a27621027ec69d5f5
+
     </div>
 </a>
      </div>
