@@ -11,6 +11,10 @@ import {
     ORDER_ALL_DETAILS_REQUEST,
     ORDER_ALL_DETAILS_SUCCESS,
     ORDER_ALL_DETAILS_FAIL,
+
+    ORDER_DELETE_REQUEST,
+    ORDER_DELETE_SUCCESS,
+    ORDER_DELETE_FAIL,
 } from '../constants/OrderConstants'
 import { CART_CLEAR_ITEMS } from '../constants/CartConstants'
 const BASE_URL = import.meta.env.VITE_URL 
@@ -117,7 +121,6 @@ export const getOrderDetails =(id)=> async (dispatch,getState) => {
 
 
 export const getAllOrderDetails =()=> async (dispatch,getState) => {
-    console.log('getAllOrderDetails')
     try{
         dispatch({
             type : ORDER_ALL_DETAILS_REQUEST
@@ -153,6 +156,52 @@ export const getAllOrderDetails =()=> async (dispatch,getState) => {
     }
     catch(error){
         dispatch({type : ORDER_ALL_DETAILS_FAIL,
+                  payload : error.response && error.response.data.detail
+                  ?error.response.data.detail
+                  :error.message
+    })
+    }
+}
+
+
+
+
+export const deleteorderid =(id)=> async (dispatch,getState) => {
+    try{
+        dispatch({
+            type : ORDER_DELETE_REQUEST
+        })
+
+        const {
+            user : {token },
+        }=getState()
+
+        const config = {
+            headers :{
+                'Content-type' : 'application/json',
+                'Authorization' :  `Bearer ${token}`
+            }
+        }
+        const {data} = await axios.delete( 
+            `${BASE_URL}/data/order/delete/${id}`,
+            config
+        )
+        const access = token
+        const data2 ={
+            ...data,
+            access:access,
+
+        }
+
+        dispatch({
+            type : ORDER_DELETE_SUCCESS,
+            payload : data2
+        })
+
+    
+    }
+    catch(error){
+        dispatch({type : ORDER_DELETE_FAIL,
                   payload : error.response && error.response.data.detail
                   ?error.response.data.detail
                   :error.message
