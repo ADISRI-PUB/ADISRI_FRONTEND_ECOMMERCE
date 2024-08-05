@@ -6,12 +6,12 @@ function MyProfile() {
     //  <>
      
     //   </>
-    <div classNameName='min-h-screen'>
-      <section className="w-full overflow-hidden min-h-screen dark:bg-gray-900">
-    <div className="w-full mx-auto">
+    <div className='min-h-screen'>
+      <section className="w-full overflow-hidden min-h-screen dark:bg-indigo-100">
+    <div className="w-full mx-auto ">
       
-        <img  src="peakpx (3)-min.jpg" alt="User Cover"
-                className="w-full h-80 object-cover " />
+        {/* <img  src="peakpx (3)-min.jpg" alt="User Cover" */}
+                {/* className="w-full h-80 object-cover " /> */}
 
        
         <div className="w-full mx-auto flex justify-center">
@@ -25,24 +25,9 @@ function MyProfile() {
             <h1 className="text-center text-gray-800 dark:text-white text-4xl font-serif">{userprofile.name}</h1>
            
        
-            <div className="w-full flex max-sm:flex-wrap gap-4 justify-center items-center mt-10">
-        
-              
-
-            
-                <div
-                    className="xl:w-1/4 xl:h-32 lg:w-1/5 lg:h-32 md:w-1/5 md:h-28 sm:w-1/3 sm:h-[5rem] xs:w-1/3 xs:h-[4rem] flex justify-center items-center rounded-sm text-center text-lg px-6 py-4 bg-white shadow shadow-black border-gray-300 transition-all duration-200  hover:scale-105  ">
-                    YOUR ORDER
-                </div>
-                <div
-                    className="xl:w-1/4 xl:h-32 lg:w-1/5 lg:h-32 md:w-1/5 md:h-28 sm:w-1/3 sm:h-[5rem] xs:w-1/3 xs:h-[4rem] flex justify-center items-center rounded-sm text-center text-lg px-6 py-4 bg-white shadow shadow-black border-gray-300 transition-all duration-200  hover:scale-105  ">
-                   PHONE :8787896678
-                </div>
-                <div
-                    className="xl:w-1/4 xl:h-32 lg:w-1/5 lg:h-32 md:w-1/5 md:h-28 sm:w-1/3 sm:h-[5rem] xs:w-1/3 xs:h-[4rem] flex justify-center items-center rounded-sm text-center text-lg px-6 py-4 bg-white shadow shadow-black border-gray-300 transition-all duration-200  hover:scale-105  ">
-                    EMAIL : {userprofile.email}
-                </div>
-            </div>
+        <div className='' >
+                            dsfgdg
+        </div>
         </div>
     </div>
 </section>
