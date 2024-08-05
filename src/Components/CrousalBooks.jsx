@@ -101,7 +101,7 @@ export default function CrousalBooks() {
             <div className="mx-auto  w-4/5 transform overflow-hidden rounded-lg bg-white text-gray-700 shadow-md duration-300  hover:shadow-lg">
               <img
                 className="sm:p-2  max-sm:p-1  m-auto w-full"
-                src="https://backend-adisri-s3-bucket.s3.amazonaws.com/Products/counting-1-50-nur/COUNTING_1-50_FRONT.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2UC3EW23UAWWCR65%2F20240803%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20240803T091135Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=52806693db1b2dfb916360fa197c427e81548628f9146ad7afb0c65a64a4942e"
+                src=""
                 alt="Product Image"
               />
               <div className="">

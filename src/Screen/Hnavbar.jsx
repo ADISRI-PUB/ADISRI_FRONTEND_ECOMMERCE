@@ -202,7 +202,7 @@ function Hnavbar() {
                 }>
                   {/* <h6 style={{fontSize:"0.8vw"}}>{(userprofile.name).split(" ")[0]}</h6>
                   <svg id="profilearrow" className="rotate-90" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg> */}
-                  <button id="dropdownInformationButton" data-dropdown-toggle="dropdownInformation" className="text-white relative  nav-text    font-medium rounded-lg  px-5 py-2.5 text-center inline-flex items-center   " type="button">{(userprofile.name).split(" ")[0]}<svg className=" transition-all duration-200 w-2.5 h-2.5 ms-3 " id="profilearrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                  <button id="dropdownInformationButton" data-dropdown-toggle="dropdownInformation" className="text-white relative  nav-text    font-medium rounded-lg  px-4 py-2  text-center inline-flex items-center   " type="button">{(userprofile.name).split(" ")[0]}<svg className=" transition-all duration-200 w-2.5 h-2.5 ms-3 " id="profilearrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
 <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"  d="m1 1 4 4 4-4"/>
 </svg>
               
