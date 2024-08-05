@@ -15,6 +15,7 @@ import { userReducer } from "./reducers/UserReducer";
 import {
   orderCreateReducer,
   orderDetailsReducer,
+  orderAllDetailsReducer,
 } from "./reducers/OrderReducers";
 
 const reducer = combineReducers({
@@ -31,6 +32,7 @@ const reducer = combineReducers({
   //Order
   orderCreate: orderCreateReducer,
   orderDetails: orderDetailsReducer,
+  orderAllDetails:orderAllDetailsReducer,
   //User
   // addLogin:addLoginData
 });
