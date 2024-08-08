@@ -13,6 +13,7 @@ function Checkout() {
   const [postalcode, setpostalcode] = useState(shippingAddress.postalcode);
   const [school, setschool] = useState(shippingAddress.school);
   const [phone,setphone] = useState(shippingAddress.phone)
+  const [correctform,setCorrectform] =useState(true)
   const history = useNavigate()
   const dispatch = useDispatch()
   let data = useSelector((state) => state.cart.cartItems);
@@ -33,9 +34,14 @@ function Checkout() {
 
   const createordershandler = (e) => {
     e.preventDefault()
-    
-    dispatch(saveShippingAddress({address,city,postalcode,school,phone}))
-    history('/ordersummary')
+     if (correctform) {
+
+       dispatch(saveShippingAddress({address,city,postalcode,school,phone}))
+       history('/ordersummary')
+     }
+     else{
+        document.querySelector('.submitbutton').classList.replace('bg-gray-900','bg-red-600')
+     }
   };
   return (
     <div className="sm:h-screen relative  overflow-hidden sm:flex bg-slate-900  ">
@@ -55,10 +61,11 @@ function Checkout() {
 
             <div className="">
               <label
-                htmlFor="email"
-                className="mt-4 mb-2 block text-sm font-medium"
+                htmlFor="
+                Phone"
+                className="mt-4 mb-2 block text-sm font-medium label-phone"
               >
-                Phone*
+                Phone* 
               </label>
 
               <div className="relative">
@@ -69,8 +76,36 @@ function Checkout() {
                   className="w-full rounded-md border border-gray-200 text-black px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
                   placeholder="XXXXX-XXXXX"
                   required
+                  onBlur={(e)=>{
+                    const regex =/[6-9]{1}[0-9]{9}/
+                   console.log("dsfkljs");
+                    if (regex.test(phone) && phone.length===10) {
+                      document.querySelector('.label-phone').classList.add('text-white')
+                      document.querySelector('.label-phone').classList.remove('text-red-600')
+                      document.querySelector('.label-phone').innerHTML=`<p className='text-white'>Phone* </p>`
+                      setCorrectform(true)
+                      document.querySelector('.submitbutton').classList.replace('bg-red-600','bg-gray-900')
+                    }
+                    else{
+                      setCorrectform(false)
+                      document.querySelector('.label-phone').classList.add('text-red-600')
+                      document.querySelector('.label-phone').innerHTML=`<p>Phone* <span className="text-red-600">please enter the valid phone number</span> </p>`
+                    }
+                    //  console.log(regex.test(e.target.value));
+                }}
+                  maxLength={10}
                   value={phone ? phone : " "}
-                  onChange={(e)=>setphone(e.target.value)}
+                  onChange={(e)=>
+                  {
+                    
+                    
+
+                    setphone(e.target.value)
+                       console.log(phone);
+                     }
+                    
+                     
+                  }
                 />
                 <div className="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3 opacity-50 text-black">
                   +91
@@ -125,6 +160,7 @@ function Checkout() {
                     className="w-full rounded-md border border-gray-200 text-black px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
                     placeholder="Street Address"
                     required
+                  
                     value={address ? address : " "}
                     onChange={(e)=>setaddress(e.target.value)}
                   />
@@ -189,7 +225,7 @@ function Checkout() {
                 createordershandler(e)
               }}
               type="submit"
-              className="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white"
+              className="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white submitbutton"
             >
               Continue
             </button>

@@ -114,14 +114,24 @@
 
 // export default Ionetoeight
 
-import React from 'react'
-
+import React, { useEffect } from 'react'
+import gsap from 'gsap'
 function Ionetoeight() {
+  useEffect(()=>{
+    let h= window.innerHeight
+    gsap.fromTo('#soonimage',{
+         y:-h,
+         
+    },{
+        y:0,
+        ease:"bounce.out"
+    })
+  })
   return (
      <>
      
        <div className='w-screen min-h-screen relative -z-10 bg-blue-100'>
-     <img className='w-1/3 m-auto opacity-70' src="pngegg (14).png" alt="cooming soon"  />
+     <img id='soonimage' className='w-1/2 m-auto ' src="pngegg (17)16.png" alt="cooming soon"  />
 
 
        </div>

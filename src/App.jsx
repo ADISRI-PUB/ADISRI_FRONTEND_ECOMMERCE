@@ -75,7 +75,7 @@ function App({profile,logout}) {
      <Route path='/journey' Component={Journey}/>
      <Route path='/contact' Component={WriteToUs}/>
      <Route path='/myorders' Component={Orders}/>
-     <Route path='/trackorder/:id?' Component={TrackOrder}/>
+     <Route path='/trackorder/:id' Component={TrackOrder}/>
      <Route path='/ordersummary' Component={OrderSummary}/>
      <Route path='/myprofile' Component={MyProfile}/>
      

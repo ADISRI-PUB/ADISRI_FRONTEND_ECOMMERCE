@@ -58,7 +58,7 @@ function WriteToUs() {
                     
                     <h2 className="mt-4 text-base font-medium text-gray-800 dark:text-white">Office</h2>
                     <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">Adisri Publications&#xae;  Pvt. Ltd.</p>
-                    <p className="mt-2 text-sm text-white">D-258, Sector 63, Noida, Uttar Pradesh-201301</p>
+                  <a href="https://www.google.com/maps/dir//Adisri+Publications+Pvt.+Ltd.+D-258+Sector+63+Noida,+Uttar+Pradesh+201301/@28.6283716,77.3862427,14z/data=!4m8!4m7!1m0!1m5!1m1!1s0x390ce55f65ebe6d5:0xbd4c56c05660d61c!2m2!1d77.3861502!2d28.6283781?entry=ttu">  <p className="mt-2 text-sm text-white">D-258, Sector 63, Noida, Uttar Pradesh-201301</p></a>
                 </div>
 
                 <div>
@@ -70,7 +70,7 @@ function WriteToUs() {
                     
                     <h2 className="mt-4 text-base font-medium text-gray-800 dark:text-white">Phone</h2>
                     <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">Mon-Sat from 9am to 6pm.</p>
-                    <p className="mt-2 text-sm text-white">+91 9250052221</p>
+                   <a href="tel:+9101204337735"> <p className="mt-2 text-sm text-white">+91 0120 433 7735</p></a>
                 </div>
             </div>
             <div className="overflow-hidden rounded-lg lg:col-span-2 h-96 lg:h-auto ">
