@@ -54,7 +54,7 @@ const handlecheckout = ()=>{
      
       {flag ? (
         
-          <div className="bg-purple-200 p-3  sm:flex sm:h-screen  ">
+          <div className="bg-purple-200 p-3  sm:flex sm:min-h-screen  ">
             <div className="w-3/5 max-sm:w-full">
       
               {cart.map((books, index) => {

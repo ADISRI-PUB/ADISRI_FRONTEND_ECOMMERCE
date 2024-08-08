@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getOrderDetails } from "../actions/OrderActions";
+import { deleteorderid } from "../actions/OrderActions";
 function OrderDetails({ time, items=[], order_id, total_amount }) {
   const dispatch = useDispatch();
   //  const [id,setId] =useState(details.Order_Id)
@@ -36,7 +37,7 @@ function OrderDetails({ time, items=[], order_id, total_amount }) {
       </div>
       <div className="  relative">
        <div className="w-[30%] m-auto   max-sm:w-4/5 max-sm:p-0    space-y-3 p-2">
-            <button className=" w-3/5 flex justify-center m-auto border-2 border-gray-900 p-5 ">
+            <button onClick={()=>{ dispatch( deleteorderid(order_id))}} className=" w-3/5 flex justify-center m-auto border-2 border-gray-900 p-5 ">
               CANCEL ORDER
             </button>
             <Link to={`/trackorder/${order_id}`}>

@@ -11,6 +11,7 @@ function TrackOrder() {
 
   const history = useNavigate();
   const orderDetails = useSelector((state) => state.orderDetails);
+  // const {}
   const { shippingAddress } = useSelector((state) => state.cart);
   // const {shippingAddress} =useSelector(state=>state.cart)
   // const productDetails = useState(state=> state.productDetails)
@@ -225,6 +226,7 @@ function TrackOrder() {
               </svg>
               Cash On Delivery
             </p>
+            <p className=" space-x-0 "> <b> &#x20B9;</b>  <span> { order ? `${order.Total_Price}`  :""}</span></p>
           </div>
         </div>
       </div>
@@ -234,6 +236,7 @@ function TrackOrder() {
         item.Name
       })} */}
       </p>
+      <div className="order-detials">
       {
       
       
@@ -251,6 +254,7 @@ function TrackOrder() {
         
         <div className="loader m-auto"></div>
       )}
+      </div>
     </div>
   );
 }

@@ -101,7 +101,7 @@ export default function CrousalBooks() {
             <div className="mx-auto  w-4/5 transform overflow-hidden rounded-lg bg-white text-gray-700 shadow-md duration-300  hover:shadow-lg">
               <img
                 className="sm:p-2  max-sm:p-1  m-auto w-full"
-                src=""
+                src="COUNTING 1-50 FRONT.jpg"
                 alt="Product Image"
               />
               <div className="">

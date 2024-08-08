@@ -212,7 +212,7 @@ function OrderSummary() {
           })}
           </div>
 
-        <div className="max-h-[17%] w-full flex justify-center ">
+        <div className="max-h-[60px] w-full flex justify-center ">
           <button
             onClick={placeorder}
             disabled={cart.cartItems === 0}

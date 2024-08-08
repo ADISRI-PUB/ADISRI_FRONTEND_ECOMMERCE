@@ -97,7 +97,7 @@ function Orders() {
 },[order])
   return (
     <>
-    <p>{orderAll.acess}</p>
+    {/* <p>{orderAll.acess}</p> */}
     <div className="min-h-screen">
       <h1 className="User-name ml-10 font-bold leading-loose max-sm:text-xl">
         {" "}
