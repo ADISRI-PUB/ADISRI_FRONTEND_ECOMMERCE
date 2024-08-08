@@ -72,8 +72,8 @@ function Checkout() {
                 <input
                   type="number"
                   id="email"
-                  name="email"
-                  className="w-full rounded-md border border-gray-200 text-black px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
+                  name="phone"
+                  className="w-full putr rounded-md border border-gray-200 text-black px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
                   placeholder="XXXXX-XXXXX"
                   required
                   onBlur={(e)=>{
@@ -82,14 +82,17 @@ function Checkout() {
                     if (regex.test(phone) && phone.length===10) {
                       document.querySelector('.label-phone').classList.add('text-white')
                       document.querySelector('.label-phone').classList.remove('text-red-600')
-                      document.querySelector('.label-phone').innerHTML=`<p className='text-white'>Phone* </p>`
+                      document.querySelector('.label-phone').innerHTML=`<p className=''>Phone* </p>`
+                      document.querySelector('.putr').style.backgroundColor="white"
                       setCorrectform(true)
                       document.querySelector('.submitbutton').classList.replace('bg-red-600','bg-gray-900')
                     }
                     else{
                       setCorrectform(false)
+                      document.querySelector('.putr').style.backgroundColor="#FF6969"
                       document.querySelector('.label-phone').classList.add('text-red-600')
-                      document.querySelector('.label-phone').innerHTML=`<p>Phone* <span className="text-red-600">please enter the valid phone number</span> </p>`
+                      document.querySelector('.label-phone').classList.remove('text-white')
+                      document.querySelector('.label-phone').innerHTML=`<p>Phone* <span className="">please enter the valid phone number</span> </p>`
                     }
                     //  console.log(regex.test(e.target.value));
                 }}
