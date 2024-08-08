@@ -1,14 +1,103 @@
-import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect,useRef,useState } from "react";
+import { useSelector,useDispatch } from "react-redux";
+import { useParams,useNavigate } from 'react-router-dom'
 import gsap from "gsap";
+import { getOrderDetails } from "../actions/OrderActions";
 import { Link } from "react-router-dom";
 import "../Css/Order.css";
+// import 
+import OrderDetails from "../Components/OrderDetails";
 function Orders() {
+  const [myorder,setMyorder] =useState([])
+  const orderAllDetails = useSelector((state) => state.orderAllDetails);
+  const {orderAll,error,success}=orderAllDetails
   const { userprofile } = useSelector((state) => state.user);
+  const orderDetails =useSelector(state =>state.orderDetails)
+  const {order} =orderDetails
+  const [myarray,setMyarray]= useState([])
+  const dispatch =useDispatch()
+  const [id,setId] =useState()
+  const [myOrderDeatils,setMyOrderDetails]=useState([])
+  function usePrevious (value){
+        const ref =useRef()
+        useEffect(()=>{
+           ref.current=value
+        },[value])
+        return ref.current
+  }
+  const Previous = usePrevious(orderDetails)
+  useEffect(()=>{
+    let array=[]
+    setTimeout(()=>{
+      array =Object.keys(orderAll).map((key)=>{
+        return orderAll[key]
+      })
+    
+         setMyarray(array.slice(0,array.length-1))
+      
+      //  console.log(myarray);
 
-  useEffect(() => {});
+      // console.log(array);
+      let id 
+       array.map((key,index)=>{
+        if (index<=array.length-2) {
+          // console.log(key.Order_Id);
+          // setId(key.Order_Id)
+     
+            id =key.Order_Id
+            dispatch(getOrderDetails(id)) 
+          // console.log(id);
+          
+          // console.log(setId);
+      
+
+         
+          
+          
+        }
+            
+       })
+               
+    },2000)
+  
+        
+      //  dispatch(getOrderDetails(myarray[7].Order_Id))
+      //  console.log(orderDetails);
+   
+   
+      
+       
+    
+    
+    //  myarray.forEach(element => {
+    //    console.log(element); 
+       
+    //   });
+     
+    //  console.log(orderDetails);
+    
+    
+    
+    
+    
+    
+    
+    
+  },[dispatch,orderAll])
+  
+  let matched=[]
+  const array2=[] 
+  useEffect(()=>{  
+     if (order) {
+       myOrderDeatils.push(order)   
+     }
+    
+    // console.log(myOrderDeatils);
+   
+},[order])
   return (
     <>
+    <p>{orderAll.acess}</p>
     <div className="min-h-screen">
       <h1 className="User-name ml-10 font-bold leading-loose max-sm:text-xl">
         {" "}
@@ -20,47 +109,30 @@ function Orders() {
       </p>
       <br />
       <br />
-      <div className="sm:ml-10 p-4 text-center sm:text-lg order-detials">
-        <h3 className=" ">Order ID : #45096</h3>
-        <h4 className=" ">Order on :Sunday 3 Aug ,2024</h4>
-        <h5 className="">Total Amount :&#x20B9;360/- </h5>
-      </div>
-      <div className="w-4/5 max-sm:w-full order-detials m-auto border-t p-2 border-b">
-        {/* <div className='col-span-2 space-x-10 flex w-4/5 m-auto' >
-            <img className='w-1/5' src="KIDS ACTIVITY C.jpg" alt="ProductPhoto"  />
-            <div className=' grid logg '>
-              <p className='font-medium sm:text-2xl'>KIDS ACTIVITY C</p>
-              <p className='font-medium sm:text-2xl'>Price : &#x20B9;180</p>
-              <p className='font-medium sm:text-2xl'>Quantity : 2</p>
-            </div>
-          </div> */}
-        <div className="sm:col-span-2">
-          <div className="m-10 space-x-3 w-80 max-sm:w-60 flex  rounded-lg border-2 border-gray-100 p-3 shadow-lg shadow-gray-200">
-            <div className="w-2/5">
-               <img src="KIDS ACTIVITY BOOK B.jpg" alt="" />
-            </div>
-            <div className="w-3/5 "> 
-              <p className="text-lg font-bold">Kids Activity C</p>
-              <p className="text-sm font-semibold text-gray-500"></p>
-              <p className="mt-3 text-4xl font-bold">&#x20B9;180</p>
-              <ul className="mt-4 space-y-2 font-semibold">
-                <li className="flex items-center space-x-4">
-                  <span>Quantity : 2</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div className="w-full  m-auto  space-y-3 p-2">
-          <button className=" w-3/5 flex justify-center m-auto border-2 border-gray-900 p-5 ">
-            VIEW DETIALS
-          </button>
-          <Link to="/trackorder">
-            <button className=" w-3/5 flex m-auto text-white justify-center bg-gray-900 p-5 mt-3">
-              TRACK ORDER
-            </button>
-          </Link>
-        </div>
+      <div >
+        {
+          myarray.map((bookedid,index1)=>{
+               
+             for (let index = 0; index < myOrderDeatils.length; index++) {
+
+                  if (bookedid.Order_Id==myOrderDeatils[index].Order_Id) {    
+                      // console.log(myOrderDeatils[index].orderItems);
+                      
+                           return(
+
+                             <OrderDetails key={index1} total_amount={bookedid.Total_Price} time ={bookedid.CreateAt} order_id ={bookedid.Order_Id} items={myOrderDeatils[index].orderItems} />
+                          )
+                       
+
+
+                    
+                  }
+              
+             }
+                
+              
+          })
+        }
       </div>
       </div>
     </>

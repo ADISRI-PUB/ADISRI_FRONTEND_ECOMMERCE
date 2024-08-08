@@ -212,11 +212,11 @@ function OrderSummary() {
           })}
           </div>
 
-        <div className=" m-auto w-3/4">
+        <div className="max-h-[17%] w-full flex justify-center ">
           <button
             onClick={placeorder}
             disabled={cart.cartItems === 0}
-            className="transition-all duration-200 hover:bg-gray-800 p-4 w-full text-white bg-gray-700 "
+            className="  w-[80%]  transition-all duration-200 hover:bg-gray-800 p-4  text-white bg-gray-700 "
           >
             ORDER
           </button>
