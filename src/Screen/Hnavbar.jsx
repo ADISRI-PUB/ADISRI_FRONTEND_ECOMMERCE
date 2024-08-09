@@ -114,8 +114,8 @@ function Hnavbar() {
 
 
   const orderAll =(e)=>{
-    e.preventDefault()
-    dispatch(getAllOrderDetails())
+    // e.preventDefault()
+    // dispatch(getAllOrderDetails())
     home('/myorders')
   }
 

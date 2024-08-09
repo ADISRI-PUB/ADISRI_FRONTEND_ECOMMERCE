@@ -140,6 +140,9 @@ export const getAllOrderDetails =()=> async (dispatch,getState) => {
             `${BASE_URL}/data/order/all/`,
             config
         )
+
+        //  console.log(data);
+        
         const access = token
         const data2 ={
             ...data,
