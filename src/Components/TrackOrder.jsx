@@ -176,11 +176,11 @@ function TrackOrder() {
           <p className="leading-loose ml-8  w-4/5 m-auto border-slate-200 order-id">
             Order ID : {order ? order.Order_Id : " "}
           </p>
-          <a className="ml-20 max-sm:ml-10 border-b  cursor-pointer ">
+          <a className=" m-auto block ml-[2%]   cursor-pointer ">
             {
               currentstep >=3 ?(<></>):(
                
-          <button onClick={deletehandler}  className=" w-1/5 flex justify-center m-auto border-2 transition-all duration-200 hover:bg-red-500 hover:text-white  border-gray-900 p-5 cancel-order ">
+          <button onClick={deletehandler}  className=" w-1/5 max-sm:w-[60%] justify-center m-auto border-2 transition-all duration-200 hover:bg-red-500 hover:text-white  border-gray-900 sm:p-5 max-sm:p-2 cancel-order ">
               CANCEL ORDER
             </button>
               )
