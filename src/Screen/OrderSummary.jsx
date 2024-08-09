@@ -35,7 +35,7 @@ function OrderSummary() {
 
     setSubtotal(cart.itemsPrice);
     setShippingprice(cart.ShippingPrice);
-    console.log(cart.shippingAddress);
+    // console.log(cart.shippingAddress);
     // setImage(cart.cartItems.image)
     // console.log(image);
   }, [success, history]);
@@ -166,7 +166,7 @@ function OrderSummary() {
           {cart.cartItems.map((booked, index) => {
             return (
               <> 
-              <div className="summary-container-1 w-full border shadow-md  ">
+              <div key={index} className="summary-container-1 w-full border shadow-md  ">
                 {" "}
                 
                 <div key={index} className="flex">

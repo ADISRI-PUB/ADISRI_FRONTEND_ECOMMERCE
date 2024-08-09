@@ -1,23 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getOrderDetails } from "../actions/OrderActions";
+import { getAllOrderDetails } from '../actions/OrderActions'
 import { deleteorderid } from "../actions/OrderActions";
-function OrderDetails({ time, items=[], order_id, total_amount }) {
+function OrderDetails({ time, items=[], order_id, total_amount,setloder }) {
   const dispatch = useDispatch();
+  const history =useNavigate()
   //  const [id,setId] =useState(details.Order_Id)
   //  const [items,setItems] =useState([])
   //  const orderDetails =useSelector(state =>state.orderDetails)
 
-  useEffect(() => {
-   
-    //  time.substr(0,time.indexOf("T")) 
-   
-    
-     
-    // console.log(items);
-    
-  }, []);
+
+
+
 
   return (
     <>
@@ -37,9 +33,7 @@ function OrderDetails({ time, items=[], order_id, total_amount }) {
       </div>
       <div className="  relative">
        <div className="w-[30%] m-auto   max-sm:w-4/5 max-sm:p-0    space-y-3 p-2">
-            <button onClick={()=>{ dispatch( deleteorderid(order_id))}} className=" w-3/5 flex justify-center m-auto border-2 border-gray-900 p-5 ">
-              CANCEL ORDER
-            </button>
+           
             <Link to={`/trackorder/${order_id}`}>
               <button className=" w-3/5 flex m-auto text-white justify-center bg-gray-400 transition-all duration-200 hover:bg-gray-900 p-5 mt-3">
                 TRACK ORDER

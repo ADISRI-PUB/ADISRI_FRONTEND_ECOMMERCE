@@ -78,7 +78,7 @@ function Checkout() {
                   required
                   onBlur={(e)=>{
                     const regex =/[6-9]{1}[0-9]{9}/
-                   console.log("dsfkljs");
+                  //  console.log("dsfkljs");
                     if (regex.test(phone) && phone.length===10) {
                       document.querySelector('.label-phone').classList.add('text-white')
                       document.querySelector('.label-phone').classList.remove('text-red-600')
@@ -104,7 +104,7 @@ function Checkout() {
                     
 
                     setphone(e.target.value)
-                       console.log(phone);
+                      //  console.log(phone);
                      }
                     
                      
