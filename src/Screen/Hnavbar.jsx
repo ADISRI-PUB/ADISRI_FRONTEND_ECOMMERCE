@@ -151,11 +151,11 @@ function Hnavbar() {
               to="/"
               className={({ isActive }) =>
                 isActive
-                  ? "bg-homebutton rounded-tr-full rounded-tl-full  p-3 transition-all duration-200 h-[90%] relative top-2"
+                  ? "bg-homebutton rounded-tr-full rounded-tl-full  p-3 transition-all duration-200 h-[90%] relative top-1"
                   : ""
               }
             >
-              HOME
+            <span className="relative top-1"> HOME</span> 
             </NavLink>
             <NavLink
               to="/preprimary"
