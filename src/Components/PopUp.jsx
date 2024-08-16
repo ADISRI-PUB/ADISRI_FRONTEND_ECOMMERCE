@@ -45,10 +45,13 @@ export default function PopUp() {
         <div className="p-4 bg-white">
           <p>
         
-            <b> Contact Us </b>
+            <b> Our Policy </b>
           </p>
           <ul className="targets">
-           <Link to='/contact'> <li>Write To Us</li></Link>
+           {/* <Link to='/contact'> <li>Write To Us</li></Link> */}
+           <Link to='/contact'> <li>Refund and Return Policy</li></Link>
+           <Link to='/contact'> <li>Shipping Policy</li></Link>
+           <Link to='/contact'> <li>COD Order Policy</li></Link>
           </ul>
           <div className="h-10 bg-white ">
 

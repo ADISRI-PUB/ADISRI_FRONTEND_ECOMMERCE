@@ -6,6 +6,13 @@ import { saveShippingAddress } from '../actions/CartActions'
 
 
 function Checkout() {
+  const history = useNavigate()
+  useEffect(()=>{
+    if (!localStorage.getItem('token')) {
+       history('/')
+    }
+    
+ })
   const cart = useSelector(state => state.cart)
   const {shippingAddress} =cart
   const [address, setaddress] = useState(shippingAddress.address);
@@ -14,8 +21,8 @@ function Checkout() {
   const [school, setschool] = useState(shippingAddress.school);
   const [phone,setphone] = useState(shippingAddress.phone)
   const [correctform,setCorrectform] =useState(true)
-  const history = useNavigate()
   const dispatch = useDispatch()
+ 
   let data = useSelector((state) => state.cart.cartItems);
   //  console.log(data);
   const [Price, setPrice] = useState("");
@@ -150,7 +157,7 @@ function Checkout() {
 
               <label
                 htmlFor="billing-address"
-                className="mt-4 mb-2 block text-sm font-medium"
+                className="mt-4 mb-2 block text-sm font-medium label-address"
               >
                 Billing Address*
               </label>
@@ -163,11 +170,22 @@ function Checkout() {
                     className="w-full rounded-md border border-gray-200 text-black px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
                     placeholder="Street Address"
                     required
-                  
+                    onBlur={()=>{
+                       if (!address) {
+                         document.querySelector('.label-address').classList.add('text-red-600')
+                         setCorrectform(false)
+                        }
+                        else{
+                          document.querySelector('.label-address').classList.remove('text-red-600')
+                          setCorrectform(true)
+                         document.querySelector('.submitbutton').classList.replace('bg-red-600','bg-gray-900')
+
+                       }
+                    }}
                     value={address ? address : " "}
                     onChange={(e)=>setaddress(e.target.value)}
                   />
-                  <div className="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3">
+                  <div className="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3 options">
                     <img
                       className="h-4 w-4 object-contain"
                       src="pngegg (17)1.png"
@@ -182,22 +200,42 @@ function Checkout() {
                   required
                   value={city || ""}
                   onChange={(e)=>setcity(e.target.value)}
+                  onBlur={()=>{
+                    if (!city) {
+                      document.querySelector('options').classList.add('bg-red-600')
+                      setCorrectform(false)
+                    }
+                    else{
+                      document.querySelector('.options').classList.remove('bg-red-600')
+                      setCorrectform(true)
+                    }
+                  }}
                 >
                   <option value=""  disabled >
                     -------State-----
                   </option>
                   <option value="New Delhi">New Delhi</option>
-                  <option value="Noida">Noida</option>
+                  {/* <option value="Noida">Noida</option> */}
                   <option value="Uttar Pardesh">Uttar Pardesh</option>
                 </select>
                 <input
                   type="number"
                   name="billing-zip"
-                  className="flex-shrink-0 text-black rounded-md border border-gray-200 px-4 py-3 text-sm shadow-sm outline-none sm:w-1/6 focus:z-10 focus:border-blue-500 focus:ring-blue-500"
+                  className="flex-shrink-0 zip text-black rounded-md border border-gray-200 px-4 py-3 text-sm shadow-sm outline-none sm:w-1/6 focus:z-10 focus:border-blue-500 focus:ring-blue-500"
                   placeholder="ZIP"
                   required
                   value={postalcode ? postalcode : " "}
                   onChange={(e)=>setpostalcode(e.target.value)}
+                  onBlur={()=>{
+                    if (!postalcode) {
+                       document.querySelector('.zip').classList.add('bg-red-600')
+                       setCorrectform(false)
+                    }
+                    else{
+                      document.querySelector('.zip').classList.remove('bg-red-600')
+                      setCorrectform(true)
+                    }
+                  }}
                 />
               </div>
 

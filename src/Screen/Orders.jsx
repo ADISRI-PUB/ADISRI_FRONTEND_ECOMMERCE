@@ -8,7 +8,15 @@ import { Link } from "react-router-dom";
 import "../Css/Order.css";
 // import
 import OrderDetails from "../Components/OrderDetails";
+import Loader from "../Components/Loader";
 function Orders() {
+  const history =useNavigate()
+  useEffect(()=>{
+    if (!localStorage.getItem('token')) {
+       history('/')
+    }
+    
+ })
   const [myorder, setMyorder] = useState([]);
   const orderAllDetails = useSelector((state) => state.orderAllDetails);
   const { orderAll, error, success } = orderAllDetails;
@@ -95,51 +103,60 @@ function Orders() {
   return (
     <>
       {/* <p>{orderAll.acess}</p> */}
+{
+  success?(
+    <div className="min-h-screen bg-white flex justify-center">
+     <Loader/>
+     </div>
+  ):(
+    <div className="min-h-screen">
+    <h1 className="User-name ml-10 font-bold leading-loose max-sm:text-xl">
+      {" "}
+      Your Orders
+    </h1>
+    <p className="text-lg ml-10">
+      Checkout your recent Orders, Manage Return and Discover Similar
+      Products !
+    </p>
+    <br />
+    <br />
+    <div className="nothing-order">
+      {loader ? (
+        <>
+        {
+          myarray.length!=0 ? (
+            myarray.map((bookedid, index1) => {
+              // console.log(bookedid);
 
-      <div className="min-h-screen">
-        <h1 className="User-name ml-10 font-bold leading-loose max-sm:text-xl">
-          {" "}
-          Your Orders
-        </h1>
-        <p className="text-lg ml-10">
-          Checkout your recent Orders, Manage Return and Discover Similar
-          Products !
-        </p>
-        <br />
-        <br />
-        <div className="nothing-order">
-          {loader ? (
+              return (
+                <OrderDetails
+                  setloder={setloder}
+                  key={index1}
+                  total_amount={bookedid.Total_Price}
+                  time={bookedid.CreateAt}
+                  order_id={bookedid.Order_Id}
+                 items={bookedid.orderItems}
+                />
+              );
+            })
+          ):(
             <>
-            {
-              myarray.length!=0 ? (
-                myarray.map((bookedid, index1) => {
-                  // console.log(bookedid);
-    
-                  return (
-                    <OrderDetails
-                      setloder={setloder}
-                      key={index1}
-                      total_amount={bookedid.Total_Price}
-                      time={bookedid.CreateAt}
-                      order_id={bookedid.Order_Id}
-                     items={bookedid.orderItems}
-                    />
-                  );
-                })
-              ):(
-                <>
-                <img className="opacity-30 m-auto w-[20%]" src="pngegg (17)12.png" alt=""  />
-                <div className="max-sm:text-[3vw] sm:text-[3vw] text-center text-gray-400 ">You Nothing Order Yet.</div>
-                </>
-              )
-            }
-           </>
-          ) : (
+            <img className="opacity-30 m-auto w-[20%]" src="pngegg (17)12.png" alt=""  />
+            <div className="max-sm:text-[3vw] sm:text-[3vw] text-center text-gray-400 ">You Nothing Order Yet.</div>
+            </>
+          )
+        }
+       </>
+      ) : (
 
-            <div className="loader w-[100px] max-sm:w-[50px]   absolute max-sm:left-[45%] left-[50%] top-[30%]"></div>
-          )}
-        </div>
-      </div>
+        <div className="loader w-[100px] max-sm:w-[50px]   absolute max-sm:left-[45%] left-[50%] top-[30%]"></div>
+      )}
+    </div>
+  </div>
+  )
+     
+
+}
     </>
     // <>
 

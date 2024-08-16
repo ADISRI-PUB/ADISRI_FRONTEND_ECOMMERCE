@@ -106,17 +106,15 @@ export default function CrousalBooks() {
               />
               <div className="">
                 <h2 className="mb-2  font-medium  text-gray-900 text-md bookcrousal p-2 text-center">
-                  <br />
+                
                 COUNTING 1-50
                 </h2>
 
                 <div className="flex items-center">
-                  <p className=" font-semibold text-gray-900 bookcrousal p-4 ">
+                  {/* <p className=" font-semibold text-gray-900 bookcrousal p-4 ">
                   &#x20b9;190/-
-                  </p>
-                  <p className="  font-medium text-gray-500 line-through  bookcrousal sm:p-4">
-                  &#x20b9;200/-
-                  </p>
+                  </p> */}
+                
                 </div>
               </div>
             </div>
@@ -136,12 +134,10 @@ export default function CrousalBooks() {
                 </h2>
 
                 <div className="flex items-center">
-                  <p className=" font-semibold text-gray-900 bookcrousal p-4 ">
+                  {/* <p className=" font-semibold text-gray-900 bookcrousal p-4 ">
                     ₹260/-
-                  </p>
-                  <p className="  font-medium text-gray-500 line-through  bookcrousal sm:p-4">
-                  ₹280/-
-                  </p>
+                  </p> */}
+               
                 </div>
               </div>
             </div>
@@ -162,12 +158,10 @@ export default function CrousalBooks() {
                 </h2>
 
                 <div className="flex items-center">
-                  <p className=" font-semibold text-gray-900 bookcrousal p-4 ">
+                  {/* <p className=" font-semibold text-gray-900 bookcrousal p-4 ">
                   ₹140/-
-                  </p>
-                  <p className="  font-medium text-gray-500 line-through  bookcrousal sm:p-4">
-                  ₹150/-
-                  </p>
+                  </p> */}
+                
                 </div>
               </div>
             </div>
@@ -187,12 +181,10 @@ export default function CrousalBooks() {
                 </h2>
 
                 <div className="flex items-center">
-                  <p className=" font-semibold text-gray-900 bookcrousal p-4 ">
+                  {/* <p className=" font-semibold text-gray-900 bookcrousal p-4 ">
                   ₹175/-
-                  </p>
-                  <p className="  font-medium text-gray-500 line-through  bookcrousal sm:p-4">
-                  ₹185/-
-                  </p>
+                  </p> */}
+                 
                 </div>
               </div>
             </div>
@@ -216,9 +208,7 @@ export default function CrousalBooks() {
                   <p className=" font-semibold text-gray-900 bookcrousal p-4 ">
                   ₹110/-
                   </p>
-                  <p className="  font-medium text-gray-500 line-through  bookcrousal sm:p-4">
-                  ₹120/-
-                  </p>
+                 
                 </div>
               </div>
             </div>
@@ -242,9 +232,7 @@ export default function CrousalBooks() {
                   <p className=" font-semibold text-gray-900 bookcrousal p-4 ">
                   ₹175/-
                   </p>
-                  <p className="  font-medium text-gray-500 line-through  bookcrousal sm:p-4">
-                  ₹185/-
-                  </p>
+                
                 </div>
               </div>
             </div>
@@ -269,10 +257,7 @@ export default function CrousalBooks() {
 
 
                   </p>
-                  <p className="  font-medium text-gray-500 line-through  bookcrousal sm:p-4">
-                  ₹205/-
-
-                  </p>
+                 
                 </div>
               </div>
             </div>
@@ -296,9 +281,7 @@ export default function CrousalBooks() {
                   <p className=" font-semibold text-gray-900 bookcrousal p-4 ">
                   ₹185/-
                   </p>
-                  <p className="  font-medium text-gray-500 line-through  bookcrousal sm:p-4">
-                  ₹195/-
-                  </p>
+                
                 </div>
               </div>
             </div>

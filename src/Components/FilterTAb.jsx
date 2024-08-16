@@ -96,13 +96,28 @@ function FilterTAb({Class,Subject,setSubject ,setClass,API ,setApi}) {
   return (
     <>
      <div className='max-sm:absolute   z-30 '>  
+       <h1 className='ml-2 text-[1vw] text-gray-500 relative top-3'>Filters </h1>
      <button className=' p-2 rounded-md buttons transition-all duration-300 sm:hidden ' onClick={open}>  
      <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 -960 960 960" width="20px" fill="#000000"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg>
      </button>
-          <div className=" max-sm:bg-white slide-bar   p-4 overflow-hidden relative max-sm:-translate-x-full  transition-all duration-400 " >
+          <div className=" max-sm:bg-white slide-bar  min-h-screen max-h-screen   p-4 overflow-hidden relative max-sm:-translate-x-full  transition-all duration-400 " >
       
-          <p className="text-lg ">Class</p>
+          <div className=" transition-all duration-1000 text-lg p-[1vw] border-2 border-gray-500 rounded-lg grid grid-col-2 logg relative cursor-pointer" >
+            <div className='flex  relative' onClick={()=>{
+              document.querySelector('.option-tab').classList.toggle('hidden')
+              if (document.querySelector('#arrrrr').classList.contains('rotate-90')) {
+                document.querySelector('#arrrrr').classList.replace('rotate-90','-rotate-90')
+              }
+              else{
+                document.querySelector('#arrrrr').classList.replace('-rotate-90','rotate-90')
+              }
+              
 
+          }}>
+           <span className='text-[1vw] max-sm:text-[2vw]'>By Class</span>
+           <svg className=' transition-all duration-200 rotate-90    absolute right-3' xmlns="http://www.w3.org/2000/svg"  id='arrrrr' height="1.3vw" viewBox="0 -960 960 960" width="1.3vw" fill="#808080"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg>
+           </div>
+           <div className='hidden option-tab '>
           {Class.map((element) => {
             return (
               <div  className="space-x-2 newclass" key={element.id}>
@@ -113,14 +128,34 @@ function FilterTAb({Class,Subject,setSubject ,setClass,API ,setApi}) {
                   value={`${element.name}`}
                   id={`${element.id}`}
                 />
-                <label className="sm:text-md max-sm:text-xs" htmlFor={`${element.id}`}>{element.name}</label>
+                <label className="sm:text-[1vw] max-sm:text-[2vw]" htmlFor={`${element.id}`}>{element.name}</label>
               </div>
             );
           })}
+          </div>
+          </div>
+        
           <br />
-          <p className="text-lg">Subjects</p>
+      
 
-          {Subject.map((element) => {
+         
+          <div className=" transition-all duration-1000 text-lg p-[1vw] border-2 border-gray-500 rounded-lg grid grid-col-2 logg relative cursor-pointer" >
+            <div className='flex  relative'onClick={()=>{
+              document.querySelector('.option-tab2').classList.toggle('hidden')
+              if (document.querySelector('#arrrrr2').classList.contains('rotate-90')) {
+                document.querySelector('#arrrrr2').classList.replace('rotate-90','-rotate-90')
+              }
+              else{
+                document.querySelector('#arrrrr2').classList.replace('-rotate-90','rotate-90')
+              }
+              
+
+          }}>
+           <span className='text-[1vw] max-sm:text-[3vw]'> By Subjects</span>
+           <svg className=' transition-all duration-200 rotate-90    absolute right-3' xmlns="http://www.w3.org/2000/svg"  id='arrrrr2' height="1.3vw" viewBox="0 -960 960 960" width="1.3vw" fill="#808080"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg>
+           </div>
+           <div className='hidden option-tab2 p-3'>
+           {Subject.map((element) => {
             return (
               <div className="space-x-2 newclass2" key={element.id}>
                 <input
@@ -130,10 +165,12 @@ function FilterTAb({Class,Subject,setSubject ,setClass,API ,setApi}) {
                   value={`${element.name}`}
                   id={`${element.id}`}
                 />
-                <label className="text-md max-sm:text-xs" htmlFor={`${element.id}`}>{element.name}</label>
+                <label className="text-[1vw] max-sm:text-[2vw]" htmlFor={`${element.id}`}>{element.name}</label>
               </div>
             );
           })}
+          </div>
+          </div>
         </div>
        
           </div>

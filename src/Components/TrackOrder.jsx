@@ -6,11 +6,17 @@ import { listProductsDetails } from "../actions/ProductsActions";
 import { deleteorderid } from "../actions/OrderActions";
 import "../Css/Order.css";
 import TrackOrderBook from "./TrackOrderBook";
+import Loader from "./Loader";
 const BASE_URL = import.meta.env.VITE_URL;
 function TrackOrder() {
   const history = useNavigate();
   const { id } = useParams();
-  
+  useEffect(()=>{
+    if (!localStorage.getItem('token')) {
+       history('/')
+    }
+    
+ })
  
   const orderDetails = useSelector((state) => state.orderDetails);
   // const {}
@@ -107,9 +113,12 @@ function TrackOrder() {
 
   return (
     <>
-    
-    
-       
+    {
+      loading ?(
+      <div className="min-h-screen flex justify-center">
+     <Loader/>
+     </div>
+    ):(
         <div className="min-h-screen">
         <h1 className="ml-2 max-sm:ml-0 p-4 font-semibold confirm-text ">
           Your Order Is Confirmed !
@@ -281,6 +290,12 @@ function TrackOrder() {
         )}
         </div>
       </div>
+      )
+       
+
+    }
+    
+       
       
     
 

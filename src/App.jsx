@@ -28,6 +28,7 @@ import Orders from './Screen/Orders'
 import TrackOrder from './Components/TrackOrder'
 import OrderSummary from './Screen/OrderSummary'
 import MyProfile from './Screen/MyProfile'
+
 function App({profile,logout}) {
   const items = useSelector((state)=>state.cart)
   const {cartItems} =items
@@ -38,8 +39,20 @@ function App({profile,logout}) {
     return (
     <> 
     <BrowserRouter>
+    <div className='w-12 max-sm:w-10 fixed z-50 cartsvg bottom-24 right-10 max-sm:right-5  ' >
+    <div className=" flex  float-end relative ">
+          
+            <Link className="w-full  " to={`${import.meta.env.VITE_PHONE}`} target='_blank'>
+            <img src="pngwing.com.png" alt="" />
+           
+          
+            </Link>
+         
+          </div>
+    </div>
     <div className='w-12 max-sm:w-10 fixed z-50 cartsvg bottom-10 right-10 max-sm:right-5  ' >
     <div className=" flex  float-end relative ">
+          
             <Link className="w-full  " to="/cart">
     <img className='' src="pngegg (14) 6.png" alt="" />
               <span
@@ -49,6 +62,9 @@ function App({profile,logout}) {
                 {cartItems.length}
               </span>
           
+            </Link>
+            <Link to="" >
+        
             </Link>
           </div>
     </div>

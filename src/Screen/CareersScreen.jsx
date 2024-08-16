@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { listCareers } from '../actions/careerActions';
 import CareerItem from '../Components/CareerItem'
 import '../Css/CAREER.css'
+import Loader from '../Components/Loader';
 function CareersScreen() {
   const dispatch = useDispatch();
   const careerList = useSelector(state => state.careerList);
@@ -17,7 +18,7 @@ function CareersScreen() {
   return (
     <div>
       {loading ? (
-        <p>Loading...</p>
+       <Loader/>
       ) : error ? (
         <p>{error}</p>
       ) : (
