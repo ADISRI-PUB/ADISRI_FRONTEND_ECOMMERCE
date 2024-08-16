@@ -35,7 +35,7 @@ function OrderDetails({ time, items=[], order_id, total_amount,setloder }) {
        <div className="w-[30%] m-auto   max-sm:w-4/5 max-sm:p-0    space-y-3 p-2">
            
             <Link to={`/trackorder/${order_id}`}>
-              <button className=" w-3/5 flex m-auto text-white justify-center bg-gray-400 transition-all duration-200 hover:bg-gray-900 p-5 mt-3">
+              <button className=" w-3/5 flex m-auto text-white justify-center hover:bg-gray-400 transition-all duration-200 bg-gray-900 p-5 mt-3">
                 TRACK ORDER
               </button>
             </Link>

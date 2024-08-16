@@ -42,3 +42,25 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 /* preprimart section css////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+/* sign in  */
+
+@media ( min-width:1041px){
+  .responsive{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+  }
+  .content3{
+    height:45% ;
+  }
+}
+@media (max-width:750px){
+  .responsive{
+     display: grid;
+     grid-template-columns: 1fr;        
+  }
+  .content3{
+    height: 100%;
+  }
+}

@@ -8,6 +8,7 @@ import axios from "axios";
 import { listProducts } from "../actions/ProductsActions";
 import { useNavigate } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
+import Loader from "../Components/Loader";
 const BASE_URL = import.meta.env.VITE_URL 
 function IPrePrimary() {
    
@@ -19,7 +20,7 @@ function IPrePrimary() {
   const { error, loading, products = [] } = productsList;
 // console.log(products);
   let [API, setApi] = useState("");
-  let [loader, setLoader] = useState(true);
+  // let [loader, setLoader] = useState(true);
   const [Class, setClass] = useState([
     { id: 1, name: "Play", isChecked: false },
     { id: 2, name: "Nursery", isChecked: false },
@@ -43,10 +44,7 @@ function IPrePrimary() {
     let flag = products;
     if (flag.length == 0) {
       dispatch(listProducts());
-      setTimeout(() => {
-        
-        setLoader(false);
-      }, 500);
+     
     }
 
     // fetching the data for filter option /////////////////////////////////////////////////////////
@@ -58,14 +56,11 @@ function IPrePrimary() {
         // console.log(data.data);
         setFilterbook(data.data);
       } catch (error) {
-        setLoader(false);
+        // setLoader(false);
         console.log("cant get the data", error);
       }
       finally{
-        setTimeout(() => {
-          
-          setLoader(false)
-        }, 700);
+     
       }
     };
     fetchData();
@@ -74,8 +69,8 @@ function IPrePrimary() {
   return (
     <>
  
-      <div className="relative primary-sections min-h-screen">
-        <div></div>
+      <div className=" primary-sections min-h-screen ">
+      
         <div className="sm:flex primary-sections">
           <div className="sm:w-1/6 z-40  primarysection1 max-sm:w-full max-sm:h-full">
             <FilterTAb
@@ -89,19 +84,10 @@ function IPrePrimary() {
           </div>
           <div className="sm:w-5/6 sm:p-10     max-sm:w-full  card-container ">
             {API === "" ? (
-              loader ? (
-                <div className=" grid grid-cols-1 sm:col-span-4 ">
-                <div className="flex justify-center items-center">
-                  <div
-                    className="inline-block h-8 w-8 sm:h-20 sm:w-20 animate-spin rounded-full border-4 border-solid border-current border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite] "
-                    role="status"
-                  >
-                    <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
-                      Loading...
-                    </span>
-                  </div>
-                </div>
-                </div>
+              loading ? (
+              
+               <Loader/>
+              
               ) : (
                 products.map((product) => {
                   return (
@@ -113,18 +99,21 @@ function IPrePrimary() {
                 })
               )
             ) : loader ? (
-              <div className=" grid grid-cols-1 sm:col-span-4 ">
-              <div className="flex justify-center items-center">
-                <div
-                  className="inline-block h-8 w-8 sm:h-20 sm:w-20 animate-spin rounded-full border-4 border-solid border-current border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite] "
-                  role="status"
-                >
-                  <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
-                    Loading...
-                  </span>
-                </div>
-              </div>
-              </div>
+              <>
+              <Loader/>
+              </>
+              // <div className=" grid grid-cols-1 sm:col-span-4 ">
+              // <div className="flex justify-center items-center">
+              //   <div
+              //     className="inline-block h-8 w-8 sm:h-20 sm:w-20 animate-spin rounded-full border-4 border-solid border-current border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite] "
+              //     role="status"
+              //   >
+              //     <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
+              //       Loading...
+              //     </span>
+              //   </div>
+              // </div>
+              // </div>
             ) : (
               filterbook.map((product) => {
                 return (

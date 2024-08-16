@@ -48,9 +48,9 @@ function ProdcutsCard({product,id}) {
     <h2 className="mb-2 text-lg font-medium  text-gray-900">{product.Name}</h2>
     <p className="mb-2 text-base flex flex-wrap  text-gray-700"> <span> <b> Class : </b> {product.Class}</span>,<span> <b> SUBJECT :</b> {product.Subject}</span></p>
     <div className="flex items-center">
-      <p className="mr-2 text-lg font-semibold text-gray-900 ">&#x20b9; {product.Price}/-</p>
-      <p className="text-base  font-medium text-gray-500 line-through dark:text-gray-300">&#x20b9; {product.Price+10}</p>
-      <p className="ml-auto text-base font-medium text-green-500">~10% off</p>
+      <p className=" text-[1vw] max-sm:text-[4vw] font-semibold text-gray-900 w-full  text-center "> Price : &#x20b9;{product.Price}/-</p>
+      
+   
     </div>
   </div>
 </div>
