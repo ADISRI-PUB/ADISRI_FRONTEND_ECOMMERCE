@@ -14,7 +14,7 @@ function IPrePrimary() {
    
   
   const [filterbook, setFilterbook] =useState([])
-
+  const history =useNavigate()
   const dispatch = useDispatch();
   const productsList = useSelector((state) => state.productList);
   const { error, loading, products = [] } = productsList;
@@ -48,7 +48,9 @@ function IPrePrimary() {
     }
 
     // fetching the data for filter option /////////////////////////////////////////////////////////
-   
+    if (error) {
+       history('/error')
+    }
     const fetchData = async () => {
       try {
          
@@ -64,11 +66,12 @@ function IPrePrimary() {
       }
     };
     fetchData();
-  }, [dispatch, API]);
+  }, [dispatch, API,error]);
 
   return (
     <>
  
+  
       <div className=" primary-sections min-h-screen ">
       
         <div className="sm:flex primary-sections">
@@ -98,7 +101,7 @@ function IPrePrimary() {
                   );
                 })
               )
-            ) : loader ? (
+            ) : loading ? (
               <>
               <Loader/>
               </>

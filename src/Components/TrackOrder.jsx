@@ -7,6 +7,7 @@ import { deleteorderid } from "../actions/OrderActions";
 import "../Css/Order.css";
 import TrackOrderBook from "./TrackOrderBook";
 import Loader from "./Loader";
+import Take from "/Take.png"
 const BASE_URL = import.meta.env.VITE_URL;
 function TrackOrder() {
   const history = useNavigate();
@@ -119,15 +120,25 @@ function TrackOrder() {
      <Loader/>
      </div>
     ):(
-        <div className="min-h-screen">
-        <h1 className="ml-2 max-sm:ml-0 p-4 font-semibold confirm-text ">
+        <div className="min-h-screen bg-[#F3EEE8] ">
+               
+          <div className=" grid grid-cols-2 logg">
+          <div className="ml-2">
+        <h1 className="ml-2 max-sm:ml-0  font-semibold confirm-text ">
+       
           Your Order Is Confirmed !
         </h1>
-        {/* border-b p-4 m-auto checked-shipment grid grid-cols-4  justify-center  logg  */}
-        <p className="ml-8 max-sm:ml-4 font-medium border-b border-slate-200 User-name">
+        
+        <p className="ml-8 max-sm:ml-4 font-medium  border-slate-200 User-name">
           {" "}
           Hi, {userprofile.name} !
         </p>
+          </div>
+          <div className="m-auto flex justify-center">
+         
+               <img className="w-2/6" src={Take} alt="" />
+               </div>
+        </div>
         <div className="flex justify-between  w-full">
           {step2.map((e, index) => {
             return (
@@ -136,7 +147,7 @@ function TrackOrder() {
                 key={index}
                 className={`items-of-step p-3  ${
                   currentstep >= index + 1
-                    ? "before:bg-green-400"
+                    ? "before:bg-[#F8C0C9]"
                     : "before:bg-slate-300"
                 } `}
               >

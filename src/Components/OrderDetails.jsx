@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getOrderDetails } from "../actions/OrderActions";
 import { getAllOrderDetails } from '../actions/OrderActions'
 import { deleteorderid } from "../actions/OrderActions";
-function OrderDetails({ time, items=[], order_id, total_amount,setloder }) {
+function OrderDetails({ time, items=[], order_id, total_amount ,Date}) {
   const dispatch = useDispatch();
   const history =useNavigate()
   //  const [id,setId] =useState(details.Order_Id)
@@ -21,12 +21,15 @@ function OrderDetails({ time, items=[], order_id, total_amount,setloder }) {
       : false Order_Id : 3 Shipping_Price : null Tax_Price : null Total_Price :
       null user : 21 */}
       {/* <h1>Hi HCL, it is in sec 16 ,Noida{id}</h1> */}
-      <div className="border-b">
+      <div className="border-b border-[#053634]">
       
-      <div className="sm:ml-10 p-4 text-center sm:text-lg order-detials  ">
+      <div className="sm:ml-10 p-4 text-center sm:text-lg order-detials text-[#053634]  ">
         <h3 className=" "> <b> Order ID :</b>{order_id}</h3>
         <h4 className=" "> <b> Order on :</b>{
-        time.substr(0,time.indexOf("T"))
+          <>
+                     {Date}  <b> Time:</b>
+        { time.substr(0,time.indexOf("."))}
+         </>
         }</h4>
         <h5 className=""> <b> Total Amount :</b>&#x20B9; {total_amount}</h5>
        
@@ -35,7 +38,7 @@ function OrderDetails({ time, items=[], order_id, total_amount,setloder }) {
        <div className="w-[30%] m-auto   max-sm:w-4/5 max-sm:p-0    space-y-3 p-2">
            
             <Link to={`/trackorder/${order_id}`}>
-              <button className=" w-3/5 flex m-auto text-white justify-center hover:bg-gray-400 transition-all duration-200 bg-gray-900 p-5 mt-3">
+              <button className=" w-3/5 flex m-auto text-white justify-center hover:bg-gray-400 transition-all duration-200 bg-[#EBB017] p-5 mt-3">
                 TRACK ORDER
               </button>
             </Link>
@@ -62,11 +65,11 @@ return(
      </div> */}
      
           <div className="">
-            <div className="m-10 space-x-3 w-80 max-sm:w-60 flex  rounded-lg border-2 border-gray-100 p-3 shadow-lg shadow-gray-200">
+            <div className="m-10 space-x-3 w-80 max-sm:w-60 flex  rounded-lg border-2 border-gray-100 p-3 bg-[#053634]  shadow-lg shadow-gray-200">
               {/* <div className="w-2/5">
                 <img src={e.Image} alt="product image" />
               </div> */}
-              <div className="w-full  text-center  ">
+              <div className="w-full  text-center  text-white">
                 <p className="text-lg font-bold">{e.Name}</p>
                 <p className="text-sm font-semibold text-gray-500"></p>
                 <p className="mt-3 text-2xl font-bold">&#x20B9;{e.Price}</p>

@@ -30,22 +30,22 @@ export default function TrackOrderBook({booked ,image}) {
 
               <a
                 href="#"
-                className="flex flex-col items-center bg-white border border-gray-200 border-gray-200 shadow-md md:flex-row md:max-w-xl "
+                className="flex flex-col items-center w-4/5 m-auto bg-[#445862] border  shadow-md md:flex-row md:max-w-xl "
               >
                 <img
-                  className="w-[25%]  max-sm:w-4/5 "
+                  className="w-[30%]  max-sm:w-2/5 "
                   src={i}
                   alt="product_image"
                 />
 
                 <div className="flex flex-col justify-between p-4 leading-normal">
-                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-500 ">
+                  <h5 className="mb-2 text-[1.3vw] max-sm:text-[4vw] font-semibold tracking-tight text-white ">
                     {booked.Name}
                   </h5>
-                  <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                  <p className="mb-3 font-normal text-white">
                     Quantity :{booked.Qty}
                   </p>
-                  <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                  <p className="mb-3 font-normal text-white">
                     Price :{booked.Price}
                   </p>
                 </div>

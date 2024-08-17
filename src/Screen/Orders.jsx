@@ -9,6 +9,8 @@ import "../Css/Order.css";
 // import
 import OrderDetails from "../Components/OrderDetails";
 import Loader from "../Components/Loader";
+import ErrorPage from "../Components/ErrorPage";
+import ThanksOrdering from "./ThanksOrdering";
 function Orders() {
   const history =useNavigate()
   useEffect(()=>{
@@ -57,7 +59,11 @@ function Orders() {
 
   useEffect(() => {
     dispatch(getAllOrderDetails());
-  }, [dispatch]);
+    if (error) {
+      
+      history('/error')
+    }
+  }, [dispatch,error]);
   // useEffect(()=>{
   //   let array=[]
 
@@ -98,8 +104,6 @@ function Orders() {
 
   // },[dispatch,orderAll])
 
-  let matched = [];
-  const array2 = [];
   return (
     <>
       {/* <p>{orderAll.acess}</p> */}
@@ -109,15 +113,23 @@ function Orders() {
      <Loader/>
      </div>
   ):(
-    <div className="min-h-screen">
-    <h1 className="User-name ml-10 font-bold leading-loose max-sm:text-xl">
+    <div className="min-h-screen bg-[#F8F6F1]  ">
+      <div className=" grid  grid-cols-2">
+      <div >
+        
+    <h1 className="User-name  text-[#053634] ml-10 font-bold leading-loose max-sm:text-xl ">
       {" "}
       Your Orders
     </h1>
-    <p className="text-lg ml-10">
+    <p className="text-lg ml-10 text-[#053634]">
       Checkout your recent Orders, Manage Return and Discover Similar
       Products !
     </p>
+    </div>
+    <div>
+    <img className="w-2/6 float-end " src="Order food-pana.png" alt="" srcset="" />
+    </div>
+    </div>
     <br />
     <br />
     <div className="nothing-order">
@@ -133,7 +145,8 @@ function Orders() {
                   setloder={setloder}
                   key={index1}
                   total_amount={bookedid.Total_Price}
-                  time={bookedid.CreateAt}
+                  time={bookedid.Create_Time_At}
+                  Date={bookedid.Create_Date_At}
                   order_id={bookedid.Order_Id}
                  items={bookedid.orderItems}
                 />
@@ -152,6 +165,7 @@ function Orders() {
         <div className="loader w-[100px] max-sm:w-[50px]   absolute max-sm:left-[45%] left-[50%] top-[30%]"></div>
       )}
     </div>
+ 
   </div>
   )
      

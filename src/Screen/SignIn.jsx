@@ -15,6 +15,8 @@ function SignIn() {
   const history = useNavigate();
   const redirect = location.search ? location.search.split("=")[1] : "/";
   // ANKUSH working/////////////////////////////////////////////////////////////////////////////////////////////////
+
+    
   const login = useGoogleLogin({
     onSuccess: (codeResponse) => {
       const temp = codeResponse;
@@ -27,7 +29,9 @@ function SignIn() {
 
       // console.log(user);
     },
-    onError: (error) => console.log("login failed:", error),
+    onError: (error) => {console.log("login failed:", error)
+      history('/error')
+    }
   });
 
   

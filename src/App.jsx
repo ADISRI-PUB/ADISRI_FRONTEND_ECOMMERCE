@@ -28,6 +28,7 @@ import Orders from './Screen/Orders'
 import TrackOrder from './Components/TrackOrder'
 import OrderSummary from './Screen/OrderSummary'
 import MyProfile from './Screen/MyProfile'
+import ErrorPage from './Components/ErrorPage'
 
 function App({profile,logout}) {
   const items = useSelector((state)=>state.cart)
@@ -94,6 +95,7 @@ function App({profile,logout}) {
      <Route path='/trackorder/:id' Component={TrackOrder}/>
      <Route path='/ordersummary' Component={OrderSummary}/>
      <Route path='/myprofile' Component={MyProfile}/>
+     <Route path='/error' Component={ErrorPage}/>
      
      </Routes>
      

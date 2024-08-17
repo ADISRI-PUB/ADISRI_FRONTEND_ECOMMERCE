@@ -129,7 +129,8 @@
   right: 50%;
  }
  .actives{
-    background-color: rgb(74, 222, 128);
+    /* background-color: rgb(74, 222, 128); */
+    background-color: #F8C0C9;
 
  }
 .loader {

@@ -5,14 +5,15 @@ export default function Footer(){
         <>
          
          <footer className="relative">
-    <div className="mx-auto  max-w-screen-xl">
+    <div className="mx-auto  w-full">
         <div>
-            <img className="m-auto max-sm:w-4/5" src="ADISRI LOGO 2.png" alt=""  />
+            <img className="m-auto max-sm:w-[70%]" src="ADISRI LOGO 2.png" alt=""  />
         </div>
         <div className="w-4/5 m-auto ">
-      <div className="grid grid-cols-2   gap-8 px-4 py-6 lg:py-8 md:grid-cols-3">
+      <div className="grid grid-cols-2    gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
         <div className="">
-            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase  ">Company</h2>
+            <div className="m-auto w-max  ">
+            <h2 className="mb-6 text-sm max-sm:text-xs font-semibold text-gray-900 uppercase  ">Company</h2>
             <ul className="text-gray-500 dark:text-gray-400  font-medium ">
                 <li className="mb-4">
                     <Link to='/aboutus' className=" hover:underline">About</Link>
@@ -24,13 +25,16 @@ export default function Footer(){
                     <a className="hover:underline decoration-none">Brand Center :Noida</a>
                 </li>
             
+
             </ul>
+            </div>
         </div>
         <div>
-            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase ">Help center</h2>
+            <div className="m-auto w-max ">
+            <h2 className="mb-6 text-sm max-sm:text-xs font-semibold text-gray-900 uppercase ">Help center</h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                    <a href="#" className="hover:underline">Twitter</a>
+                    <a href="#" className="hover:underline ">Twitter</a>
                 </li>
                 <li className="mb-4">
                     <a href="#" className="hover:underline">Facebook</a>
@@ -39,8 +43,10 @@ export default function Footer(){
                     <Link to="/contact" className="hover:underline">Contact Us</Link>
                 </li>
             </ul>
+            </div>
         </div>
         <div>
+            <div className="m-auto w-max ">
             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">Legal</h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
@@ -53,6 +59,24 @@ export default function Footer(){
                     <a href="#" className="hover:underline">Terms &amp; Conditions</a>
                 </li>
             </ul>
+            </div>
+        </div>
+        <div className="">
+            <div className="m-auto w-max ">
+            <h2 className="mb-6 text-sm max-sm:text-xs font-semibold text-gray-900 uppercase  ">Company</h2>
+            <ul className="text-gray-500 dark:text-gray-400  font-medium ">
+                <li className="mb-4">
+                    <Link to='/aboutus' className=" hover:underline">About</Link>
+                </li>
+                <li className="mb-4">
+                    <Link to='/careers' className="hover:underline">Careers</Link>
+                </li>
+                <li className="mb-4">
+                    <a className="hover:underline decoration-none">Brand Center :Noida</a>
+                </li>
+            
+            </ul>
+            </div>
         </div>
         <div>
            
@@ -60,7 +84,7 @@ export default function Footer(){
         </div>
     </div>
     </div>
-    <div className="px-4 py-6 bg-gray-100 w-4/5 m-auto dark:bg-gray-700 md:flex md:items-center md:justify-between">
+    <div className="px-4 py-6  w-full m-auto bg-gray-700 md:flex md:items-center md:justify-between">
         <span className="text-sm text-gray-500 dark:text-gray-300 sm:text-center">© 2024 <a href="https://flowbite.com/">Adisri | Publications&#xae;</a>. All Rights Reserved.
         </span>
         <div className="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse">

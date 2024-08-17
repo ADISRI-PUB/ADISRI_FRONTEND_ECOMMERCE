@@ -5,7 +5,8 @@ import "../Css/Order.css";
 import { ORDER_CREATE_RESET } from "../constants/OrderConstants";
 import { createOrder } from "../actions/OrderActions";
 import Loader from "../Components/Loader";
-
+import ThanksOrdering from "./ThanksOrdering";
+import ReactDOM from 'react-dom';
 function OrderSummary() {
   const history = useNavigate();
   useEffect(()=>{
@@ -39,8 +40,29 @@ function OrderSummary() {
 
     if (success) {
       setloadtocreate(false)
-      history(`/trackorder/${order.Order_Id}`);
-      dispatch({ type: ORDER_CREATE_RESET });
+  //    document.querySelector('.thanks').innerHTML=` <div className='w-[50%] h-[] bg-white flex logg'>
+  //     <div className='w-1/2 m-auto '>
+  //     <img className='w-3/4 opacity-80' src="7171668_3544858.jpg" alt=""  />
+      
+  //     </div>
+  // </div>}`
+  const container = document.querySelector('.thanks');
+
+if (container) {
+  ReactDOM.render(<ThanksOrdering />, container);
+}
+      setTimeout(()=>{
+
+        
+        history(`/trackorder/${order.Order_Id}`);
+        dispatch({ type: ORDER_CREATE_RESET });
+      },2000)
+    }
+    if (error) {
+        setloadtocreate(false)
+      //  console.log(error);
+      history('/error')
+       
     }
 
     setSubtotal(cart.itemsPrice);
@@ -48,7 +70,7 @@ function OrderSummary() {
     // console.log(cart.shippingAddress);
     // setImage(cart.cartItems.image)
     // console.log(image);
-  }, [success, history]);
+  }, [success, history,error]);
 
   const placeorder = () => {
     dispatch(
@@ -67,10 +89,13 @@ function OrderSummary() {
 
   return (
     <>
+    <div className="min-h-screen thanks flex justify-center">
     {
       loadtocreate ?(
            <div className="min-h-screen flex justify-center order-confirm ">
-                <Loader/>
+              
+              <Loader/>
+              
            </div>
       ):(
         <div className="min-h-screen shipping-page  bg-[#cccaff] ">
@@ -258,6 +283,7 @@ function OrderSummary() {
       </div>
       )
     }
+    </div>
    </>
   )
 }

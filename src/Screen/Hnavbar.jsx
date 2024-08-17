@@ -171,11 +171,11 @@ function Hnavbar() {
               to="/onetoeight"
               className={({ isActive }) =>
                 isActive
-                  ? "bg-blue-100  rounded-tr-full rounded-tl-full  p-3 transition-all duration-200 h-[90%] relative top-2"
+                  ? "bg-blue-100  rounded-tr-full rounded-tl-full  p-3 transition-all duration-200 h-[90%] relative top-1"
                   : ""
               }
             >
-              1<sup>st</sup> TO 8<sup>th</sup>
+             <span className="relative top-1">   1<sup>st</sup> TO 8<sup>th</sup></span> 
             </NavLink>
 
             <NavLink
@@ -185,11 +185,11 @@ function Hnavbar() {
               onMouseLeave={hide}
               className={({ isActive }) =>
                 isActive
-                  ? "text-nav-about  bg-[#e0fff8] rounded-tr-full rounded-tl-full  p-3 transition-all duration-200 h-[90%] relative top-2  "
+                  ? "text-nav-about  bg-[#707070] rounded-tr-full rounded-tl-full  p-3 transition-all duration-200 h-[90%] relative top-1  "
                   : ""
               }
             >
-              <span>ABOUT US</span>
+              <span className="relative top-1">ABOUT</span> 
             </NavLink>
             <NavLink
               to="/contact"
