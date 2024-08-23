@@ -51,7 +51,7 @@ function Orders() {
         return orderAll[key];
       });
       setMyarray(array.slice(0, array.length - 1));
-      console.log(myarray);
+      // console.log(myarray);
     },
     [orderAll],
     array
