@@ -1,12 +1,7 @@
 /* :root{
   --bodybackground:#F4EEFF;
 } */
-.h-navbar {
-  width: 100%;
-  height: 8vmin;
-  border-bottom: 0px solid black;
-  position: fixed;
-}
+
 .image-logo {
   width: 30%;
 }
@@ -83,33 +78,13 @@
   background-color: black;
 }
 
-@media (max-width: 300px) {
-  .navbar-small {
-    background-color: white;
-  }
 
-}
-.navbar-small{
-  transform: translateY(-200%);
-}
-.navbar {
-  position: relative;
-  border-radius: 2vw;
-  top: 4vh;
-  height: 90vh;
-  width: 100%;
-}
 @media (max-width: 640px) {
   .navcomponents {
     max-width: 100%;
   }
 }
-.small-navbar {
-  font-size: 3vw;
-}
-.small-navbar-component {
-  width: 100vw;
-}
+
 
 .logg {
   align-items: center;
@@ -147,24 +122,24 @@
 @media (max-width: 640px) {
   #leftarrow {
     width: 15vw;
-    height: 100%;
+  
     z-index: 10;
     position: absolute;
     left: 0;
-    background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(2px);
+    /* background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(2px); */
     display: flex;
     justify-content: center;
     align-items: center;
   }
   #rightarrow{
     width: 15vw;
-    height: 100%;
+   
     z-index: 10;
     position: absolute;
     right: 0;
-    background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(2px);
+    /* background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(2px); */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -172,20 +147,20 @@
 }
 #leftarrow {
   width: 10vw;
-  height: 100%;
+ 
   z-index: 10;
-  background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(2px);
+  /* background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(2px); */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 #rightarrow{
   width: 10vw;
-  height: 100%;
+  
   z-index: 10;
-  background-color: rgba(255, 255, 255,0.2);
-  backdrop-filter: blur(2px);
+  /* background-color: rgba(255, 255, 255,0.2);
+  backdrop-filter: blur(2px); */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -221,14 +196,14 @@
 }
 
 .animated {
-  animation: 12s slider infinite linear;
+  animation: 25s slider infinite linear;
 }
 @keyframes slider {
   0% {
     transform: translateX(0%);
   }
   100% {
-    transform: translateX(-280%);
+    transform: translateX(-279.5%);
   }
 }
 
@@ -393,6 +368,7 @@
 }
 .logos-brand {
   width: 85%;
+  height: 100%;
   margin: auto;
   overflow: hidden;
   display: flex;

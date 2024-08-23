@@ -114,7 +114,7 @@ function Orders() {
      </div>
   ):(
     <div className="min-h-screen bg-[#F8F6F1]  ">
-      <div className=" grid  grid-cols-2">
+      <div className=" grid  grid-cols-2 max-sm:grid-cols-1">
       <div >
         
     <h1 className="User-name  text-[#053634] ml-10 font-bold leading-loose max-sm:text-xl ">

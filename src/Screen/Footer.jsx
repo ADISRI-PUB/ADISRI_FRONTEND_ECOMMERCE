@@ -10,9 +10,9 @@ export default function Footer(){
             <img className="m-auto max-sm:w-[70%]" src="ADISRI LOGO 2.png" alt=""  />
         </div>
         <div className="w-4/5 m-auto ">
-      <div className="grid grid-cols-2    gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
+      <div className="grid grid-cols-2    gap-8 max-sm:gap-3  max-sm:py-10 px-4 py-6 lg:py-8 md:grid-cols-4 ">
         <div className="">
-            <div className="m-auto w-max  ">
+            <div className="m-auto w-max max-sm:w-full  ">
             <h2 className="mb-6 text-sm max-sm:text-xs font-semibold text-gray-900 uppercase  ">Company</h2>
             <ul className="text-gray-500 dark:text-gray-400  font-medium ">
                 <li className="mb-4">
@@ -30,7 +30,7 @@ export default function Footer(){
             </div>
         </div>
         <div>
-            <div className="m-auto w-max ">
+            <div className="m-auto w-max max-sm:w-full ">
             <h2 className="mb-6 text-sm max-sm:text-xs font-semibold text-gray-900 uppercase ">Help center</h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
@@ -46,7 +46,7 @@ export default function Footer(){
             </div>
         </div>
         <div>
-            <div className="m-auto w-max ">
+            <div className="m-auto w-max max-sm:w-full ">
             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">Legal</h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
@@ -62,7 +62,7 @@ export default function Footer(){
             </div>
         </div>
         <div className="">
-            <div className="m-auto w-max ">
+            <div className="m-auto w-max  max-sm:w-full">
             <h2 className="mb-6 text-sm max-sm:text-xs font-semibold text-gray-900 uppercase  ">Company</h2>
             <ul className="text-gray-500 dark:text-gray-400  font-medium ">
                 <li className="mb-4">
