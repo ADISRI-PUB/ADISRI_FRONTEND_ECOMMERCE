@@ -6,8 +6,10 @@ import { ORDER_CREATE_RESET } from "../constants/OrderConstants";
 import { createOrder } from "../actions/OrderActions";
 import Loader from "../Components/Loader";
 import ThanksOrdering from "./ThanksOrdering";
+// import { SMTPClient } from 'emailjs';
 import ReactDOM from 'react-dom';
 function OrderSummary() {
+    
   const history = useNavigate();
   useEffect(()=>{
     if (!localStorage.getItem('token')) {
@@ -15,6 +17,9 @@ function OrderSummary() {
     }
     
  })
+   const Orderred =()=>{
+    
+   }
   const orderCreate = useSelector((state) => state.orderCreate);
   const { order, error, success } = orderCreate;
   const [loadtocreate, setloadtocreate]=useState(false)
@@ -267,8 +272,10 @@ if (container) {
             <button
               onClick={()=>
                 {
-                  setloadtocreate(true)
-                  placeorder()
+
+                  // setloadtocreate(true)
+                  // placeorder()
+                  Orderred()
                 }
                 
                 }

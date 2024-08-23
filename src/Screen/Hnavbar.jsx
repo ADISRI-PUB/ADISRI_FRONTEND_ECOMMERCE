@@ -51,7 +51,7 @@ function Hnavbar() {
 
     if (count == 0) {
       document.querySelector(".side-bar").classList.toggle("hidden");
-      document.querySelector("body").classList.toggle("overflow-hidden");
+     
       setTimeout(() => {
         document.querySelector(".row1").style.transform = "rotate(45deg)";
         document.querySelector(".row2").style.transform = "rotate(-45deg)";
@@ -71,7 +71,7 @@ function Hnavbar() {
       document.querySelector(".row2").style.marginTop = "6px";
       setTimeout(() => {
         document.querySelector(".side-bar").classList.toggle("hidden");
-        document.querySelector("body").classList.toggle("overflow-hidden");
+       
       }, 300);
     }
   };

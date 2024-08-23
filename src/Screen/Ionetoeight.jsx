@@ -131,7 +131,7 @@ function Ionetoeight() {
      <>
      
        <div className='w-screen min-h-screen relative -z-10 bg-blue-100'>
-     <img id='soonimage' className='w-1/2 m-auto ' src="pngegg (17)16.png" alt="cooming soon"  />
+     <img id='soonimage' className='w-1/2 m-auto max-sm:w-full' src="pngegg (17)16.png" alt="cooming soon"  />
 
 
        </div>

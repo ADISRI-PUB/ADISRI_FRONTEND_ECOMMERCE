@@ -67,17 +67,32 @@ function IPrePrimary() {
     };
     fetchData();
   }, [dispatch, API,error]);
-
+  let count=0
+  const  open =()=>{
+    if (count==0) {
+      document.querySelector('.primarysection1').classList.toggle('max-sm:translate-x-full')
+      document.querySelector('.buttons').innerHTML='<svg class="w-7 max-sm:w-[13px]" xmlns="http://www.w3.org/2000/svg"  viewBox="0 -960 960 960"  fill="#000000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>'
+      count++
+    }
+    else{
+      document.querySelector('.primarysection1').classList.toggle('max-sm:translate-x-full')
+        document.querySelector('.buttons').innerHTML='<svg class="w-7 max-sm:w-[13px]" xmlns="http://www.w3.org/2000/svg"  viewBox="0 -960 960 960"  fill="#000000"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg>'
+      
+        count=0
+    }
+ }
   return (
     <>
  
   
       <div className=" primary-sections min-h-screen relative">
-      {/* <h1 className='ml-3 text-xl max-sm:text-[15px]  text-gray-500 relative top-3 w-1/6'>Filters </h1> */}
-        <div className="sm:flex  primary-sections">
-          <div className="sm:w-[17%] max-sm:w-full  max-sm:hidden  primarysection1 relative z-10   max-sm:h-full">
-           
-          </div>
+      <div className='p-4 text-xl max-sm:text-[15px]  text-gray-500 relative flex space-x-3  w-full  ' >
+        <p className=" flex  space-x-5"> <span> Filters</span> <button onClick={open} className=' transition-all duration-300 buttons sm:hidden max-sm:visible   w-full' >  
+     <svg className='w-[15px] max-sm:w-[13px]' xmlns="http://www.w3.org/2000/svg"  viewBox="0 -960 960 960"  fill="#000000"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg>
+     </button> </p> </div>
+   
+        <div className="flex   primary-sections   ">
+        <div className="sm:w-[17%] max-sm:w-full max-sm:absolute max-sm:z-20 max-sm:-translate-x-full    primarysection1  max-sm:bg-white ease-out transition-all duration-500 relative    max-sm:h-full ">
           <FilterTAb
               Class={Class}
               setClass={setClass}
@@ -86,7 +101,9 @@ function IPrePrimary() {
               API={API}
               setApi={setApi}
             />
-          <div className="sm:w-5/6 sm:p-10  max-sm:p-0   max-sm:w-full  card-container relative max-sm:top-3 ">
+          </div>
+       
+          <div className="sm:w-5/6 sm:p-5    max-sm:w-full  card-container relative  ">
             {API === "" ? (
               loading ? (
               

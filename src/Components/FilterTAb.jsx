@@ -80,26 +80,11 @@ function FilterTAb({Class,Subject,setSubject ,setClass,API ,setApi}) {
     
     };
     // console.log(API);
-    let count=0
-    const  open =()=>{
-      if (count==0) {
-        document.querySelector('.slide-bar').classList.toggle('max-sm:-translate-x-full')
-        document.querySelector('.buttons').innerHTML='<svg class="w-7 max-sm:w-[13px]" xmlns="http://www.w3.org/2000/svg"  viewBox="0 -960 960 960"  fill="#000000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>'
-        count++
-      }
-      else{
-        document.querySelector('.slide-bar').classList.toggle('max-sm:-translate-x-full')
-          document.querySelector('.buttons').innerHTML='<svg class="w-7 max-sm:w-[13px]" xmlns="http://www.w3.org/2000/svg"  viewBox="0 -960 960 960"  fill="#000000"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg>'
-          count=0
-      }
-   }
+    
+    
   return (
     <>
-     <div className='left-0 absolute  sm:w-[17%] max-sm:w-[100%] bg-gray-[#f5e4ba] z-20 '>  
-     <h1 className=' text-xl max-sm:text-[13px]  text-gray-500 relative top-0 bg-[#FDF7E4] sm:p-4 max-sm:p-0 flex logg'>Filters  <button className=' p-2  buttons transition-all duration-300 sm:hidden  w-full' onClick={open}>  
-     <svg className='w-7 max-sm:w-[13px]' xmlns="http://www.w3.org/2000/svg"  viewBox="0 -960 960 960"  fill="#000000"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg>
-     </button> </h1>
-    
+     <div className='  sm:w-[100%] bg-gray-[#f5e4ba]  filter-container '>  
           <div className=" max-sm:bg-white  slide-bar leading-tight  min-h-screen max-h-screen   p-4 overflow-hidden relative max-sm:-translate-x-full  transition-all duration-400 " >
       
           <div className=" transition-all duration-1000 text-lg  border-2 border-gray-500 rounded-lg grid grid-col-2 logg relative cursor-pointer" >
