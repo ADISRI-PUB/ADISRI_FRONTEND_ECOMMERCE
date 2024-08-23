@@ -1,128 +1,286 @@
-
-import React,{useEffect ,useState} from "react"
-import { NavLink } from "react-router-dom"
+import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import { googleLogout } from "@react-oauth/google";
 import { Link } from "react-router-dom";
-export default function Navbar(){
+import { Accordion, AccordionItem } from '@szhsin/react-accordion';
+export default function Navbar({ menuopen }) {
   const [profile, setProfile] = useState(null);
-      const [token, setToken] = useState(null);
-      const [flag ,setflag] =useState(false)
-  const timer = setInterval(()=>{
+  const [token, setToken] = useState(null);
+  const [flag, setflag] = useState(false);
+  const timer = setInterval(() => {
     const stroedProfile = localStorage.getItem("profile");
-      const storedToken = localStorage.getItem("token");
-      
-      if (storedToken && stroedProfile) {
-  
-        setToken(storedToken)
-        setProfile(JSON.parse(stroedProfile))
+    const storedToken = localStorage.getItem("token");
+
+    if (storedToken && stroedProfile) {
+      setToken(storedToken);
+      setProfile(JSON.parse(stroedProfile));
       //  console.log("home ", stroedProfile, storedToken);
-        
-        clearInterval(timer)
-        setflag(true)
-        
-      }
-      
-   },1000)
-  
-   const opendropdown =()=>{
-   
-       document.querySelector('.list-dropdown').classList.toggle('hidden')
-       if ( document.querySelector('#aboutsvg').classList.contains('rotate-90')) {
-        document.querySelector('#aboutsvg').classList.replace('rotate-90','-rotate-90')
-       }
-       else{
-        document.querySelector('#aboutsvg').classList.replace('-rotate-90','rotate-90')
-       }
-      
-   }
-  
-    useEffect(() => { 
-    }, [flag]);
-  const logout=()=>{
-     googleLogout()
-     localStorage.removeItem('profile')
-     localStorage.removeItem('token')
-     setProfile(null)
-     setToken(null)
-     setflag(false)
-  }
 
-  let count = 0;
-  const menuopen = () => {
-
-    if (count == 0) {
-      gsap.fromTo(
-        ".small-navbar",
-        {
-          opacity: 0,
-          x:-1000,
-          stagger: 0.2,
-          duration: 0.8,
-         
-        },
-        {
-          x:0,
-          stagger: 0.2,
-          opacity: 1,
-        }
-      );
-      document.querySelector(".row1").style.transform = "rotate(45deg)";
-      document.querySelector(".row2").style.transform = "rotate(-45deg)";
-      document.querySelector(".row2").style.marginTop = "0px";
-      document.querySelector(".navbar-small").style.transform =
-        "translateY(0%)";
-        count++;
-      } else {
-        count = 0;
-        
-        
-        document.querySelector(".navbar-small").style.transform =
-        "translateY(-200%)";
-        document.querySelector(".row1").style.transform = "rotate(0deg)";
-        document.querySelector(".row2").style.transform = "rotate(0deg)";
-        document.querySelector(".row2").style.marginTop = "12px";
+      clearInterval(timer);
+      setflag(true);
     }
-  };
-     
-    return(
-        <>
-     
-     <div className="navvv w-full relative    ">
-     
-      <div className="text-center bg-white w-full space-y-6  sm:hidden max-sm:visible small-navbar-component transition-all duration-500   ">
-        <NavLink
-              to="/"
-              className="  small-navbar   transition-all duration-200 p-3 block z-50 "
-              onClick={menuopen}
-            >
-              HOME
-            </NavLink>
-            <NavLink
-              to="/preprimary"
-              className="   small-navbar transition-all duration-200 p-3 block"
-              onClick={menuopen}
-            >
-              PRE-PRIMARY
-            </NavLink>
-            <NavLink
-              to="/onetoeight"
-              className=" small-navbar  transition-all duration-200  p-3  block"
-              onClick={menuopen}
-            >
-              1<sup>st</sup> TO 8<sup>th</sup>
-            </NavLink>
-         
-            <p
-              className="small-navbar logg   flex transition-all duration-200 p-3 justify-center"
-              onClick={opendropdown}
-            >
-              ABOUT US 
-              <svg className="transition-all duration-200 rotate-90 ml-2 " xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" fill="#000000" height="8px" width="8px" version="1.1" id="aboutsvg" viewBox="0 0 330 330" xmlSpace="preserve">
-<path id="XMLID_222_" d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001  c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213  C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606  C255,161.018,253.42,157.202,250.606,154.389z"/>
-</svg>
+  }, 1000);
 
+  const opendropdown = () => {
+    document.querySelector(".list-dropdown").classList.toggle("hidden");
+    document.querySelector(".svg-open").classList.toggle("rotate-180");
+  };
+  const opendropdown2 = () => {
+    document.querySelector(".list-dropdown2").classList.toggle("hidden");
+    document.querySelector(".svg-open2").classList.toggle("rotate-180");
+  };
+  const opendropdown3 = () => {
+    document.querySelector(".list-dropdown3").classList.toggle("hidden");
+    document.querySelector(".svg-open3").classList.toggle("rotate-180");
+  };
+
+  const opendropdown4 = (e) => {
+    document.querySelector(".list-dropdown4").classList.toggle("hidden");
+    document.querySelector(".svg-open4").classList.toggle("rotate-180");
+  };
+
+  useEffect(() => {}, [flag]);
+  const logout = () => {
+    googleLogout();
+    localStorage.removeItem("profile");
+    localStorage.removeItem("token");
+    setProfile(null);
+    setToken(null);
+    setflag(false);
+  };
+  let count = 0;
+
+  return (
+    <>
+      <div className="w-[90%] absolute right-0 bg-white text-black shadow-black min-h-screen overflow-y-auto">
+        <div className="w-full m-auto text-center">
+          {flag ? (
+            <img
+              className="  w-[30%] m-auto border-2 rounded-full p-1"
+              src={profile.picture}
+              alt={profile.name}
+            />
+          ) : (
+            <img
+              className="w-[30%] m-auto border-2 rounded-full p-1"
+              src="PngItem_203432.png"
+              alt=""
+            />
+          )}
+          {flag ? (
+            <p className=" mt-2 mb-2">
+              {" "}
+              <Link to="/myprofile">
+                <span
+                  className="p-2 rounded-lg border w-1/2 m-auto border-gray-200 block text-xs"
+                  onClick={menuopen}
+                >
+                  My Profile
+                </span>
+              </Link>
             </p>
-            <div className="list-dropdown  hidden">
+          ) : (
+            <p className="mt-2 mb-2 ">
+              <Link to="/SignIn">
+                <span
+                  className="p-2 rounded-lg border w-1/2 m-auto border-gray-200 block text-xs"
+                  onClick={menuopen}
+                >
+                  signIn/signUp
+                </span>
+              </Link>
+            </p>
+          )}
+            
+       
+        </div>
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive
+              ? "bg-[#F4EEFF] p-3 tex-sm w-full block  "
+              : "p-3 tex-sm w-full block"
+          }
+          onClick={menuopen}
+        >
+          <span className=" p-3"> HOME</span>
+        </NavLink>
+        <NavLink
+          to="/preprimary"
+          className={({ isActive }) =>
+            isActive
+              ? "bg-[#FBF0D5] p-3 tex-sm w-full block  "
+              : "p-3 tex-sm w-full block "
+          }
+          onClick={menuopen}
+        >
+          <span className=" p-3"> PRE-PRIMARY</span>
+        </NavLink>
+        <NavLink
+          to="/onetoeight"
+          className={({ isActive }) =>
+            isActive
+              ? "bg-[#DBEAFE] p-3 tex-sm w-full block  "
+              : "p-3 tex-sm w-full block "
+          }
+          onClick={menuopen}
+        >
+          <span className=" p-3">
+            {" "}
+            1<sup>st</sup> TO 8<sup>th</sup>
+          </span>
+        </NavLink>
+        <NavLink
+          to="/contact"
+          className={({ isActive }) =>
+            isActive
+              ? "bg-[#F7D137] p-3 tex-sm w-full block  "
+              : "p-3 tex-sm w-full block "
+          }
+          onClick={menuopen}
+        >
+          <span className=" p-3"> Contact</span>
+        </NavLink>
+        <div
+          // to="/aboutus"
+          className="p-3 tex-sm w-full block"
+        >
+          <p className="flex logg justify-between  " onClick={opendropdown}>
+            <span className=" relative left-2 font-semibold"> ABOUT </span>
+            <svg
+              className="svg-open transition-all durartion-300"
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#000"
+            >
+              <path d="M480-360 280-560h400L480-360Z" />
+            </svg>
+          </p>
+        </div>
+        <div className=" transition-all duration-300 list-dropdown hidden w-[90%]  m-auto  ">
+          <div>
+            <div className=" p-2 leading-loose " onClick={opendropdown2}>
+              <p className="flex justify-between border-b-[2px] ">
+                {" "}
+                <span className="font-semibold"> About us</span>{" "}
+                <svg
+                  className="svg-open2 transition-all durartion-300"
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24px"
+                  viewBox="0 -960 960 960"
+                  width="24px"
+                  fill="#000"
+                >
+                  <path d="M480-360 280-560h400L480-360Z" />
+                </svg>{" "}
+              </p>
+              <div className="list-dropdown2 hidden">
+                <Link to="/aboutus" className="block" onClick={menuopen}>
+                  About Us
+                </Link>
+                <Link to="/" className="block" onClick={menuopen}>
+                  Who We Are
+                </Link>
+                <Link to="/journey" className="block" onClick={menuopen}>
+                  Adisri Journey
+                </Link>
+                <a
+                  className="block "
+                  href="https://drive.google.com/file/d/1_46HY9Y0bdyyTbkUIYupRLJ_0WAln0Ei/view?usp=sharing"
+                  download="catalog.pdf"
+                  target="_blank"
+                  onClick={menuopen}
+                >
+                  {" "}
+                  <span>Catalogue</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div className=" p-2 leading-loose " onClick={opendropdown3}>
+              <p className="flex justify-between border-b-[2px] ">
+                {" "}
+                <span className="font-semibold"> Career</span>{" "}
+                <svg
+                  className="svg-open3 transition-all durartion-300"
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24px"
+                  viewBox="0 -960 960 960"
+                  width="24px"
+                  fill="#000"
+                >
+                  <path d="M480-360 280-560h400L480-360Z" />
+                </svg>{" "}
+              </p>
+              <div className="list-dropdown3 hidden">
+                <Link to="/careers" onClick={menuopen} className="block">
+                  Current Openings
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div className=" p-2 leading-loose " onClick={opendropdown4}>
+              <p className="flex justify-between border-b-[2px] ">
+                {" "}
+                <span className="font-semibold">Our Policy</span>{" "}
+                <svg
+                  className="svg-open4 transition-all durartion-300"
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24px"
+                  viewBox="0 -960 960 960"
+                  width="24px"
+                  fill="#000"
+                >
+                  <path d="M480-360 280-560h400L480-360Z" />
+                </svg>{" "}
+              </p>
+              <div className="list-dropdown4 hidden">
+                <Link to="/privacy" onClick={menuopen} className="block">
+                  Privacy Policy
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* <Accordion>
+      <AccordionItem header="What is Lorem Ipsum?">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+        do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </AccordionItem>
+
+      <AccordionItem header="Where does it come from?">
+        Quisque eget luctus mi, vehicula mollis lorem. Proin fringilla
+        vel erat quis sodales. Nam ex enim, eleifend venenatis lectus
+        vitae, accumsan auctor mi.
+      </AccordionItem>
+
+      <AccordionItem header="Why do we use it?">
+        Suspendisse massa risus, pretium id interdum in, dictum sit
+        amet ante. Fusce vulputate purus sed tempus feugiat.
+      </AccordionItem>
+    </Accordion> */}
+     <Accordion>
+        <div
+          // to="/aboutus"
+          className="p-3 tex-sm w-full block"
+        >
+          <div className="flex logg justify-between  " >
+          <AccordionItem className="relative left-2 font-semibold" header={`More Options`} >
+               <Link className="left-0 font-normal p-2 relative top-2  " to="/myorders" onClick={menuopen}>My Orders</Link>
+               <p className="left-0 font-normal p-2 "  onClick={()=>{
+                  logout()
+                  menuopen()
+               }} >Logout</p>
+            </AccordionItem>
+          </div>
+        </div>
+        </Accordion>
+        {/* <div className="list-dropdown  hidden">
            <div className="grid grid-cols-3 text-xs  ">
                <ul className="bg-pink-200"> <span className=" text-sm block"> About us</span>
                 <li className="p-1">Who we are</li>
@@ -141,8 +299,8 @@ export default function Navbar(){
                 
                </ul>
            </div>
-           </div>
-
+           </div> */}
+        {/* 
             {
                 flag ?(
                   <>
@@ -197,12 +355,8 @@ export default function Navbar(){
             </NavLink>
                 )
                
-            }
-            
-            
-        </div>
-        
+            } */}
       </div>
-        </>
-    )
+    </>
+  );
 }

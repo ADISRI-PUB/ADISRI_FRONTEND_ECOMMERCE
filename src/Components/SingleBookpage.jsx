@@ -8,6 +8,8 @@ import Loader from "./Loader";
 function SingleBookpage() {
   const dispatch = useDispatch();
   const history = useNavigate();
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [keyfeatures,setKeyfeatures] =useState('')
   const { id } = useParams();
   const productDetails = useSelector((state) => state.productDetails);
   const [Quantity, setquantity] = useState(1);
@@ -39,16 +41,15 @@ function SingleBookpage() {
 
   return (
     <>
-      {
-        loading ?(
-          <Loader/>
-        ):(
+      {loading ? (
+        <Loader />
+      ) : (
         <div
           key={product.Product_Id}
           className="w-full min-h-screen bg-blue-200 flex gap-5"
         >
           <div className="font-sans bg-blue-100 w-full  ">
-            <div className="p-4   mx-auto">
+            <div className="p-4 max-sm:p-1   mx-auto">
               <div className="grid items-start gap-10 grid-cols-2 lg:grid-cols-5   p-6 rounded-lg ">
                 <div className="lg:col-span-2 max-sm:col-span-3   top-0 text-center sm:w-1/2 max-sm:w-3/4 max-sm:m-auto ">
                   <div className="px-2 py-6 rounded-lg shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative bg-white">
@@ -112,7 +113,7 @@ function SingleBookpage() {
                       onMouseLeave={blackcolor}
                       className="min-w-[200px] px-4 py-2.5 border-2 flex justify-center border-white hover:bg-white hover:text-black transition-all duration-300 rounded-full  text-white text-sm font-semibold "
                     >
-                      Wishlist{" "}
+                      Buy Now
                       <svg
                         id="emoji"
                         xmlns="http://www.w3.org/2000/svg"
@@ -129,7 +130,7 @@ function SingleBookpage() {
                     </button>
                   </div>
                   <br />
-                  <div>
+                  <div className="">
                     <ul>
                       <li>
                         {" "}
@@ -155,6 +156,46 @@ function SingleBookpage() {
                         {" "}
                         <b>Publications</b>:{product.Publication}{" "}
                       </li>
+                      <li>
+                        {" "}
+                        <b>Description</b>:
+
+                        {
+                        isExpanded ? (
+                          <>
+                          <span>{product?.Description?.slice(0,product?.Description?.indexOf("Key"))}</span>
+                          <p className="p-4">
+                            
+                           <b > Key Features :</b> 
+                           <ul className="p-4">
+                            {
+                              product?.Description.slice(0,product.Description.indexOf("Key")).split(".").filter((e)=>e.trim()).map((e,index)=>{
+                                return <li key={index}><b>•</b> {e}.</li>
+                              }
+                              
+                              )
+                            }
+                            </ul>
+                            </p>
+                         </>
+                        ) : (
+                          <>
+                          <span> {product?.Description?.slice(0,product?.Description?.indexOf("Key"))}</span> 
+                        </>
+                        )}
+                       
+                      </li>
+                      <button onClick={(e) =>{ 
+
+                        setIsExpanded(!isExpanded)
+                        }}>
+                          {" "}
+                          {isExpanded ? (
+                            <span className="text-blue-600">...Read Less</span>
+                          ) : (
+                            <span className="text-blue-600">..Read more</span>
+                          )}
+                        </button>
                     </ul>
                   </div>
                 </div>
@@ -162,8 +203,7 @@ function SingleBookpage() {
             </div>
           </div>
         </div>
-        )
-      }
+      )}
     </>
   );
 }

@@ -34,8 +34,8 @@ function App({profile,logout}) {
   const items = useSelector((state)=>state.cart)
   const {cartItems} =items
   useEffect(()=>{
-       document.querySelector('.cartsvg').classList.remove('carticons')
-       document.querySelector('.cartsvg').classList.add('carticons')
+      //  document.querySelector('.cartsvg').classList.remove('carticons')
+      //  document.querySelector('.cartsvg').classList.add('carticons')
   },[])
     return (
     <> 
@@ -64,16 +64,11 @@ function App({profile,logout}) {
               </span>
           
             </Link>
-            <Link to="" >
-        
-            </Link>
+           
           </div>
     </div>
    
-    <div className="absolute text-black bg-white navbar-small w-full overflow-x-hidden  z-40 transition-all duration-700  ">    
-      <br /><br /> <br />
-      <Navbar/>
-        </div>
+  
    
   
        <Headroom className='relative z-50'><Hnavbar/></Headroom>

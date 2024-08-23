@@ -7,6 +7,7 @@ import Crousal from "../Components/Crousal";
 import CountUp from "react-countup";
 import CrousalBooks from "../Components/CrousalBooks";
 import Clients from "../Components/Cilents";
+import { Link } from "react-router-dom";
 
 export default function Home({ token }) {
   const [startCount, setStartcount] = useState(false);
@@ -41,8 +42,8 @@ export default function Home({ token }) {
       <div className="home-area z-20 min-h-screen leading-snug">
         {/* <p className="welcome-text p-3 text-center  block ">Welcome To,</p> */}
 
-        <div className=" z-20 books-crousal-container  m-auto  w-full">
-          <img src="BANNER  UPPER.jpg" alt="" />
+        <div className=" z-20 books-crousal-container  m-auto  w-full ">
+          <img className="w-full" src="BANNER  UPPER.jpg" alt="" />
           <Crousal />
         </div>
         <div className="sections1  ">
@@ -68,33 +69,26 @@ export default function Home({ token }) {
               </svg>
             </div>
 
-            <div className="w-full leading-loose">
-              <div className="preprimary-text text-center z-20">
+            <div className="w-full ">
+              <div className=" preprimary-text max-sm:text-lg   text-center z-20 ">
                 Pre-Primary Books
               </div>
-              <div className="w-4/5 m-auto">
-                <p className="pre-books-description p-3">
-                  "Welcome to Adisri Publications, where learning begins with
-                  our vibrant collection of pre-primary books. Designed to{" "}
-                  <b className="bg-yellow-300"> spark curiosity </b> and foster
-                  early literacy skills, our books are tailored to engage young
-                  minds through captivating stories,{" "}
-                  <b className="bg-yellow-300"> interactive activities </b>, and
-                  colorful illustrations. Whether you're looking to introduce
-                  basic concepts like numbers and letters or encourage
-                  creativity through imaginative tales, our curated selection
-                  offers something for every young learner. Explore our range
-                  and embark on a journey of discovery with your child today."
+              <br /> 
+              <div className="w-4/5 m-auto max-sm:w-[99%]">
+                <p className="pre-books-description max-sm:text-xs p-3 max-sm:p-0 leading-loose sm:text-center" >
+             
+"Welcome to Adisri Publications, where the magic of learning unfolds with every turn of the page! Our enchanting pre-primary books are designed to captivate young minds, blending vibrant illustrations with playful activities that make early learning a joyous adventure. From the first letter to the last number, each book is a treasure trove of discovery, sparking creativity and fueling curiosity. Let your child’s imagination soar as they explore our world of whimsical tales and interactive fun. At Adisri, we don’t just teach—we inspire a lifelong love for learning!"
                 </p>
               </div>
+              <br />
             </div>
-            <div className="w-5/6 max-sm:w-full m-auto z-50 ">
+            <div className="w-[83%] max-sm:w-full m-auto z-50 ">
               <CrousalBooks />
             </div>
           </div>
           {/* <OnetoEight /> */}
-          <div className="sm:h-20 new-space-color"></div>
-          <div className="preprimary-section _sections2  p-4 transition-all duration-500 overflow-hidden">
+       
+          <div className=" transition-all duration-500 overflow-hidden">
             <div className="absolute overflow-hidden z-10 opacity-20">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -116,31 +110,18 @@ export default function Home({ token }) {
               </svg>
             </div>
             <div className="w-full leading-loose ">
-              <div className="preprimary-text text-center">
+              <div className="preprimary-text max-sm:text-lg text-center">
                 1<sup>st</sup> TO 8<sup>th</sup>
               </div>
               <div className="w-4/5 m-auto">
-                <p className="pre-books-description p-3">
-                  "Step into a world of wonder at our bookstore, where each book
-                  is a key to unlocking boundless imagination and endless
-                  learning for young readers. Our curated collection of 1st to
-                  8th grade books is a treasure trove of stories, knowledge, and
-                  inspiration, carefully chosen to captivate and enrich young
-                  minds at every stage of their reading journey. Whether you're
-                  seeking thrilling adventures that transport you to distant
-                  realms, insightful stories that teach valuable life lessons,
-                  or educational resources that make learning engaging and fun,
-                  we have{" "}
-                  <b className="bg-yellow-400"> something extraordinary </b>{" "}
-                  waiting for you. Dive into the magic of storytelling with
-                  beloved classics, explore new horizons with innovative
-                  educational tools, and embark on adventures that ignite a
-                  lifelong passion for reading. Join us on this literary
-                  adventure and let the pages of our books become your gateway
-                  to endless possibilities."
+              <br />
+                <p className="pre-books-description max-sm:text-xs p-3 max-sm:p-0 leading-loose sm:text-center">
+                
+"Step into our bookstore, where each book is a doorway to a universe of imagination and discovery for young readers. Our carefully curated collection for 1st to 8th graders is a treasure chest brimming with stories that inspire, knowledge that empowers, and adventures that captivate. Whether you’re in search of thrilling tales that whisk you away to far-off lands, heartwarming stories that impart life’s most valuable lessons, or educational resources that turn learning into an exciting journey, you’ll find something extraordinary here. Immerse yourself in the magic of beloved classics, explore new worlds with innovative educational tools, and embark on journeys that kindle a lifelong love for reading. Join us in this literary odyssey, where every page is a gateway to infinite possibilities."
                 </p>
               </div>
             </div>
+            <br />
             <div className=" w-5/6 max-sm:w-full m-auto z-50">
               <CrousalBooks slideshow={4} />
             </div>
@@ -148,25 +129,23 @@ export default function Home({ token }) {
           <div className="sm:h-20 new-space-color"></div>
 
           <div className="about-sections ">
-            <p className="abouttext text-black max-sm:text-xl w-4/5 border-b-2 border-purple-500 m-auto">
+            <p className="abouttext text-black max-sm:text-xl w-4/5 border-b-2 border-white m-auto">
               ABOUT US
             </p>
             <br />
-            <p className="w-4/5 m-auto text-2xl max-sm:text-sm ">
-              Adisri Publications&#174;,an ever evolving name in the sphere of
-              educational publishing in india, We offer enjoyable learning
-              opportunities and memorable reading experience as we strive to
-              imporve the quality of education of the student through reading,
-              writing and drawing.
+            <p className="w-4/5 m-auto text-2xl max-sm:text-sm  leading-loose sm:text-center">
+            Adisri Publications®, a dynamic name in the realm of educational publishing in India, is dedicated to enhancing the quality of education through the joy of reading, writing, and drawing. We provide enriching learning experiences and memorable reading adventures, continually evolving to meet the needs of students and educators alike. Our mission is to inspire a love for learning that lasts a lifetime.
+
+           
             </p>
             <br />
             <br />
 
-            <div className="w-[80%]    m-auto justify-center grid sm:grid-cols-3 max-sm:grid-cols-1  sm:gap-[10%] max-sm:gap-[1%] ">
+            {/* <div className="w-[80%]    m-auto justify-center grid sm:grid-cols-3 max-sm:grid-cols-1  sm:gap-[10%] max-sm:gap-[1%] ">
               <div className="bg-[#E5D7FE]  rounded-xl ">
                 <p className="uppercase text-center  font-semibold sm:text-[1.3vw] max-sm:text-sm ">Student Covered</p>
                 <div className="p-5">
-                  <img src="Teaching-cuate (1).png" alt="" />
+                  <img className="max-sm:w-1/2 m-auto" src="Teaching-cuate (1).png" alt="" />
                 </div>
                 <div className="  sm:text-[1.3vw] font-semibold text-center max-sm:text-sm w-full bg-white p-3">
                   <CountUp end={60000} duration={6} enableScrollSpy />+
@@ -175,7 +154,7 @@ export default function Home({ token }) {
               <div className="bg-[#E5D7FE]  rounded-xl">
               <p className="uppercase text-center  sm:text-[1.3vw] font-semibold max-sm:text-sm " >Our Clients</p>
                 <div className="">
-                  <img src="Customer relationship management-bro (1).png" alt=""  />
+                  <img className="max-sm:w-1/2 m-auto" src="Customer relationship management-bro (1).png" alt=""  />
                 </div>
                 <div className="sm:text-[1.3vw] font-semibold text-center max-sm:text-sm w-full bg-white p-3">
                   <CountUp end={650} duration={6} enableScrollSpy />+
@@ -184,25 +163,41 @@ export default function Home({ token }) {
               <div className="bg-[#E5D7FE]  rounded-xl">
               <p className="uppercase text-center  sm:text-[1.3vw] font-semibold max-sm:text-sm">School covered</p>
                 <div className="p-5">
-                  <img src="High School-cuate.png" alt="" />
+                  <img className="max-sm:w-1/2 m-auto" src="High School-cuate.png" alt="" />
                 </div>
                 <div className=" sm:text-[1.3vw] font-semibold text-center max-sm:text-sm w-full bg-white p-3">
                   <CountUp end={950} duration={6} enableScrollSpy />+
                 </div>
               </div>
-            </div>
-
+            </div> */}
+            <div className="m-auto flex justify-center  border-b-[1px] border-white p-2 ">
+              <Link to="/aboutus">
+             <button
+                          onClick={() => {
+                            handleprofile();
+                          }}
+                          className="relative border  inline-flex items-center justify-start px-9 py-4  overflow-hidden font-medium transition-all bg-white rounded-full hover:bg-white group"
+                          >
+                          <span className="w-48 h-48 rounded rotate-[-40deg] bg-purple-400 absolute bottom-0 left-0 z-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
+                          <span className="relative w-full text-left transition-colors duration-300 ease-in-out text-sm ">
+                            {" "}
+                              Read More ...
+                          </span>
+                         
+                        </button>
+                        </Link>
+                          </div>
           <div className=" h-20"></div>
             <div className="w-full">
               <div>
                 
                 <p className="our-clients2 max-sm:text-xl">Our Clients</p>
               </div>
-              <div className="sm:h-5 new-space-color"></div>
-              <div>
+              <div className="sm:h-5  new-space-color"></div>
+              <div className="">
                 <Clients />
               </div>
-              <div className="sm:h-20 max-sm:h-12 new-space-color"></div>
+              <div className="sm:h-10 max-sm:h-10 new-space-color"></div>
             </div>
           </div>
         </div>

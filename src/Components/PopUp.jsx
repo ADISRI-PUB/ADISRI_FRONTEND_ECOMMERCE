@@ -49,9 +49,8 @@ export default function PopUp() {
           </p>
           <ul className="targets">
            {/* <Link to='/contact'> <li>Write To Us</li></Link> */}
-           <Link to='/contact'> <li>Refund and Return Policy</li></Link>
-           <Link to='/contact'> <li>Shipping Policy</li></Link>
-           <Link to='/contact'> <li>COD Order Policy</li></Link>
+           <Link to='/contact'> <li>Privacy Policy</li></Link>
+         
           </ul>
           <div className="h-10 bg-white ">
 

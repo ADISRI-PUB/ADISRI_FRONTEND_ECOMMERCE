@@ -72,11 +72,13 @@ function IPrePrimary() {
     <>
  
   
-      <div className=" primary-sections min-h-screen ">
-      
-        <div className="sm:flex primary-sections">
-          <div className="sm:w-1/6 z-40  primarysection1 max-sm:w-full max-sm:h-full">
-            <FilterTAb
+      <div className=" primary-sections min-h-screen relative">
+      {/* <h1 className='ml-3 text-xl max-sm:text-[15px]  text-gray-500 relative top-3 w-1/6'>Filters </h1> */}
+        <div className="sm:flex  primary-sections">
+          <div className="sm:w-[17%] max-sm:w-full  max-sm:hidden  primarysection1 relative z-10   max-sm:h-full">
+           
+          </div>
+          <FilterTAb
               Class={Class}
               setClass={setClass}
               setSubject={setSubject}
@@ -84,8 +86,7 @@ function IPrePrimary() {
               API={API}
               setApi={setApi}
             />
-          </div>
-          <div className="sm:w-5/6 sm:p-10     max-sm:w-full  card-container ">
+          <div className="sm:w-5/6 sm:p-10  max-sm:p-0   max-sm:w-full  card-container relative max-sm:top-3 ">
             {API === "" ? (
               loading ? (
               
@@ -94,7 +95,7 @@ function IPrePrimary() {
               ) : (
                 products.map((product) => {
                   return (
-                    <div key={product.Product_Id} className="p-5 ">
+                    <div key={product.Product_Id} className="p-5 max-sm:p-0 ">
                       <ProdcutsCard product={product} id={1} />
                       <br />
                     </div>
