@@ -221,7 +221,7 @@ if (container) {
         <div className=" w-full   space-y-3">
             {cart.cartItems.map((booked, index) => {
               return (
-                <> 
+                <div key={index}> 
                 <div key={index} className="summary-container-1 w-full border shadow-md bg-[#a4a1ff]  ">
                   {" "}
                   
@@ -262,7 +262,7 @@ if (container) {
                   </div>
                   
           </div>
-                </>
+                </div>
                 
               );
             })}
@@ -275,11 +275,13 @@ if (container) {
 
                   // setloadtocreate(true)
                   // placeorder()
-                  Orderred()
+                  placeorder()
+                  // console.log("Dffs");
+                  
                 }
                 
                 }
-              disabled={cart.cartItems === 0}
+               disabled={cart.cartItems === 0}
               className="  w-[80%]  transition-all duration-200 bg-[#8681FF] p-4 block m-auto  text-white hover:bg-gray-700 max-h-[60px] "
             >
               ORDER

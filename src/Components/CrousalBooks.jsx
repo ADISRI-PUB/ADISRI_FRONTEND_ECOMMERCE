@@ -18,7 +18,7 @@ function SampleNextArrow(props) {
             onClick={onClick}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 -960 960 960"
-            height="60pxpx"
+            height="60px"
             width="60px"
             fill="#000"
           >
@@ -46,7 +46,7 @@ function SamplePrevArrow(props) {
             onClick={onClick}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 -960 960 960"
-            height="60pxpx"
+            height="60px"
             width="60px"
             fill="#000"
           >

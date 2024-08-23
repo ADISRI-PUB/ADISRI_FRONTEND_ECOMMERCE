@@ -49,7 +49,7 @@ function Journey() {
             const handleWheel = (e) => {
                 scroll(e.deltaY);
                 sum+=e.deltaY
-                console.log(sum);
+                // console.log(sum);
               };
              
               window.addEventListener('wheel', handleWheel);

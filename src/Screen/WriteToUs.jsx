@@ -22,7 +22,7 @@ function WriteToUs() {
 
         setTimeout(async()=>{
           const formData = new FormData(event.target);
-          console.log(formData);
+          // console.log(formData);
           
           formData.append("access_key", "229f2605-024b-4455-9837-6bbd8d888654");
           const response = await fetch("https://api.web3forms.com/submit", {
@@ -44,7 +44,7 @@ function WriteToUs() {
                             document.querySelector(".tracking-wide").textContent="send"
                },1000)
          } else {
-           console.log("Error", data);
+          //  console.log("Error", data);
            // setResult(data.message);
            document.querySelector('.tracking-wide').textContent="Please Try Again Later !"
            setTimeout(()=>{
@@ -432,7 +432,7 @@ function WriteToUs() {
           <div className="overflow-hidden rounded-lg lg:col-span-2 h-96 lg:h-auto ">
             <iframe
               width="100%"
-              height="600"
+              height="600px"
               src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord=28.627795,77.386448&amp;q=Adisri Publications Pvt. Ltd., D-258, Sector 63, Noida, Uttar Pradesh 201301&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"
             ></iframe>
           </div>

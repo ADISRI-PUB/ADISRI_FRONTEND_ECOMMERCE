@@ -12,12 +12,12 @@ export default function TrackOrderBook({booked ,image}) {
         }
         const data = await response.json();
          image2 = data.Cover_Image;
-        console.log(image); 
+        // console.log(image); 
         // setbookeditems(image)
         // This will log the image after it's been assigned
         setI(image2)
       } catch (error) {
-        console.error('There was a problem with the fetch operation:', error);
+        // console.error('There was a problem with the fetch operation:', error);
       }
     };
      getImage()
