@@ -61,17 +61,12 @@ export default function Footer(){
         </div> */}
         <div className="">
             <div className="m-auto w-max  max-sm:w-full">
-            <h2 className="mb-6 text-sm max-sm:text-xs font-semibold text-gray-900 uppercase  ">Company</h2>
+            <h2 className="mb-6 text-sm max-sm:text-xs font-semibold text-gray-900 uppercase  ">Careers</h2>
             <ul className="text-gray-500 dark:text-gray-400  font-medium ">
                 <li className="mb-4">
-                    <Link to='/aboutus' className=" hover:underline">About</Link>
+                    <Link to='/careers' className=" hover:underline">Current opening</Link>
                 </li>
-                <li className="mb-4">
-                    <Link to='/careers' className="hover:underline">Careers</Link>
-                </li>
-                <li className="mb-4">
-                    <a className="hover:underline decoration-none">Brand Center :Noida</a>
-                </li>
+            
             
             </ul>
             </div>
