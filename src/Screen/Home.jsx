@@ -47,7 +47,7 @@ export default function Home({ token }) {
           <Crousal />
         </div>
         <div className="sections1  ">
-          <div className="preprimary-section pre-books relative   p-4 transition-all duration-700">
+          <div className="preprimary-section pre-books relative   max-sm:p-2 sm:p-4 transition-all duration-700">
             <div className="absolute overflow-hidden z-0  opacity-20 top-0 right-20 ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -74,15 +74,15 @@ export default function Home({ token }) {
                 Pre-Primary Books
               </div>
               <br /> 
-              <div className="w-4/5 m-auto max-sm:w-[99%]">
-                <p className="pre-books-description max-sm:text-xs p-3 max-sm:p-0 leading-loose sm:text-center" >
+              <div className="w-4/5 m-auto ">
+                <p className=" pre-books-description leading-loose max-sm:text-xs p-3 max-sm:p-0 sm:text-center" >
              
 "Welcome to Adisri Publications, where the magic of learning unfolds with every turn of the page! Our enchanting pre-primary books are designed to captivate young minds, blending vibrant illustrations with playful activities that make early learning a joyous adventure. From the first letter to the last number, each book is a treasure trove of discovery, sparking creativity and fueling curiosity. Let your child’s imagination soar as they explore our world of whimsical tales and interactive fun. At Adisri, we don’t just teach—we inspire a lifelong love for learning!"
                 </p>
               </div>
               <br />
             </div>
-            <div className="w-[83%] max-sm:w-full m-auto z-50 ">
+            <div className="w-[83%] max-sm:w-full  m-auto  z-50 ">
               <CrousalBooks />
             </div>
           </div>
@@ -176,10 +176,10 @@ export default function Home({ token }) {
                           onClick={() => {
                             handleprofile();
                           }}
-                          className="relative border  inline-flex items-center justify-start px-9 py-4  overflow-hidden font-medium transition-all bg-white rounded-full hover:bg-white group"
+                          className="relative border  inline-flex items-center justify-start px-9 py-4 max-sm:py-2 max-sm:px-9 overflow-hidden font-medium transition-all bg-white rounded-full hover:bg-white group"
                           >
                           <span className="w-48 h-48 rounded rotate-[-40deg] bg-purple-400 absolute bottom-0 left-0 z-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
-                          <span className="relative w-full text-left transition-colors duration-300 ease-in-out text-sm ">
+                          <span className="relative w-full text-left transition-colors duration-300 ease-in-out text-sm max-sm:text-[8px] ">
                             {" "}
                               Read More ...
                           </span>
@@ -187,13 +187,13 @@ export default function Home({ token }) {
                         </button>
                         </Link>
                           </div>
-          <div className=" h-20"></div>
+          <div className=" h-20 max-sm:h-4"></div>
             <div className="w-full">
               <div>
                 
                 <p className="our-clients2 max-sm:text-xl">Our Clients</p>
               </div>
-              <div className="sm:h-5  new-space-color"></div>
+              <div className="sm:h-5 max-sm:hidden  new-space-color"></div>
               <div className="">
                 <Clients />
               </div>

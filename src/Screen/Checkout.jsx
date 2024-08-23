@@ -51,14 +51,14 @@ function Checkout() {
      }
   };
   return (
-    <div className="sm:h-screen relative  overflow-hidden sm:flex bg-slate-900  ">
+    <div className="min-h-screen relative  overflow-hidden sm:flex bg-slate-900  ">
       <div className="absolute max-sm:hidden w-full h-hull z-0 opacity-50 top-20">
         <img className="w-2/5" src="pngegg (17)2.png" alt="" />
       </div>
-      <div className="absolute right-12 ">
+      <div className="absolute right-12 max-sm:bottom-0 max-sm:right-0 ">
         <img src="pngegg (17)90.png" alt="" />
       </div>
-      <form className="w-full  flex  logg">
+      <form className="w-full bg-black/30 flex  logg">
         <div className="grid sm:px-10 col-span-2  w-3/5 max-sm:w-full  m-auto lg:px-20 xl:px-32 relative  ">
           <div className="mt-10 bg-white/20 border-2 border-white rounded-xl text-white backdrop-blur-sm px-4 pt-8 lg:mt-0">
             <p className="text-xl font-medium">Shipping Details</p>
@@ -161,7 +161,7 @@ function Checkout() {
               >
                 Billing Address*
               </label>
-              <div className="flex flex-col sm:flex-row">
+              <div className="flex flex-col sm:flex-row max-sm:space-y-5">
                 <div className="relative flex-shrink-0 sm:w-7/12">
                   <input
                     type="text"

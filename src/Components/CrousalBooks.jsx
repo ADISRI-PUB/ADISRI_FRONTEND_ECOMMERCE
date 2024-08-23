@@ -20,7 +20,7 @@ function SampleNextArrow(props) {
             viewBox="0 -960 960 960"
             height="60pxpx"
             width="60px"
-            fill="#9d64ff"
+            fill="#000"
           >
             <path d="m480-340 180-180-57-56-123 123-123-123-57 56 180 180Zm0 260q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
           </svg>
@@ -48,7 +48,7 @@ function SamplePrevArrow(props) {
             viewBox="0 -960 960 960"
             height="60pxpx"
             width="60px"
-            fill="#9d64ff"
+            fill="#000"
           >
             <path d="m480-340 180-180-57-56-123 123-123-123-57 56 180 180Zm0 260q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
           </svg>
@@ -76,58 +76,69 @@ export default function CrousalBooks() {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
+          autoplay: true,
+          autoplaySpeed: 2000,
+          infinite: true,
           slidesToScroll: 1,
-          nextArrow: "",
-          prevArrow: "",
-          
+        nextArrow:"",
+        prevArrow:""
         },
       },
       
     ],
   };
   return (
-    <div className="slider-container   p-4  w-full">
+    <div className="slider-container   p-4 max-sm:p-10 w-full">
       <div className="w-4/5 m-auto">
       <Slider {...settings}>
-        <div className="sm:h-[200px]" >
+        <div className="sm:h-[200px] max-sm:h-[200px]  rounded-lg" >
           <Link to="/preprimary">
-            <div className="mx-auto  w-4/5 transform overflow-hidden rounded-lg bg-white text-gray-700 shadow-md duration-300  hover:shadow-lg">
+          <div className="mx-auto  w-4/5  transform overflow-hidden rounded-lg bg-white text-gray-700 shadow-md duration-300  hover:shadow-lg">
               <img
-                className="sm:p-2  max-sm:p-1  m-auto w-full aspect-auto object-cover"
+                className="sm:p-2 max-sm:p-3 w-full "
                 src="COUNTING 1-50 FRONT.jpg"
-                alt="Product Image"
-              />
-               <h2 className="mb-2  font-medium  text-gray-900 text-md bookcrousal  text-center">
-                COUNTING 1-50
-                </h2>
-          
-            </div>
-          </Link>
-        </div>
-        <div className="sm:h-[200px]  ">
-          <Link to="/preprimary">
-          <div className="mx-auto w-4/5 transform overflow-hidden rounded-lg bg-white text-gray-700 shadow-md duration-300  hover:shadow-lg">
-              <img
-                className="sm:p-2  max-sm:p-1  m-auto"
-                src="ALL IN ONE WRITING BOOK HARD BOUND.jpg"
                 alt="Product Image"
               />
               <div className="">
                 <h2 className="mb-2  font-medium  text-gray-900 text-md bookcrousal p-2 text-center">
-                ALL IN ONE PAPER BACK
+                
+               Counting 1-50
                 </h2>
 
                 <div className="flex items-center">
-                  {/* <p className=" font-semibold text-gray-900 bookcrousal p-4 ">
-                    ₹260/-
-                  </p> */}
-               
+                
+                 
                 </div>
               </div>
             </div>
           </Link>
         </div>
+        <div className="sm:h-[200px] " >
+          <Link to="/preprimary">
+          <div className="mx-auto shadow-md  w-4/5 transform overflow-hidden rounded-lg bg-white text-gray-700  duration-300  hover:shadow-lg">
+              <img
+                className="sm:p-2      max-sm:p-3  m-auto"
+                src="ALL IN ONE WRITING BOOK HARD BOUND.jpg"
+                alt="Product Image"
+              />
+              <div className="">
+                <h2 className="mb-2  font-medium  text-gray-900 text-md bookcrousal p-2 text-center">
+               
+                ALL IN ONE
+                </h2>
+
+                <div className="flex items-center">
+                  {/* <p className=" font-semibold text-gray-900 bookcrousal p-4 ">
+                  ₹140/-
+                  </p> */}
+                
+                </div>
+              </div>
+            </div>
+          </Link>
+        </div>
+    
         <div className="sm:h-[200px]">
           <Link to="/preprimary">
           <div className="mx-auto  w-4/5 transform overflow-hidden rounded-lg bg-white text-gray-700 shadow-md duration-300  hover:shadow-lg">

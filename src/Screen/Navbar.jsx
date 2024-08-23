@@ -224,7 +224,7 @@ export default function Navbar({ menuopen }) {
           </div>
           <div>
             <div className=" p-2 leading-loose " onClick={opendropdown4}>
-              <p className="flex justify-between border-b-[2px] ">
+              {/* <p className="flex justify-between border-b-[2px] ">
                 {" "}
                 <span className="font-semibold">Our Policy</span>{" "}
                 <svg
@@ -237,11 +237,11 @@ export default function Navbar({ menuopen }) {
                 >
                   <path d="M480-360 280-560h400L480-360Z" />
                 </svg>{" "}
-              </p>
+              </p> */}
               <div className="list-dropdown4 hidden">
-                <Link to="/privacy" onClick={menuopen} className="block">
+                {/* <Link to="/privacy" onClick={menuopen} className="block">
                   Privacy Policy
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>
@@ -270,13 +270,21 @@ export default function Navbar({ menuopen }) {
           className="p-3 tex-sm w-full block"
         >
           <div className="flex logg justify-between  " >
-          <AccordionItem className="relative left-2 font-semibold" header={`More Options`} >
-               <Link className="left-0 font-normal p-2 relative top-2  " to="/myorders" onClick={menuopen}>My Orders</Link>
-               <p className="left-0 font-normal p-2 "  onClick={()=>{
-                  logout()
-                  menuopen()
-               }} >Logout</p>
-            </AccordionItem>
+
+          {
+            flag ?(
+              <AccordionItem className="relative left-2 font-semibold" header={`More Options`} >
+              <Link className="left-0 font-normal p-2 relative top-2  " to="/myorders" onClick={menuopen}>My Orders</Link>
+              <p className="left-0 font-normal p-2 "  onClick={()=>{
+                 logout()
+                 menuopen()
+              }} >Logout</p>
+           </AccordionItem>
+            ):(
+              <Link to='/SignIn' >SignIn</Link>
+            )
+          }
+       
           </div>
         </div>
         </Accordion>

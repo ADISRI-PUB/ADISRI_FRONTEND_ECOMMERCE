@@ -9,6 +9,58 @@ function WriteToUs() {
   const [message, setMessage] = useState("");
   const regex = /[6-9]{1}[0-9]{9}/;
   let formdata = {};
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    // setResult("Sending....");
+     
+       if (!regex.test(phone)) {
+          document.querySelector('.text').classList.replace("text-black","text-[#FF403D]")
+       }
+       else{
+        document.querySelector(".tracking-wide").textContent="sending......"
+
+        setTimeout(async()=>{
+          const formData = new FormData(event.target);
+          console.log(formData);
+          
+          formData.append("access_key", "229f2605-024b-4455-9837-6bbd8d888654");
+          const response = await fetch("https://api.web3forms.com/submit", {
+           method: "POST",
+           body: formData
+         });
+         const data = await response.json();
+ 
+         if (data.success) {
+          document.querySelector(".tracking-wide").textContent="sent !"
+               setTimeout(()=>{
+                setEmail("");
+                          setMessage("");
+                          setPhone("");
+                          setSubject("");
+                          setfirstname("");
+                          setlastname("");
+                          event.target.reset();
+                            document.querySelector(".tracking-wide").textContent="send"
+               },1000)
+         } else {
+           console.log("Error", data);
+           // setResult(data.message);
+           document.querySelector('.tracking-wide').textContent="Please Try Again Later !"
+           setTimeout(()=>{
+             document.querySelector(".tracking-wide").textContent="send"
+
+           },1000)
+         }
+        },1000)
+        
+       }
+    
+
+   
+
+   
+  };
   // const onSubmit = async (e) => {
   //   e.preventDefault();
   //   // console.log(e.target.value);
@@ -47,12 +99,7 @@ function WriteToUs() {
   //         setTimeout(() => {
   //           // console.log(formdata);
   //           document.querySelector("#Contact-us").reset();
-  //           setEmail("");
-  //           setMessage("");
-  //           setPhone("");
-  //           setSubject("");
-  //           setfirstname("");
-  //           setlastname("");
+  //          
   //         }, 1000);
   //       } else {
   //         console.log("Error", data);
@@ -232,15 +279,11 @@ function WriteToUs() {
                   <div className=" w-[100%] sm:max-w-[80%] ">
                     <form
                       id="Contact-us"
-                      // onSubmit={""}
+                       onSubmit={onSubmit}
                       className="rounded-lg  min-w-full"
-                      // action=""
+                    
                     >
-                      {/* <input
-                        type="hidden"
-                        name="access_key"
-                        value="4b0b05d4-2651-46d1-b758-5b74e6989f1a"
-                      /> */}
+                      
                       <div className="">
                         <div>
                           {/* <h1 className="text-center text-2xl mb-6 text-white font-bold font-sans border-b-2 border-white">
@@ -293,7 +336,7 @@ function WriteToUs() {
                               </label>
                               <input
                                 className="w-full  p-2 bg-transparent border-b-2 border-[#FF403D] text-white focus:outline-none"
-                                type="text"
+                                type="email"
                                 name="email"
                                 id="username"
                                 required
@@ -305,7 +348,7 @@ function WriteToUs() {
                             </div>
                             <div>
                               <label
-                                className="text-black font-semibold block sm:my-3 text-md phoneee"
+                                className="text-black font-semibold block sm:my-3 text-md text"
                                 htmlFor="username"
                               >
                                 Phone*
@@ -319,7 +362,7 @@ function WriteToUs() {
                                 value={phone}
                                 onFocus={() => {
                                   document
-                                    .querySelector(".phoneee")
+                                    .querySelector(".text")
                                     .classList.replace(
                                       "text-[#FF403D]",
                                       "text-black"
@@ -345,9 +388,9 @@ function WriteToUs() {
                               id="username"
                               required
                               value={subject}
-                              onChange={(e) => {
-                                setSubject(e.target.value);
-                              }}
+                              onChange={(e) =>
+                                setSubject(e.target.value)
+                              }
                             />
                           </div>
                           <div className="w-full ">
