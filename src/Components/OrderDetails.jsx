@@ -63,9 +63,9 @@ return(
      <p className='font-medium sm:text-2xl'>Quantity : 2</p>
      </div>
      </div> */}
-     
+     {/* grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); */}
           <div className="">
-            <div className="m-10 space-x-3 w-80 max-sm:w-60 flex  rounded-lg border-2 border-gray-100 p-3 bg-[#053634]  shadow-lg shadow-gray-200">
+            <div className="  w-80 h-40   rounded-lg border-2 border-gray-100 p-3 bg-[#053634]  shadow-lg shadow-gray-200">
               {/* <div className="w-2/5">
                 <img src={e.Image} alt="product image" />
               </div> */}

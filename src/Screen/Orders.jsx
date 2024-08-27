@@ -127,7 +127,7 @@ function Orders() {
     </p>
     </div>
     <div>
-    <img className="w-2/6 float-end " src="Order food-pana.png" alt="" srcset="" />
+    <img className="w-2/6 float-end " src="Order food-pana.png" alt=""  />
     </div>
     </div>
     <br />

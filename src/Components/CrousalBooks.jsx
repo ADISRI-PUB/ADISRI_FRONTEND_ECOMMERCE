@@ -5,7 +5,7 @@ function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
     <>
-    <div className="w-full bg-[]">
+    <div className="w-full ">
       <svg
             className={className}
             style={{
@@ -94,7 +94,7 @@ export default function CrousalBooks() {
       <Slider {...settings}>
         <div className="sm:h-[200px] max-sm:h-[200px]  rounded-lg" >
           <Link to="/preprimary">
-          <div className="mx-auto  w-4/5  transform overflow-hidden rounded-lg bg-white text-gray-700 shadow-md duration-300  hover:shadow-lg">
+          <div className="mx-auto  w-4/5 aspect-[4/6]  transform overflow-hidden rounded-lg bg-white text-gray-700 shadow-md duration-300  hover:shadow-lg">
               <img
                 className="sm:p-2 max-sm:p-3 w-full "
                 src="COUNTING 1-50 FRONT.jpg"
@@ -106,19 +106,17 @@ export default function CrousalBooks() {
                Counting 1-50
                 </h2>
 
-                <div className="flex items-center">
-                
-                 
-                </div>
+              
               </div>
             </div>
           </Link>
         </div>
-        <div className="sm:h-[200px] " >
+     
+        <div className="h-[200px] " >
           <Link to="/preprimary">
-          <div className="mx-auto shadow-md  w-4/5 transform overflow-hidden rounded-lg bg-white text-gray-700  duration-300  hover:shadow-lg">
+          <div className="mx-auto shadow-md aspect-[4/6]  w-4/5 transform overflow-hidden rounded-lg bg-white text-gray-700  duration-300  hover:shadow-lg">
               <img
-                className="sm:p-2      max-sm:p-3  m-auto"
+                className="sm:p-2      max-sm:p-3  w-full"
                 src="ALL IN ONE WRITING BOOK HARD BOUND.jpg"
                 alt="Product Image"
               />
@@ -128,12 +126,7 @@ export default function CrousalBooks() {
                 ALL IN ONE
                 </h2>
 
-                <div className="flex items-center">
-                  {/* <p className=" font-semibold text-gray-900 bookcrousal p-4 ">
-                  ₹140/-
-                  </p> */}
-                
-                </div>
+            
               </div>
             </div>
           </Link>
@@ -141,7 +134,7 @@ export default function CrousalBooks() {
     
         <div className="sm:h-[200px]">
           <Link to="/preprimary">
-          <div className="mx-auto  w-4/5 transform overflow-hidden rounded-lg bg-white text-gray-700 shadow-md duration-300  hover:shadow-lg">
+          <div className="mx-auto aspect-[4/6]  w-4/5 transform overflow-hidden rounded-lg bg-white text-gray-700 shadow-md duration-300  hover:shadow-lg">
               <img
                 className="sm:p-2      max-sm:p-3  m-auto"
                 src="AMAZING PICTURES  A.jpg"
@@ -165,7 +158,7 @@ export default function CrousalBooks() {
         </div>
         <div className="sm:h-[200px]">
           <Link to="/preprimary">
-          <div className="mx-auto  w-4/5 transform overflow-hidden rounded-lg bg-white text-gray-700 shadow-md duration-300  hover:shadow-lg">
+          <div className="mx-auto  w-4/5 aspect-[4/6] transform overflow-hidden rounded-lg bg-white text-gray-700 shadow-md duration-300  hover:shadow-lg">
               <img
                 className="sm:p-2  max-sm:p-3 m-auto"
                 src="ART&CRAFT B.jpg"
@@ -188,7 +181,7 @@ export default function CrousalBooks() {
         </div>
         <div className="sm:h-[200px]">
           <Link to="/preprimary">
-          <div className="mx-auto  w-4/5  transform overflow-hidden rounded-lg bg-white text-gray-700 shadow-md duration-300  hover:shadow-lg">
+          <div className="mx-auto  w-4/5 aspect-[4/6]  transform overflow-hidden rounded-lg bg-white text-gray-700 shadow-md duration-300  hover:shadow-lg">
               <img
                 className="sm:p-2 max-sm:p-3 w-full "
                 src="MADHUR SARGAM FRONT.jpg"
@@ -210,7 +203,7 @@ export default function CrousalBooks() {
         </div>
         <div className="sm:h-[200px]">
           <Link to="/preprimary">
-          <div className="mx-auto    w-4/5   transform overflow-hidden rounded-lg bg-white text-gray-700 shadow-md duration-300  hover:shadow-lg">
+          <div className="mx-auto    w-4/5  aspect-[4/6]  transform overflow-hidden rounded-lg bg-white text-gray-700 shadow-md duration-300  hover:shadow-lg">
               <img
                 className="sm:p-2 max-sm:p-3 w-full "
                 src="LITTLE ARTIST COLORING BOOK B- FRONT.jpg"
@@ -218,8 +211,7 @@ export default function CrousalBooks() {
               />
               <div className="">
                 <h2 className="mb-2  font-medium  text-gray-900 text-md bookcrousal p-2 text-center">
-         
-                LITTLE ARTIST'S COLOURING BOOK B 
+                LITTLE ARTIST BOOK  
                 </h2>
 
                 <div className="flex items-center">
@@ -232,7 +224,7 @@ export default function CrousalBooks() {
         </div>
         <div className="sm:h-[200px] ">
           <Link to="/preprimary">
-          <div className="mx-auto  w-4/5   transform overflow-hidden rounded-lg bg-white text-gray-700 shadow-md duration-300  hover:shadow-lg">
+          <div className="mx-auto  w-4/5 aspect-[4/6]   transform overflow-hidden rounded-lg bg-white text-gray-700 shadow-md duration-300  hover:shadow-lg">
               <img
                 className="sm:p-2 max-sm:p-3 w-full"
                 src="MILESTONE ENGLISH PRE-PRIMER- FRONT.jpg"
@@ -253,7 +245,7 @@ export default function CrousalBooks() {
         </div>
         <div className="max-h-70">
           <Link to="/preprimary">
-          <div className="mx-auto  w-4/5   transform overflow-hidden rounded-lg bg-white text-gray-700 shadow-md duration-300  hover:shadow-lg">
+          <div className="mx-auto  w-4/5  aspect-[4/6]  transform overflow-hidden rounded-lg bg-white text-gray-700 shadow-md duration-300  hover:shadow-lg">
               <img
                 className="sm:p-2 max-sm:p-3 w-full "
                 src="SHABD SULEKHAN TITLE - FRONT.jpg"

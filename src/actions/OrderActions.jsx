@@ -1,4 +1,5 @@
 import axios from 'axios'
+import emailjs from '@emailjs/browser';
 import { 
     ORDER_CREATE_FAIL,
     ORDER_CREATE_REQUEST,
@@ -42,13 +43,61 @@ export const createOrder =(order)=> async (dispatch,getState) => {
             config
         )
         const access = token
-
+         
         const data2 ={
             ...data,
             access:access,
 
         }
-
+  const orderItems = [];
+  data2.orderItems.map((products,index)=>{
+    orderItems.push({
+       Name:products.Name,
+       Quantity:products.Qty ,
+       ProdcutId:products.product 
+    })
+  })
+//   console.log(data2);
+  
+  let orderDetailsmail = '';
+  orderItems.forEach((item, index) => {
+    orderDetailsmail  += `Item ${index + 1}:  ,`;
+    orderDetailsmail  += ` Product Name: ${item.Name} `;
+    orderDetailsmail  += ` Quantity: ${item.Quantity}  -----------------`
+    orderDetailsmail +=`ProductId : ${item.ProdcutId}`;
+  });
+  let shipping  =`${data2.shippingAddress.Address},${data2.shippingAddress.City}-${data2.shippingAddress.PostalCode}`
+  
+  const emailParams = {
+     name: data2.user.name,
+     email: data2.user.email,
+     phone:data2.shippingAddress.Phone_Number,
+     school_name:data2.shippingAddress.School_name,
+    order_details: orderDetailsmail,
+    shipping:shipping,
+    OrderId:data2.Order_Id,
+    Total_Price:data2.Total_Price,
+  };  
+  emailjs.init({
+    publicKey: "JTJgKyyYcrVSeMq_m",
+  });   
+//    console.log(emailParams);
+  emailjs.send('service_cgmvlif', 'template_ias4gas', emailParams)
+  .then(function(response) {
+     console.log('Email sent successfully!', response.status, response.text);
+    //  alert('Your order has been submitted successfully!');
+  }, function(error) {
+     console.error('Failed to send email.', error);
+    //  alert('There was an error sending your order. Please try later.');
+  }); 
+  emailjs.send('service_cgmvlif', 'template_rvpqnht', emailParams)
+  .then(function(response) {
+     console.log('Email sent successfully!', response.status, response.text);
+    //  alert('Your order has been submitted successfully!');
+  }, function(error) {
+     console.error('Failed to send email.', error);
+    //  alert('There was an error sending your order. Please try later.');
+  });
         dispatch({
             type : ORDER_CREATE_SUCCESS,
             payload : data2

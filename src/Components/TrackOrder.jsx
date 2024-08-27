@@ -6,29 +6,72 @@ import { listProductsDetails } from "../actions/ProductsActions";
 import { deleteorderid } from "../actions/OrderActions";
 import "../Css/Order.css";
 import TrackOrderBook from "./TrackOrderBook";
+import emailjs from '@emailjs/browser';
 import Loader from "./Loader";
 import Take from "/Take.png"
 const BASE_URL = import.meta.env.VITE_URL;
 function TrackOrder() {
+  const orderDetails = useSelector((state) => state.orderDetails);
+  const { order, error, loading } = orderDetails;
+  const dispatch = useDispatch();
   const history = useNavigate();
   const { id } = useParams();
   useEffect(()=>{
     if (!localStorage.getItem('token')) {
        history('/')
     }
-    
+   
  })
  
-  const orderDetails = useSelector((state) => state.orderDetails);
-  // const {}
+  // const {} 
+  // console.log(order);
+   useEffect(()=>{
+     if (order) {
+    // setTimeout(()=>{
+    //   const orderItems = [];
+    //   order.orderItems.map((products,index)=>{
+    //     orderItems.push({
+    //        Name:products.Name,
+    //        Quantity:products.Qty  
+    //     })
+    //   })
+    //   let orderDetailsmail = '';
+    //   orderItems.forEach((item, index) => {
+    //     orderDetailsmail  += `Item ${index + 1}:  ,`;
+    //     orderDetailsmail  += ` Product Name: ${item.Name} `;
+    //     orderDetailsmail  += ` Quantity: ${item.Quantity}  -----------------`;
+    //   });
+    //   let shipping  =`${order.shippingAddress.Address},${order.shippingAddress.City}-${order.shippingAddress.PostalCode}`
+      
+    //   const emailParams = {
+    //      name: order.user.name,
+    //      email: order.user.email,
+    //      phone:order.shippingAddress.Phone_Number,
+    //      school_name:order.shippingAddress.School_name,
+    //     order_details: orderDetailsmail,
+    //     shipping:shipping,
+    //     Total_Price:order.Total_Price,
+    //   };     
+    //   console.log(emailParams);
+    // //   emailjs.send('service_cgmvlif', 'template_ias4gas', emailParams)
+    // //   .then(function(response) {
+    // //      console.log('Email sent successfully!', response.status, response.text);
+    // //      alert('Your order has been submitted successfully!');
+    // //   }, function(error) {
+    // //      console.error('Failed to send email.', error);
+    // //      alert('There was an error sending your order. Please try again.');
+    // //   });
+    // },5000)
+  }
+   },[order])
   const { shippingAddress } = useSelector((state) => state.cart);
   // const {shippingAddress} =useSelector(state=>state.cart)
   // const productDetails = useState(state=> state.productDetails)
   // const {product} =productDetails
   const [bookeditems, setbookeditems] = useState([]);
   const [loader,setLoader] =useState(true)
-  const { order, error, loading } = orderDetails;
-  const dispatch = useDispatch();
+  
+
   let imagearray = [];
   const { userprofile } = useSelector((state) => state.user);
   const step = ["Placed", "Processing", "Shipped", "Delivered"];
@@ -109,6 +152,7 @@ function TrackOrder() {
   useEffect(() => {
     dispatch(getOrderDetails(id));
     // setLoader(false)
+
   }, [dispatch]);
   
 
