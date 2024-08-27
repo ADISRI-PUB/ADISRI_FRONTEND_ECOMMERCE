@@ -6,7 +6,6 @@ import { ORDER_CREATE_RESET } from "../constants/OrderConstants";
 import { createOrder } from "../actions/OrderActions";
 import Loader from "../Components/Loader";
 import ThanksOrdering from "./ThanksOrdering";
-// import { SMTPClient } from 'emailjs';
 import ReactDOM from 'react-dom';
 function OrderSummary() {
     
@@ -22,6 +21,7 @@ function OrderSummary() {
    }
   const orderCreate = useSelector((state) => state.orderCreate);
   const { order, error, success } = orderCreate;
+  const orderDetails = useSelector((state) => state.orderDetails);
   const [loadtocreate, setloadtocreate]=useState(false)
   const dispatch = useDispatch();
   const { userprofile } = useSelector((state) => state.user);
@@ -41,8 +41,9 @@ function OrderSummary() {
     Number(cart.itemsPrice)
   ).toFixed(2);
   const [image, setImage] = useState("");
+  const container =document.querySelector('.thanks')
   useEffect(() => {
-
+    
     if (success) {
       setloadtocreate(false)
   //    document.querySelector('.thanks').innerHTML=` <div className='w-[50%] h-[] bg-white flex logg'>
@@ -51,7 +52,7 @@ function OrderSummary() {
       
   //     </div>
   // </div>}`
-  const container = document.querySelector('.thanks');
+  
 
 if (container) {
   ReactDOM.render(<ThanksOrdering />, container);
@@ -88,10 +89,16 @@ if (container) {
         TaxPrice: cart.TaxPrice,
         ToatalPrice: cart.ToatalPrice,
       })
-    );
+    )
+    
 
   };
-
+  // the mail proccess for creating the mail
+ 
+  useEffect(()=>{
+   
+         
+  },[success])
   return (
     <>
     <div className="min-h-screen thanks flex justify-center">

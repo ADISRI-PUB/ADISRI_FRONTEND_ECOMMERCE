@@ -35,7 +35,7 @@ export default function Footer(){
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
               
                 <li className="mb-4">
-                    <a href="#" className="hover:underline">Facebook</a>
+                    <a href="https://www.facebook.com/adisripublications/" target="_blank" className="hover:underline">Facebook</a>
                 </li>
                 <li className="mb-4">
                     <Link to="/contact" className="hover:underline">Contact Us</Link>

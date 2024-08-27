@@ -6,6 +6,7 @@ import Crousal from "../Components/Crousal";
 
 import CountUp from "react-countup";
 import CrousalBooks from "../Components/CrousalBooks";
+import CrousalBooks2 from "../Components/CrousalBook2";
 import Clients from "../Components/Cilents";
 import { Link } from "react-router-dom";
 
@@ -68,7 +69,10 @@ export default function Home({ token }) {
                 </g>
               </svg>
             </div>
-
+            {/* <div className="min-h-screen grid grid-cols-2 bg-blue-300">
+                 <img  className="w-[70%]" src="Bibliophile-bro.png" alt="" />
+                 <p>Adi Sri </p>
+            </div> */}
             <div className="w-full ">
               <div className=" preprimary-text max-sm:text-lg   text-center z-20 ">
                 Pre-Primary Books
@@ -77,7 +81,8 @@ export default function Home({ token }) {
               <div className="w-4/5 m-auto ">
                 <p className=" pre-books-description leading-loose max-sm:text-xs p-3 max-sm:p-0 sm:text-center" >
              
-"Welcome to Adisri Publications, where the magic of learning unfolds with every turn of the page! Our enchanting pre-primary books are designed to captivate young minds, blending vibrant illustrations with playful activities that make early learning a joyous adventure. From the first letter to the last number, each book is a treasure trove of discovery, sparking creativity and fueling curiosity. Let your child’s imagination soar as they explore our world of whimsical tales and interactive fun. At Adisri, we don’t just teach—we inspire a lifelong love for learning!"
+"Welcome to Adisri Publications, where the magic of learning unfolds with every turn of the page! Our enchanting pre-primary books are designed to captivate young minds, blending vibrant illustrations with playful activities that make early learning a joyous adventure. From the first letter to the last number, each book is a treasure trove of discovery, sparking creativity and fueling curiosity. Let your child’s imagination soar as they explore our world of whimsical tales and interactive fun. At Adisri, we don’t just teach—
+ <span className="p-1 bg-purple-400 text-white rounded-lg"> we inspire a lifelong love for learning"</span>
                 </p>
               </div>
               <br />
@@ -109,6 +114,7 @@ export default function Home({ token }) {
                 </g>
               </svg>
             </div>
+        
             <div className="w-full leading-loose ">
               <div className="preprimary-text max-sm:text-lg text-center">
                 1<sup>st</sup> TO 8<sup>th</sup>
@@ -117,13 +123,13 @@ export default function Home({ token }) {
               <br />
                 <p className="pre-books-description max-sm:text-xs p-3 max-sm:p-0 leading-loose sm:text-center">
                 
-"Step into our bookstore, where each book is a doorway to a universe of imagination and discovery for young readers. Our carefully curated collection for 1st to 8th graders is a treasure chest brimming with stories that inspire, knowledge that empowers, and adventures that captivate. Whether you’re in search of thrilling tales that whisk you away to far-off lands, heartwarming stories that impart life’s most valuable lessons, or educational resources that turn learning into an exciting journey, you’ll find something extraordinary here. Immerse yourself in the magic of beloved classics, explore new worlds with innovative educational tools, and embark on journeys that kindle a lifelong love for reading. Join us in this literary odyssey, where every page is a gateway to infinite possibilities."
+"Step into our bookstore, where each book is a doorway to a universe of imagination and discovery for young readers. Our carefully curated collection for 1st to 8th graders is a treasure chest brimming with stories that inspire, knowledge that empowers, and adventures that captivate. Whether you’re in search of thrilling tales that whisk you away to far-off lands, heartwarming stories that impart <span className="p-1 bg-purple-400 text-white rounded-lg"> life’s most valuable lessons </span>, or educational resources that turn learning into an exciting journey, you’ll find something extraordinary here. Immerse yourself in the magic of beloved classics, explore new worlds with innovative educational tools, and embark on journeys that kindle a lifelong love for reading. Join us in this literary odyssey, where every page is a gateway to infinite possibilities."
                 </p>
               </div>
             </div>
             <br />
             <div className=" w-5/6 max-sm:w-full m-auto z-50">
-              <CrousalBooks slideshow={4} />
+              <CrousalBooks2 slideshow={4} />
             </div>
           </div>
           <div className="sm:h-20 new-space-color"></div>

@@ -142,7 +142,7 @@ function WriteToUs() {
             </p>
           </div>
           <div className="w-[45%] max-sm:w-[50%] max-sm:m-auto  top-0 right-0 -z-0">
-            <img src="Service 24_7-bro.png" alt="" />
+            <img src="Call center-cuate.png" alt="" />
           </div>
         </div>
         <div className="w-[80%]  px-6 py-12 mx-auto ">
