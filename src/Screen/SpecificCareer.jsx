@@ -61,8 +61,8 @@ function SpecificCareer() {
             <p className="text-white mb-2 relative z-20"><strong className="text-gray-500">Location:</strong> {career.Location}</p>
             <p className="text-white mb-2 relative z-20"><strong className="text-gray-500">Salary:</strong> {career.Salary}LPA</p>
             <p className="text-white mb-2 relative z-20"><strong className="text-gray-500">Skills:</strong> {career.Skill}</p>
-            <p className="text-white mb-4 relative z-20"><strong className="text-gray-500">Send Resume:</strong> {career.Send_Resume}</p>
-            <Link to="/careers" style={{backgroundColor:"#50b8e7"}} className="hover:text-black text-white transition-all duration-200  rounded-full p-3">
+            <p className="text-white mb-4 relative z-20"><strong className="text-gray-500">Send Resume:</strong> infoadisri@gmail.com</p>
+            <Link to="/careers" style={{backgroundColor:"#50b8e7"}} className="hover:text-black text-white transition-all duration-200  rounded-full px-3 py-2">
               Back to Careers
             </Link>
           </div>

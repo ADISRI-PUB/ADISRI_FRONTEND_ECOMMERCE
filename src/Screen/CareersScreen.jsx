@@ -23,8 +23,8 @@ function CareersScreen() {
         <p>{error}</p>
       ) : (
         <div className=' career-section realtive '>
-          <div className='z-10   w-full absolute svg-container '>
-          <svg className='m-auto' xmlns="http://www.w3.org/2000/svg" version="1.0" width="60vw"viewBox="0 0 1280.000000 640.000000" preserveAspectRatio="xMidYMid meet">
+          {/* <img className='w-1/5 absolute opacity-55' src="Job offers-cuate (1).png" alt="" /> */}
+          {/* <svg className='m-auto absolute left-[20%] ' xmlns="http://www.w3.org/2000/svg" version="1.0" width="60vw"viewBox="0 0 1280.000000 640.000000" preserveAspectRatio="xMidYMid meet">
 <g transform="translate(0.000000,640.000000) scale(0.100000,-0.100000)" fill="#a7e7d8" stroke="none">
 <path d="M5668 4220 c-29 -29 -30 -34 -26 -94 6 -95 34 -132 147 -190 82 -42 116 -49 75 -16 -8 8 -27 33 -41 57 -23 40 -25 49 -18 122 8 89 0 113 -45 136 -42 22 -58 19 -92 -15z"/>
 <path d="M7033 4231 c-41 -25 -46 -45 -38 -139 8 -87 -1 -117 -49 -161 -47 -44 -27 -43 65 5 113 58 141 95 147 190 4 60 3 65 -26 94 -35 35 -55 37 -99 11z"/>
@@ -45,16 +45,16 @@ function CareersScreen() {
 <path d="M4551 2480 c-33 -70 -61 -168 -61 -211 0 -103 105 -158 157 -81 36 54 14 209 -47 322 l-18 35 -31 -65z"/>
 <path d="M8183 2474 c-89 -200 -52 -362 71 -310 66 28 71 121 15 266 -47 123 -50 124 -86 44z"/>
 </g>
-</svg>
+</svg> */}
           
-          </div>
+          
           <div className='space sm:h-36 max-sm:h-5 ' style={{backgroundColor:'#E3FEF7'}}>
 
           </div>
-            <div className='working-with-container  z-20 relative sm:leading-loose max-sm:leading-normal'>
+            <div className='working-with-container max-sm:text-xl  z-20 relative sm:leading-loose max-sm:leading-normal'>
            <h1>Working With Us !</h1>
-           <p  className=' w-4/5 m-auto description'>
-"At ADISRI Publications, we pride ourselves on fostering a dynamic and <b className='text1  rounded-xl sm:p-1'> supportive working environment </b> where creativity and innovation thrive. Joining our team means not only gaining access to exciting opportunities in the publishing industry but also enjoying a range of benefits designed to support your <b className=' rounded-xl sm:p-1 text2'> professional growth</b> and well-being. From competitive compensation packages to flexible work arrangements and ongoing learning opportunities, we are committed to nurturing talent and empowering our employees to reach their full potential."</p>
+           <p  className=' w-4/5 m-auto text-xs max-sm:w-full max-sm:p-2 sm:text-lg'>
+"At ADISRI Publications, we pride ourselves on fostering a dynamic and <b className='  rounded-xl sm:p-1'> supportive working environment </b> where creativity and innovation thrive. Joining our team means not only gaining access to exciting opportunities in the publishing industry but also enjoying a range of benefits designed to support your <b className=' rounded-xl sm:p-1 text2'> professional growth</b> and well-being. From competitive compensation packages to flexible work arrangements and ongoing learning opportunities, we are committed to nurturing talent and empowering our employees to reach their full potential."</p>
            </div>
            
            <div className='p-3 opening-text text-center relative z-30  leading-loose '>

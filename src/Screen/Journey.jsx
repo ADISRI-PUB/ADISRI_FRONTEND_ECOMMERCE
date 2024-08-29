@@ -56,7 +56,7 @@ function Journey() {
           
         },[scroll])
   return (
-    <div className='pin-container gap-7 h-1/2'>
+    <div className='pin-container gap-7 h-1/2 min-h-screen'>
      <Slider className='sll2ider ' {...settings} ref={sliderRef}>
         <div className=' max-sm:h-96 sm:h-screen  bg-black/80 flex logg justify-center  '>
             <div className='logg flex w-full justify-center h-full'>

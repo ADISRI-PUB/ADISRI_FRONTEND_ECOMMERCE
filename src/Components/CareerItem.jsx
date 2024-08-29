@@ -45,7 +45,7 @@ function CareerItem({ career }) {
         </div>
         <div>
           <div className="mt-5">
-            <Link to={`/careers/${career.Carrer_Job_Id}`} className="mr-2 my-1 uppercase tracking-wider px-2 text-indigo-600 border-indigo-600 hover:bg-indigo-600 hover:text-white border text-sm font-semibold rounded py-1 transition transform duration-500 cursor-pointer">
+            <Link to={`/careers/${career.Carrer_Job_Id}`} className="mr-2 my-1 uppercase tracking-wider sm:px-2 sm:py-1  text-indigo-600 border-indigo-600 hover:bg-indigo-600 hover:text-white border text-sm max-sm:text-[0.5em] font-semibold rounded max-sm:p-1 transition transform duration-500 cursor-pointer">
               Apply
             </Link>
           </div>
