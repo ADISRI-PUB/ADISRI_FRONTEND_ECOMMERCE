@@ -52,28 +52,29 @@ export const createOrder =(order)=> async (dispatch,getState) => {
   const orderItems = [];
   data2.orderItems.map((products,index)=>{
     orderItems.push({
+        Item:index+1,
        Name:products.Name,
        Quantity:products.Qty ,
-       ProdcutId:products.product 
+       ProdcutId:products.product,
+       Price:products.Price
     })
   })
-//   console.log(data2);
+//    console.log(data2);
   
-  let orderDetailsmail = '';
-  orderItems.forEach((item, index) => {
-    orderDetailsmail  += `Item ${index + 1}:  ,`;
-    orderDetailsmail  += ` Product Name: ${item.Name} `;
-    orderDetailsmail  += ` Quantity: ${item.Quantity}  -----------------`
-    orderDetailsmail +=`ProductId : ${item.ProdcutId}`;
-  });
+//   let orderDetailsmail = '';
+//   orderItems.forEach((item, index) => {
+//     orderDetailsmail  += `Item :${index + 1} |  ProductId : ${item.ProdcutId} | Product Name: ${item.Name} | Quantity: ${item.Quantity}`;
+//     orderDetailsmail+="<br>"
+//   });
   let shipping  =`${data2.shippingAddress.Address},${data2.shippingAddress.City}-${data2.shippingAddress.PostalCode}`
   
+// {Name: 'KIDS RHYMES & GEET (PLAY)', Quantity: 1, ProdcutId: 9}
   const emailParams = {
      name: data2.user.name,
      email: data2.user.email,
      phone:data2.shippingAddress.Phone_Number,
      school_name:data2.shippingAddress.School_name,
-    order_details: orderDetailsmail,
+    order_details: orderItems,
     shipping:shipping,
     OrderId:data2.Order_Id,
     Total_Price:data2.Total_Price,
@@ -81,7 +82,7 @@ export const createOrder =(order)=> async (dispatch,getState) => {
   emailjs.init({
     publicKey: "JTJgKyyYcrVSeMq_m",
   });   
-//    console.log(emailParams);
+   console.log(emailParams);
   emailjs.send('service_cgmvlif', 'template_ias4gas', emailParams)
   .then(function(response) {
      console.log('Email sent successfully!', response.status, response.text);
