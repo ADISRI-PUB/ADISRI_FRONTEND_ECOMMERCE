@@ -82,7 +82,7 @@ export default function Home({ token }) {
                 <p className=" pre-books-description leading-loose max-sm:text-xs p-3 max-sm:p-0 sm:text-center" >
              
 "Welcome to Adisri Publications, where the magic of learning unfolds with every turn of the page! Our enchanting pre-primary books are designed to captivate young minds, blending vibrant illustrations with playful activities that make early learning a joyous adventure. From the first letter to the last number, each book is a treasure trove of discovery, sparking creativity and fueling curiosity. Let your child’s imagination soar as they explore our world of whimsical tales and interactive fun. At Adisri, we don’t just teach—
- <span className="p-1 bg-purple-400 text-white rounded-lg"> we inspire a lifelong love for learning"</span>
+ <span className="p-1 max-sm:p-0 bg-purple-400 text-white rounded-lg"> we inspire a lifelong love for learning"</span>
                 </p>
               </div>
               <br />
@@ -123,7 +123,7 @@ export default function Home({ token }) {
               <br />
                 <p className="pre-books-description max-sm:text-xs p-3 max-sm:p-0 leading-loose sm:text-center">
                 
-"Step into our bookstore, where each book is a doorway to a universe of imagination and discovery for young readers. Our carefully curated collection for 1st to 8th graders is a treasure chest brimming with stories that inspire, knowledge that empowers, and adventures that captivate. Whether you’re in search of thrilling tales that whisk you away to far-off lands, heartwarming stories that impart <span className="p-1 bg-purple-400 text-white rounded-lg"> life’s most valuable lessons </span>, or educational resources that turn learning into an exciting journey, you’ll find something extraordinary here. Immerse yourself in the magic of beloved classics, explore new worlds with innovative educational tools, and embark on journeys that kindle a lifelong love for reading. Join us in this literary odyssey, where every page is a gateway to infinite possibilities."
+"Step into our bookstore, where each book is a doorway to a universe of imagination and discovery for young readers. Our carefully curated collection for 1st to 8th graders is a treasure chest brimming with stories that inspire, knowledge that empowers, and adventures that captivate. Whether you’re in search of thrilling tales that whisk you away to far-off lands, heartwarming stories that impart <span className="p-1 max-sm:p-0 bg-purple-400 text-white rounded-lg"> life’s most valuable lessons </span>, or educational resources that turn learning into an exciting journey, you’ll find something extraordinary here. Immerse yourself in the magic of beloved classics, explore new worlds with innovative educational tools, and embark on journeys that kindle a lifelong love for reading. Join us in this literary odyssey, where every page is a gateway to infinite possibilities."
                 </p>
               </div>
             </div>

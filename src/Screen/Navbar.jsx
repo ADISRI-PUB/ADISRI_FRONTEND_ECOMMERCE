@@ -52,7 +52,8 @@ export default function Navbar({ menuopen }) {
 
   return (
     <>
-      <div className="w-[90%] absolute right-0 bg-white text-black shadow-black min-h-screen overflow-y-auto">
+        <Accordion>
+      <div className="w-[90%] absolute transition-all duration-200  right-0 hidden translate-x-full side-bar bg-white   text-black shadow-black min-h-screen overflow-visible">
         <div className="w-full m-auto text-center">
           {flag ? (
             <img
@@ -72,7 +73,7 @@ export default function Navbar({ menuopen }) {
               {" "}
               <Link to="/myprofile">
                 <span
-                  className="p-2 rounded-lg border w-1/2 m-auto border-gray-200 block text-xs"
+                  className="p-2 rounded-lg border w-1/2 m-auto border-gray-200 block text-xs "
                   onClick={menuopen}
                 >
                   My Profile
@@ -103,19 +104,20 @@ export default function Navbar({ menuopen }) {
           }
           onClick={menuopen}
         >
-          <span className=" p-3"> HOME</span>
+          <span className=" p-3 "> HOME</span>
         </NavLink>
-        <NavLink
-          to="/preprimary"
-          className={({ isActive }) =>
-            isActive
-              ? "bg-[#FBF0D5] p-3 tex-sm w-full block  "
-              : "p-3 tex-sm w-full block "
-          }
-          onClick={menuopen}
-        >
-          <span className=" p-3"> PRE-PRIMARY</span>
-        </NavLink>
+    
+         <AccordionItem className="px-6 tex-sm w-full block " header={`PRE SCHOOL SOLUTIONS`} >
+              <Link className="left-0 font-normal p-2 relative top-2  block " to="/preprimary"onClick={menuopen} >PRE SCHOOL SOLUTIONS</Link>
+              <Link to='/customizedcorner' className="left-0 font-normal p-2  block"  onClick={menuopen} >Customized Corner</Link>
+              <Link to='/playgroup' className="left-0 font-normal p-2  block"  onClick={menuopen} >PlayGroup</Link>
+              <Link to='/nursery' className="left-0 font-normal p-2  block"  onClick={menuopen} >Nursery</Link>
+              <Link to='/lowerlkg' className="left-0 font-normal p-2 block "  onClick={menuopen} >Lower (LKG)</Link>
+              <Link to='/upperukg' className="left-0 font-normal p-2  block"  onClick={menuopen} >Upper (UKG)</Link>
+              <Link to='/teachertraining' className="left-0 font-normal p-2  block"  onClick={menuopen} >Teacher Training Program</Link>
+                  <Link to='/freeactivity' className="left-0 font-normal p-2 block "  onClick={menuopen} >Free Activity Sheets</Link>
+           </AccordionItem>
+      
         <NavLink
           to="/onetoeight"
           className={({ isActive }) =>
@@ -125,9 +127,10 @@ export default function Navbar({ menuopen }) {
           }
           onClick={menuopen}
         >
-          <span className=" p-3">
+          <span className=" px-3 ">
             {" "}
-            1<sup>st</sup> TO 8<sup>th</sup>
+            {/* 1<sup>st</sup> TO 8<sup>th</sup> */}
+            SCHOOL SOLUTION
           </span>
         </NavLink>
         <NavLink
@@ -135,13 +138,17 @@ export default function Navbar({ menuopen }) {
           className={({ isActive }) =>
             isActive
               ? "bg-[#F7D137] p-3 tex-sm w-full block  "
-              : "p-3 tex-sm w-full block "
+              : " tex-sm w-full block "
           }
           onClick={menuopen}
         >
-          <span className=" p-3"> Contact</span>
+          <span className=" px-6 "> Contact</span>
         </NavLink>
-        <div
+        <AccordionItem className="px-6 py-3 tex-sm w-full block" header={`ABOUT`} >
+            
+            
+          
+        {/* <div
           // to="/aboutus"
           className="p-3 tex-sm w-full block"
         >
@@ -158,8 +165,8 @@ export default function Navbar({ menuopen }) {
               <path d="M480-360 280-560h400L480-360Z" />
             </svg>
           </p>
-        </div>
-        <div className=" transition-all duration-300 list-dropdown hidden w-[90%]  m-auto  ">
+        </div> */}
+        <div className=" transition-all duration-300 list-dropdown  w-[90%]  m-auto  ">
           <div>
             <div className=" p-2 leading-loose " onClick={opendropdown2}>
               <p className="flex justify-between border-b-[2px] ">
@@ -246,7 +253,7 @@ export default function Navbar({ menuopen }) {
             </div>
           </div>
         </div>
-
+        </AccordionItem>
         {/* <Accordion>
       <AccordionItem header="What is Lorem Ipsum?">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -264,16 +271,16 @@ export default function Navbar({ menuopen }) {
         amet ante. Fusce vulputate purus sed tempus feugiat.
       </AccordionItem>
     </Accordion> */}
-     <Accordion>
+    
         <div
           // to="/aboutus"
-          className="p-3 tex-sm w-full block"
+          className="px-4 tex-sm w-full block"
         >
           <div className="flex logg justify-between  " >
 
           {
             flag ?(
-              <AccordionItem className="relative left-2 font-semibold" header={`More Options`} >
+              <AccordionItem className="relative left-2  " header={`More Options`} >
               <Link className="left-0 font-normal p-2 relative top-2  " to="/myorders" onClick={menuopen}>My Orders</Link>
               <p className="left-0 font-normal p-2 "  onClick={()=>{
                  logout()
@@ -287,7 +294,7 @@ export default function Navbar({ menuopen }) {
        
           </div>
         </div>
-        </Accordion>
+      
         {/* <div className="list-dropdown  hidden">
            <div className="grid grid-cols-3 text-xs  ">
                <ul className="bg-pink-200"> <span className=" text-sm block"> About us</span>
@@ -365,6 +372,7 @@ export default function Navbar({ menuopen }) {
                
             } */}
       </div>
+      </Accordion>
     </>
   );
 }

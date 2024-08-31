@@ -90,7 +90,7 @@ export const createOrder =(order)=> async (dispatch,getState) => {
   }, function(error) {
      console.error('Failed to send email.', error);
     //  alert('There was an error sending your order. Please try later.');
-  }); 
+  });    
   emailjs.send('service_cgmvlif', 'template_rvpqnht', emailParams)
   .then(function(response) {
      console.log('Email sent successfully!', response.status, response.text);

@@ -84,25 +84,15 @@ function FilterTAb({Class,Subject,setSubject ,setClass,API ,setApi}) {
     
   return (
     <>
-     <div className='  sm:w-[100%] bg-gray-[#f5e4ba]  filter-container '>  
+     <div className='  sm:w-[100%]  filter-container '>  
           <div className=" max-sm:bg-white  slide-bar leading-tight  min-h-screen max-h-screen   p-4 overflow-hidden relative max-sm:-translate-x-full  transition-all duration-400 " >
       
-          <div className=" transition-all duration-1000 text-lg  border-2 border-gray-500 rounded-lg grid grid-col-2 logg relative cursor-pointer" >
-            <div className='flex  relative logg' onClick={()=>{
-              document.querySelector('.option-tab').classList.toggle('hidden')
-              if (document.querySelector('#arrrrr').classList.contains('rotate-90')) {
-                document.querySelector('#arrrrr').classList.replace('rotate-90','-rotate-90')
-              }
-              else{
-                document.querySelector('#arrrrr').classList.replace('-rotate-90','rotate-90')
-              }
-              
-
-          }}>
-           <span className='max-sm:text-sm sm:p-4 max-sm:p-3'>By Class</span>
-           <svg className=' transition-all duration-200 rotate-90  w-5   absolute right-3' xmlns="http://www.w3.org/2000/svg"  id='arrrrr' viewBox="0 -960 960 960"  fill="#808080"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg>
+          <div className=" transition-all duration-1000 text-lg   rounded-lg grid grid-col-2 logg relative cursor-pointer" >
+            <div className='flex  relative logg' >
+           <span className='max-sm:text-sm max-sm:p-3'>By Class</span>
+          
            </div>
-           <div className='hidden option-tab p-5  '>
+           <div className=' option-tab p-5  '>
           {Class.map((element) => {
             return (
               <div  className="space-x-2 newclass" key={element.id}>
@@ -124,22 +114,11 @@ function FilterTAb({Class,Subject,setSubject ,setClass,API ,setApi}) {
       
 
          
-          <div className=" transition-all duration-1000 text-lg  border-2 border-gray-500 rounded-lg grid grid-col-2 logg relative cursor-pointer" >
-            <div className='flex  relative logg'onClick={()=>{
-              document.querySelector('.option-tab2').classList.toggle('hidden')
-              if (document.querySelector('#arrrrr2').classList.contains('rotate-90')) {
-                document.querySelector('#arrrrr2').classList.replace('rotate-90','-rotate-90')
-              }
-              else{
-                document.querySelector('#arrrrr2').classList.replace('-rotate-90','rotate-90')
-              }
-              
-
-          }}>
-           <span className=' max-sm:text-sm sm:p-4 max-sm:p-3'> By Subjects</span>
-           <svg className=' transition-all duration-200 rotate-90 w-5   absolute right-3' xmlns="http://www.w3.org/2000/svg"  id='arrrrr2'  viewBox="0 -960 960 960"  fill="#808080"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg>
+          <div className=" transition-all duration-1000 text-lg  rounded-lg grid grid-col-2 logg relative cursor-pointer" >
+            <div className='flex  relative logg'>
+           <span className=' max-sm:text-sm  max-sm:p-3'> By Subjects</span>
            </div>
-           <div className='hidden option-tab2 p-5 '>
+           <div className=' p-5 '>
            {Subject.map((element) => {
             return (
               <div className="space-x-2 newclass2" key={element.id}>

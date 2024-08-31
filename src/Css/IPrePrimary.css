@@ -1,6 +1,6 @@
 
 :root{
-    --bgprimarycolor:#fbf0d5;
+    --bgprimarycolor:#dfffff;
     --bgcontentprimarycolor:#FDF7E4;
     --bgcontentprimarycolor2:#ffebc6;
     --bgcontentprimary:#ffd992;
@@ -48,10 +48,15 @@
 @media (min-width:1042px){
   .card-container{
     display: grid;
-    gap: 50px;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
     grid-template-rows: auto;
-   
+  }
+  .tab-grid{
+    display: grid;
+    gap: 25px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto; 
   }
 }
 
@@ -59,16 +64,33 @@
   .card-container{
     display: grid;
     gap: 30px;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    
+    grid-template-columns: 1fr 1fr 1fr ;
     grid-template-rows: auto;
     height: max-content;
+  }
+  .tab-grid{
+    display: grid;
+    gap: 25px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto; 
   }
 }
 @media ((max-width:730px)){
   .card-container{
     display: grid;
     grid-template-columns:1fr 1fr ;
+    gap: 10px;
     grid-template-rows: auto;
    
   }
+   .tab-grid{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto; 
+  }
+}
+.hover\:svg-rotate:hover svg {
+  transform: rotate(45deg);
 }

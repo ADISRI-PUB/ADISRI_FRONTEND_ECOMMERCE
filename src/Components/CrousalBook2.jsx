@@ -179,12 +179,12 @@ export default function CrousalBooks2() {
           <div className="mx-auto  w-4/5 aspect-[4/6] transform overflow-hidden rounded-lg bg-white text-gray-700 shadow-md duration-300  hover:shadow-lg">
               <img
                 className="sm:p-2  max-sm:p-3 m-auto"
-                src="ART&CRAFT B.jpg"
+                src="madhurima hindi 5.jpg"
                 alt="Product Image"
               />
               <div className="">
                 <h2 className="mb-2  font-medium  text-gray-900 text-md bookcrousal p-2 text-center">
-                LITTLE ARTIST'S ART AND CRAFT BOOK -B
+               MADHURIMA HINDI
                 </h2>
 
                 <div className="flex items-center">
@@ -202,13 +202,13 @@ export default function CrousalBooks2() {
           <div className="mx-auto  w-4/5 aspect-[4/6]  transform overflow-hidden rounded-lg bg-white text-gray-700 shadow-md duration-300  hover:shadow-lg">
               <img
                 className="sm:p-2 max-sm:p-3 w-full "
-                src="MADHUR SARGAM FRONT.jpg"
+                src="grow wid grammar 5.jpg"
                 alt="Product Image"
               />
               <div className="">
                 <h2 className="mb-2  font-medium  text-gray-900 text-md bookcrousal p-2 text-center">
                 
-                MADHUR SARGARM -A 
+                GROW GRAMMER
                 </h2>
 
                 <div className="flex items-center">
@@ -224,12 +224,12 @@ export default function CrousalBooks2() {
           <div className="mx-auto    w-4/5  aspect-[4/6]  transform overflow-hidden rounded-lg bg-white text-gray-700 shadow-md duration-300  hover:shadow-lg">
               <img
                 className="sm:p-2 max-sm:p-3 w-full "
-                src="LITTLE ARTIST COLORING BOOK B- FRONT.jpg"
+                src="vyakaran vaticka 2.jpg"
                 alt="Product Image"
               />
               <div className="">
                 <h2 className="mb-2  font-medium  text-gray-900 text-md bookcrousal p-2 text-center">
-                LITTLE ARTIST BOOK  
+               VYAKARAN VATIKA
                 </h2>
 
                 <div className="flex items-center">
@@ -240,49 +240,8 @@ export default function CrousalBooks2() {
             </div>
           </Link>
         </div>
-        <div className="sm:h-[200px] ">
-          <Link to="/onetoeight">
-          <div className="mx-auto  w-4/5 aspect-[4/6]   transform overflow-hidden rounded-lg bg-white text-gray-700 shadow-md duration-300  hover:shadow-lg">
-              <img
-                className="sm:p-2 max-sm:p-3 w-full"
-                src="MILESTONE ENGLISH PRE-PRIMER- FRONT.jpg"
-              />
-              <div className="">
-                <h2 className="mb-2  font-medium  text-gray-900 text-md bookcrousal p-2 text-center">
-                 
-                MILESTONE ENGLISH 
-                </h2>
-
-                <div className="flex items-center">
-                  
-                 
-                </div>
-              </div>
-            </div>
-          </Link>
-        </div>
-        <div className="max-h-70">
-          <Link to="/onetoeight">
-          <div className="mx-auto  w-4/5  aspect-[4/6]  transform overflow-hidden rounded-lg bg-white text-gray-700 shadow-md duration-300  hover:shadow-lg">
-              <img
-                className="sm:p-2 max-sm:p-3 w-full "
-                src="SHABD SULEKHAN TITLE - FRONT.jpg"
-                alt="Product Image"
-              />
-              <div className="">
-                <h2 className="mb-2 max-sm:mb-0  font-medium  text-gray-900 text-md bookcrousal p-2 text-center">
-           
-                SHABD SULEKHAN 
-                </h2>
-
-                <div className="flex items-center">
-                
-                
-                </div>
-              </div>
-            </div>
-          </Link>
-        </div>
+      
+      
       </Slider>
       </div>
     </div>

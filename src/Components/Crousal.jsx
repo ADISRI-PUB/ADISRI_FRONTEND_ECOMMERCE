@@ -40,17 +40,7 @@ export default function Crousal({slideshow}) {
      cssEase: "linear",
     nextArrow:<SampleNextArrow/>,
     prevArrow:<SamplePrevArrow/>,
-     appendDots: dots => (
-        <div
-          style={{
-            padding: "1vw",
-            height:"6" 
-          }}
-        >
-          <ul style={{marginBottom:'0px' }}> {dots} </ul>
-        
-        </div>
-      ),
+     
   };
   return (
     <div className="overflow-hidden  ">
