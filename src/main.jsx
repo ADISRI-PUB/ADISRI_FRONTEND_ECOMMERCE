@@ -6,7 +6,7 @@ import { Provider } from 'react-redux'
 import store from './store.jsx'
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import Favicon from "react-favicon"
-
+// import { store } from './store/store.jsx'
 const GoogleId = import.meta.env.VITE_GOOGLE_SIGN_ID
 
 ReactDOM.createRoot(document.getElementById('root')).render(

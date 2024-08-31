@@ -85,14 +85,23 @@ function IPrePrimary() {
     <>
  
   
-      <div className=" primary-sections min-h-screen relative">
-      <div className='p-4 text-xl max-sm:text-[15px]  text-gray-500 relative flex space-x-3  w-full  ' >
-        <p className=" flex  space-x-5"> <span> Filters</span> <button onClick={open} className=' transition-all duration-300 buttons sm:hidden max-sm:visible   w-full' >  
+      <div className=" primary-sections  min-h-screen  ">
+        {/* <div className=" tab-grid  bg-[] w-[83%] justify-items-center logg sm:mr-0 sm:ml-auto py-8">
+            <div  className="px-10 py-3 bg-[#b9f0ea]  rounded-full   cursor-pointer   ">Books & Copy
+
+            </div>
+            <h2  className="px-10 py-3 bg-[#b9f0ea]  rounded-full   cursor-pointer ">Stationary</h2>
+            <h2  className="px-10 py-3 bg-[#b9f0ea]  rounded-full   cursor-pointer ">Art & Craft Supply</h2>
+            <h2  className="px-10 py-3 bg-[#b9f0ea]  rounded-full   cursor-pointer  ">Toy & Educational Material</h2>
+         
+        </div> */}
+      <div className='p-4 text-xl max-sm:text-[15px]    relative flex space-x-3 bg-[#b9f0ea]  max-sm:w-full  sm:w-[17%] ' >
+        <p className=" flex  space-x-5 "> <span> Filters</span> <button onClick={open} className=' transition-all duration-300 buttons sm:hidden max-sm:visible   w-full' >  
      <svg className='w-[15px] max-sm:w-[13px]' xmlns="http://www.w3.org/2000/svg"  viewBox="0 -960 960 960"  fill="#000000"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg>
      </button> </p> </div>
    
         <div className="flex   primary-sections   ">
-        <div className="sm:w-[17%] max-sm:w-full max-sm:absolute max-sm:z-20 max-sm:-translate-x-full    primarysection1  max-sm:bg-white ease-out transition-all duration-500 relative    max-sm:h-full ">
+        <div className="sm:w-[17%] max-sm:w-full max-sm:absolute max-sm:z-20 max-sm:-translate-x-full   primarysection1 bg-[#b9f0ea]  ease-out transition-all duration-500 relative    max-sm:h-full ">
           <FilterTAb
               Class={Class}
               setClass={setClass}
@@ -103,7 +112,7 @@ function IPrePrimary() {
             />
           </div>
        
-          <div className="sm:w-5/6 sm:p-5    max-sm:w-full  card-container relative  ">
+          <div className="sm:w-[79%] sm:p-2 m-auto   max-sm:w-full  card-container relative  ">
             {API === "" ? (
               loading ? (
               
@@ -112,9 +121,9 @@ function IPrePrimary() {
               ) : (
                 products.map((product) => {
                   return (
-                    <div key={product.Product_Id} className="p-5 max-sm:p-0 ">
+                    <div key={product.Product_Id} className=" max-sm:p-0 ">
                       <ProdcutsCard product={product} id={1} />
-                      <br />
+                      
                     </div>
                   );
                 })
@@ -138,9 +147,9 @@ function IPrePrimary() {
             ) : (
               filterbook.map((product) => {
                 return (
-                  <div key={product.Product_Id} className="p-5 ">
+                  <div key={product.Product_Id} className=" ">
                     <ProdcutsCard product={product} id={1} />
-                    <br />
+                 
                   </div>
                 );
               })

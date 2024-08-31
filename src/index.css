@@ -64,3 +64,50 @@ input[type="number"]::-webkit-outer-spin-button {
     height: 100%;
   }
 }
+
+@media (min-width:950px){
+  .hide-visible{
+    display: none;
+  }
+}
+@media (max-width:949px){
+  .hide-visible{
+    display: contents;
+    width: 50%;
+
+
+  }
+  .homelogo{
+    width: 100%;
+    
+  }
+  .hide-visible3{
+    display: none;
+  }
+}
+@media (min-width:950px){
+  .hide-visible2{
+    visibility: visible;
+  }
+  .hide-visible3{
+    display: contents;
+  }
+}
+@media (max-width:949px){
+  .hide-visible2{
+     visibility: hidden;
+  }
+  .hide-visible3{
+    display: none;
+  }
+}
+@media (min-width:950px){
+  .navbarsmall{
+    display: none;
+  }
+}
+@media (max-width:949px){
+  .navbarsmall{
+    display: contents;
+  }
+}

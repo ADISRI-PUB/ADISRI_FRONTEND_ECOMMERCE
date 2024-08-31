@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Navbar from "./Navbar";
 import { useNavigate } from "react-router-dom";
 import { getAllOrderDetails } from "../actions/OrderActions";
+import PrePopup from "../Components/PrePopup";
 function Hnavbar() {
   //kamal
   const [flag, setflag] = useState(false);
@@ -50,7 +51,7 @@ function Hnavbar() {
     //   }
 
     if (count == 0) {
-      document.querySelector(".side-bar").classList.toggle("hidden");
+       document.querySelector(".side-bar").classList.toggle("hidden");
      
       setTimeout(() => {
         document.querySelector(".row1").style.transform = "rotate(45deg)";
@@ -65,7 +66,9 @@ function Hnavbar() {
     } else {
       count = 0;
 
-      document.querySelector(".side-bar").classList.toggle("translate-x-full");
+      document
+      .querySelector(".side-bar")
+      .classList.toggle("translate-x-full");
       document.querySelector(".row1").style.transform = "rotate(0deg)";
       document.querySelector(".row2").style.transform = "rotate(0deg)";
       document.querySelector(".row2").style.marginTop = "6px";
@@ -98,7 +101,20 @@ function Hnavbar() {
     // dispatch(getAllOrderDetails())
     home("/myorders");
   };
+ const show2=()=>{
+    document.querySelector('.second2').classList.remove('hidden')
+    // console.log("dsfsfsfs");
+    
+ }
+ const hide2=()=>{
+  setTimeout(()=>{
 
+    if (!document.querySelector('.second2').classList.contains('visited')) {
+      document.querySelector('.second2').classList.add('hidden')
+      
+    }
+  },160)
+ }
   return (
     <>
     <nav>
@@ -106,62 +122,59 @@ function Hnavbar() {
         onClick={handleprofile}
         className="w-screen h-screen  bg-transparent absolute click  hidden max-sm:hidden"
       ></div>
-      <div className="block relative  nav-slide  bg-transparent">
-        <div className=" z-50 max-w-full sticky top-0 bg-white/50 backdrop-blur-sm  border-white  flex justify-between  max-sm:p-0 logg max-sm:h-[50px] sm:h-[80px]  ">
+      <div className="block relative    bg-transparent">
+        <div className=" z-50 max-w-full sticky top-0 bg-white/50 backdrop-blur-sm    border-white  flex  max-sm:p-0 logg max-sm:h-[50px] sm:h-[80px]  ">
+        
           <Link
             to="/"
-            className="float-start  flex logg   w-[22%] max-sm:w-[70%] "
+            className="float-start  flex logg   sm:w-[20%]  homologo  "
           >
             <img
-              className="w-[75%]  max-sm:w-[50%] relative left-2 "
+              className="w-[80%]   relative left-2 "
               src="ADISRI LOGO 2.png"
               alt="adisri logo"
             />
           </Link>
 
-          <div
-            onClick={menuopen}
-            className="float-end cursor-pointer menu z-30 sm:hidden max-sm:visible  relative  rounded-lg  right-[1vw] flex logg justify-center  "
-          >
-            <div className="">
-              <span className="row1 h-0.5  w-[25px] transition-all duration-200   bg-black block"></span>
+         
 
-              <span className="row2 mt-[6px]  h-0.5  w-[25px] transition-all duration-200  block "></span>
-            </div>
-          </div>
-
-          <div className=" w-[45%] text-[0.8vw]  grid grid-cols-5 text-center logg  max-sm:hidden  ">
+          <div className="w-[60%] flex text-[0.8vw] justify-evenly logg hide-visible2  ">
             <NavLink
               to="/"
               className={({ isActive }) =>
                 isActive
-                  ? "bg-homebutton rounded-tr-full rounded-bl-full  p-3 transition-all duration-200 h-[90%] relative top-1"
+                  ? "bg-homebutton rounded-tr-full rounded-bl-full  px-12 py-3 transition-all duration-200 h-[90%] relative top-1"
                   : ""
               }
             >
-              <span className="relative "> HOME</span>
+              <span className="relative  "> HOME</span>
             </NavLink>
             <NavLink
+            // #FBF0D5
               to="/preprimary"
+              onMouseEnter={show2}
+              onMouseLeave={hide2}
               className={({ isActive }) =>
                 isActive
-                  ? "bg-[#FBF0D5] rounded-tr-full rounded-bl-full  p-3 transition-all duration-200 h-[90%] relative top-1"
+                  ? "bg-[#b9f0ea] rounded-tr-full rounded-bl-full  px-8 py-3  transition-all duration-200 h-[90%] relative top-1"
                   : ""
               }
             >
-              PRE-PRIMARY
+             <span className=""> PRE SCHOOL SOLUTIONS</span>
             </NavLink>
             <NavLink
               to="/onetoeight"
+             
               className={({ isActive }) =>
                 isActive
-                  ? "bg-blue-100  rounded-tr-full rounded-bl-full p-3 transition-all duration-200 h-[90%] relative top-1"
+                  ? "bg-blue-100  rounded-tr-full rounded-bl-full px-8 py-3  transition-all duration-200 h-[90%] relative top-1"
                   : ""
               }
             >
-              <span className="relative ">
+              <span className="relative  ">
                 {" "}
-                1<sup>st</sup> TO 8<sup>th</sup>
+                {/* 1<sup>st</sup> TO 8<sup>th</sup> */}
+                SCHOOL SOLUTION
               </span>
             </NavLink>
 
@@ -172,25 +185,26 @@ function Hnavbar() {
               onMouseLeave={hide}
               className={({ isActive }) =>
                 isActive
-                  ? "text-nav-about  bg-[#7b9272] rounded-tr-full rounded-bl-full text-white  p-3 transition-all duration-200 h-[90%] relative top-1 "
+                  ? "text-nav-about  bg-[#7b9272] rounded-tr-full rounded-bl-full text-white px-12 py-3  transition-all duration-200 h-[90%] relative top-1 "
                   : ""
               }
             >
-              <span className="relative ">ABOUT</span>
+              <span className="relative  ">ABOUT</span>
             </NavLink>
             <NavLink
               to="/contact"
               className={({ isActive }) =>
                 isActive
-                  ? "bg-[#F7D137]  rounded-tr-full rounded-bl-full p-3 transition-all duration-200 h-[90%] relative top-1"
+                  ? "bg-[#F7D137]  rounded-tr-full rounded-bl-full px-12 py-3  transition-all duration-200 h-[90%] relative top-1"
                   : " "
               }
             >
-              <span className="relative "> CONTACT</span>
+              <span className="relative  "> CONTACT</span>
             </NavLink>
+          
           </div>
-
-          <div className="loginbutton   w-1/6 flex logg justify-center  relative  max-sm:hidden   ">
+       
+          <div className="loginbutton   w-[20%]    hide-visible2 ">
             <div className="  w-full justify-center   ">
               {flag ? (
                 <>
@@ -351,12 +365,27 @@ function Hnavbar() {
               )}
             </div>
           </div>
+          <div
+            onClick={menuopen}
+            className=" cursor-pointer  menu z-30 hide-visible  "
+          >
+            <div className="">
+              <span className="row1 h-0.5  w-[25px] transition-all duration-200   block"></span>
+
+              <span className="row2 mt-[6px]  h-0.5  w-[25px] transition-all duration-200  block "></span>
+            </div>
+          </div>
         </div>
         <div className="fixed w-3/5 m-auto top-20 right-12 z-50 max-sm:hidden sm:visible">
           <PopUp />
+         
+        </div>
+        <div className="fixed w-[20%] m-auto top-20 left-[31%]   z-50 max-sm:hidden sm:visible " >
+        <PrePopup/>
+         
         </div>
 
-        <div className="  w-full text-white sm:hidden max-sm:visible translate-x-full transition-all duration-400 side-bar hidden min-h-screen overflow-y-auto  right-0 ">
+        <div className="  text-white   navbarsmall  transition-all duration-400 side-bar2      right-0 ">
           <Navbar menuopen={menuopen} />
         </div>
       </div>

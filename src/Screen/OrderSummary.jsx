@@ -55,7 +55,7 @@ function OrderSummary() {
   
 
 if (container) {
-  ReactDOM.render(<ThanksOrdering />, container);
+  ReactDOM.createPortal(<ThanksOrdering />, container);
 }
       setTimeout(()=>{
 

@@ -16,8 +16,8 @@ export default function PopUp() {
     }
   return (
     <>
-      <div onMouseEnter={onmouse} onMouseLeave={nomouse} className="w-4/5    m-auto pop-up hidden transition-all duration-800   ">
-      <div className="grid grid-cols-3 grid-rows-1 ">
+      <div onMouseEnter={onmouse} onMouseLeave={nomouse} className="w-3/5    m-auto pop-up hidden transition-all duration-800   ">
+      <div className="grid grid-cols-2 grid-rows-1 ">
         <div className="p-4 bg-white ">
           <p>
             <b> About Us </b>
@@ -42,20 +42,20 @@ export default function PopUp() {
           </ul>
          
         </div>
-        <div className="p-4 bg-white">
+        {/* <div className="p-4 bg-white">
           <p>
         
-            <b> Our Policy </b>
+            <b> </b>
           </p>
           <ul className="targets">
            {/* <Link to='/contact'> <li>Write To Us</li></Link> */}
-           <Link to='/contact'> <li>Privacy Policy</li></Link>
+           {/* <Link to='/contact'> <li>Privacy Policy</li></Link>
          
           </ul>
           <div className="h-10 bg-white ">
 
         </div>
-        </div>
+        </div> */}
         </div>
       </div>
     </>

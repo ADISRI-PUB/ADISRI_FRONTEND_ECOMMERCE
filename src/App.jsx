@@ -29,6 +29,12 @@ import TrackOrder from './Components/TrackOrder'
 import OrderSummary from './Screen/OrderSummary'
 import MyProfile from './Screen/MyProfile'
 import ErrorPage from './Components/ErrorPage'
+import PlayGroup from './Screen/PlayGroup'
+import Nursery from './Screen/Nursery'
+import LowerLKG from './Screen/LowerLKG'
+import UpperUKG from './Screen/UpperUKG'
+import TeacherTraining from './Screen/TeacherTraining'
+import FreeActivity from './Screen/FreeActivity'
 
 function App({profile,logout}) {
   const items = useSelector((state)=>state.cart)
@@ -91,6 +97,15 @@ function App({profile,logout}) {
      <Route path='/ordersummary' Component={OrderSummary}/>
      <Route path='/myprofile' Component={MyProfile}/>
      <Route path='/error' Component={ErrorPage}/>
+     <Route path='/playgroup'Component={PlayGroup}/>
+     <Route path='/nursery'Component={Nursery}/>
+     <Route path='/lowerlkg'Component={LowerLKG}/>
+     <Route path='/upperukg'Component={UpperUKG}/>
+     <Route path='/teachertraining'Component={TeacherTraining}/>
+     <Route path='/freeactivity' Component={FreeActivity}/>
+     
+
+
      
      </Routes>
      
