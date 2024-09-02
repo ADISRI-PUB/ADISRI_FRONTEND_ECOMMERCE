@@ -27,7 +27,7 @@ function ProdcutsCard({product,id}) {
     
    
    
-    <div  className="mx-auto  sm:aspect-[4/9] max-sm:aspect-[] max-sm:mt-4 max-sm:w-4/5  bg-white transform overflow-hidden rounded-lg  shadow-md duration-300  hover:shadow-lg max-sm:leading-snug">
+    <div  className="mx-auto  sm:aspect-[4/9]  max-sm:mt-4 max-sm:w-4/5  bg-white transform overflow-hidden rounded-lg  shadow-md duration-300  hover:shadow-lg max-sm:leading-snug">
   <div className='w-[100%]  '> <img className="object-cover " src={product.Image} alt="Product Image" /></div>
   <div className="p-4 max-sm:p-2">
     <h2 className=" text-lg max-sm:text-[10px] font-medium  text-gray-900 max-sm:leading-normal">{product.Name}</h2>

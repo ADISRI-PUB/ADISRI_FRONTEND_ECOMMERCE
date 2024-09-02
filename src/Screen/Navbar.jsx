@@ -106,8 +106,25 @@ export default function Navbar({ menuopen }) {
         >
           <span className=" p-3 "> HOME</span>
         </NavLink>
-    
-         <AccordionItem className="px-6 tex-sm w-full block " header={`PRE SCHOOL SOLUTIONS`} >
+        <AccordionItem
+        header={({ state }) => (
+          <div className="accordion-header flex ">
+            <span className="px-3 ml-3 text-[1rem]">PRE SCHOOL SOLUTIONS</span>
+            <span className={`arrow ${state.isExpanded ? 'expanded' : 'notexpended'} `}><svg  xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000"><path d="M480-360 280-560h400L480-360Z"/></svg>
+            </span>
+          </div>
+        )}
+      >
+         <Link className="left-0 font-normal p-2 ml-5 relative top-2  block " to="/preprimary"onClick={menuopen} >PRE SCHOOL SOLUTIONS</Link>
+              <Link to='/customizedcorner' className="left-0 font-normal p-2 ml-5 block"  onClick={menuopen} >Customized Corner</Link>
+              <Link to='/playgroup' className="left-0 font-normal p-2 ml-5  block"  onClick={menuopen} >PlayGroup</Link>
+              <Link to='/nursery' className="left-0 font-normal p-2 ml-5 block"  onClick={menuopen} >Nursery</Link>
+              <Link to='/lowerlkg' className="left-0 font-normal p-2 ml-5 block "  onClick={menuopen} >Lower (LKG)</Link>
+              <Link to='/upperukg' className="left-0 font-normal p-2 ml-5  block"  onClick={menuopen} >Upper (UKG)</Link>
+              <Link to='/teachertraining' className="left-0 font-normal ml-5 p-2  block"  onClick={menuopen} >Teacher Training Program</Link>
+                  <Link to='/freeactivity' className="left-0 font-normal ml-5 p-2 block "  onClick={menuopen} >Free Activity Sheets</Link>
+      </AccordionItem>
+         {/* <AccordionItem className="px-6 tex-sm w-full block " header={`PRE SCHOOL SOLUTIONS`} >
               <Link className="left-0 font-normal p-2 relative top-2  block " to="/preprimary"onClick={menuopen} >PRE SCHOOL SOLUTIONS</Link>
               <Link to='/customizedcorner' className="left-0 font-normal p-2  block"  onClick={menuopen} >Customized Corner</Link>
               <Link to='/playgroup' className="left-0 font-normal p-2  block"  onClick={menuopen} >PlayGroup</Link>
@@ -116,7 +133,7 @@ export default function Navbar({ menuopen }) {
               <Link to='/upperukg' className="left-0 font-normal p-2  block"  onClick={menuopen} >Upper (UKG)</Link>
               <Link to='/teachertraining' className="left-0 font-normal p-2  block"  onClick={menuopen} >Teacher Training Program</Link>
                   <Link to='/freeactivity' className="left-0 font-normal p-2 block "  onClick={menuopen} >Free Activity Sheets</Link>
-           </AccordionItem>
+           </AccordionItem> */}
       
         <NavLink
           to="/onetoeight"

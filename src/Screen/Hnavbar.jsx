@@ -174,7 +174,7 @@ function Hnavbar() {
               <span className="relative  ">
                 {" "}
                 {/* 1<sup>st</sup> TO 8<sup>th</sup> */}
-                SCHOOL SOLUTION
+                SCHOOL SOLUTIONS
               </span>
             </NavLink>
 
@@ -185,7 +185,7 @@ function Hnavbar() {
               onMouseLeave={hide}
               className={({ isActive }) =>
                 isActive
-                  ? "text-nav-about  bg-[#7b9272] rounded-tr-full rounded-bl-full text-white px-12 py-3  transition-all duration-200 h-[90%] relative top-1 "
+                  ? "text-nav-about  bg-gray-800 rounded-tr-full rounded-bl-full text-white px-12 py-3  transition-all duration-200 h-[90%] relative top-1 "
                   : ""
               }
             >
