@@ -82,10 +82,10 @@ export const createOrder =(order)=> async (dispatch,getState) => {
   emailjs.init({
     publicKey: "JTJgKyyYcrVSeMq_m",
   });   
-   console.log(emailParams);
+//    console.log(emailParams);
   emailjs.send('service_cgmvlif', 'template_ias4gas', emailParams)
   .then(function(response) {
-     console.log('Email sent successfully!', response.status, response.text);
+    //  console.log('Email sent successfully!', response.status, response.text);
     //  alert('Your order has been submitted successfully!');
   }, function(error) {
      console.error('Failed to send email.', error);
@@ -93,7 +93,7 @@ export const createOrder =(order)=> async (dispatch,getState) => {
   });    
   emailjs.send('service_cgmvlif', 'template_rvpqnht', emailParams)
   .then(function(response) {
-     console.log('Email sent successfully!', response.status, response.text);
+    //  console.log('Email sent successfully!', response.status, response.text);
     //  alert('Your order has been submitted successfully!');
   }, function(error) {
      console.error('Failed to send email.', error);

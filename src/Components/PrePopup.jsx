@@ -49,12 +49,11 @@ function PrePopup() {
             Upper (UKG)
           </p>{" "}
         </Link>
-        <p>
-          {" "}
+        <Link to='/teachertraining'>
           <p className=" transition-all duration-200 hover:bg-[#b9f0ea] p-2  text-gray-950 hover:text-black  cursor-pointer">
             Teacher Traning Program
           </p>
-        </p>
+        </Link>
         <p >
           {" "}
           <p className=" transition-all duration-200 hover:bg-[#b9f0ea] p-2  text-gray-950 hover:text-black  cursor-pointer">
