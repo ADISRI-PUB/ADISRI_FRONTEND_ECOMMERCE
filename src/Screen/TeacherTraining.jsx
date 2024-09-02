@@ -18,10 +18,10 @@ function TeacherTraining() {
       {/* <h1>Teacher training program</h1> */}
       <div className="grid grid-cols-2 max-sm:grid-cols-1">
         <div className="">
-          <div className="py-10 w-2/3 m-auto">
-            <h1 className="text-[2vw] text-center">Teacher Training Program</h1>
+          <div className="py-10  max-sm:py-4 w-2/3 max-sm:w-full m-auto">
+            <h1 className="text-[2vw] text-center max-sm:text-lg text-[#293249]">Teacher Training Program</h1>
 
-            <p className="px-4 py-3 text-xl ">
+            <p className="px-4 py-3 max-sm:px-2 text-xl max-sm:text-sm text-[#293249] ">
               Adisri Publications is a rapidly growing organization which
               strongly focuses on the very necessary early childhood education
               and professional development of a child, parent as well as
@@ -37,7 +37,7 @@ function TeacherTraining() {
             </p>
           </div>
         </div>
-        <div className=" p-20">
+        <div className=" p-20 max-sm:p-0">
           {/* <Slider {...settings} className=" ">
               </Slider> */}
           
@@ -52,12 +52,12 @@ function TeacherTraining() {
         </div>
       </div>
       <div className="w-[90%] m-auto py-4 ">
-        <div className="flex  logg">
-        <h1 className="text-xl font-semibold  border-[#FFFFFF] ">
+        <div className=" max-sm:justify-center max-sm:flex-wrap ">
+        <h1 className="text-xl font-semibold  text-center py-4 border-[#FFFFFF] ">
           {" "}
-          <span className="text-[#293249] "> About the Programme</span>
+          <span className="text-[#293249]  text-3xl  "> About the Programme</span>
         </h1>
-        <p className=" w-[85%] m-auto leading-relaxed text-lg py-5 text-[#293249]">
+        <p className=" w-[85%] max-sm:w-full m-auto leading-relaxed text-lg py-5 text-[#293249]">
           Adisri Publications in association with Dr. Kalam International
           Foundation (a leading International NGO certified by MSME, Govt. of
           India & Niti Ayog) is committed to promoting quality & value-based
@@ -172,7 +172,7 @@ function TeacherTraining() {
           </div>
         </div>
         <div>
-          <p className="w-4/5 m-auto p-10 max-sm:p-4 leading-relaxed text-center text-lg text-[#293249]">
+          <p className="w-4/5 max-sm:w-full m-auto p-10 max-sm:p-4 leading-relaxed sm:text-center text-lg text-[#293249]">
             In summary, Adisri – DKIF trainings & workshops based on CBSE
             guidelines are crucial for fostering professional development,
             enhancing teaching effectiveness, and ultimately contributing to the
@@ -202,8 +202,8 @@ function TeacherTraining() {
               </span>
             </a>
           </button>
-          <h4 className="text-lg font-medium text-[#293249] px-5">For More About this Program  <a href="mailto:design.adisri@gmail.com"> <b className="cursor-pointer"> Click Here</b> </a></h4>
-          <h3 className="text-2xl py-10 font-medium text-[#293249]">
+          <h4 className="text-lg font-medium text-[#293249] px-5 max-sm:text-sm max-sm:py-5">For More About this Program  <a href="mailto:design.adisri@gmail.com"> <b className="cursor-pointer"> Click Here</b> </a></h4>
+          <h3 className="text-2xl py-10 font-medium text-[#293249] max-sm:text-lg">
             List of Topics included in Teacher Training Program
           </h3>
           <div className="w-2/5 max-sm:w-[90%] m-auto">

@@ -30,3 +30,11 @@
 .about-container{
     background: var(--aboutusbackground);
 }
+.about-grid  >  div:nth-child(odd){
+    background-color: #dddddd;
+   
+}
+.about-grid  >  div:nth-child(even){
+    background-color: #ffffff
+   
+}

@@ -112,7 +112,7 @@ function IPrePrimary() {
             />
           </div>
        
-          <div className="sm:w-[79%] sm:p-2 m-auto   max-sm:w-full  card-container relative  ">
+          <div className="sm:w-[79%] sm:p-2 mx-auto   max-sm:w-full  card-container relative  ">
             {API === "" ? (
               loading ? (
               
@@ -145,14 +145,25 @@ function IPrePrimary() {
               // </div>
               // </div>
             ) : (
-              filterbook.map((product) => {
-                return (
-                  <div key={product.Product_Id} className=" ">
-                    <ProdcutsCard product={product} id={1} />
-                 
+              <>
+              {
+                filterbook.length!==0 ? (
+                  filterbook.map((product) => {
+                    return (
+                      <div key={product.Product_Id} className=" max-sm:p-0 ">
+                      <ProdcutsCard product={product} id={1} />
+                   
+                    </div>
+                  );
+                })
+                ):(
+                  <div className="sm:col-start-2 w-[200%] ">
+                  <img className="" src="Empty-pana.png" alt=""  />
                   </div>
-                );
-              })
+                )
+              
+            }
+              </>
             )}
           </div>
         </div>
