@@ -18,7 +18,7 @@ function IPrePrimary() {
   const dispatch = useDispatch();
   const productsList = useSelector((state) => state.productList);
   const { error, loading, products = [] } = productsList;
-// console.log(products);
+ console.log(products);
   let [API, setApi] = useState("");
   // let [loader, setLoader] = useState(true);
   const [Class, setClass] = useState([
@@ -42,8 +42,8 @@ function IPrePrimary() {
   let data;
   useEffect(() => {
     let flag = products;
-    if (flag.length == 0) {
-      dispatch(listProducts());
+    if (flag.length === 0) {
+      dispatch(listProducts(''));
      
     }
 
@@ -56,7 +56,8 @@ function IPrePrimary() {
          
         data = await axios.get(`${BASE_URL}/data/products/product/?${API}`);
         // console.log(data.data);
-        setFilterbook(data.data);
+        setFilterbook(data.data.
+          results);
       } catch (error) {
         // setLoader(false);
         console.log("cant get the data", error);
@@ -66,7 +67,7 @@ function IPrePrimary() {
       }
     };
     fetchData();
-  }, [dispatch, API,error]);
+  }, [ API]);
   let count=0
   const  open =()=>{
     if (count==0) {
@@ -114,12 +115,13 @@ function IPrePrimary() {
        
           <div className="sm:w-[79%] sm:p-2 mx-auto   max-sm:w-full  card-container relative  ">
             {API === "" ? (
-              loading ? (
+              Object.keys(products).length===0 ? (
               
                <Loader/>
               
               ) : (
-                products.map((product) => {
+                products.
+                results.map((product) => {
                   return (
                     <div key={product.Product_Id} className=" max-sm:p-0 ">
                       <ProdcutsCard product={product} id={1} />
@@ -157,7 +159,7 @@ function IPrePrimary() {
                   );
                 })
                 ):(
-                  <div className="sm:col-start-2 w-[200%] ">
+                  <div className=" col-span-6 w-[50%] m-auto items-center logg ">
                   <img className="" src="Empty-pana.png" alt=""  />
                   </div>
                 )
@@ -167,9 +169,65 @@ function IPrePrimary() {
             )}
           </div>
         </div>
+          <div className="p-5 w-[83%] max-sm:w-full  ml-auto mr-0">
+            {
+              API === ''?(
+                <div className="flex justify-between">
+                {
+                     Object.keys(products).length===0 ?(<>
+                         <Loader/>
+                     </>):(<>
+                     {
+                         products.previous!==null ?(
+                          <button className="bg-[#4285F4]  rounded-full sm:px-10 sm:p-3 max-sm:p-2 block m-auto text-white  max-sm:text-xs   transition-all duration-400 hover:bg-[#4d91ff] hover:text-white " onClick={()=>{
+                            let url =`${ products.previous.slice(products.previous.indexOf('?')+1,products.previous.length)}`
+                             dispatch(listProducts(url));
+                            
+                            
+                          }}>Previous</button>
+                         ):(
+                          <button className="bg-[#4285F4]   opacity-60 rounded-full sm:px-10 sm:p-3 max-sm:p-[9px] block m-auto   text-white max-sm:text-xs   transition-all duration-400 hover:bg-[#4d91ff] hover:text-white ">Previous</button>
+                         )
+                     }
+                     </>)
+                 
+    
+                  }
+                  {
+                     Object.keys(products).length===0 ?(<>
+                         <Loader/>
+                     </>):(<>
+                     {
+                         products.next!==null ?(
+                          <button className="bg-[#4285F4] rounded-full sm:px-10 max-sm:px-6  sm:p-3 max-sm:p-2 block m-auto  text-white max-sm:text-xs   transition-all duration-400 hover:bg-[#4d91ff] hover:text-white " onClick={()=>{
+                            let url =`${products.next.slice(products.next.indexOf('?')+1,products.next.length)}`
+                             dispatch(listProducts(url));
+                            // console.log(url);
+                          }}> Next </button>
+                         ):(
+                          <button className="bg-[#4285F4] rounded-full sm:px-10 p-3 sm:p-3 max-sm:p-2 block m-auto  text-white max-sm:text-xs   transition-all duration-400 opacity-60 hover:bg-[#4d91ff] hover:text-white ">Next</button>
+                         )
+                     }
+                     </>)
+                   
+    
+                  }
+                
+          
+              </div>
+              ):(<>
+              
+              </>)
+            }
+          
+          </div>
      
       </div>
+
     </>
+    //  <>
+    //  <h1>dfff</h1>
+    //  </>
   );
 }
 

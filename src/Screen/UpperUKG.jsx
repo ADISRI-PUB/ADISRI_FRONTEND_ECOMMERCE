@@ -14,7 +14,7 @@ function PlayGroup() {
             try {
                
              const  {data} = await axios.get(`${BASE_URL}/data/products/product/?&class=Primer`);
-                setBooks(data)
+                setBooks(data.results)
                 setLoading(false)
               
             } catch (error) {
