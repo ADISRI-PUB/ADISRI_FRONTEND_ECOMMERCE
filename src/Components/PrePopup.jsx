@@ -54,12 +54,12 @@ function PrePopup() {
             Teacher Traning Program
           </p>
         </Link>
-        <p >
+        <div >
           {" "}
           <p className=" transition-all duration-200 hover:bg-[#b9f0ea] p-2  text-gray-950 hover:text-black  cursor-pointer">
             Free Activity Sheets
           </p>
-        </p>
+        </div>
       </div>
     </div>
   );

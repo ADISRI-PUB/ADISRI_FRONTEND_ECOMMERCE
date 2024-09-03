@@ -9,6 +9,8 @@ import {
 import {
   productDetailsReducers,
   productListReducers,
+  productListOnetoeightReducer,
+  productListDetailOnetoeightReducer
 } from "./reducers/ProductsReducers";
 import { cartReducer } from "./reducers/CartReducers";
 import { userReducer } from "./reducers/UserReducer";
@@ -26,7 +28,9 @@ const reducer = combineReducers({
   //PRODUCTS
   productList: productListReducers,
   productDetails: productDetailsReducers,
-
+  ProductOnetoeight:productListOnetoeightReducer,
+  ProductsDonetoeight:productListDetailOnetoeightReducer,
+  
   //CART
   cart: cartReducer,
   user: userReducer,
@@ -38,6 +42,8 @@ const reducer = combineReducers({
   //User
   // addLogin:addLoginData
 });
+
+// window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 
 const cartItemsFromStorage = localStorage.getItem("cartItems")
   ? JSON.parse(localStorage.getItem("cartItems"))
