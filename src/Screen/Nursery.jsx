@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
 import { Helmet } from 'react-helmet';
 const BASE_URL = import.meta.env.VITE_URL
-function PlayGroup() {
+function Nursery() {
     const history = useNavigate()
     const [loading,setLoading]=useState(true)
     const [Books,setBooks] =useState([])
@@ -97,4 +97,4 @@ Developed by a team of early childhood education experts, our nursery books are 
   )
 }
 
-export default PlayGroup
+export default Nursery

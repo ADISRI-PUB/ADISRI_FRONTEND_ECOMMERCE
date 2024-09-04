@@ -17,13 +17,14 @@ export const addToCart =(id,qty)=>async(dispatch,getState)=>{
         payload:{
             product:data.Book_Id,
             name :data.Name,
-            image :data.Cover_Image,
+            image :data.Image[0],
             price : data.Price,
-            qty
+            qty:qty
 
         }
     })
-
+   console.log(data);
+   
     localStorage.setItem('cartItems',JSON.stringify(getState().cart.cartItems))
 }
 

@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
 const BASE_URL = import.meta.env.VITE_URL
-function PlayGroup() {
+function UpperUKG() {
     const history = useNavigate()
     const [loading,setLoading]=useState(true)
     const [Books,setBooks] =useState([])
@@ -39,7 +39,7 @@ function PlayGroup() {
                 </div>
             ):(
                 <div className='min-h-screen bg-[rgb(255,213,213)] py-[3vh] '>
-                    <div className="applications">
+       <div className="applications">
         <Helmet>
         <title>Upper (UKG) -Adisri Publications</title>
         <meta 
@@ -53,15 +53,14 @@ function PlayGroup() {
       </Helmet>
 
         </div>
-                <h1 className='text-center sm:text-[2.5vw] max-sm:text-lg relative z-20 '>Exclusive Collection Of Nursery Books</h1>
+                
+
+                <h1 className='text-center sm:text-[2.5vw] max-sm:text-lg relative z-20 '>Exclusive Collection Of UpperUKG Books</h1>
+
                  <img className='z-0  w-[30%] max-sm:w-4/5 m-auto opacity-85  ' src="nursery3.png " alt=""/>
                  <div className='w-4/5 max-sm:w-full m-auto py-5 text-lg text-center relative z-20'>
                      <p>
-                     Explore our exclusive collection of LKG (Lower Kindergarten) books, carefully designed to bridge the gap between early learning and more structured education. Each book in this collection is tailored to meet the growing curiosity and expanding cognitive abilities of LKG students, offering a perfect blend of play and learning. Our LKG books cover a comprehensive range of subjects, including English, Hindi, Mathematics, Environmental Studies, Art, and Rhymes, all designed to build a strong academic foundation.
-
-What makes our LKG collection unique is its focus on interactive learning. The books are filled with vibrant illustrations, engaging exercises, and fun activities that encourage children to think critically and independently. Whether it’s learning the basics of counting, recognizing letters and sounds, or understanding the world around them, our LKG books present concepts in a way that’s both enjoyable and educational.
-
-The collection also emphasizes creativity and imagination, with art projects and rhymes that inspire self-expression and artistic growth. Developed by education experts, our LKG books are aligned with key developmental milestones, ensuring that your child is not only prepared for the next stage of their education but also excited about it. With our exclusive LKG collection, you’re providing your child with the tools they need to succeed, all while making learning a fun and rewarding experience.
+                     Welcome to our collection of high-quality UKG (Upper Kindergarten) books, designed to inspire young minds. Our carefully curated selection includes a wide range of subjects, from English and Mathematics to Art and Environmental Studies. We believe in nurturing curiosity and creativity in every child, which is why our books are not just educational but also engaging and fun. With a focus on innovative content and attractive designs, we aim to make learning a delightful experience for both children and educators. Explore our collection and give your little ones the tools they need to excel in their early educational journey.
         </p>
                  </div>
                  <div className='py-5'>
@@ -97,4 +96,4 @@ The collection also emphasizes creativity and imagination, with art projects and
   )
 }
 
-export default PlayGroup
+export default UpperUKG

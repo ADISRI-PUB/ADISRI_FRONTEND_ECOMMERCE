@@ -30,6 +30,8 @@ function Cartsection() {
     }
     else{
       setflag(true)
+      console.log(cart);
+      
     }
   }, [dispatch,Quantity,cart]);
 

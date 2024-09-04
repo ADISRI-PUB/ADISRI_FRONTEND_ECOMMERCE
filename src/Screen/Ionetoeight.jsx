@@ -94,7 +94,8 @@ function Ionetoeight() {
   };
   return (
     <>
-      <div className=" primary-sections  min-h-screen  ">
+
+      <div className=" primary-sections  min-h-screen   bg-[#dfe9f7] ">
       <div className="applications">
       <Helmet>
         <title>Books for Classes 1 to 8 - Adisri Publications</title>
@@ -108,6 +109,7 @@ function Ionetoeight() {
         />
       </Helmet>
       </div>
+
         {/* <div className=" tab-grid  bg-[] w-[83%] justify-items-center logg sm:mr-0 sm:ml-auto py-8">
             <div  className="px-10 py-3 bg-[#b9f0ea]  rounded-full   cursor-pointer   ">Books & Copy
 
@@ -117,7 +119,7 @@ function Ionetoeight() {
             <h2  className="px-10 py-3 bg-[#b9f0ea]  rounded-full   cursor-pointer  ">Toy & Educational Material</h2>
          
         </div> */}
-        <div className="p-4 text-xl max-sm:text-[15px]    relative flex space-x-3 bg-[#b9f0ea]  max-sm:w-full  sm:w-[17%] ">
+        <div className="p-4 text-xl max-sm:text-[15px]    relative flex space-x-3 bg-[#b2e3f3]  max-sm:w-full  sm:w-[17%] ">
           <p className=" flex  space-x-5 ">
             {" "}
             <span> Filters</span>{" "}
@@ -137,8 +139,8 @@ function Ionetoeight() {
           </p>{" "}
         </div>
 
-        <div className="flex   primary-sections   ">
-          <div className="sm:w-[17%] max-sm:w-full max-sm:absolute max-sm:z-20 max-sm:-translate-x-full   primarysection1 bg-[#b9f0ea]  ease-out transition-all duration-500 relative    max-sm:h-full ">
+        <div className="flex   primary-sections   bg-[#dfe9f7]">
+          <div className="sm:w-[17%] max-sm:w-full max-sm:absolute max-sm:z-20 max-sm:-translate-x-full   primarysection1 bg-[#b2e3f3]  ease-out transition-all duration-500 relative    max-sm:h-full ">
             <FilterTAb
               Class={Class}
               setClass={setClass}
@@ -149,7 +151,7 @@ function Ionetoeight() {
             />
           </div>
 
-          <div className="sm:w-[79%] sm:p-2 mx-auto   max-sm:w-full  card-container relative  ">
+          <div className="sm:w-[79%] sm:p-2 mx-auto   max-sm:w-full  card-container relative bg-[#]  ">
             {API === "" ? (
               Object.keys(productonetoeight).length === 0 ? (
                 <Loader />
@@ -214,7 +216,7 @@ function Ionetoeight() {
                           productonetoeight.previous.indexOf("?") + 1,
                           productonetoeight.previous.length
                         )}`;
-                        dispatch(listproductonetoeight(url));
+                        dispatch(listonetoeight(url));
                       }}
                     >
                       Previous
@@ -240,7 +242,7 @@ function Ionetoeight() {
                           productonetoeight.next.indexOf("?") + 1,
                           productonetoeight.next.length
                         )}`;
-                        dispatch(listproductonetoeight(url));
+                        dispatch(listonetoeight(url));
                         // console.log(url);
                       }}
                     >

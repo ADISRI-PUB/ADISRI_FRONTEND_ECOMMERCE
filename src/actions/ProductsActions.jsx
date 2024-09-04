@@ -69,10 +69,10 @@ export const listProductsDetails =(id)=>async(dispatch)=>{
 
 
 
-export const listonetoeight=()=>async (dispatch)=>{
+export const listonetoeight=(url)=>async (dispatch)=>{
          try {
             dispatch({type:PRODUCTS_ONETOEIGHT_LIST_REQUEST})
-            const {data} =await axios.get(`${BASE_URL}/data/products/onetoeight/?`)
+            const {data} =await axios.get(`${BASE_URL}/data/products/onetoeight/?${url}`)
             console.log(data);
             dispatch({type:PRODUCTS_ONETOEIGHT_LIST_SUCCESS,payload:data})
             
