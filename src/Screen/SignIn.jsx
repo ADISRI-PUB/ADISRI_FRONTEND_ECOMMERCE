@@ -4,6 +4,7 @@ import { useGoogleLogin } from "@react-oauth/google";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useLocation } from "react-router-dom";
 import { profilecreation } from "../actions/UserAction";
+import { Helmet } from 'react-helmet';
 import axios from "axios";
 function SignIn() {
   const BASE_URL = import.meta.env.VITE_URL 
@@ -40,6 +41,19 @@ function SignIn() {
  
   return (
     <div className="relative min-h-screen bg-[#2B3F7E]">
+      <div className="applications">
+      <Helmet>
+        <title>Sign In - Adisri Publications</title>
+        <meta 
+          name="description" 
+          content="Sign in to your Adisri Publications account to access your personalized book orders, view your cart, and manage your profile settings." 
+        />
+        <meta 
+          name="keywords" 
+          content="Sign In, Adisri Publications, online bookstore, account login, book orders, user profile" 
+        />
+      </Helmet>
+      </div>
       <div className="   logg   responsive  ">
         <img
           className="w-full max-sm:h-full max-sm:w-full   "

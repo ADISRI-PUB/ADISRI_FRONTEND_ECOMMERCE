@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams, useNavigate, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, removeFromCart } from "../actions/CartActions";
+import { Helmet } from 'react-helmet';
 import '../Css/cart.css'
 function Cartsection() {
 
@@ -55,6 +56,20 @@ const handlecheckout = ()=>{
       {flag ? (
         
           <div className="bg-purple-200 p-3  sm:flex sm:min-h-screen  ">
+            <div className="application">
+      <Helmet>
+        <title>My Cart - Adisri Publications</title>
+        <meta 
+          name="description" 
+          content='Review the items in your shopping cart at Adisri Publications. Update quantities, remove items, and proceed to secure checkout.'
+        />
+        <meta 
+          name="keywords" 
+          content="Shopping Cart, Review Items, Checkout, Online Shopping, Adisri Publications"
+    
+        />
+      </Helmet></div>
+      
             <div className="w-3/5 max-sm:w-full">
       
               {cart.map((books, index) => {

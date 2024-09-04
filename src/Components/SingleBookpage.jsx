@@ -4,6 +4,7 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 
 import { listProductsDetails } from "../actions/ProductsActions";
 import { addToCart, removeFromCart } from "../actions/CartActions";
+import { Helmet } from 'react-helmet';
 import Loader from "./Loader";
 function SingleBookpage() {
   const dispatch = useDispatch();
@@ -39,6 +40,10 @@ function SingleBookpage() {
     dispatch(listProductsDetails(id));
   }, [dispatch, id]);
 
+  const title = product?.Name || 'Adisri Publications';
+  const description = product?.Description || 'Explore a wide range of quality products at Your Store. Find the best deals and top-rated items.';
+  const keywords = `${product?.Author || ''}, ${product?.Class || ''}`.trim();
+
   return (
     <>
       {loading ? (
@@ -51,6 +56,20 @@ function SingleBookpage() {
             key={product.Product_Id}
             className="w-full min-h-screen bg-blue-200 flex gap-5"
           >
+             <div className="applications">
+      <Helmet>
+        <title>{title}</title>
+        <meta 
+          name="description" 
+          content={description} 
+        />
+        <meta 
+          name="keywords" 
+          content={keywords}
+    
+        />
+      </Helmet>
+      </div>
             <div className="font-sans bg-blue-100 w-full  ">
               <div className="p-4 max-sm:p-1   mx-auto">
                 <div className="grid items-start gap-10 grid-cols-2 lg:grid-cols-5   p-6 rounded-lg ">

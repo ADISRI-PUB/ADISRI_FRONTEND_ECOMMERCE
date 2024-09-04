@@ -7,6 +7,7 @@ import { createOrder } from "../actions/OrderActions";
 import Loader from "../Components/Loader";
 import ThanksOrdering from "./ThanksOrdering";
 import ReactDOM from 'react-dom';
+import { Helmet } from 'react-helmet';
 function OrderSummary() {
     
   const history = useNavigate();
@@ -111,6 +112,20 @@ if (container) {
            </div>
       ):(
         <div className="min-h-screen shipping-page  bg-[#cccaff] ">
+          <div className="applications">
+        <Helmet>
+        <title>Order Summary - Adisri Publications</title>
+        <meta 
+          name="description" 
+          content="Review the details of your order with Adisri Publications. Confirm items, pricing, and shipping information." 
+        />
+        <meta 
+          name="keywords" 
+          content="Adisri Publications, Order Summary, order details, order confirmation, online books" 
+        />
+      </Helmet>
+
+        </div>
         <div className="grid sm:grid-cols-2 max-sm:grid-cols-1 ">
           <div>
         <h1 className="User-name p-10  max-sm:p-3 max-sm:ml-2  max-sm:text-xl">Thanks For Ordering !</h1>

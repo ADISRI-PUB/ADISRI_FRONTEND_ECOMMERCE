@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import ProdcutsCard from '../Components/ProdcutsCard';
 import Loader from '../Components/Loader';
+import { Helmet } from 'react-helmet';
+
 const BASE_URL = import.meta.env.VITE_URL
 function PlayGroup() {
     const [loading,setLoading]=useState(true)
@@ -34,6 +36,20 @@ function PlayGroup() {
                 </div>
             ):(
                 <div className='min-h-screen bg-[#E4FEFF] py-[3vh] '>
+                     <div className="applications">
+        <Helmet>
+        <title>PlayGroup Books - Adisri Publications</title>
+        <meta 
+          name="description" 
+          content="Explore our Playgroup books, designed to make learning fun with interactive exercises, vibrant visuals, and creative prompts." 
+        />
+        <meta 
+          name="keywords" 
+          content="Adisri Publications, online books, personalized book cover, stationery, play books, nursery books, pre-primer books, primer books, school books" 
+        />
+      </Helmet>
+
+        </div>
                  <img className='fixed z-0  w-[30%] right-0 opacity-85  ' src="playimages.png " alt=""/>
                 <h1 className='text-center sm:text-[2.5vw] relative z-20 '>Exclusive Collection Of PlayGroup Books</h1>
                  <div className='w-4/5 m-auto py-5 text-lg text-center relative z-20'>

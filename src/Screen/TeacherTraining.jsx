@@ -1,5 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
+import { Helmet } from 'react-helmet';
+
 function TeacherTraining() {
   var settings = {
     infinite: true,
@@ -15,6 +17,20 @@ function TeacherTraining() {
   };
   return (
     <div className="min-h-screen bg-[#e0e0e088]">
+       <div className="applications">
+        <Helmet>
+        <title>Teacher Training Program - Enhance Your Teaching Skills | Adisri Publications</title>
+        <meta 
+          name="description" 
+          content="Join the Teacher Training Program by Adisri Publications. Designed for educators looking to enhance their teaching skills and methodologies, our program offers comprehensive training and certification." 
+        />
+        <meta 
+          name="keywords" 
+          content="Teacher Training Program, Professional Development, Educator Training, Teaching Skills, Education Programs, Adisri Publications" 
+        />
+      </Helmet>
+
+        </div>
       {/* <h1>Teacher training program</h1> */}
       <div className="grid grid-cols-2 max-sm:grid-cols-1">
         <div className="">
