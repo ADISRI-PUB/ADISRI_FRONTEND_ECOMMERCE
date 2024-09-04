@@ -3,6 +3,7 @@ import axios from 'axios'
 import ProdcutsCard from '../Components/ProdcutsCard';
 import Loader from '../Components/Loader';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 const BASE_URL = import.meta.env.VITE_URL
 function LowerLKG() {
   const history = useNavigate()
@@ -37,7 +38,25 @@ function LowerLKG() {
                 </div>
             ):(
                 <div className='min-h-screen bg-[rgb(226,253,228)] py-[3vh] '>
+
+                    <div className="applications">
+        <Helmet>
+        <title>Lower (LKG) -Adisri Publications</title>
+        <meta 
+          name="description" 
+          content="Shop for personalized book covers, stationery, play books, nursery books, pre-primer books, primer books, and books for standards 1 to 8." 
+        />
+        <meta 
+          name="keywords" 
+          content="Adisri Publications, online books, personalized book cover, stationery, play books, nursery books, pre-primer books, primer books, school books" 
+        />
+      </Helmet>
+
+        </div>
+
+
                 <h1 className='text-center sm:text-[2.5vw] max-sm:text-lg relative z-20 '>Exclusive Collection Of LowerLKG Books</h1>
+
                  <img className='z-0  w-[30%] max-sm:w-4/5 m-auto opacity-85  ' src="nursery2.png " alt=""/>
                  <div className='w-4/5 max-sm:w-full m-auto py-5 text-lg text-center relative z-20'>
                      <p>

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllOrderDetails, getOrderDetails } from "../actions/OrderActions";
 import { listProductsDetails } from "../actions/ProductsActions";
 import { deleteorderid } from "../actions/OrderActions";
+import { Helmet } from 'react-helmet';
 import "../Css/Order.css";
 import TrackOrderBook from "./TrackOrderBook";
 import emailjs from '@emailjs/browser';
@@ -155,6 +156,9 @@ function TrackOrder() {
 
   }, [dispatch]);
   
+  const title = `Track Order #${order.Order_Id} - Adisri Publications`;
+  const description = `Track the status of your order #${order.Order_Id} at Adisri Publications. Your order is currently Placed `;
+  const keywords = `Track Order, Order ${order.Order_Id},  Adisri Publications`;
 
   return (
     <>
@@ -165,6 +169,19 @@ function TrackOrder() {
      </div>
     ):(
         <div className="min-h-screen bg-[#F3EEE8] ">
+          <div className="application">
+      <Helmet>
+        <title>{title}</title>
+        <meta 
+          name="description" 
+          content={description} 
+        />
+        <meta 
+          name="keywords" 
+          content={keywords}
+    
+        />
+      </Helmet></div>
                
           <div className=" grid grid-cols-2 logg">
           <div className="ml-2">

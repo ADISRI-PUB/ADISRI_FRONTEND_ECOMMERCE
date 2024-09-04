@@ -9,6 +9,7 @@ import { listProducts } from "../actions/ProductsActions";
 import { useNavigate } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 import Loader from "../Components/Loader";
+import { Helmet } from 'react-helmet';
 const BASE_URL = import.meta.env.VITE_URL 
 function IPrePrimary() {
    
@@ -87,6 +88,19 @@ function IPrePrimary() {
  
   
       <div className=" primary-sections  min-h-screen  ">
+      <div className="applications">
+      <Helmet>
+        <title>Play, Nursery, Pre-Primer, and Primer Books - Adisri Publications</title>
+        <meta 
+          name="description" 
+          content="Explore a wide range of books for Play, Nursery, Pre-Primer, and Primer levels at Adisri Publications. Enhance early education with our curated selection of engaging and educational books." 
+        />
+        <meta 
+          name="keywords" 
+          content="Play books, Nursery books, Pre-Primer books, Primer books, early education books, children's books, Adisri Publications" 
+        />
+      </Helmet>
+      </div>
         {/* <div className=" tab-grid  bg-[] w-[83%] justify-items-center logg sm:mr-0 sm:ml-auto py-8">
             <div  className="px-10 py-3 bg-[#b9f0ea]  rounded-full   cursor-pointer   ">Books & Copy
 

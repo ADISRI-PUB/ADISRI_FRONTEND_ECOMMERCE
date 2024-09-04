@@ -2,6 +2,7 @@ import React, {  useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { listCareers } from '../actions/careerActions';
 import CareerItem from '../Components/CareerItem'
+import { Helmet } from 'react-helmet';
 import '../Css/CAREER.css'
 import Loader from '../Components/Loader';
 function CareersScreen() {
@@ -23,6 +24,20 @@ function CareersScreen() {
         <p>{error}</p>
       ) : (
         <div className=' career-section realtive '>
+          <div className="application">
+      <Helmet>
+        <title>Careers at Adisri Publications - Join Our Team</title>
+        <meta 
+          name="description" 
+          content='Explore job openings and career opportunities at Adisri Publications. Join our team and grow with us. Learn about our company culture, benefits, and the hiring process.'
+        />
+        <meta 
+          name="keywords" 
+          content="Careers, Jobs, Employment, Hiring, Job Openings, Work with Us, Company Culture,Adisri Publications"
+    
+        />
+      </Helmet></div>
+      
           {/* <img className='w-1/5 absolute opacity-55' src="Job offers-cuate (1).png" alt="" /> */}
           {/* <svg className='m-auto absolute left-[20%] ' xmlns="http://www.w3.org/2000/svg" version="1.0" width="60vw"viewBox="0 0 1280.000000 640.000000" preserveAspectRatio="xMidYMid meet">
 <g transform="translate(0.000000,640.000000) scale(0.100000,-0.100000)" fill="#a7e7d8" stroke="none">

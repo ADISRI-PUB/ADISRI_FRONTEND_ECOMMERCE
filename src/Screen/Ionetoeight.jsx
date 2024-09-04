@@ -5,6 +5,7 @@ import gsap from "gsap";
 import FilterTAb from "../Components/FilterTAb";
 import ProdcutsCard from "../Components/ProdcutsCard";
 import axios from "axios";
+import { Helmet } from 'react-helmet';
 import {
   listonetoeight,
   listonetoeightDetails,
@@ -93,7 +94,22 @@ function Ionetoeight() {
   };
   return (
     <>
-      <div className=" primary-sections  min-h-screen bg-[#dfe9f7]  ">
+
+      <div className=" primary-sections  min-h-screen   bg-[#dfe9f7] ">
+      <div className="applications">
+      <Helmet>
+        <title>Books for Classes 1 to 8 - Adisri Publications</title>
+        <meta 
+          name="description" 
+          content="Explore a comprehensive collection of books for Classes 1 to 8 at Adisri Publications. Find textbooks, workbooks, and reference materials for a wide range of subjects tailored to enhance learning." 
+        />
+        <meta 
+          name="keywords" 
+          content="Class 1 books, Class 2 books, Class 3 books, Class 4 books, Class 5 books, Class 6 books, Class 7 books, Class 8 books, school textbooks, workbooks, Adisri Publications" 
+        />
+      </Helmet>
+      </div>
+
         {/* <div className=" tab-grid  bg-[] w-[83%] justify-items-center logg sm:mr-0 sm:ml-auto py-8">
             <div  className="px-10 py-3 bg-[#b9f0ea]  rounded-full   cursor-pointer   ">Books & Copy
 

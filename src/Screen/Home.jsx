@@ -9,6 +9,7 @@ import CrousalBooks from "../Components/CrousalBooks";
 import CrousalBooks2 from "../Components/CrousalBook2";
 import Clients from "../Components/Cilents";
 import { Link } from "react-router-dom";
+import { Helmet } from 'react-helmet';
 
 export default function Home({ token }) {
   const [startCount, setStartcount] = useState(false);
@@ -42,6 +43,20 @@ export default function Home({ token }) {
 
       <div className="home-area z-20 min-h-screen leading-snug">
         {/* <p className="welcome-text p-3 text-center  block ">Welcome To,</p> */}
+        <div className="applications">
+        <Helmet>
+        <title>Adisri Publications: Buy Online Books, Customized Book Covers</title>
+        <meta 
+          name="description" 
+          content="Shop for personalized book covers, stationery, play books, nursery books, pre-primer books, primer books, and books for standards 1 to 8." 
+        />
+        <meta 
+          name="keywords" 
+          content="Adisri Publications, online books, personalized book cover, stationery, play books, nursery books, pre-primer books, primer books, school books" 
+        />
+      </Helmet>
+
+        </div>
 
         <div className=" z-20 books-crousal-container  m-auto  w-full ">
           <img className="w-full" src="BANNER  UPPER.jpg" alt="" />

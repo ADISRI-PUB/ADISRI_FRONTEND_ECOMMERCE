@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Helmet } from 'react-helmet';
 import "../Css/About.css";
 import gsap from "gsap";
 import "../Css/Order.css";
@@ -55,6 +56,21 @@ function Iaboutus() {
   return (
     <>
       <div className="bg-[#f0ecec] relative min-h-screen  ">
+        <div className="application">
+      <Helmet>
+        <title>About Us - Adisri Publications</title>
+        <meta 
+          name="description" 
+          content='Learn more about Adisri Publications, our mission, values, and the team dedicated to delivering exceptional products and services.'
+        />
+        <meta 
+          name="keywords" 
+          content="About Us, Adisri Publications, Our Mission, Company Values, Team"
+    
+        />
+      </Helmet></div>
+      
+      
         <div className="text-container w-full text-center relative z-20 ">
           <h1 className=" w-3/5 m-auto text-gray-800 font-semibold  max-sm:block justify-center">
             About Us

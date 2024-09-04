@@ -1,4 +1,5 @@
 import React, { useEffect ,useCallback,useRef} from 'react'
+import { Helmet } from 'react-helmet';
 import Slider from 'react-slick';
 import '../Css/PopUPSections.css'
 import gsap from 'gsap';
@@ -57,6 +58,20 @@ function Journey() {
         },[scroll])
   return (
     <div className='pin-container gap-7 h-1/2 min-h-screen'>
+      <div className="application">
+      <Helmet>
+        <title>Our Journey - The Story of  Adisri Publications</title>
+        <meta 
+          name="description" 
+          content='Discover the journey of Adisri Publications. Learn about our humble beginnings, key milestones, and the passion that drives us to innovate and grow.'
+        />
+        <meta 
+          name="keywords" 
+          content="Our Journey, Company History, Growth Story, Milestones, Adisri Publications"
+    
+        />
+      </Helmet></div>
+      
      <Slider className='sll2ider ' {...settings} ref={sliderRef}>
         <div className=' max-sm:h-96 sm:h-screen  bg-black/80 flex logg justify-center  '>
             <div className='logg flex w-full justify-center h-full'>

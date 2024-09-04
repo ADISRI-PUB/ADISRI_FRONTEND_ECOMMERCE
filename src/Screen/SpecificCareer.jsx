@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams, useNavigate } from "react-router-dom";
+import { Helmet } from 'react-helmet';
 import '../Css/CAREER.css'
 import { listCareersDetails } from "../actions/careerActions";
 import gsap from "gsap";
@@ -23,6 +24,11 @@ function SpecificCareer() {
       dispatch(listCareersDetails(id));
   
   }, [dispatch, id,error]);
+  career.Job_Title
+
+  const title = career?.Job_Title ? `${career.Job_Title} - Careers at Adisri Publications` : 'Job Opening - Your Company Name';
+  const description = career?.description || 'Explore career opportunities at Adisri Publications. Join our team and help us achieve excellence.';
+  const keywords = career?.Job_Title ? `${career.Job_Title}, Careers, Jobs, Employment, ${career.Skill}, ${career.Location}, Adisri Publications` : 'Jobs, Careers, Employment, Hiring, Adisri Publications';
 
   return (
     <>
@@ -55,7 +61,22 @@ function SpecificCareer() {
         ) : error ? (
           <p>{error}</p>
         ) : (
+          
           <div className="career-card  relative  rounded-lg p-6 text-white w-4/5 h-4/5">
+            <div className="application">
+      <Helmet>
+        <title>{title}</title>
+        <meta 
+          name="description" 
+          content={description}
+        />
+        <meta 
+          name="keywords" 
+          content={keywords}
+    
+        />
+      </Helmet></div>
+      
             <h1 className="text-2xl font-semibold mb-4 relative z-20 ">{career.Job_Title}</h1>
             <p className="text-white mb-2 relative z-20"><strong className="text-gray-500">Experience:</strong> {career.Experience}</p>
             <p className="text-white mb-2 relative z-20"><strong className="text-gray-500">Location:</strong> {career.Location}</p>
