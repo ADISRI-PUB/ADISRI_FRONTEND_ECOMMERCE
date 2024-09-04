@@ -4,7 +4,7 @@ import ProdcutsCard from '../Components/ProdcutsCard';
 import Loader from '../Components/Loader';
 import { useNavigate } from 'react-router-dom';
 const BASE_URL = import.meta.env.VITE_URL
-function PlayGroup() {
+function LowerLKG() {
   const history = useNavigate()
     const [loading,setLoading]=useState(true)
     const [Books,setBooks] =useState([])
@@ -37,7 +37,7 @@ function PlayGroup() {
                 </div>
             ):(
                 <div className='min-h-screen bg-[rgb(226,253,228)] py-[3vh] '>
-                <h1 className='text-center sm:text-[2.5vw] max-sm:text-lg relative z-20 '>Exclusive Collection Of Nursery Books</h1>
+                <h1 className='text-center sm:text-[2.5vw] max-sm:text-lg relative z-20 '>Exclusive Collection Of LowerLKG Books</h1>
                  <img className='z-0  w-[30%] max-sm:w-4/5 m-auto opacity-85  ' src="nursery2.png " alt=""/>
                  <div className='w-4/5 max-sm:w-full m-auto py-5 text-lg text-center relative z-20'>
                      <p>
@@ -81,4 +81,4 @@ The collection also emphasizes creativity and imagination, with art projects and
   )
 }
 
-export default PlayGroup
+export default LowerLKG

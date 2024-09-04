@@ -58,6 +58,14 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto; 
   }
+  ._3d-container{
+    display: grid ;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  }
+  .image-3d{
+    display: none;
+  }
 }
 
 @media ((min-width:731px) and (max-width:1041px)){
@@ -75,6 +83,12 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto; 
   }
+  ._3d-container{
+    display: none;
+ }
+  .image-3d{
+    display: contents;
+  }
 }
 @media ((max-width:730px)){
   .card-container{
@@ -89,6 +103,12 @@
     gap: 10px;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto; 
+  }
+  ._3d-container{
+     display: none;
+  }
+  .image-3d{
+    display: contents;
   }
 }
 .hover\:svg-rotate:hover svg {

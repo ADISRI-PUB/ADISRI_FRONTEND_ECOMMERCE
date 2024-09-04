@@ -11,7 +11,7 @@ export default function TrackOrderBook({booked ,image}) {
          throw new Error('Network response was not ok');
         }
         const data = await response.json();
-         image2 = data.Cover_Image;
+         image2 = data.Image[0];
         // console.log(image); 
         // setbookeditems(image)
         // This will log the image after it's been assigned

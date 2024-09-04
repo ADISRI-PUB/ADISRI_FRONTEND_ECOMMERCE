@@ -82,23 +82,23 @@ export const createOrder =(order)=> async (dispatch,getState) => {
   emailjs.init({
     publicKey: "JTJgKyyYcrVSeMq_m",
   });   
-//    console.log(emailParams);
-  emailjs.send('service_cgmvlif', 'template_ias4gas', emailParams)
-  .then(function(response) {
-    //  console.log('Email sent successfully!', response.status, response.text);
-    //  alert('Your order has been submitted successfully!');
-  }, function(error) {
-     console.error('Failed to send email.', error);
-    //  alert('There was an error sending your order. Please try later.');
-  });    
-  emailjs.send('service_cgmvlif', 'template_rvpqnht', emailParams)
-  .then(function(response) {
-    //  console.log('Email sent successfully!', response.status, response.text);
-    //  alert('Your order has been submitted successfully!');
-  }, function(error) {
-     console.error('Failed to send email.', error);
-    //  alert('There was an error sending your order. Please try later.');
-  });
+   console.log(emailParams);
+//   emailjs.send('service_cgmvlif', 'template_ias4gas', emailParams)
+//   .then(function(response) {
+//     //  console.log('Email sent successfully!', response.status, response.text);
+//     //  alert('Your order has been submitted successfully!');
+//   }, function(error) {
+//      console.error('Failed to send email.', error);
+//     //  alert('There was an error sending your order. Please try later.');
+//   });    
+//   emailjs.send('service_cgmvlif', 'template_rvpqnht', emailParams)
+//   .then(function(response) {
+//     //  console.log('Email sent successfully!', response.status, response.text);
+//     //  alert('Your order has been submitted successfully!');
+//   }, function(error) {
+//      console.error('Failed to send email.', error);
+//     //  alert('There was an error sending your order. Please try later.');
+//   });
         dispatch({
             type : ORDER_CREATE_SUCCESS,
             payload : data2

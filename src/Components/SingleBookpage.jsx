@@ -72,16 +72,36 @@ function SingleBookpage() {
                       ></button>
                     </div>
                     <div className="mt-6 flex  justify-center gap-6 mx-auto  ">
-                      <div
-                        onClick={handleimage}
-                        className="w-20 h-16 flex items-center bg-white justify-center rounded-lg p-4 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] cursor-pointer"
-                      >
-                        <img
-                          id="Dynamichange"
-                          src={product.Image[0]}
-                          alt="Product2"
-                        />
-                      </div>
+                      {
+                        product?(
+                          <>
+                          {
+
+                            product.Image.map((list,index)=>{
+                              return(
+
+                                <div
+                                key={index}
+                                onClick={handleimage}
+                                className="w-20 h-16 flex items-center bg-white justify-center rounded-lg p-4 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] cursor-pointer"
+                                >
+                              <img
+                                id="Dynamichange"
+                                src={list}
+                                alt="Product2"
+                                />
+    
+                            </div>
+                              )
+                            })
+                       
+                          }
+                        </>
+                        ):(<>
+                        
+                        </>)
+                      }
+                      
                     
                     </div>
                   </div>
@@ -155,37 +175,48 @@ function SingleBookpage() {
                           <b>Publications</b>:{product.Publication}{" "}
                         </li>
                         <li>
-                          {" "}
-                          <b>Description</b>:
-  
+                          
                           {
-                          isExpanded ? (
-                            <>
-                            <span>{product?.Description?.slice(0,product?.Description?.indexOf("Key"))}</span>
-                            <div className="p-4">
-                              
-                             <b > Key Features :</b> 
-                             <ul className="p-4">
-                              {
-                                product?.Description.slice(0,product.Description.indexOf("Key")).split(".").filter((e)=>e.trim()).map((e,index)=>{
-                                  return <li key={index}><b>•</b> {e}.</li>
+                               product.Description? (
+                                <>
+                                <b>Description</b>
+                                {
+                                    isExpanded ? (
+                                      <>
+                                      <span>{product?.Description?.slice(0,product?.Description?.indexOf("Key"))}</span>
+                                      <div className="p-4">
+                                        
+                                       <b > Key Features :</b> 
+                                       <ul className="p-4">
+                                        {
+                                          product?.Description.slice(0,product.Description.indexOf("Key")).split(".").filter((e)=>e.trim()).map((e,index)=>{
+                                            return <li key={index}><b>•</b> {e}.</li>
+                                          }
+                                          
+                                          )
+                                        }
+                                        </ul>
+                                        </div>
+                                     </>
+                                    ) : (
+                                      <>
+                                      <span> {product?.Description?.slice(0,product?.Description?.indexOf("Key"))}</span> 
+                                    </>
+                                    )
                                 }
-                                
-                                )
-                              }
-                              </ul>
-                              </div>
-                           </>
-                          ) : (
-                            <>
-                            <span> {product?.Description?.slice(0,product?.Description?.indexOf("Key"))}</span> 
-                          </>
-                          )}
-                         
-                        </li>
-                        <button onClick={(e) =>{ 
-  
-                          setIsExpanded(!isExpanded)
+
+                                </>
+                               ):(<>
+                               </>)
+                        
+                        }
+                    
+                        </li> 
+                        {
+                         product.Description?(
+                          <button onClick={(e) =>{ 
+                            
+                            setIsExpanded(!isExpanded)
                           }}>
                             {" "}
                             {isExpanded ? (
@@ -194,6 +225,9 @@ function SingleBookpage() {
                               <span className="text-blue-600">..Read more</span>
                             )}
                           </button>
+                         ):(<></>)
+                        
+                          }
                       </ul>
                     </div>
                   </div>
