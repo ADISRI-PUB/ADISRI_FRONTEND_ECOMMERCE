@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from 'react-helmet';
 
 function WriteToUs() {
   const [firstname, setfirstname] = useState("");
@@ -123,6 +124,19 @@ function WriteToUs() {
   // };
   return (
     <div className="w-full min-h-screen bg-[#F7D137]">
+       <div className="applications">
+       <Helmet>
+        <title>Contact Us - Adisri Publications</title>
+        <meta 
+          name="description" 
+          content="Get in touch with Adisri Publications for inquiries, support, or feedback. Contact us via phone, email, or our online contact form." 
+        />
+        <meta 
+          name="keywords" 
+          content="Contact Adisri Publications, customer support, inquiries, feedback, book orders, online bookstore contact" 
+        />
+      </Helmet>
+      </div>
       <section className="bg-[#F7D137]">
         <div className="w-full  bg-[#F7D137] relative sm:flex">
           <div className="w-[45%] max-sm:w-[50%] max-sm:m-auto  top-0 -z-0">

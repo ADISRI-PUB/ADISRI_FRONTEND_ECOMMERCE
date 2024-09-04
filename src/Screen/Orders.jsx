@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { getOrderDetails } from "../actions/OrderActions";
 import { getAllOrderDetails } from "../actions/OrderActions";
 import { Link } from "react-router-dom";
+import { Helmet } from 'react-helmet';
 import "../Css/Order.css";
 // import
 import OrderDetails from "../Components/OrderDetails";
@@ -114,6 +115,20 @@ function Orders() {
      </div>
   ):(
     <div className="min-h-screen bg-[#F8F6F1]  ">
+      <div className="applications">
+      <Helmet>
+  <title>My Orders - Adisri Publications</title>
+  <meta 
+    name="description" 
+    content="View and manage your orders from Adisri Publications. Track shipments and review order history." 
+  />
+  <meta 
+    name="keywords" 
+    content="Adisri Publications, My Orders, order tracking, order history, online books" 
+  />
+</Helmet>
+
+        </div>
       <div className=" grid  grid-cols-2 max-sm:grid-cols-1">
       <div >
         
