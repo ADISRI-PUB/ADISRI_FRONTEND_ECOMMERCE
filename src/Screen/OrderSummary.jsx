@@ -46,17 +46,13 @@ function OrderSummary() {
     
     if (success) {
       setloadtocreate(false)
-  //    document.querySelector('.thanks').innerHTML=` <div className='w-[50%] h-[] bg-white flex logg'>
-  //     <div className='w-1/2 m-auto '>
-  //     <img className='w-3/4 opacity-80' src="7171668_3544858.jpg" alt=""  />
+     document.querySelector('.thanks').innerHTML=` <div class='  bg-white flex logg'>
+      <div class='w-[30%] m-auto '>
+      <img class='w-[100%] opacity-80' src="7171668_3544858.jpg" alt=""  />
       
-  //     </div>
-  // </div>}`
+      </div>
+  </div>}`
   
-
-if (container) {
-  ReactDOM.createPortal(<ThanksOrdering />, container);
-}
       setTimeout(()=>{
 
         

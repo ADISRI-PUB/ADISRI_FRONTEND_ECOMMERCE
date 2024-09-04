@@ -1,5 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
+import '../Css/IPrePrimary.css'
 function TeacherTraining() {
   var settings = {
     infinite: true,
@@ -203,6 +204,88 @@ function TeacherTraining() {
             </a>
           </button>
           <h4 className="text-lg font-medium text-[#293249] px-5 max-sm:text-sm max-sm:py-5">For More About this Program  <a href="mailto:design.adisri@gmail.com"> <b className="cursor-pointer"> Click Here</b> </a></h4>
+       
+          <h3 className="text-2xl py-10 font-medium text-[#293249] max-sm:text-lg">
+            New Academic System According To NEP
+          </h3>
+          <div className="image-3d">
+          <img
+              className="w-[70%] m-auto"
+              src="proposal dr. Kalam foundation & adisri publications_page-0005.jpg"
+              alt=""
+            />
+          </div>
+          <div className="w-4/5 max-sm:w-[90%] m-auto   gap-0  _3d-container ">
+           
+            <div className="">
+              <div className="text-center border-b-4 max-sm:border-b-2 border-black">
+              <p className="border-r-4 border-black text-lg ">Foundational</p>
+              </div>
+            <div className="_3d min-h-[200px]  h-full    "> 
+            
+                 <div className=" flex logg text-center m-auto   h-full bg-purple-800 text-white ">
+                 <div className="w-11/12 m-auto text-xl ">
+                 {/* <p className="border-b-2">Foundational</p> */}
+                     <h6>2 Years</h6>
+                     <p><span>(Class 1 & 2)</span> <span>(Class 6-8)</span></p>
+                     <p>----------------------------</p>
+                     <p>3 Years (Anganwadi/pre-school/Balvatika)(Ages 3-6)</p>
+                 </div>
+                 </div>
+               </div>
+               </div>
+            <div className="">
+              <div className="text-center border-b-4 border-black">
+              <p className="border-r-4 border-black text-xl">Foundational</p>
+              </div>
+            <div className="_3d min-h-[200px]  h-full    "> 
+            
+                 <div className=" flex logg text-center m-auto   h-full bg-amber-500 text-white ">
+                 <div className="w-11/12 m-auto text-2xl ">
+                 {/* <p className="border-b-2">Foundational</p> */}
+                     <h6>3 Years</h6>
+                     <p><span>(Class 3 to 5 )</span></p>
+                     
+                     <p>(Ages 8-11)</p>
+                 </div>
+                 </div>
+               </div>
+               </div>
+             
+            <div>
+            <div className="text-center border-b-4 border-black">
+              <p className="border-r-4 border-black text-xl ">Middle</p>
+              </div>
+            <div className="_3d min-h-[200px]  h-full   bg-purple-200 text-white">
+            <div className=" flex logg text-center m-auto  h-full ">
+                 <div className="w-11/12 m-auto text-2xl ">
+                 {/* <p>Middle</p> */}
+                     <h6>3 Years</h6>
+                     <p><span>(Class 6 to 8)</span></p>
+                     
+                     <p>(Age 11-14)</p>
+                 </div>
+                 </div>
+            </div>
+            </div>
+            <div>
+            <div className="text-center border-b-4 border-black">
+              <p className=" border-black text-xl">Secondary</p>
+              </div>
+            <div className="_3d min-h-[200px]  h-full   w-full bg-green-300">
+
+            <div className=" flex logg text-center m-auto  h-full ">
+                 <div className="w-11/12 m-auto text-2xl ">
+                 {/* <p>Secondary</p> */}
+                     <h6>4 Years</h6>
+                     <p><span>(Class 9 to 12)</span></p>
+                     
+                     <p>(Ages 14-18)</p>
+                 </div>
+                 </div>
+            </div>
+            </div>
+          </div>
           <h3 className="text-2xl py-10 font-medium text-[#293249] max-sm:text-lg">
             List of Topics included in Teacher Training Program
           </h3>
