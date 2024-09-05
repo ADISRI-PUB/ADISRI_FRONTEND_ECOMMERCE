@@ -51,7 +51,7 @@ function PrePopup() {
         </Link>
         <Link to='/teachertraining'>
           <p className=" transition-all duration-200 hover:bg-[#FF5F5F]  p-2  text-gray-950 hover:text-black  cursor-pointer">
-            Teacher Traning Program
+            Teacher Training Program
           </p>
         </Link>
         <div >
