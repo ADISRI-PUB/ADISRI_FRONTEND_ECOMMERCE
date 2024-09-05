@@ -27,9 +27,13 @@ function ProdcutsCard({product,id}) {
     
    
    
-    <div  className="mx-auto  sm:aspect-[4/9]  max-sm:mt-4 max-sm:w-4/5  bg-white transform overflow-hidden rounded-lg  shadow-md duration-300  hover:shadow-lg max-sm:leading-snug">
-  <div className='w-[100%]  '> <img className="object-cover " src={product.Image} alt="Product Image" /></div>
-  <div className="p-4 max-sm:p-2">
+    <div  className="mx-auto  sm:aspect-[4/9]   max-sm:mt-4 max-sm:w-4/5  bg-white transform overflow-hidden rounded-lg relative shadow-md duration-300  hover:shadow-lg max-sm:leading-snug">
+      <div className='relative w-[90%] h-[58%] flex logg  m-auto justify-center  ' style={{perspective:'900px'}}>
+  <div className=' sm:absolute image-card  w-full m-auto'>
+  <img className="w-[90%] m-auto " src={product.Image} alt="Product Image" />
+</div>
+</div>
+  <div className="p-4 max-sm:p-2 relative">
     <h2 className=" text-lg max-sm:text-[10px] font-medium  text-gray-900 max-sm:leading-normal">{product.Name}</h2>
     <p className="mb-2 text-base  max-sm:text-[8px] sm:text-lg text-gray-700"> <span> <b> SUBJECT :</b> {product.Subject}</span></p>
     <div className="flex items-center">

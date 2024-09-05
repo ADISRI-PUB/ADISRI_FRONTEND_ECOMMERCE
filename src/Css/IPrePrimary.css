@@ -71,8 +71,7 @@
 @media ((min-width:731px) and (max-width:1041px)){
   .card-container{
     display: grid;
-    gap: 30px;
-    
+    gap: 20px;
     grid-template-columns: 1fr 1fr 1fr ;
     grid-template-rows: auto;
     height: max-content;
@@ -126,4 +125,19 @@
   padding: 10px;
   min-height: 200px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+.image-card{
+  transform-style: preserve-3d;
+  perspective: 100px;
+  transform: rotateY(20deg);
+  transition: all;
+  transition-duration: 300ms;
+
+}
+.image-card:hover{
+  transform-style: preserve-3d;
+  perspective: 0px;
+  transform: rotateY(0deg);
+  transition: all;
+  transition-duration: 300ms;
 }
