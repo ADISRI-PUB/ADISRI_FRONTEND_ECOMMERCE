@@ -275,7 +275,7 @@ function TeacherTraining() {
             <div className="text-center border-b-4 border-black">
               <p className="border-r-4 border-black text-xl ">Middle</p>
               </div>
-            <div className="_3d min-h-[200px]  h-full   bg-purple-200 text-white">
+            <div className="_3d min-h-[200px]  h-full   bg-purple-400 text-white">
             <div className=" flex logg text-center m-auto  h-full ">
                  <div className="w-11/12 m-auto text-2xl ">
                  {/* <p>Middle</p> */}
