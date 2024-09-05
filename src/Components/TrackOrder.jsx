@@ -156,9 +156,9 @@ function TrackOrder() {
 
   }, [dispatch]);
   
-  const title = `Track Order #${order.Order_Id} - Adisri Publications`;
-  const description = `Track the status of your order #${order.Order_Id} at Adisri Publications. Your order is currently Placed `;
-  const keywords = `Track Order, Order ${order.Order_Id},  Adisri Publications`;
+  const title = `Track Order #${order?.Order_Id} - Adisri Publications`;
+  const description = `Track the status of your order #${order?.Order_Id} at Adisri Publications. Your order is currently Placed `;
+  const keywords = `Track Order, Order ${order?.Order_Id},  Adisri Publications`;
 
   return (
     <>
@@ -168,7 +168,7 @@ function TrackOrder() {
      <Loader/>
      </div>
     ):(
-        <div className="min-h-screen bg-[#F3EEE8] ">
+        <div className="min-h-screen  ">
           <div className="application">
       <Helmet>
         <title>{title}</title>
@@ -208,7 +208,7 @@ function TrackOrder() {
                 key={index}
                 className={`items-of-step p-3  ${
                   currentstep >= index + 1
-                    ? "before:bg-[#F8C0C9]"
+                    ? "before:bg-[#74c271]"
                     : "before:bg-slate-300"
                 } `}
               >

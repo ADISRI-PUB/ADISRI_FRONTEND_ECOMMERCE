@@ -41,7 +41,7 @@ export default function Home({ token }) {
     <>
       {/* <Hnavbar/> */}
 
-      <div className="home-area z-20 min-h-screen leading-snug">
+      <div className="home-area z-20 min-h-screen leading-snug bg-white">
         {/* <p className="welcome-text p-3 text-center  block ">Welcome To,</p> */}
         <div className="applications">
         <Helmet>
@@ -58,17 +58,17 @@ export default function Home({ token }) {
 
         </div>
 
-        <div className=" z-20 books-crousal-container  m-auto  w-full ">
+        <div className=" z-20 books-crousal-container  m-auto  w-full bg-white ">
           <img className="w-full" src="BANNER  UPPER.jpg" alt="" />
           <Crousal />
         </div>
-        <div className="sections1  ">
+        <div className="sections1 bg-white ">
           <div className="preprimary-section pre-books relative   max-sm:p-2 sm:p-4 transition-all duration-700">
             <div className="absolute overflow-hidden z-0  opacity-20 top-0 right-20 ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 xmlnsXlink="http://www.w3.org/1999/xlink"
-                fill="#a77afa"
+                fill="#FF5F5F"
                 version="1.1"
                 id="Capa_1"
                 width="30vw"
@@ -88,7 +88,7 @@ export default function Home({ token }) {
                  <img  className="w-[70%]" src="Bibliophile-bro.png" alt="" />
                  <p>Adi Sri </p>
             </div> */}
-            <div className="w-full ">
+            <div className="w-full bg-white">
               <div className=" preprimary-text max-sm:text-lg   text-center z-20 ">
                 Pre-Primary Books
               </div>
@@ -97,7 +97,7 @@ export default function Home({ token }) {
                 <p className=" pre-books-description leading-loose max-sm:text-xs p-3 max-sm:p-0 sm:text-center" >
              
 "Welcome to Adisri Publications, where the magic of learning unfolds with every turn of the page! Our enchanting pre-primary books are designed to captivate young minds, blending vibrant illustrations with playful activities that make early learning a joyous adventure. From the first letter to the last number, each book is a treasure trove of discovery, sparking creativity and fueling curiosity. Let your child’s imagination soar as they explore our world of whimsical tales and interactive fun. At Adisri, we don’t just teach—
- <span className="p-1 max-sm:p-0 bg-purple-400 text-white rounded-lg"> we inspire a lifelong love for learning"</span>
+ <span className="p-1 max-sm:p-0 bg-[#ff8787] text-black rounded-lg"> we inspire a lifelong love for learning"</span>
                 </p>
               </div>
               <br />
@@ -113,7 +113,7 @@ export default function Home({ token }) {
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 xmlnsXlink="http://www.w3.org/1999/xlink"
-                fill="#a77afa"
+                fill="#2EA59B"
                 version="1.1"
                 id="Capa_1"
                 width="30vw"
@@ -138,7 +138,7 @@ export default function Home({ token }) {
               <br />
                 <p className="pre-books-description max-sm:text-xs p-3 max-sm:p-0 leading-loose sm:text-center">
                 
-"Step into our bookstore, where each book is a doorway to a universe of imagination and discovery for young readers. Our carefully curated collection for 1st to 8th graders is a treasure chest brimming with stories that inspire, knowledge that empowers, and adventures that captivate. Whether you’re in search of thrilling tales that whisk you away to far-off lands, heartwarming stories that impart <span className="p-1 max-sm:p-0 bg-purple-400 text-white rounded-lg"> life’s most valuable lessons </span>, or educational resources that turn learning into an exciting journey, you’ll find something extraordinary here. Immerse yourself in the magic of beloved classics, explore new worlds with innovative educational tools, and embark on journeys that kindle a lifelong love for reading. Join us in this literary odyssey, where every page is a gateway to infinite possibilities."
+"Step into our bookstore, where each book is a doorway to a universe of imagination and discovery for young readers. Our carefully curated collection for 1st to 8th graders is a treasure chest brimming with stories that inspire, knowledge that empowers, and adventures that captivate. Whether you’re in search of thrilling tales that whisk you away to far-off lands, heartwarming stories that impart <span className="p-1 max-sm:p-0 bg-[#90d1d1] text-black rounded-lg"> life’s most valuable lessons </span>, or educational resources that turn learning into an exciting journey, you’ll find something extraordinary here. Immerse yourself in the magic of beloved classics, explore new worlds with innovative educational tools, and embark on journeys that kindle a lifelong love for reading. Join us in this literary odyssey, where every page is a gateway to infinite possibilities."
                 </p>
               </div>
             </div>
@@ -197,9 +197,9 @@ export default function Home({ token }) {
                           onClick={() => {
                             handleprofile();
                           }}
-                          className="relative border  inline-flex items-center justify-start px-9 py-4 max-sm:py-2 max-sm:px-9 overflow-hidden font-medium transition-all bg-white rounded-full hover:bg-white group"
+                          className="relative border  inline-flex items-center justify-start px-9 py-4 max-sm:py-2 max-sm:px-9 overflow-hidden font-medium transition-all bg-[#FF5F5F] rounded-full hover:bg-white group"
                           >
-                          <span className="w-48 h-48 rounded rotate-[-40deg] bg-purple-400 absolute bottom-0 left-0 z-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
+                          <span className="w-48 h-48 rounded rotate-[-40deg] bg-[#FCE992] absolute bottom-0 left-0 z-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
                           <span className="relative w-full text-left transition-colors duration-300 ease-in-out text-sm max-sm:text-[8px] ">
                             {" "}
                               Read More ...

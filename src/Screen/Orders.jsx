@@ -114,7 +114,7 @@ function Orders() {
      <Loader/>
      </div>
   ):(
-    <div className="min-h-screen bg-[#F8F6F1]  ">
+    <div className="min-h-screen   ">
       <div className="applications">
       <Helmet>
   <title>My Orders - Adisri Publications</title>
@@ -141,9 +141,7 @@ function Orders() {
       Products !
     </p>
     </div>
-    <div>
-    <img className="w-2/6 float-end " src="Order food-pana.png" alt=""  />
-    </div>
+  
     </div>
     <br />
     <br />

@@ -20,7 +20,7 @@ function TeacherTraining() {
     dots: false,
   };
   return (
-    <div className="min-h-screen bg-[#e0e0e088]">
+    <div className="min-h-screen">
        <div className="applications">
         <Helmet>
         <title>Teacher Training Program - Enhance Your Teaching Skills | Adisri Publications</title>
@@ -57,14 +57,14 @@ function TeacherTraining() {
             </p>
           </div>
         </div>
-        <div className=" p-20 max-sm:p-0">
+        <div className="  max-sm:p-0">
           {/* <Slider {...settings} className=" ">
               </Slider> */}
           
             <div>
               <img
-                className=""
-                src="https://senseselec.com/wp-content/uploads/2024/05/Teacher-training-programs-scaled.jpg"
+                className="w-[65%] m-auto"
+                src="Education-bro (1).png"
                 alt=""
               />
             </div>
@@ -202,12 +202,7 @@ function TeacherTraining() {
             Curriculum Framework), SDG Goals, incorporating Research methodology
             in lesson plans & classrooms etc.
           </p>
-          <button className="bg-white rounded-full p-3 block m-auto  text-black max-sm:text-xs   transition-all duration-400 hover:bg-[#293249] hover:text-white " onMouseEnter={()=>{
-           document.querySelector('#_download').setAttribute('fill',"#FFFFFF")  
-          }}
-           onMouseLeave={()=>{
-            document.querySelector('#_download').setAttribute('fill',"#000")  
-           }}
+          <button className="bg-[#FF5F5F] rounded-full p-3 block m-auto  text-black max-sm:text-xs   transition-all duration-400 hover:bg-[#FCE992]  " 
           >
             <a
               href="https://drive.google.com/file/d/1S28iwHGOFH85bA_c2fWmi8bCh3tV4MkL/view?usp=sharing"

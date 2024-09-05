@@ -65,7 +65,9 @@ function Ionetoeight() {
       } finally {
       }
     };
-    fetchData();
+    if (!(API==='')) {  
+      fetchData();
+    }
   }, [API]);
   useEffect(() => {
     console.log(productonetoeight);
@@ -95,7 +97,7 @@ function Ionetoeight() {
   return (
     <>
 
-      <div className=" primary-sections  min-h-screen   bg-[#dfe9f7] ">
+      <div className=" primary-sections  min-h-screen    ">
       <div className="applications">
       <Helmet>
         <title>Books for Classes 1 to 8 - Adisri Publications</title>
@@ -119,8 +121,8 @@ function Ionetoeight() {
             <h2  className="px-10 py-3 bg-[#b9f0ea]  rounded-full   cursor-pointer  ">Toy & Educational Material</h2>
          
         </div> */}
-        <div className="p-4 text-xl max-sm:text-[15px]    relative flex space-x-3 bg-[#b2e3f3]  max-sm:w-full  sm:w-[17%] ">
-          <p className=" flex  space-x-5 ">
+        <div className="p-4 text-xl max-sm:text-[15px]    relative flex space-x-3 bg-[#049A99] max-sm:w-full  sm:w-[17%] ">
+          <p className=" flex  space-x-5 text-white">
             {" "}
             <span> Filters</span>{" "}
             <button
@@ -139,8 +141,8 @@ function Ionetoeight() {
           </p>{" "}
         </div>
 
-        <div className="flex   primary-sections   bg-[#dfe9f7]">
-          <div className="sm:w-[17%] max-sm:w-full max-sm:absolute max-sm:z-20 max-sm:-translate-x-full   primarysection1 bg-[#b2e3f3]  ease-out transition-all duration-500 relative    max-sm:h-full ">
+        <div className="flex   primary-sections   ">
+          <div className="sm:w-[17%] max-sm:w-full max-sm:absolute max-sm:z-20 max-sm:-translate-x-full   primarysection1 bg-[#049A99]  ease-out transition-all duration-500 relative    max-sm:h-full text-white">
             <FilterTAb
               Class={Class}
               setClass={setClass}
@@ -210,7 +212,7 @@ function Ionetoeight() {
                 <>
                   {productonetoeight.previous !== null ? (
                     <button
-                      className="bg-[#4285F4]  rounded-full sm:px-10 sm:p-3 max-sm:p-2 block m-auto text-white  max-sm:text-xs   transition-all duration-400 hover:bg-[#4d91ff] hover:text-white "
+                      className="bg-[#FF5F5F]  rounded-full sm:px-10 sm:p-3 max-sm:p-2 block m-auto text-white  max-sm:text-xs   transition-all duration-400  hover:text-white "
                       onClick={() => {
                         let url = `${productonetoeight.previous.slice(
                           productonetoeight.previous.indexOf("?") + 1,
@@ -222,7 +224,7 @@ function Ionetoeight() {
                       Previous
                     </button>
                   ) : (
-                    <button className="bg-[#4285F4]   opacity-60 rounded-full sm:px-10 sm:p-3 max-sm:p-[9px] block m-auto   text-white max-sm:text-xs   transition-all duration-400 hover:bg-[#4d91ff] hover:text-white ">
+                    <button className="bg-[#FF5F5F]   opacity-60 rounded-full sm:px-10 sm:p-3 max-sm:p-[9px] block m-auto   text-white max-sm:text-xs   transition-all duration-400 hover:bg-[#FF5F5F] hover:text-white ">
                       Previous
                     </button>
                   )}
@@ -236,7 +238,7 @@ function Ionetoeight() {
                 <>
                   {productonetoeight.next !== null ? (
                     <button
-                      className="bg-[#4285F4] rounded-full sm:px-10 max-sm:px-6  sm:p-3 max-sm:p-2 block m-auto  text-white max-sm:text-xs   transition-all duration-400 hover:bg-[#4d91ff] hover:text-white "
+                      className="bg-[#FF5F5F] rounded-full sm:px-10 max-sm:px-6  sm:p-3 max-sm:p-2 block m-auto  text-white max-sm:text-xs   transition-all duration-400 hover:bg-[#FF5F5F] hover:text-white "
                       onClick={() => {
                         let url = `${productonetoeight.next.slice(
                           productonetoeight.next.indexOf("?") + 1,
@@ -250,7 +252,7 @@ function Ionetoeight() {
                       Next{" "}
                     </button>
                   ) : (
-                    <button className="bg-[#4285F4] rounded-full sm:px-10 p-3 sm:p-3 max-sm:p-2 block m-auto  text-white max-sm:text-xs   transition-all duration-400 opacity-60 hover:bg-[#4d91ff] hover:text-white ">
+                    <button className="bg-[#FF5F5F] rounded-full sm:px-10 p-3 sm:p-3 max-sm:p-2 block m-auto  text-white max-sm:text-xs   transition-all duration-400 opacity-60 hover:bg-[#FF5F5F] hover:text-white ">
                       Next
                     </button>
                   )}

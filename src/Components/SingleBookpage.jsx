@@ -24,12 +24,7 @@ function SingleBookpage() {
       .setAttribute("src", `${img.getAttribute("src")}`);
   };
 
-  const whitecolor = () => {
-    document.querySelector("#emoji").setAttribute("fill", "#000");
-  };
-  const blackcolor = () => {
-    document.querySelector("#emoji").setAttribute("fill", "#FFF");
-  };
+
 
   const addToCartHandler = () => {
     dispatch(addToCart(id, Quantity));
@@ -54,7 +49,7 @@ function SingleBookpage() {
           Object.keys(product).length? (
             <div
             key={product.Product_Id}
-            className="w-full min-h-screen bg-blue-200 flex gap-5"
+            className="w-full min-h-screen flex gap-5"
           >
              <div className="applications">
       <Helmet>
@@ -70,11 +65,11 @@ function SingleBookpage() {
         />
       </Helmet>
       </div>
-            <div className="font-sans bg-blue-100 w-full  ">
+            <div className="font-sans  w-full  ">
               <div className="p-4 max-sm:p-1   mx-auto">
                 <div className="grid items-start gap-10 grid-cols-2 lg:grid-cols-5   p-6 rounded-lg ">
                   <div className="lg:col-span-2 max-sm:col-span-3   top-0 text-center sm:w-1/2 max-sm:w-3/4 max-sm:m-auto ">
-                    <div className="px-2 py-6 rounded-lg shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative bg-white">
+                    <div className="px-2 py-6 rounded-lg  relative bg-white">
                       {
                   <img
                   id="frontpage"
@@ -102,7 +97,7 @@ function SingleBookpage() {
                                 <div
                                 key={index}
                                 onClick={handleimage}
-                                className="w-20 h-16 flex items-center bg-white justify-center rounded-lg p-4 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] cursor-pointer"
+                                className="w-20 h-16 flex items-center  justify-center rounded-lg p-4 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] cursor-pointer"
                                 >
                               <img
                                 id="Dynamichange"
@@ -139,31 +134,18 @@ function SingleBookpage() {
                       <button
                         onClick={addToCartHandler}
                         type="button"
-                        className="min-w-[200px] rounded-full px-4 py-3 bg-blue-600  hover:bg-blue-700 text-white text-sm font-semibold transition-all duration-200"
+                        className="min-w-[200px] rounded-full px-4 py-3 bg-[#FF5F5F] text-white text-sm font-semibold transition-all duration-200"
                       >
                         Add To Cart
                       </button>
   
                       <button
                         type="button"
-                        onMouseEnter={whitecolor}
-                        onMouseLeave={blackcolor}
-                        className="min-w-[200px] px-4 py-2.5 border-2 flex justify-center border-white hover:bg-white hover:text-black transition-all duration-300 rounded-full  text-white text-sm font-semibold "
+                       
+                        className="min-w-[200px] px-4 py-2.5 border-[1px] flex justify-center border-black hover:bg-white hover:text-black transition-all duration-300 rounded-full  text-black text-sm font-semibold "
                       >
                         Buy Now
-                        <svg
-                          id="emoji"
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="20px"
-                          fill="#ffffff"
-                          className="ml-3 hover:fill-[#333] transition-all duration-200"
-                          viewBox="0 0 64 64"
-                        >
-                          <path
-                            d="M45.5 4A18.53 18.53 0 0 0 32 9.86 18.5 18.5 0 0 0 0 22.5C0 40.92 29.71 59 31 59.71a2 2 0 0 0 2.06 0C34.29 59 64 40.92 64 22.5A18.52 18.52 0 0 0 45.5 4ZM32 55.64C26.83 52.34 4 36.92 4 22.5a14.5 14.5 0 0 1 26.36-8.33 2 2 0 0 0 3.27 0A14.5 14.5 0 0 1 60 22.5c0 14.41-22.83 29.83-28 33.14Z"
-                            data-original="#000000"
-                          ></path>
-                        </svg>
+                       
                       </button>
                     </div>
                     <br />

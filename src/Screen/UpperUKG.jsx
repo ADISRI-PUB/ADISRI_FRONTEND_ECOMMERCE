@@ -38,7 +38,7 @@ function UpperUKG() {
                 <Loader/>
                 </div>
             ):(
-                <div className='min-h-screen bg-[rgb(255,213,213)] py-[3vh] '>
+                <div className='min-h-screen bg-white py-[3vh] '>
        <div className="applications">
         <Helmet>
         <title>Upper (UKG) -Adisri Publications</title>

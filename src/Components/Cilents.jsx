@@ -5,7 +5,7 @@ export default function Clients() {
     },1000)
   return (
     <>
-      <div  className="logos-brand sm:w-full max-sm:w-full">
+      <div   className="logos-brand sm:w-full max-sm:w-full">
         <div  className="logo-brand-slider ">
           <img src="THE NOVA SCHOOL.png" alt="" />
           <img src="AMANDEEP INTERNATIOAL SCHOOL.png" alt="" />

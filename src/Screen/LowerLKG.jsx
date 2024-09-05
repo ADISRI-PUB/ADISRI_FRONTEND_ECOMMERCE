@@ -37,7 +37,7 @@ function LowerLKG() {
                 <Loader/>
                 </div>
             ):(
-                <div className='min-h-screen bg-[rgb(226,253,228)] py-[3vh] '>
+                <div className='min-h-screen bg-white py-[3vh] '>
 
                     <div className="applications">
         <Helmet>

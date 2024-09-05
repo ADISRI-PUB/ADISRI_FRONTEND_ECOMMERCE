@@ -21,9 +21,9 @@ function OrderDetails({ time, items=[], order_id, total_amount ,Date}) {
       : false Order_Id : 3 Shipping_Price : null Tax_Price : null Total_Price :
       null user : 21 */}
       {/* <h1>Hi HCL, it is in sec 16 ,Noida{id}</h1> */}
-      <div className="border-b border-[#053634]">
+      <div className="border-b-2 ">
       
-      <div className="sm:ml-10 p-4 text-center sm:text-lg order-detials text-[#053634]  ">
+      <div className="sm:ml-10 p-4 text-center sm:text-lg order-detials  ">
         <h3 className=" "> <b> Order ID :</b>{order_id}</h3>
         <h4 className=" "> <b> Order on :</b>{
           <>
@@ -38,7 +38,7 @@ function OrderDetails({ time, items=[], order_id, total_amount ,Date}) {
        <div className="w-[30%] m-auto   max-sm:w-4/5 max-sm:p-0    space-y-3 p-2">
            
             <Link to={`/trackorder/${order_id}`}>
-              <button className=" w-3/5 flex m-auto text-white justify-center hover:bg-gray-400 transition-all duration-200 bg-[#EBB017] p-5 mt-3">
+              <button className=" w-3/5 flex m-auto text-white justify-center  transition-all duration-200 bg-[#FF5F5F] p-5 mt-3">
                 TRACK ORDER
               </button>
             </Link>
@@ -65,11 +65,11 @@ return(
      </div> */}
      {/* grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); */}
           <div className="">
-            <div className="  w-80 h-40   rounded-lg border-2 border-gray-100 p-3 bg-[#053634]  shadow-lg shadow-gray-200">
+            <div className="  w-80 h-40   rounded-lg border-2 border-gray-100 p-3 bg-[#FCE992] text-black shadow-lg shadow-gray-200">
               {/* <div className="w-2/5">
                 <img src={e.Image} alt="product image" />
               </div> */}
-              <div className="w-full  text-center  text-white">
+              <div className="w-full  text-center  ">
                 <p className="text-lg font-bold">{e.Name}</p>
                 <p className="text-sm font-semibold text-gray-500"></p>
                 <p className="mt-3 text-2xl font-bold">&#x20B9;{e.Price}</p>

@@ -39,7 +39,7 @@ function Nursery() {
                 <Loader/>
                 </div>
             ):(
-                <div className='min-h-screen bg-[rgb(255,241,208)] py-[3vh] '>
+                <div className='min-h-screen  py-[3vh] '>
                     <div className="applications">
         <Helmet>
         <title> Nursery Books - Adisri Publications</title>

@@ -40,7 +40,7 @@ function SignIn() {
   //kamal
  
   return (
-    <div className="relative min-h-screen bg-[#2B3F7E]">
+    <div className="relative min-h-screen bg-white">
       <div className="applications">
       <Helmet>
         <title>Sign In - Adisri Publications</title>
@@ -61,7 +61,7 @@ function SignIn() {
           alt="backgroundimage"
         />
 
-        <div className="w-4/5 content3    rounded-lg m-auto flex logg bg-[#FEF7E5] justify-center  ">
+        <div className="w-4/5 content3    rounded-lg m-auto flex logg bg-[#ff8989] justify-center  text-white">
         <div>
           <div>
             <p className="p-3 uppercase w-4/5 text-center m-auto">Sign in with Google to enjoy personalized features and content.</p>
@@ -70,7 +70,7 @@ function SignIn() {
   onClick={login}
   aria-label="Sign in with Google "
   
-  className="flex logg bg-[#F3B200] text-black w-[40%] max-sm:w-[80%]  m-auto relative justify-center   rounded-full p-0.5  "
+  className="flex logg bg-white text-black w-[40%] max-sm:w-[80%]  m-auto relative justify-center   rounded-full p-0.5  "
 >
   <div className="flex items-center justify-center bg-white w-10 h-10 max-sm:h-10 max-sm:w-10 rounded-full">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="" className=" ">

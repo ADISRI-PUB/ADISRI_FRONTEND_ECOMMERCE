@@ -67,7 +67,9 @@ function IPrePrimary() {
      
       }
     };
-    fetchData();
+    if (!(API==='')) {  
+      fetchData();
+    }
   }, [ API]);
   let count=0
   const  open =()=>{
@@ -87,7 +89,7 @@ function IPrePrimary() {
     <>
  
   
-      <div className=" primary-sections  min-h-screen  ">
+      <div className=" primary-sections  min-h-screen bg-[rgb(252, 209, 209)]">
       <div className="applications">
       <Helmet>
         <title>Play, Nursery, Pre-Primer, and Primer Books - Adisri Publications</title>
@@ -102,21 +104,21 @@ function IPrePrimary() {
       </Helmet>
       </div>
         {/* <div className=" tab-grid  bg-[] w-[83%] justify-items-center logg sm:mr-0 sm:ml-auto py-8">
-            <div  className="px-10 py-3 bg-[#b9f0ea]  rounded-full   cursor-pointer   ">Books & Copy
+            <div  className="px-10 py-3 bg-white   rounded-full   cursor-pointer   ">Books & Copy
 
             </div>
-            <h2  className="px-10 py-3 bg-[#b9f0ea]  rounded-full   cursor-pointer ">Stationary</h2>
-            <h2  className="px-10 py-3 bg-[#b9f0ea]  rounded-full   cursor-pointer ">Art & Craft Supply</h2>
-            <h2  className="px-10 py-3 bg-[#b9f0ea]  rounded-full   cursor-pointer  ">Toy & Educational Material</h2>
+            <h2  className="px-10 py-3 bg-white   rounded-full   cursor-pointer ">Stationary</h2>
+            <h2  className="px-10 py-3 bg-white   rounded-full   cursor-pointer ">Art & Craft Supply</h2>
+            <h2  className="px-10 py-3 bg-white   rounded-full   cursor-pointer  ">Toy & Educational Material</h2>
          
         </div> */}
-      <div className='p-4 text-xl max-sm:text-[15px]    relative flex space-x-3 bg-[#b9f0ea]  max-sm:w-full  sm:w-[17%] ' >
+      <div className='p-4 text-xl max-sm:text-[15px]    relative flex space-x-3 bg-[#049A99]    max-sm:w-full  sm:w-[17%]  text-white' >
         <p className=" flex  space-x-5 "> <span> Filters</span> <button onClick={open} className=' transition-all duration-300 buttons sm:hidden max-sm:visible   w-full' >  
      <svg className='w-[15px] max-sm:w-[13px]' xmlns="http://www.w3.org/2000/svg"  viewBox="0 -960 960 960"  fill="#000000"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg>
      </button> </p> </div>
    
         <div className="flex   primary-sections   ">
-        <div className="sm:w-[17%] max-sm:w-full max-sm:absolute max-sm:z-20 max-sm:-translate-x-full   primarysection1 bg-[#b9f0ea]  ease-out transition-all duration-500 relative    max-sm:h-full ">
+        <div className="sm:w-[17%] max-sm:w-full max-sm:absolute max-sm:z-20 max-sm:-translate-x-full   primarysection1 bg-[#049A99] text-white  ease-out transition-all duration-500 relative    max-sm:h-full ">
           <FilterTAb
               Class={Class}
               setClass={setClass}
@@ -127,7 +129,7 @@ function IPrePrimary() {
             />
           </div>
        
-          <div className="sm:w-[79%] sm:p-2 mx-auto   max-sm:w-full  card-container relative  ">
+          <div className="sm:w-[79%] sm:p-2 mx-auto   max-sm:w-full  card-container relative   ">
             {API === "" ? (
               Object.keys(products).length===0 ? (
               
@@ -193,14 +195,14 @@ function IPrePrimary() {
                      </>):(<>
                      {
                          products.previous!==null ?(
-                          <button className="bg-[#4285F4]  rounded-full sm:px-10 sm:p-3 max-sm:p-2 block m-auto text-white  max-sm:text-xs   transition-all duration-400 hover:bg-[#4d91ff] hover:text-white " onClick={()=>{
+                          <button className="bg-[#FF5F5F]  rounded-full sm:px-10 sm:p-3 max-sm:p-2 block m-auto text-white  max-sm:text-xs   transition-all duration-400 hover:bg-[#FF5F5F]  hover:text-white " onClick={()=>{
                             let url =`${ products.previous.slice(products.previous.indexOf('?')+1,products.previous.length)}`
                              dispatch(listProducts(url));
                             
                             
                           }}>Previous</button>
                          ):(
-                          <button className="bg-[#4285F4]   opacity-60 rounded-full sm:px-10 sm:p-3 max-sm:p-[9px] block m-auto   text-white max-sm:text-xs   transition-all duration-400 hover:bg-[#4d91ff] hover:text-white ">Previous</button>
+                          <button className="bg-[#FF5F5F]    opacity-60 rounded-full sm:px-10 sm:p-3 max-sm:p-[9px] block m-auto   text-white max-sm:text-xs   transition-all duration-400 hover:bg-[#FF5F5F]  hover:text-white ">Previous</button>
                          )
                      }
                      </>)
@@ -213,13 +215,13 @@ function IPrePrimary() {
                      </>):(<>
                      {
                          products.next!==null ?(
-                          <button className="bg-[#4285F4] rounded-full sm:px-10 max-sm:px-6  sm:p-3 max-sm:p-2 block m-auto  text-white max-sm:text-xs   transition-all duration-400 hover:bg-[#4d91ff] hover:text-white " onClick={()=>{
+                          <button className="bg-[#FF5F5F] rounded-full sm:px-10 max-sm:px-6  sm:p-3 max-sm:p-2 block m-auto  text-white max-sm:text-xs   transition-all duration-400 hover:bg-[#FF5F5F]  hover:text-white " onClick={()=>{
                             let url =`${products.next.slice(products.next.indexOf('?')+1,products.next.length)}`
                              dispatch(listProducts(url));
                             // console.log(url);
                           }}> Next </button>
                          ):(
-                          <button className="bg-[#4285F4] rounded-full sm:px-10 p-3 sm:p-3 max-sm:p-2 block m-auto  text-white max-sm:text-xs   transition-all duration-400 opacity-60 hover:bg-[#4d91ff] hover:text-white ">Next</button>
+                          <button className="bg-[#FF5F5F]  rounded-full sm:px-10 p-3 sm:p-3 max-sm:p-2 block m-auto  text-white max-sm:text-xs   transition-all duration-400 opacity-60 hover:bg-[#FF5F5F]  hover:text-white ">Next</button>
                          )
                      }
                      </>)

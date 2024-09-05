@@ -27,7 +27,7 @@
 }
 
 .active {
-  background-color:#F4EEFF;
+  background-color:white;
   color: white;
   padding: 12px;
   color: black;
@@ -375,6 +375,7 @@
   display: flex;
   position: relative;
   background-color: white;
+  
 }
 about-sections {
   background-color: var(--bodybackground);
@@ -414,9 +415,7 @@ footer {
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
-p + ul li:hover {
-  font-weight: bold;
-}
+
 
 .pop-up:hover {
   visibility: visible;

@@ -57,7 +57,7 @@ const handlecheckout = ()=>{
      
       {flag ? (
         
-          <div className="bg-purple-200 p-3  sm:flex sm:min-h-screen  ">
+          <div className="bg-white p-3  sm:flex sm:min-h-screen  ">
             <div className="application">
       <Helmet>
         <title>My Cart - Adisri Publications</title>
@@ -96,7 +96,7 @@ const handlecheckout = ()=>{
                         <polygon points="456.851,0 245,212.564 33.149,0 0.708,32.337 212.669,245.004 0.708,457.678 33.149,490 245,277.443 456.851,490   489.292,457.678 277.331,245.004 489.292,32.337 " />
                       </svg>
                     </div>
-                      <div className="sm:flex  w-full ">
+                      <div className="sm:flex  w-full bg-white border-b-2 ">
                        <div className="w-1/4 max-sm:w-full   p-2">
                          <img className="w-3/5 m-auto max-sm:w-1/4 " src={books.image} alt="productimage"  />
                        </div>
@@ -158,8 +158,8 @@ const handlecheckout = ()=>{
                 );
               })}
             </div>
-            <div className="w-2/5 p-4 rounded-xl h-96 max-sm:w-full right-0  logg flex justify-center ">
-              <div className="cart-section2  bg-purple-300 border-2 border-white rounded-xl  h-full grid grid-rows-4 w-full   ">
+            <div className="w-2/5 p-4  h-96 max-sm:w-full right-0  logg flex justify-center ">
+              <div className="cart-section2  bg-[#fff4c3] border-2 border-white  h-full grid grid-rows-4 w-full   ">
                 <h1 className="text-xl grid grid-cols-2  justify-center  m-auto">
                   {" "}
                   <p className="  max-sm:text-sm"> Total MRP &nbsp;&nbsp; </p>
@@ -168,27 +168,23 @@ const handlecheckout = ()=>{
 
                 <h1 className="text-lg max-sm:text-sm  grid grid-cols-2  justify-center m-auto ">
                   {" "}
-                  <p className=" "> Discount &nbsp;&nbsp; </p>
-                  <p>:&#x20B9;0 </p>{" "}
+                  <p className=" "> Shipping &nbsp;&nbsp; </p>
+                  <p>:&#x20B9;50/-</p>{" "}
                 </h1>
 
-                <h1 className="text-xl max-sm:text-sm grid grid-cols-2  justify-center m-auto">
-                  {" "}
-                  <p className=" "> Total &nbsp;&nbsp; </p>
-                  <p>:&#x20B9;{Price} </p>{" "}
-                </h1>
+              
 
                 <h1 className="text-xl max-sm:text-sm grid grid-cols-2  justify-center m-auto">
                   {" "}
                   <p className=""> Grand Total &nbsp;&nbsp; </p>
-                  <p>:&#x20B9;{Price} </p>{" "}
+                  <p>:&#x20B9;{Price+50} </p>{" "}
                 </h1>
 
                  <button
                  onClick ={handlecheckout}
-                  className="w-1/2 m-auto transition-all duration-300  overflow-hidden space-x-2 rounded-full text-center justify-center hover:bg-purple-400 cursor-pointer p-4 max-sm:p-2  bg-white  flex">
+                  className="w-1/2 m-auto transition-all duration-300  overflow-hidden space-x-2 rounded-full text-center justify-center bg-[#FF5F5F] text-white cursor-pointer p-4 max-sm:p-2   flex">
                 
-                  <span className="text-black max-sm:text-sm">Checkout</span>
+                  <span className=" max-sm:text-sm">Checkout</span>
                 </button>
                   
 

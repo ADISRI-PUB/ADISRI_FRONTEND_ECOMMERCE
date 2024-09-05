@@ -94,176 +94,133 @@ export default function CrousalBooks() {
     <div className="slider-container   p-4 max-sm:p-10 w-full">
       <div className="w-4/5 m-auto">
       <Slider {...settings}>
-        <div className="sm:h-[200px] max-sm:h-[200px]  rounded-lg" >
-          <Link to="/preprimary">
-          <div className="mx-auto  w-4/5 aspect-[4/6]  transform overflow-hidden rounded-lg bg-white text-gray-700 shadow-md duration-300  hover:shadow-lg">
+      <div className="h-[200px] relative " >
+          <Link to="/onetoeight">
+
+          <div className="mx-auto   w-4/5 relative transform overflow-hidden rounded-lg bg-white text-gray-700  duration-300  ">
+          <div className="w-[100%] h-[90%] relative " style={{perspective:'900px'}}>
+            <div className="image-card p-2">
               <img
-                className="sm:p-2 max-sm:p-3 w-full "
+                className="       h-[80%]"
                 src="COUNTING 1-50 FRONT.jpg"
                 alt="Product Image"
               />
-              <div className="">
-                <h2 className="mb-2  font-medium  text-gray-900 text-md bookcrousal p-2 text-center">
-                
-               Counting 1-50
-                </h2>
-
-              
-              </div>
+             </div>
+            </div>
             </div>
           </Link>
         </div>
      
-        <div className="h-[200px] " >
-          <Link to="/preprimary">
-          <div className="mx-auto shadow-md aspect-[4/6]  w-4/5 transform overflow-hidden rounded-lg bg-white text-gray-700  duration-300  hover:shadow-lg">
+        <div className="h-[200px] relative " >
+          <Link to="/onetoeight">
+
+          <div className="mx-auto   w-4/5 relative transform overflow-hidden rounded-lg bg-white text-gray-700  duration-300  ">
+          <div className="w-[100%] h-[100%] relative " style={{perspective:'900px'}}>
+            <div className="image-card">
               <img
-                className="sm:p-2      max-sm:p-3  w-full"
+                className="        p-2"
                 src="ALL IN ONE WRITING BOOK HARD BOUND.jpg"
                 alt="Product Image"
               />
-              <div className="">
-                <h2 className="mb-2  font-medium  text-gray-900 text-md bookcrousal p-2 text-center">
-               
-                ALL IN ONE
-                </h2>
-
-            
-              </div>
+             </div>
+            </div>
             </div>
           </Link>
         </div>
     
-        <div className="sm:h-[200px]">
-          <Link to="/preprimary">
-          <div className="mx-auto aspect-[4/6]  w-4/5 transform overflow-hidden rounded-lg bg-white text-gray-700 shadow-md duration-300  hover:shadow-lg">
+        <div className="h-[200px] relative " >
+          <Link to="/onetoeight">
+
+          <div className="mx-auto   w-4/5 relative transform overflow-hidden rounded-lg bg-white text-gray-700  duration-300  ">
+          <div className="w-[100%] h-[100%] relative " style={{perspective:'900px'}}>
+            <div className="image-card">
               <img
-                className="sm:p-2      max-sm:p-3  m-auto"
+                className="        p-2"
                 src="AMAZING PICTURES  A.jpg"
                 alt="Product Image"
               />
-              <div className="">
-                <h2 className="mb-2  font-medium  text-gray-900 text-md bookcrousal p-2 text-center">
-               
-                AMAZING PICTURES - A 
-                </h2>
-
-                <div className="flex items-center">
-                  {/* <p className=" font-semibold text-gray-900 bookcrousal p-4 ">
-                  ₹140/-
-                  </p> */}
-                
-                </div>
-              </div>
+             </div>
+            </div>
             </div>
           </Link>
         </div>
-        <div className="sm:h-[200px]">
-          <Link to="/preprimary">
-          <div className="mx-auto  w-4/5 aspect-[4/6] transform overflow-hidden rounded-lg bg-white text-gray-700 shadow-md duration-300  hover:shadow-lg">
+        <div className="h-[200px] relative " >
+          <Link to="/onetoeight">
+
+          <div className="mx-auto   w-4/5 relative transform overflow-hidden rounded-lg bg-white text-gray-700  duration-300  ">
+          <div className="w-[100%] h-[100%] relative " style={{perspective:'900px'}}>
+            <div className="image-card">
               <img
-                className="sm:p-2  max-sm:p-3 m-auto"
+                className="        p-2"
                 src="ART&CRAFT B.jpg"
                 alt="Product Image"
               />
-              <div className="">
-                <h2 className="mb-2  font-medium  text-gray-900 text-md bookcrousal p-2 text-center">
-                LITTLE ARTIST'S ART AND CRAFT BOOK -B
-                </h2>
-
-                <div className="flex items-center">
-                  {/* <p className=" font-semibold text-gray-900 bookcrousal p-4 ">
-                  ₹175/-
-                  </p> */}
-                 
-                </div>
-              </div>
+             </div>
+            </div>
             </div>
           </Link>
         </div>
-        <div className="sm:h-[200px]">
-          <Link to="/preprimary">
-          <div className="mx-auto  w-4/5 aspect-[4/6]  transform overflow-hidden rounded-lg bg-white text-gray-700 shadow-md duration-300  hover:shadow-lg">
+        <div className="h-[200px] relative " >
+          <Link to="/onetoeight">
+
+          <div className="mx-auto   w-4/5 relative transform overflow-hidden rounded-lg bg-white text-gray-700  duration-300  ">
+          <div className="w-[100%] h-[100%] relative " style={{perspective:'900px'}}>
+            <div className="image-card">
               <img
-                className="sm:p-2 max-sm:p-3 w-full "
+                className="        p-2"
                 src="MADHUR SARGAM FRONT.jpg"
                 alt="Product Image"
               />
-              <div className="">
-                <h2 className="mb-2  font-medium  text-gray-900 text-md bookcrousal p-2 text-center">
-                
-                MADHUR SARGARM -A 
-                </h2>
-
-                <div className="flex items-center">
-                
-                 
-                </div>
-              </div>
+             </div>
+            </div>
             </div>
           </Link>
         </div>
-        <div className="sm:h-[200px]">
-          <Link to="/preprimary">
-          <div className="mx-auto    w-4/5  aspect-[4/6]  transform overflow-hidden rounded-lg bg-white text-gray-700 shadow-md duration-300  hover:shadow-lg">
+        <div className="h-[200px] relative " >
+          <Link to="/onetoeight">
+
+          <div className="mx-auto   w-4/5 relative transform overflow-hidden rounded-lg bg-white text-gray-700  duration-300  ">
+          <div className="w-[100%] h-[100%] relative " style={{perspective:'900px'}}>
+            <div className="image-card">
               <img
-                className="sm:p-2 max-sm:p-3 w-full "
+                className="        p-2"
                 src="LITTLE ARTIST COLORING BOOK B- FRONT.jpg"
                 alt="Product Image"
               />
-              <div className="">
-                <h2 className="mb-2  font-medium  text-gray-900 text-md bookcrousal p-2 text-center">
-                LITTLE ARTIST BOOK  
-                </h2>
-
-                <div className="flex items-center">
-                  
-                
-                </div>
-              </div>
+             </div>
+            </div>
             </div>
           </Link>
         </div>
-        <div className="sm:h-[200px] ">
-          <Link to="/preprimary">
-          <div className="mx-auto  w-4/5 aspect-[4/6]   transform overflow-hidden rounded-lg bg-white text-gray-700 shadow-md duration-300  hover:shadow-lg">
+        <div className="h-[200px] relative " >
+          <Link to="/onetoeight">
+
+          <div className="mx-auto   w-4/5 relative transform overflow-hidden rounded-lg bg-white text-gray-700  duration-300  ">
+          <div className="w-[100%] h-[100%] relative " style={{perspective:'900px'}}>
+            <div className="image-card">
               <img
-                className="sm:p-2 max-sm:p-3 w-full"
+                className="        p-2"
                 src="MILESTONE ENGLISH PRE-PRIMER- FRONT.jpg"
+                alt="Product Image"
               />
-              <div className="">
-                <h2 className="mb-2  font-medium  text-gray-900 text-md bookcrousal p-2 text-center">
-                 
-                MILESTONE ENGLISH 
-                </h2>
-
-                <div className="flex items-center">
-                  
-                 
-                </div>
-              </div>
+             </div>
+            </div>
             </div>
           </Link>
         </div>
-        <div className="max-h-70">
-          <Link to="/preprimary">
-          <div className="mx-auto  w-4/5  aspect-[4/6]  transform overflow-hidden rounded-lg bg-white text-gray-700 shadow-md duration-300  hover:shadow-lg">
+        <div className="h-[200px] relative " >
+          <Link to="/onetoeight">
+
+          <div className="mx-auto   w-4/5 relative transform overflow-hidden rounded-lg bg-white text-gray-700  duration-300  ">
+          <div className="w-[100%] h-[100%] relative " style={{perspective:'900px'}}>
+            <div className="image-card">
               <img
-                className="sm:p-2 max-sm:p-3 w-full "
+                className="        p-2"
                 src="SHABD SULEKHAN TITLE - FRONT.jpg"
                 alt="Product Image"
               />
-              <div className="">
-                <h2 className="mb-2 max-sm:mb-0  font-medium  text-gray-900 text-md bookcrousal p-2 text-center">
-           
-                SHABD SULEKHAN 
-                </h2>
-
-                <div className="flex items-center">
-                
-                
-                </div>
-              </div>
+             </div>
+            </div>
             </div>
           </Link>
         </div>

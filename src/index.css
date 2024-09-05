@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 :root{
-  --bodybackground:#F4EEFF;
+  --bodybackground:white;
  
 }
 body{

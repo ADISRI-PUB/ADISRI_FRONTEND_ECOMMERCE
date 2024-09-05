@@ -55,7 +55,7 @@ function Iaboutus() {
   //   #FFE06B
   return (
     <>
-      <div className="bg-[#f0ecec] relative min-h-screen  ">
+      <div className="bg-white relative min-h-screen  ">
         <div className="application">
       <Helmet>
         <title>About Us - Adisri Publications</title>
@@ -71,11 +71,11 @@ function Iaboutus() {
       </Helmet></div>
       
       
-        <div className="text-container w-full text-center relative z-20 ">
+        <div className="text-container w-full text-center relative z-20 bg-white">
           <h1 className=" w-3/5 m-auto text-gray-800 font-semibold  max-sm:block justify-center">
             About Us
           </h1>
-          <h5 className=" border-[#7b9272]  text-gray-800  w-3/5 max-sm:w-4/5 m-auto italic ">
+          <h5 className="   text-gray-800  w-3/5 max-sm:w-4/5 m-auto italic ">
            <span className=" max-sm:text-sm"> "Education is not the learning of facts, but the training of the
             mind to think."</span>
           </h5>

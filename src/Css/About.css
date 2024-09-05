@@ -31,10 +31,10 @@
     background: var(--aboutusbackground);
 }
 .about-grid  >  div:nth-child(odd){
-    background-color: #dddddd;
+    background-color: #ffa4a4;
    
 }
 .about-grid  >  div:nth-child(even){
-    background-color: #ffffff
+    background-color: #ffea8c
    
 }

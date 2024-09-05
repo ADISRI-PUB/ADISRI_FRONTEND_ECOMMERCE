@@ -25,9 +25,9 @@ function ProdcutsCard({product,id}) {
 
   return (
     
-   
-   
-    <div  className="mx-auto  sm:aspect-[4/9]   max-sm:mt-4 max-sm:w-4/5  bg-white transform overflow-hidden rounded-lg relative shadow-md duration-300  hover:shadow-lg max-sm:leading-snug">
+  
+    <Link to={`/singlebook/${product.Product_Id}`}>
+    <div  className="mx-auto  sm:aspect-[4/9]   max-sm:mt-4 max-sm:w-4/5   transform overflow-hidden  relative  duration-300  max-sm:leading-snug ">
       <div className='relative w-[90%] h-[58%] flex logg  m-auto justify-center  ' style={{perspective:'900px'}}>
   <div className=' sm:absolute image-card  w-full m-auto'>
   <img className="w-[90%] m-auto " src={product.Image} alt="Product Image" />
@@ -44,14 +44,15 @@ function ProdcutsCard({product,id}) {
   </div>
     <Link to={`/singlebook/${product.Product_Id}`}
      className='relative'
-    >  <button className='m-auto flex space-x-4 justify-center  max-sm:space-x-1  relative  logg   py-2 px-5 max-sm:px-2 rounded-full bg-gray-800 text-white  hover:svg-rotate'>
-       <span className='sm:text-sm max-sm:text-[8px]  '>View Book</span>
-      <svg id='_45' className=' transition-all duration-200 max-sm:w-3  sm:w-5' xmlns="http://www.w3.org/2000/svg"  viewBox="0 -960 960 960"  fill="#e8eaed"><path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z"/></svg></button> </Link>
+    >  <button className='m-auto flex space-x-4 justify-center  max-sm:space-x-1  relative  logg   py-2 px-5 max-sm:px-2 rounded-full bg-[#FCE992] text-black  hover:svg-rotate'>
+       <span className='sm:text-sm max-sm:text-[8px] font-semibold '>View Book</span>
+      <svg id='_45' className=' transition-all duration-200 max-sm:w-3  sm:w-5' xmlns="http://www.w3.org/2000/svg"  viewBox="0 -960 960 960"  fill="#000"><path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z"/></svg></button> </Link>
       <div className='sm:hidden max-sm:visible h-1'>
 
       </div>
 </div>
-   
+    </Link>
+  
   )
 }
 

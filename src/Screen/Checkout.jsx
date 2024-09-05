@@ -47,22 +47,18 @@ function Checkout() {
        history('/ordersummary')
      }
      else{
-        document.querySelector('.submitbutton').classList.replace('bg-gray-900','bg-red-600')
+        document.querySelector('.submitbutton').classList.replace('bg-[#FF5F5F]','bg-red-600')
      }
   };
   return (
-    <div className="min-h-screen relative  overflow-hidden sm:flex bg-slate-900  ">
-      <div className="absolute max-sm:hidden w-full h-hull z-0 opacity-50 top-20">
-        <img className="w-2/5" src="pngegg (17)2.png" alt="" />
-      </div>
-      <div className="absolute right-12 max-sm:bottom-0 max-sm:right-0 ">
-        <img src="pngegg (17)90.png" alt="" />
-      </div>
-      <form className="w-full bg-black/30 flex  logg">
-        <div className="grid sm:px-10 col-span-2  w-3/5 max-sm:w-full  m-auto lg:px-20 xl:px-32 relative  ">
-          <div className="mt-10 bg-white/20 border-2 border-white rounded-xl text-white backdrop-blur-sm px-4 pt-8 lg:mt-0">
-            <p className="text-xl font-medium">Shipping Details</p>
-            <p className="text-gray-200">
+    <div className="min-h-screen relative  overflow-hidden sm:flex bg-white/100  ">
+      
+     
+      <form className="w-full   flex  logg">
+        <div className="grid border-2  sm:px-10 col-span-2  w-3/5 max-sm:w-full  m-auto lg:px-20 xl:px-32 relative  ">
+          <div className="mt-10  border-2 border-white rounded-xl text-white backdrop-blur-sm px-4 pt-8 lg:mt-0">
+            <p className="text-xl font-medium text-gray-800" >Shipping Details</p>
+            <p className="text-gray-900">
               Complete your order by providing your Shipping details.
             </p>
 
@@ -92,7 +88,7 @@ function Checkout() {
                       document.querySelector('.label-phone').innerHTML=`<p className=''>Phone* </p>`
                       document.querySelector('.putr').style.backgroundColor="white"
                       setCorrectform(true)
-                      document.querySelector('.submitbutton').classList.replace('bg-red-600','bg-gray-900')
+                      document.querySelector('.submitbutton').classList.replace('bg-red-600','bg-[#FF5F5F]')
                     }
                     else{
                       setCorrectform(false)
@@ -178,7 +174,7 @@ function Checkout() {
                         else{
                           document.querySelector('.label-address').classList.remove('text-red-600')
                           setCorrectform(true)
-                         document.querySelector('.submitbutton').classList.replace('bg-red-600','bg-gray-900')
+                         document.querySelector('.submitbutton').classList.replace('bg-red-600','bg-[#FF5F5F]')
 
                        }
                     }}
@@ -266,7 +262,7 @@ function Checkout() {
                 createordershandler(e)
               }}
               type="submit"
-              className="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white submitbutton"
+              className="mt-4 mb-8 w-full rounded-md bg-[#FF5F5F] px-6 py-3 font-medium text-white submitbutton"
             >
               Continue
             </button>

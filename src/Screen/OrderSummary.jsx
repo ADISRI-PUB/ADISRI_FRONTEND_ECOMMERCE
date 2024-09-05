@@ -59,7 +59,7 @@ function OrderSummary() {
         
         history(`/trackorder/${order.Order_Id}`);
         dispatch({ type: ORDER_CREATE_RESET });
-      },2000)
+      },3000)
     }
     if (error) {
         setloadtocreate(false)
@@ -107,7 +107,7 @@ function OrderSummary() {
               
            </div>
       ):(
-        <div className="min-h-screen shipping-page  bg-[#cccaff] ">
+        <div className="min-h-screen shipping-page  ">
           <div className="applications">
         <Helmet>
         <title>Order Summary - Adisri Publications</title>
@@ -130,12 +130,12 @@ function OrderSummary() {
         </p>
         </div>
         <div>
-          <img className="w-[45%] " src="new-entries-concept-illustration.png" alt="" />
+          <img className="w-[45%] " src="Messenger-pana.png" alt="" />
 
         </div>
         </div>
         <br />
-        <div className="w-4/5 max-sm:w-full m-auto summary-container-1 bg-[#a4a1ff] ">
+        <div className="w-4/5 max-sm:w-full m-auto summary-container-1  ">
           <div className=" leading-loose">
             <p className=" sm:ml-10 max-sm:ml-2 max-sm:p-2 sm:text-3xl max-sm:text-md p-3">Shipping Details</p>
             <div className="sm:ml-10 max-sm:ml-2 max-sm:p-2">
@@ -208,7 +208,7 @@ function OrderSummary() {
                   <div className="flex justify-between items-center w-full">
                     <p className="text-base  leading-4 text-black">
                       Tax Price{" "}
-                      <span className="bg-[#8681FF] p-1 text-xs font-medium  leading-3 text-gray-800">
+                      <span className="p-1 text-xs font-medium  leading-3 text-gray-800">
                         GST
                       </span>
                     </p>
@@ -240,7 +240,7 @@ function OrderSummary() {
             {cart.cartItems.map((booked, index) => {
               return (
                 <div key={index}> 
-                <div key={index} className="summary-container-1 w-full border shadow-md bg-[#a4a1ff]  ">
+                <div key={index} className="summary-container-1 w-full border shadow-md   ">
                   {" "}
                   
                   <div key={index} className="flex">
@@ -300,7 +300,7 @@ function OrderSummary() {
                 
                 }
                disabled={cart.cartItems === 0}
-              className="  w-[80%]  transition-all duration-200 bg-[#8681FF] p-4 block m-auto  text-white hover:bg-gray-700 max-h-[60px] "
+              className="  w-[80%]  transition-all duration-200 bg-[#FF5F5F] p-4 block m-auto  text-white hover:text-black hover:bg-[#FCE992] max-h-[60px] "
             >
               ORDER
             </button>

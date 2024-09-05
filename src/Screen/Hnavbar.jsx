@@ -22,7 +22,8 @@ function Hnavbar() {
   const handleprofile = () => {
     document.querySelector("#profilearrow").classList.toggle("rotate-180");
     document.querySelector(".namebutton").classList.toggle("bg-white")
-    document.querySelector(".namebutton").classList.toggle("bg-purple-600")
+    document.querySelector(".namebutton").classList.toggle("bg-[#FF5F5F]")
+    document.querySelector(".namebutton").classList.toggle("text-white")
     document.querySelector(".drop-down").classList.toggle("hidden");
     document.querySelector(".drop-down").classList.toggle("show");
     document.querySelector(".click").classList.toggle("hidden");
@@ -123,7 +124,7 @@ function Hnavbar() {
         className="w-screen h-screen  bg-transparent absolute click  hidden max-sm:hidden"
       ></div>
       <div className="block relative    bg-transparent">
-        <div className=" z-50 max-w-full sticky top-0 bg-white/50 backdrop-blur-sm    border-white  flex  max-sm:p-0 logg max-sm:h-[50px] sm:h-[80px]  ">
+        <div className=" z-50 max-w-full sticky top-0 bg-[#FCE992] backdrop-blur-sm    border-white  flex  max-sm:p-0 logg max-sm:h-[50px] sm:h-[80px]  ">
         
           <Link
             to="/"
@@ -138,13 +139,13 @@ function Hnavbar() {
 
          
 
-          <div className="w-[60%] flex text-[0.8vw] justify-evenly logg hide-visible2  ">
+          <div className="w-[60%] flex text-[0.8vw] justify-evenly logg hide-visible2 text-gray-700  ">
             <NavLink
               to="/"
               className={({ isActive }) =>
                 isActive
-                  ? "bg-homebutton rounded-tr-full rounded-bl-full  px-12 py-3 transition-all duration-200 h-[90%] relative top-1"
-                  : ""
+                  ? "bg-[#ff5f5f] text-white rounded-tr-full rounded-bl-full  px-12 py-3 transition-all duration-200 h-[90%] relative top-1"
+                  : " rounded-tr-full rounded-bl-full  px-12 py-3 transition-all duration-500 h-[90%] relative top-1 hover:bg-white"
               }
             >
               <span className="relative  "> HOME</span>
@@ -156,8 +157,8 @@ function Hnavbar() {
               onMouseLeave={hide2}
               className={({ isActive }) =>
                 isActive
-                  ? "bg-[#b9f0ea] rounded-tr-full rounded-bl-full  px-8 py-3  transition-all duration-200 h-[90%] relative top-1"
-                  : ""
+                  ? "bg-[#ff5f5f] text-white rounded-tr-full rounded-bl-full  px-8 py-3  transition-all duration-200 h-[90%] relative top-1"
+                  : "rounded-tr-full rounded-bl-full  px-12 py-3 transition-all duration-500 h-[90%] relative top-1 hover:bg-white  "
               }
             >
              <span className=""> PRE SCHOOL SOLUTIONS</span>
@@ -167,8 +168,8 @@ function Hnavbar() {
              
               className={({ isActive }) =>
                 isActive
-                  ? "bg-blue-100  rounded-tr-full rounded-bl-full px-8 py-3  transition-all duration-200 h-[90%] relative top-1"
-                  : ""
+                  ? "bg-[#ff5f5f] text-white  rounded-tr-full rounded-bl-full px-8 py-3  transition-all duration-200 h-[90%] relative top-1"
+                  : "rounded-tr-full rounded-bl-full  px-12 py-3 transition-all duration-500 h-[90%] relative top-1 hover:bg-white"
               }
             >
               <span className="relative  ">
@@ -185,8 +186,8 @@ function Hnavbar() {
               onMouseLeave={hide}
               className={({ isActive }) =>
                 isActive
-                  ? "text-nav-about  bg-gray-800 rounded-tr-full rounded-bl-full text-white px-12 py-3  transition-all duration-200 h-[90%] relative top-1 "
-                  : ""
+                  ? "text-nav-about  bg-[#ff5f5f] text-white rounded-tr-full rounded-bl-full px-12 py-3  transition-all duration-200 h-[90%] relative top-1 "
+                  : "rounded-tr-full rounded-bl-full  px-12 py-3 transition-all duration-500 h-[90%] relative top-1 hover:bg-white"
               }
             >
               <span className="relative  ">ABOUT</span>
@@ -195,8 +196,8 @@ function Hnavbar() {
               to="/contact"
               className={({ isActive }) =>
                 isActive
-                  ? "bg-[#F7D137]  rounded-tr-full rounded-bl-full px-12 py-3  transition-all duration-200 h-[90%] relative top-1"
-                  : " "
+                  ? "bg-[#ff5f5f] text-white  rounded-tr-full rounded-bl-full px-12 py-3  transition-all duration-200 h-[90%] relative top-1"
+                  : " rounded-tr-full rounded-bl-full  px-12 py-3 transition-all duration-500 h-[90%] relative top-1 hover:bg-white"
               }
             >
               <span className="relative  "> CONTACT</span>
@@ -210,16 +211,16 @@ function Hnavbar() {
                 <>
                   <div className="w-4/5 flex m-auto justify-end  relative right-5 float-end  ">
                     <div className="space-x-3 flex   ">
-                      <div className=" trainsition-all duration-500  space-x-2 relative cursor-pointer bg-blue-600 rounded-lg    flex logg m-auto  justify-center  hover:bg-blue-400 text-black  ">
+                      <div className=" trainsition-all duration-500  space-x-2 relative cursor-pointer  rounded-lg    flex logg m-auto  justify-center   text-black  ">
                         {/* <h6 style={{fontSize:"0.8vw"}}>{(userprofile.name).split(" ")[0]}</h6>
                   <svg id="profilearrow" className="rotate-90" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg> */}
                         <button
                           onClick={() => {
                             handleprofile();
                           }}
-                          className="relative border border-gray-200 namebutton inline-flex items-center justify-start px-6 py-2 overflow-hidden font-medium transition-all bg-white rounded hover:bg-white group"
+                          className="relative border border-gray-200 namebutton inline-flex items-center justify-start px-6 py-2 overflow-hidden font-medium transition-all bg-white hover:text-white rounded hover:bg-white group"
                         >
-                          <span className="w-48 h-48 rounded rotate-[-40deg] bg-purple-600 absolute bottom-0 left-0 z-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
+                          <span className="w-48 h-48 rounded rotate-[-40deg] bg-[#FF5F5F] absolute bottom-0 left-0 z-0 -translate-x-full ease-out duration-200 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
                           <span className="relative w-full text-left transition-colors duration-300 ease-in-out text-sm ">
                             {" "}
                             {userprofile.name.split(" ")[0]}
@@ -240,11 +241,11 @@ function Hnavbar() {
                             />
                           </svg>
                         </button>
-                        <div className=" transition-all duration-150 translate-y-12 w-full drop-down  rounded-lg -top-1 -left-2 bg-blue-100 absolute hidden text-black">
+                        <div className=" transition-all duration-150 translate-y-12 w-full drop-down  rounded-lg -top-1 -left-2 bg-white absolute hidden text-black">
                           <ul className=" text-sm ">
                             <Link
                               to="/myprofile"
-                              className=" transition-all duration-200 p-2 flex  hover:bg-blue-300 space-x-1 "
+                              className=" transition-all duration-200 p-2 flex   space-x-1 "
                               onClick={handleprofile}
                             >
                               {" "}
@@ -260,7 +261,7 @@ function Hnavbar() {
                               <span>My Profile</span>
                             </Link>
                             <li
-                              className="flex p-2 space-x-1 transition-all duration-200 border-white hover:bg-blue-300  w-full"
+                              className="flex p-2 space-x-1 transition-all duration-200 border-white   w-full"
                               onClick={(e) => {
                                 orderAll(e);
                                 handleprofile()
@@ -285,7 +286,7 @@ function Hnavbar() {
                                 dispatch(logout());
                                 setflag(false);
                               }}
-                              className=" transition-all duration-200 p-2 hover:bg-blue-300 flex space-x-1  "
+                              className=" transition-all duration-200 p-2  flex space-x-1  "
                             >
                               {" "}
                               <svg
@@ -322,16 +323,16 @@ function Hnavbar() {
                   </div>
                 </>
               ) : (
-                <div className=" p-4 flex justify-end w-full ">
+                <div className=" p-4 flex justify-end w-full  ">
                   <Link
                     to="/SignIn"
                     className="transition-all duration-200        "
                   >
                     <button
                       aria-label="Sign in with Google "
-                      className="flex logg bg-blue-400 text-white  w-[110%] relative right-5  rounded-full p-0.5  "
+                      className="flex logg bg-white text-black  w-[110%] px-5 relative right-5  rounded-full p-0.5  "
                     >
-                      <div className="flex items-center justify-center bg-white w-[2.1vw] h-[2.1vw] rounded-full">
+                      <div className="flex items-center  bg-white w-[2.1vw] h-[2.1vw] rounded-full">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 24 24"
@@ -356,8 +357,8 @@ function Hnavbar() {
                           ></path>
                         </svg>
                       </div>
-                      <span className="relative  text-[0.8vw] ml-2  ">
-                        Sign/Google{" "}
+                      <span className="relative  text-[0.8vw]   ">
+                        Login
                       </span>
                     </button>
                   </Link>
@@ -380,7 +381,7 @@ function Hnavbar() {
           <PopUp />
          
         </div>
-        <div className="fixed w-[20%] m-auto top-20 left-[31%]   z-50 max-sm:hidden sm:visible " >
+        <div className="fixed w-[20%] m-auto top-20 left-[31%]   pop-up z-50 max-sm:hidden sm:visible " >
         <PrePopup/>
          
         </div>
