@@ -19,7 +19,7 @@ export default function Footer(){
                     <Link to='/aboutus' className=" hover:underline">About</Link>
                 </li>
                 <li className="mb-4">
-                    <Link to='/careers' className="hover:underline ds">Careers</Link>
+                    <Link to='/careers' className="hover:underline ds ">Careers</Link>
                 </li>
                 <li className="mb-4">
                     <a className="hover:underline decoration-none">Brand Center :Noida</a>

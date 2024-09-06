@@ -16,7 +16,7 @@ export default function PopUp() {
     }
   return (
     <>
-      <div onMouseEnter={onmouse} onMouseLeave={nomouse} className="w-3/5    m-auto pop-up hidden transition-all duration-800 relative z-20  ">
+      <div onMouseEnter={onmouse} onMouseLeave={nomouse} className="    m-auto pop-up hidden transition-all duration-800 relative z-20 border-2 border-yellow-300  ">
       <div className="grid grid-cols-2 grid-rows-1 ">
         <div className="p-2 bg-white ">
           <p>
