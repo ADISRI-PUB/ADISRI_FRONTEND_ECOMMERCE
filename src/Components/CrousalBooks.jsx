@@ -95,7 +95,7 @@ export default function CrousalBooks() {
       <div className="w-4/5 m-auto">
       <Slider {...settings}>
       <div className="h-[200px] relative " >
-          <Link to="/onetoeight">
+          <Link to="/preprimary">
 
           <div className="mx-auto   w-4/5 relative transform overflow-hidden rounded-lg bg-white text-gray-700  duration-300  ">
           <div className="w-[100%] h-[90%] relative " style={{perspective:'900px'}}>
@@ -112,7 +112,7 @@ export default function CrousalBooks() {
         </div>
      
         <div className="h-[200px] relative " >
-          <Link to="/onetoeight">
+          <Link to="/preprimary">
 
           <div className="mx-auto   w-4/5 relative transform overflow-hidden rounded-lg bg-white text-gray-700  duration-300  ">
           <div className="w-[100%] h-[100%] relative " style={{perspective:'900px'}}>
@@ -129,7 +129,7 @@ export default function CrousalBooks() {
         </div>
     
         <div className="h-[200px] relative " >
-          <Link to="/onetoeight">
+          <Link to="/preprimary">
 
           <div className="mx-auto   w-4/5 relative transform overflow-hidden rounded-lg bg-white text-gray-700  duration-300  ">
           <div className="w-[100%] h-[100%] relative " style={{perspective:'900px'}}>
@@ -145,7 +145,7 @@ export default function CrousalBooks() {
           </Link>
         </div>
         <div className="h-[200px] relative " >
-          <Link to="/onetoeight">
+          <Link to="/preprimary">
 
           <div className="mx-auto   w-4/5 relative transform overflow-hidden rounded-lg bg-white text-gray-700  duration-300  ">
           <div className="w-[100%] h-[100%] relative " style={{perspective:'900px'}}>
@@ -161,7 +161,7 @@ export default function CrousalBooks() {
           </Link>
         </div>
         <div className="h-[200px] relative " >
-          <Link to="/onetoeight">
+          <Link to="/preprimary">
 
           <div className="mx-auto   w-4/5 relative transform overflow-hidden rounded-lg bg-white text-gray-700  duration-300  ">
           <div className="w-[100%] h-[100%] relative " style={{perspective:'900px'}}>
@@ -177,7 +177,7 @@ export default function CrousalBooks() {
           </Link>
         </div>
         <div className="h-[200px] relative " >
-          <Link to="/onetoeight">
+          <Link to="/preprimary">
 
           <div className="mx-auto   w-4/5 relative transform overflow-hidden rounded-lg bg-white text-gray-700  duration-300  ">
           <div className="w-[100%] h-[100%] relative " style={{perspective:'900px'}}>
@@ -193,7 +193,7 @@ export default function CrousalBooks() {
           </Link>
         </div>
         <div className="h-[200px] relative " >
-          <Link to="/onetoeight">
+          <Link to="/preprimary">
 
           <div className="mx-auto   w-4/5 relative transform overflow-hidden rounded-lg bg-white text-gray-700  duration-300  ">
           <div className="w-[100%] h-[100%] relative " style={{perspective:'900px'}}>
@@ -209,7 +209,7 @@ export default function CrousalBooks() {
           </Link>
         </div>
         <div className="h-[200px] relative " >
-          <Link to="/onetoeight">
+          <Link to="/preprimary">
 
           <div className="mx-auto   w-4/5 relative transform overflow-hidden rounded-lg bg-white text-gray-700  duration-300  ">
           <div className="w-[100%] h-[100%] relative " style={{perspective:'900px'}}>
