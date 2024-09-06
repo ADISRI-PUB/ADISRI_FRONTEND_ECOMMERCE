@@ -34,8 +34,10 @@ function Ionetoeight() {
   const [Subject, setSubject] = useState([
     { id: 6, name: "Evs", isChecked: false },
     { id: 7, name: "English", isChecked: false },
-    { id: 8, name: "Hindi", isChecked: false },
-    { id: 9, name: "Math", isChecked: false },
+    { id: 8, name: "English Grammer", isChecked: false },
+    { id: 9, name: "Hindi", isChecked: false },
+    { id: 10, name: "Hindi Vyakaran", isChecked: false },
+    { id: 11, name: "Math", isChecked: false },
   
   ]);
 
