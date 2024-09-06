@@ -134,8 +134,21 @@ export default function Navbar({ menuopen }) {
               <Link to='/teachertraining' className="left-0 font-normal p-2  block"  onClick={menuopen} >Teacher Training Program</Link>
                   <Link to='/freeactivity' className="left-0 font-normal p-2 block "  onClick={menuopen} >Free Activity Sheets</Link>
            </AccordionItem> */}
-      
-        <NavLink
+        <AccordionItem
+        header={({ state }) => (
+          <div className="accordion-header flex  py-4">
+            <span className="px-3 ml-3 text-[1rem]">SCHOOL SOLUTIONS</span>
+            <span className={`arrow ${state.isExpanded ? 'expanded' : 'notexpended'} `}><svg  xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000"><path d="M480-360 280-560h400L480-360Z"/></svg>
+            </span>
+          </div>
+        )}
+      >
+         <Link className="left-0 font-normal p-2 ml-5 relative top-2  block " to="/onetoeight"onClick={menuopen} >SCHOOL SOLUTIONS</Link>
+              <Link to='/customizedcorner' className="left-0 font-normal p-2 ml-5 block"  onClick={menuopen} >Customized Corner</Link>
+              <Link to='/teachertraining' className="left-0 font-normal ml-5 p-2  block"  onClick={menuopen} >Teacher Training Program</Link>
+                  <Link to='/freeactivity' className="left-0 font-normal ml-5 p-2 block "  onClick={menuopen} >Free Activity Sheets</Link>
+      </AccordionItem>
+        {/* <NavLink
           to="/onetoeight"
           className={({ isActive }) =>
             isActive
@@ -144,12 +157,12 @@ export default function Navbar({ menuopen }) {
           }
           onClick={menuopen}
         >
-          <span className=" px-3 ">
+          <span className=" px-3 "> */}
             {" "}
             {/* 1<sup>st</sup> TO 8<sup>th</sup> */}
-            SCHOOL SOLUTION
+            {/* SCHOOL SOLUTION
           </span>
-        </NavLink>
+        </NavLink> */}
         <NavLink
           to="/contact"
           className={({ isActive }) =>
@@ -293,7 +306,7 @@ export default function Navbar({ menuopen }) {
           // to="/aboutus"
           className="px-4 tex-sm w-full block"
         >
-          <div className="flex logg justify-between  " >
+          <div className="flex logg justify-between  px-2  " >
 
           {
             flag ?(

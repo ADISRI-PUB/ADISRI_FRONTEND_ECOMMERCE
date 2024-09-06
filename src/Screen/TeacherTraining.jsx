@@ -1,12 +1,71 @@
-import React from "react";
+import React,{useState} from "react";
 import Slider from "react-slick";
 
-import { Helmet } from 'react-helmet';
+import { Helmet } from "react-helmet";
 
 
 import '../Css/IPrePrimary.css'
 
+
 function TeacherTraining() {
+  const [firstname, setfirstname] = useState("");
+  const [lastname, setlastname] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+  const regex = /[6-9]{1}[0-9]{9}/;
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    // setResult("Sending....");
+     
+       if (!regex.test(phone)) {
+          document.querySelector('.text').classList.replace("text-black","text-[#FF403D]")
+       }
+       else{
+        document.querySelector(".tracking-wide").textContent="sending......"
+
+        setTimeout(async()=>{
+          const formData = new FormData(event.target);
+          // console.log(formData);
+          
+          formData.append("access_key", "229f2605-024b-4455-9837-6bbd8d888654");
+          const response = await fetch("https://api.web3forms.com/submit", {
+           method: "POST",
+           body: formData
+         });
+         const data = await response.json();
+ 
+         if (data.success) {
+          document.querySelector(".tracking-wide").textContent="sent !"
+               setTimeout(()=>{
+                setEmail("");
+                          setMessage("");
+                          setPhone("");
+                          setSubject("");
+                          setfirstname("");
+                          setlastname("");
+                          event.target.reset();
+                            document.querySelector(".tracking-wide").textContent="send"
+               },1000)
+         } else {
+          //  console.log("Error", data);
+           // setResult(data.message);
+           document.querySelector('.tracking-wide').textContent="Please Try Again Later !"
+           setTimeout(()=>{
+             document.querySelector(".tracking-wide").textContent="send"
+
+           },1000)
+         }
+        },1000)
+        
+       }
+    
+
+   
+
+   
+  };
   var settings = {
     infinite: true,
     speed: 500,
@@ -217,28 +276,170 @@ function TeacherTraining() {
               </span>
             </a>
           </button>
-          <h4 className="text-lg font-medium text-[#293249] px-5 max-sm:text-sm max-sm:py-5">For More About this Program  <a href="mailto:design.adisri@gmail.com"> <b className="cursor-pointer"> Click Here</b> </a></h4>
-       
+          <br />
+          <h4 className="text-lg font-medium text-[#293249] px-5 max-sm:text-sm max-sm:py-5 w-full  " onClick={()=>{
+            document.querySelector('.formteachertraining').classList.toggle('hidden')
+          }}>For More About this Program <b className="cursor-pointer  p-2 text-sm bg-[#ff5f5f] text-white rounded-full max-sm:p-1"> Click Here</b></h4>
+         <div className={`formteachertraining max-w-[600px] m-auto relative  hidden`}>
+         <div className=" w-[100%] sm:max-w-[80%]  m-auto">
+                    <form
+                      id="Contact-us"
+                       onSubmit={onSubmit}
+                      className="rounded-lg  min-w-full"
+                    
+                    >
+                      
+                      <div className="">
+                        <div>
+                          {/* <h1 className="text-center text-2xl mb-6 text-white font-bold font-sans border-b-2 border-white">
+                    CONTACT FROM 
+                  </h1> */}
+                          <div className="grid sm:grid-cols-2 gap-10 max-sm:gap-2">
+                            <div>
+                              <label
+                                className="text-black font-semibold block sm:my-3 text-md"
+                                htmlFor="username"
+                              >
+                                First Name*
+                              </label>
+                              <input
+                                className="w-full  p-2 bg-transparent border-b-2 border-[#FF403D] text-black focus:outline-none"
+                                type="text"
+                                name="firstname"
+                                id="username"
+                                required
+                                value={firstname}
+                                onChange={(e) => setfirstname(e.target.value)}
+                              />
+                            </div>
+                            <div>
+                              <label
+                                className="text-black font-semibold block sm:my-3 text-md"
+                                htmlFor="username"
+                              >
+                                Last Name
+                              </label>
+                              <input
+                                className="w-full  p-2 bg-transparent border-b-2 border-[#FF403D] text-black focus:outline-none"
+                                type="text"
+                                name="lastname"
+                                id="username"
+                                value={lastname}
+                                onChange={(e) => {
+                                  setlastname(e.target.value);
+                                }}
+                              />
+                            </div>
+                          </div>
+                          <div className="grid sm:grid-cols-2 gap-10 max-sm:gap-5">
+                            <div>
+                              <label
+                                className="text-black font-semibold block my-3 text-md"
+                                htmlFor="username"
+                              >
+                                Email*
+                              </label>
+                              <input
+                                className="w-full  p-2 bg-transparent border-b-2 border-[#FF403D] text-black focus:outline-none"
+                                type="email"
+                                name="email"
+                                id="username"
+                                required
+                                value={email}
+                                onChange={(e) => {
+                                  setEmail(e.target.value);
+                                }}
+                              />
+                            </div>
+                            <div>
+                              <label
+                                className="text-black font-semibold block sm:my-3 text-md text"
+                                htmlFor="username"
+                              >
+                                Phone*
+                              </label>
+                              <input
+                                className="w-full  p-2 bg-transparent border-b-2 border-[#FF403D] text-black focus:outline-none"
+                                type="number"
+                                name="phone"
+                                id="username"
+                                required
+                                value={phone}
+                                onFocus={() => {
+                                  document
+                                    .querySelector(".text")
+                                    .classList.replace(
+                                      "text-[#FF403D]",
+                                      "text-black"
+                                    );
+                                }}
+                                onChange={(e) => {
+                                  setPhone(e.target.value);
+                                }}
+                              />
+                            </div>
+                          </div>
+                          <div>
+                            <label
+                              className="text-black font-semibold block my-3 text-md"
+                              htmlFor="username"
+                            >
+                              Subject
+                            </label>
+                            <input
+                              className="w-full  p-2 bg-transparent border-b-2 border-[#FF403D] text-black focus:outline-none"
+                              type="text"
+                              name="subject"
+                              id="username"
+                              required
+                              value={subject}
+                              onChange={(e) =>
+                                setSubject(e.target.value)
+                              }
+                            />
+                          </div>
+                          <div className="w-full ">
+                            <label
+                              className="text-black  font-semibold block my-3  text-md "
+                              htmlFor="username"
+                            >
+                              Message
+                            </label>
+                            <textarea
+                              className="w-full bg-transparent border-b-2 border-[#FF403D] text-black focus:outline-none"
+                              name="message"
+                              cols={"30"}
+                              rows={"5"}
+                              value={message}
+                              onChange={(e) => setMessage(e.target.value)}
+                            ></textarea>
+                          </div>
+                        </div>
+                      </div>
+
+                      <button
+                         type="submit"
+                        className="w-full mt-6 transition-all  duration-200 bg-[#FF403D] hover:bg-[#ff6764] rounded-lg px-4 py-2 text-lg text-white tracking-wide font-semibold font-sans "
+                      >
+                        Send
+                      </button>
+                    </form>
+                  </div>
+             
+         </div>
           <h3 className="text-2xl py-10 font-medium text-[#293249] max-sm:text-lg">
             New Academic System According To NEP
           </h3>
-          <div className="image-3d">
-          <img
-              className="w-[70%] m-auto"
-              src="proposal dr. Kalam foundation & adisri publications_page-0005.jpg"
-              alt=""
-            />
-          </div>
+       
           <div className="w-4/5 max-sm:w-[90%] m-auto   gap-0  _3d-container ">
            
-            <div className="">
-              <div className="text-center border-b-4 max-sm:border-b-2 border-black">
-              <p className="border-r-4 border-black text-lg ">Foundational</p>
+          <div className=" ">
+            <div className="text-center border-b-4 border-black text-3d ">
+              <p className="border-r-4 border-black text-xl ">Middle</p>
               </div>
-            <div className="_3d min-h-[200px]  h-full    "> 
-            
-                 <div className=" flex logg text-center m-auto   h-full bg-purple-800 text-white ">
-                 <div className="w-11/12 m-auto text-xl ">
+            <div className="_3d min-h-[200px]  h-full   bg-purple-400 text-white">
+            <div className=" flex logg text-center m-auto  h-full ">
+            <div className="w-11/12 m-auto text-xl ">
                  {/* <p className="border-b-2">Foundational</p> */}
                      <h6>2 Years</h6>
                      <p><span>(Class 1 & 2)</span> <span>(Class 6-8)</span></p>
@@ -246,16 +447,15 @@ function TeacherTraining() {
                      <p>3 Years (Anganwadi/pre-school/Balvatika)(Ages 3-6)</p>
                  </div>
                  </div>
-               </div>
-               </div>
-            <div className="">
-              <div className="text-center border-b-4 border-black">
-              <p className="border-r-4 border-black text-xl">Foundational</p>
+            </div>
+            </div>
+               <div className=" ">
+            <div className="text-center border-b-4 border-black text-3d ">
+              <p className="border-r-4 border-black text-xl ">Middle</p>
               </div>
-            <div className="_3d min-h-[200px]  h-full    "> 
-            
-                 <div className=" flex logg text-center m-auto   h-full bg-amber-500 text-white ">
-                 <div className="w-11/12 m-auto text-2xl ">
+            <div className="_3d min-h-[200px]  h-full   bg-amber-500 text-white">
+            <div className=" flex logg text-center m-auto  h-full ">
+            <div className="w-11/12 m-auto text-2xl ">
                  {/* <p className="border-b-2">Foundational</p> */}
                      <h6>3 Years</h6>
                      <p><span>(Class 3 to 5 )</span></p>
@@ -263,11 +463,11 @@ function TeacherTraining() {
                      <p>(Ages 8-11)</p>
                  </div>
                  </div>
-               </div>
-               </div>
+            </div>
+            </div>
              
-            <div>
-            <div className="text-center border-b-4 border-black">
+            <div className=" ">
+            <div className="text-center border-b-4 border-black text-3d ">
               <p className="border-r-4 border-black text-xl ">Middle</p>
               </div>
             <div className="_3d min-h-[200px]  h-full   bg-purple-400 text-white">
@@ -282,33 +482,232 @@ function TeacherTraining() {
                  </div>
             </div>
             </div>
-            <div>
-            <div className="text-center border-b-4 border-black">
-              <p className=" border-black text-xl">Secondary</p>
+            <div className=" ">
+            <div className="text-center border-b-4 border-black text-3d ">
+              <p className="border-r-4 border-black text-xl ">Middle</p>
               </div>
-            <div className="_3d min-h-[200px]  h-full   w-full bg-green-300">
-
+            <div className="_3d min-h-[200px]  h-full   bg-green-400 text-white">
             <div className=" flex logg text-center m-auto  h-full ">
                  <div className="w-11/12 m-auto text-2xl ">
-                 {/* <p>Secondary</p> */}
+                 {/* <p>Middle</p> */}
                      <h6>4 Years</h6>
                      <p><span>(Class 9 to 12)</span></p>
                      
-                     <p>(Ages 14-18)</p>
+                     <p>(Age 14-18)</p>
                  </div>
                  </div>
             </div>
             </div>
+          
           </div>
           <h3 className="text-2xl py-10 font-medium text-[#293249] max-sm:text-lg">
             List of Topics included in Teacher Training Program
           </h3>
-          <div className="w-2/5 max-sm:w-[90%] m-auto">
-            <img
-              className=""
-              src="proposal dr. Kalam foundation & adisri publications_page-0004.jpg"
-              alt=""
-            />
+          <div className="w-3/5 flex  justify-center m-auto max-sm:w-[90%] ">
+          {/* <table>
+            <tr>
+              <th>S.NO</th>
+              <th>Topics</th>
+              <th>Category</th>
+            </tr>
+            <tr>
+              <td>1.</td>
+              <td className="">New Education Policy (NEP)2020</td>
+              <td className="">ALL</td>              
+            </tr>
+            <tr>
+              <td>2.</td>
+              <td>National Curriculum Framework(NCF): Foundational Satge</td>
+              <td>Foundation</td>
+            </tr>
+            <tr>
+              <td>3.</td>
+              <td></td>
+              <td></td>
+            </tr>
+          </table> */}
+          <table border="1" cellspacing="0" cellpadding="5" className="max-sm:text-xs">
+  <thead >
+    <tr className="bg-[#FF5F5F] ">
+      <th>S.NO</th>
+      <th>Topics</th>
+      <th>Category</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>New Education Policy (NEP) 2020</td>
+      <td>All</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>National Curriculum Framework (NCF): Foundational Stage</td>
+      <td>Foundational</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Early Childhood Care and Education FLN- Foundational Literacy & Numeracy</td>
+      <td>Foundational</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>FLN - Foundfational Literacy & Numeracy </td>
+      <td>Foundational</td>
+    </tr>
+   
+    <tr>
+      <td>5</td>
+      <td>HPC-Holistic Progress Card</td>
+      <td>Foundational & Prep.</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Storytelling Pedagogy</td>
+      <td>Foundational & Prep.</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>Game based Pedagogy</td>
+      <td>Foundational & Prep.</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>Making a Lesson Plan Essential Components</td>
+      <td>All</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>Alternative to Homework</td>
+      <td>Foundational & Prep.</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>Three domains of child development-Parent, Teacher & Child</td>
+      <td>Foundational & Prep.</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>Environmental Education</td>
+      <td>Found. Prep & Middle</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>Learning by doing</td>
+      <td>Middle</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>Adolescent Education Programme</td>
+      <td>Middle</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>Art Integration</td>
+      <td>All</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>Classroom Management</td>
+      <td>All</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>Critical & Creative Thinking</td>
+      <td>All</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>Experiential Learning</td>
+      <td>All</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>Gender Sensitivity in Schools</td>
+      <td>All</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>Happy Classrooms</td>
+      <td>All</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>Ethics & Integrity</td>
+      <td>All</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>Learning outcomes & Pedagogies</td>
+      <td>All</td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td>Life skills (Basic)</td>
+      <td>All</td>
+    </tr>
+    <tr>
+      <td>23</td>
+      <td>21st Century Skill Based Classrooms</td>
+      <td>All</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>Career Guidance</td>
+      <td>Secondary</td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>Cyber Safety & Security</td>
+      <td>Secondary</td>
+    </tr>
+    <tr>
+      <td>26</td>
+      <td>Stress Management</td>
+      <td>Secondary</td>
+    </tr>
+    <tr>
+      <td>27</td>
+      <td>Strengthening Assessment & Evaluation Practices</td>
+      <td>Secondary</td>
+    </tr>
+    <tr>
+      <td>28</td>
+      <td>Leading Transformation</td>
+      <td>Secondary</td>
+    </tr>
+    <tr>
+      <td>29</td>
+      <td>School Libraries</td>
+      <td>Secondary</td>
+    </tr>
+    <tr>
+      <td>30</td>
+      <td>Theory of Knowledge</td>
+      <td>Secondary</td>
+    </tr>
+    <tr>
+      <td>31</td>
+      <td>Active Learning</td>
+      <td>Secondary</td>
+    </tr>
+    <tr>
+      <td>32</td>
+      <td>Project based learning</td>
+      <td>Secondary/All</td>
+    </tr>
+    <tr>
+      <td>33</td>
+      <td>Competency Based Assessment (Secondary Level)- Generic</td>
+      <td>Secondary</td>
+    </tr>
+    <tr>
+      <td>34</td>
+      <td>SQAAF(Principal/Vice Principal /SR.Coordinator)</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
           </div>
         
         

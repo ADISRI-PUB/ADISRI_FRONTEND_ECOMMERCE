@@ -12,6 +12,7 @@ import Navbar from "./Navbar";
 import { useNavigate } from "react-router-dom";
 import { getAllOrderDetails } from "../actions/OrderActions";
 import PrePopup from "../Components/PrePopup";
+import Onetorightpopup from "../Components/Onetoeightpopup";
 function Hnavbar() {
   //kamal
   const [flag, setflag] = useState(false);
@@ -22,7 +23,7 @@ function Hnavbar() {
   const handleprofile = () => {
     document.querySelector("#profilearrow").classList.toggle("rotate-180");
     document.querySelector(".namebutton").classList.toggle("bg-white")
-    document.querySelector(".namebutton").classList.toggle("bg-[#FF5F5F]")
+    document.querySelector(".namebutton").classList.toggle("bg-[#ff5f5f]")
     document.querySelector(".namebutton").classList.toggle("text-white")
     document.querySelector(".drop-down").classList.toggle("hidden");
     document.querySelector(".drop-down").classList.toggle("show");
@@ -116,6 +117,20 @@ function Hnavbar() {
     }
   },160)
  }
+ const show3=()=>{
+    document.querySelector('.second3').classList.remove('hidden')
+    // console.log("dsfsfsfs");
+    
+ }
+ const hide3=()=>{
+  setTimeout(()=>{
+
+    if (!document.querySelector('.second3').classList.contains('visited')) {
+      document.querySelector('.second3').classList.add('hidden')
+      
+    }
+  },160)
+ }
   return (
     <>
     <nav>
@@ -124,14 +139,14 @@ function Hnavbar() {
         className="w-screen h-screen  bg-transparent absolute click  hidden max-sm:hidden"
       ></div>
       <div className="block relative    bg-transparent">
-        <div className=" z-50 max-w-full sticky top-0 bg-[#FCE992] backdrop-blur-sm    border-white  flex  max-sm:p-0 logg max-sm:h-[50px] sm:h-[80px]  ">
+        <div className=" z-50 max-w-full sticky top-0 bg-[#FCE992] backdrop-blur-sm justify-between   border-white  flex  max-sm:p-0 logg max-sm:h-[50px] sm:h-[80px]  overflow-visible">
         
           <Link
             to="/"
-            className="float-start  flex logg   sm:w-[20%]  homologo  "
+            className="float-start     max-sm:w-[50%] block home-logo  "
           >
             <img
-              className="w-[80%]   relative left-2 "
+              className=" w-[60%]  relative left-2 "
               src="ADISRI LOGO 2.png"
               alt="adisri logo"
             />
@@ -144,8 +159,8 @@ function Hnavbar() {
               to="/"
               className={({ isActive }) =>
                 isActive
-                  ? "bg-[#ff5f5f] text-white rounded-tr-full rounded-bl-full  px-12 py-3 transition-all duration-200 h-[90%] relative top-1"
-                  : " rounded-tr-full rounded-bl-full  px-12 py-3 transition-all duration-500 h-[90%] relative top-1 hover:bg-white"
+                  ? "bg-[#ff5f5f] rounded-lg  text-white px-12 py-3 transition-all duration-200 h-[90%] relative top-1"
+                  : "   px-12 py-3 transition-all duration-500 h-[90%] relative top-1 hover:bg-white "
               }
             >
               <span className="relative  "> HOME</span>
@@ -157,19 +172,20 @@ function Hnavbar() {
               onMouseLeave={hide2}
               className={({ isActive }) =>
                 isActive
-                  ? "bg-[#ff5f5f] text-white rounded-tr-full rounded-bl-full  px-8 py-3  transition-all duration-200 h-[90%] relative top-1"
-                  : "rounded-tr-full rounded-bl-full  px-12 py-3 transition-all duration-500 h-[90%] relative top-1 hover:bg-white  "
+                  ? "bg-[#ff5f5f] rounded-lg  text-white   px-8 py-3  transition-all duration-200 h-[90%] relative top-1"
+                  : "  px-12 py-3 transition-all duration-500 h-[90%] relative top-1 hover:bg-white  "
               }
             >
              <span className=""> PRE SCHOOL SOLUTIONS</span>
             </NavLink>
             <NavLink
               to="/onetoeight"
-             
+             onMouseEnter={show3}
+             onMouseLeave={hide3}
               className={({ isActive }) =>
                 isActive
-                  ? "bg-[#ff5f5f] text-white  rounded-tr-full rounded-bl-full px-8 py-3  transition-all duration-200 h-[90%] relative top-1"
-                  : "rounded-tr-full rounded-bl-full  px-12 py-3 transition-all duration-500 h-[90%] relative top-1 hover:bg-white"
+                  ? "bg-[#ff5f5f] rounded-lg  text-white   px-8 py-3  transition-all duration-200 h-[90%] relative top-1 "
+                  : "  px-12 py-3 transition-all duration-500 h-[90%] relative top-1 hover:bg-white "
               }
             >
               <span className="relative  ">
@@ -177,6 +193,7 @@ function Hnavbar() {
                 {/* 1<sup>st</sup> TO 8<sup>th</sup> */}
                 SCHOOL SOLUTIONS
               </span>
+             
             </NavLink>
 
             <NavLink
@@ -186,8 +203,8 @@ function Hnavbar() {
               onMouseLeave={hide}
               className={({ isActive }) =>
                 isActive
-                  ? "text-nav-about  bg-[#ff5f5f] text-white rounded-tr-full rounded-bl-full px-12 py-3  transition-all duration-200 h-[90%] relative top-1 "
-                  : "rounded-tr-full rounded-bl-full  px-12 py-3 transition-all duration-500 h-[90%] relative top-1 hover:bg-white"
+                  ? "text-nav-about  bg-[#ff5f5f] rounded-lg  text-white  px-12 py-3  transition-all duration-200 h-[90%] relative top-1 "
+                  : "  px-12 py-3 transition-all duration-500 h-[90%] relative top-1 hover:bg-white"
               }
             >
               <span className="relative  ">ABOUT</span>
@@ -196,8 +213,8 @@ function Hnavbar() {
               to="/contact"
               className={({ isActive }) =>
                 isActive
-                  ? "bg-[#ff5f5f] text-white  rounded-tr-full rounded-bl-full px-12 py-3  transition-all duration-200 h-[90%] relative top-1"
-                  : " rounded-tr-full rounded-bl-full  px-12 py-3 transition-all duration-500 h-[90%] relative top-1 hover:bg-white"
+                  ? "bg-[#ff5f5f] rounded-lg  text-white   px-12 py-3  transition-all duration-200 h-[90%] relative top-1"
+                  : "   px-12 py-3 transition-all duration-500 h-[90%] relative top-1 hover:bg-white"
               }
             >
               <span className="relative  "> CONTACT</span>
@@ -220,7 +237,7 @@ function Hnavbar() {
                           }}
                           className="relative border border-gray-200 namebutton inline-flex items-center justify-start px-6 py-2 overflow-hidden font-medium transition-all bg-white hover:text-white rounded hover:bg-white group"
                         >
-                          <span className="w-48 h-48 rounded rotate-[-40deg] bg-[#FF5F5F] absolute bottom-0 left-0 z-0 -translate-x-full ease-out duration-200 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
+                          <span className="w-48 h-48 rounded rotate-[-40deg] bg-[#ff5f5f]   absolute bottom-0 left-0 z-0 -translate-x-full ease-out duration-200 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
                           <span className="relative w-full text-left transition-colors duration-300 ease-in-out text-sm ">
                             {" "}
                             {userprofile.name.split(" ")[0]}
@@ -377,11 +394,15 @@ function Hnavbar() {
             </div>
           </div>
         </div>
-        <div className="fixed w-3/5 m-auto top-20 right-12 z-50 max-sm:hidden sm:visible">
+        <div className="fixed  w-2/5 left-[50%] m-auto top-20  z-50 max-sm:hidden sm:visible">
           <PopUp />
          
         </div>
-        <div className="fixed w-[20%] m-auto top-20 left-[31%]   pop-up z-50 max-sm:hidden sm:visible " >
+        <div className="fixed w-1/5 m-auto left-[50%] top-20  z-50 max-sm:hidden sm:visible">
+          <Onetorightpopup />
+         
+        </div>
+        <div className="fixed  w-1/5 left-[35%] m-auto  top-20    pop-up z-50 max-sm:hidden sm:visible  " >
         <PrePopup/>
          
         </div>

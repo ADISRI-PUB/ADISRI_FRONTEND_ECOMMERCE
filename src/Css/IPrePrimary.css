@@ -63,7 +63,10 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
 
   }
-  .image-3d{
+  .text-3d{
+    visibility: visible;
+  }
+  .text2-3d{
     display: none;
   }
 }
@@ -82,10 +85,11 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto; 
   }
-  ._3d-container{
-    display: none;
- }
-  .image-3d{
+  
+  .text-3d{
+    visibility: hidden;
+  }
+  .image2-3d{
     display: contents;
   }
 }
@@ -103,10 +107,11 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto; 
   }
-  ._3d-container{
-     display: none;
+ 
+  .text-3d{
+    visibility: hidden;
   }
-  .image-3d{
+  .image2-3d{
     display: contents;
   }
 }

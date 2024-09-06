@@ -13,7 +13,7 @@ function PrePopup() {
   return (
     <div>
       <div
-        className="bg-white  space-y-1 hidden second2      "
+        className="bg-white  space-y-1 hidden second2  border-2 border-yellow-300    "
         onMouseEnter={breakhide}
         onMouseLeave={showhide}
       >
