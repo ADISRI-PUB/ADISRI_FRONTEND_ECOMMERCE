@@ -435,9 +435,9 @@ function TeacherTraining() {
            
           <div className=" ">
             <div className="text-center border-b-4 border-black text-3d ">
-              <p className="border-r-4 border-black text-xl ">Middle</p>
+              <p className="border-r-4 border-black text-xl ">Foundational</p>
               </div>
-            <div className="_3d min-h-[200px]  h-full   bg-purple-400 text-white">
+            <div className="_3d min-h-[200px]  h-full   bg-purple-700 text-white">
             <div className=" flex logg text-center m-auto  h-full ">
             <div className="w-11/12 m-auto text-xl ">
                  {/* <p className="border-b-2">Foundational</p> */}
@@ -451,7 +451,7 @@ function TeacherTraining() {
             </div>
                <div className=" ">
             <div className="text-center border-b-4 border-black text-3d ">
-              <p className="border-r-4 border-black text-xl ">Middle</p>
+              <p className="border-r-4 border-black text-xl ">Preparatory</p>
               </div>
             <div className="_3d min-h-[200px]  h-full   bg-amber-500 text-white">
             <div className=" flex logg text-center m-auto  h-full ">
@@ -484,7 +484,7 @@ function TeacherTraining() {
             </div>
             <div className=" ">
             <div className="text-center border-b-4 border-black text-3d ">
-              <p className="border-r-4 border-black text-xl ">Middle</p>
+              <p className="border-r-4 border-black text-xl ">Secondary</p>
               </div>
             <div className="_3d min-h-[200px]  h-full   bg-green-400 text-white">
             <div className=" flex logg text-center m-auto  h-full ">

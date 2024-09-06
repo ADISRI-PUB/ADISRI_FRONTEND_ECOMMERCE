@@ -33,7 +33,7 @@ function FilterTAb({Class,Subject,setSubject ,setClass,API ,setApi}) {
     const handleChange = (ids) => {
       let newarr = [...Class]
       let newarr_subject =[...Subject]
-      
+   
       newarr.forEach((e) => {
        
         if (e.id == ids) {
@@ -87,7 +87,7 @@ function FilterTAb({Class,Subject,setSubject ,setClass,API ,setApi}) {
      <div className='  sm:w-[100%]  filter-container '>  
           <div className=" max-sm:bg-white  slide-bar leading-tight  min-h-screen max-h-screen   p-4 overflow-hidden relative max-sm:-translate-x-full  transition-all duration-400 " >
       
-          <div className=" transition-all duration-1000 text-lg   rounded-lg grid grid-col-2 logg relative cursor-pointer" >
+          <div className=" transition-all duration-1000 text-lg   rounded-lg grid grid-col-2 logg relative " >
             <div className='flex  relative logg' >
            <span className='max-sm:text-sm max-sm:p-3'>By Class</span>
           
@@ -98,12 +98,13 @@ function FilterTAb({Class,Subject,setSubject ,setClass,API ,setApi}) {
               <div  className="space-x-2 newclass" key={element.id}>
                 <input
                   type="checkbox"
+                  className='cursor-pointer'
                   onChange={() => handleChange(element.id)}
                   name={`${element.name}`}
                   value={`${element.name}`}
                   id={`${element.id}`}
                 />
-                <label className="sm:text-[1vw] max-sm:text-sm" htmlFor={`${element.id}`}>{element.name}</label>
+                <label  className="sm:text-[1vw]  max-sm:text-sm " htmlFor={`${element.id}`}>{element.name}</label>
               </div>
             );
           })}
@@ -114,7 +115,7 @@ function FilterTAb({Class,Subject,setSubject ,setClass,API ,setApi}) {
       
 
          
-          <div className=" transition-all duration-1000 text-lg  rounded-lg grid grid-col-2 logg relative cursor-pointer" >
+          <div className=" transition-all duration-1000 text-lg  rounded-lg grid grid-col-2 logg relative " >
             <div className='flex  relative logg'>
            <span className=' max-sm:text-sm  max-sm:p-3'> By Subjects</span>
            </div>
@@ -124,12 +125,13 @@ function FilterTAb({Class,Subject,setSubject ,setClass,API ,setApi}) {
               <div className="space-x-2 newclass2" key={element.id}>
                 <input
                   type="checkbox"
+                  className='cursor-pointer'
                   onChange={() => handleChange(element.id)}
                   name={`${element.name}`}
                   value={`${element.name}`}
                   id={`${element.id}`}
                 />
-                <label className="text-[1vw] max-sm:text-sm" htmlFor={`${element.id}`}>{element.name}</label>
+                <label  className="text-[1vw] max-sm:text-sm " htmlFor={`${element.id}`}>{element.name}</label>
               </div>
             );
           })}

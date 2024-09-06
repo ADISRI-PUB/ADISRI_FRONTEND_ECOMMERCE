@@ -38,7 +38,6 @@ function Ionetoeight() {
     { id: 9, name: "Hindi", isChecked: false },
     { id: 10, name: "Hindi Vyakaran", isChecked: false },
     { id: 11, name: "Math", isChecked: false },
-  
   ]);
 
   let data;
