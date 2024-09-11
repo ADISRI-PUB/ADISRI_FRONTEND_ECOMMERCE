@@ -27,14 +27,16 @@ export default function PopUp() {
 
           <a href="">  <li className="hover:bg-[#FF5F5F] p-2"> Our Distribution Centers</li></a>
             <Link to='/'> <li className="hover:bg-[#FF5F5F] p-2"> Adisri Journey</li></Link>
-            <a href="https://drive.google.com/file/d/1_46HY9Y0bdyyTbkUIYupRLJ_0WAln0Ei/view?usp=sharing" download="catalog.pdf" target="_blank"> <li className="hover:bg-[#FF5F5F] p-2">Catalogue</li></a>
+            <a href="https://drive.google.com/uc?export=download&id=1aCRy4BfWLZ02ivUPVGwraHMXfCQE_MbC" download="catalog.pdf" >
+  <li className="hover:bg-[#FF5F5F] p-2">Catalogue</li>
+</a>
           </ul>
           <div className="h-12 bg-white">
 
           </div>
         </div>
         <div className="bg-white p-2">
-          <p clas>
+          <p >
             <b> Career </b>
           </p>
           <ul className="targets">

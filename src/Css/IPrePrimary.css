@@ -48,7 +48,7 @@
 @media (min-width:1042px){
   .card-container{
     display: grid;
-    gap: 25px;
+    
     grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
     grid-template-rows: auto;
   }
@@ -97,7 +97,7 @@
   .card-container{
     display: grid;
     grid-template-columns:1fr 1fr ;
-    gap: 10px;
+   
     grid-template-rows: auto;
    
   }
@@ -133,7 +133,7 @@
 }
 .image-card{
   transform-style: preserve-3d;
-  perspective: 100px;
+  perspective: 10px;
   transform: rotateY(20deg);
   transition: all;
   transition-duration: 300ms;

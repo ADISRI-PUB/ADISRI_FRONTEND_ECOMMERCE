@@ -13,22 +13,22 @@ export default function Footer(){
       <div className="grid grid-cols-2    gap-8 max-sm:gap-3  max-sm:py-10 px-4 py-6 lg:py-8 md:grid-cols-4 ">
         <div className="">
             <div className="m-auto w-max max-sm:w-full   ">
-            <h2 className="mb-6 text-2xl max-sm:text-xs font-semibold  text-red-400  font-sans">Adisri Kids Book</h2>
-            <ul className="text-gray-800   font-medium ">
-                <li className="mb-4">
+            <h2 className="mb-6 text-2xl max-sm:text-xl font-semibold  text-red-400  font-sans">Adisri Kids Book</h2>
+            <ul className="text-gray-800 text-2xl max-sm:text-xl   font-medium ">
+                <li className="mb-4 text-[0.7em]">
                     <Link to='/playgroup' className=" hover:underline">
                     Customize Corner</Link>
                 </li>
-                <li className="mb-4">
+                <li className="mb-4 text-[0.7em]">
                     <Link to='/playgroup' className=" hover:underline">Playgroup</Link>
                 </li>
-                <li className="mb-4">
+                <li className="mb-4 text-[0.7em]">
                     <Link to='/nursery' className="hover:underline ds ">Nursery</Link>
                 </li>
-                <li className="mb-4">
+                <li className="mb-4 text-[0.7em]">
                     <Link to='/lowerlkg' className="hover:underline ds ">Lower (LKG)</Link>
                 </li>
-                <li className="mb-4">
+                <li className="mb-4 text-[0.7em]">
                     <Link to='/upperukg' className="hover:underline ds ">Upper (UKG)</Link>
                 </li>
              
@@ -39,18 +39,18 @@ export default function Footer(){
         </div>
         <div className="">
             <div className="m-auto w-max max-sm:w-full   ">
-            <h2 className="mb-6 text-2xl max-sm:text-xs font-semibold  text-red-400  font-sans">Adisri School Books</h2>
-            <ul className="text-gray-800   font-medium ">
-                <li className="mb-4">
+            <h2 className="mb-6 text-2xl max-sm:text-xl font-semibold  text-red-400  font-sans">Adisri School Books</h2>
+            <ul className="text-gray-800 text-2xl max-sm:text-xl   font-medium ">
+                <li className="mb-4 text-[0.7em]">
                     <Link to='/onetoeight' className=" hover:underline">Customized Corner</Link>
                 </li>
-                <li className="mb-4">
+                <li className="mb-4 text-[0.7em]">
                     <Link to='/onetoeight' className="hover:underline ds "> Class 2 And ALL Subject</Link>
                 </li>
-                <li className="mb-4">
+                <li className="mb-4 text-[0.7em]">
                     <Link to='/onetoeight' className="hover:underline ds ">Class 3</Link>
                 </li>
-                <li className="mb-4">
+                <li className="mb-4 text-[0.7em]">
                     <Link to='/onetoeight' className="hover:underline ds ">Class 4</Link>
                 </li>
              
@@ -78,18 +78,18 @@ export default function Footer(){
         </div> */}
       <div className="">
             <div className="m-auto w-max max-sm:w-full   ">
-            <h2 className="mb-6 text-2xl max-sm:text-xs font-semibold  text-red-400  font-sans">Adisri School Books</h2>
-            <ul className="text-gray-800   font-medium ">
-                <li className="mb-4">
+            <h2 className="mb-6 text-2xl max-sm:text-xl font-semibold  text-red-400  font-sans">Adisri School Books</h2>
+            <ul className="text-gray-800 text-2xl max-sm:text-xl  font-medium ">
+                <li className="mb-4  text-[0.7em]">
                     <Link to='/teachertraining' className=" hover:underline">Class Room Plannning</Link>
                 </li>
-                <li className="mb-4">
+                <li className="mb-4 text-[0.7em]">
                     <Link to='/teachertraining' className=" hover:underline">Online Training Courses</Link>
                 </li>
-                <li className="mb-4">
+                <li className="mb-4 text-[0.7em]">
                     <Link to='/teachertraining' className=" hover:underline">Certification Course</Link>
                 </li>
-                <li className="mb-4">
+                <li className="mb-4 text-[0.7em]">
                     <Link to='/teachertraining' className=" hover:underline">Lesson Plan</Link>
                 </li>
             
@@ -100,16 +100,16 @@ export default function Footer(){
         <div>
         <div className="">
             <div className="m-auto w-max max-sm:w-full   ">
-            <h2 className="mb-6 text-2xl max-sm:text-xs font-semibold  text-red-400  font-sans">Support</h2>
-            <ul className="text-gray-800 font-medium">
+            <h2 className="mb-6 text-2xl max-sm:text-xl font-semibold  text-red-400  font-sans">Support</h2>
+            <ul className="text-gray-800 font-medium text-2xl max-sm:text-xl">
               
-              <li className="mb-4">
+              <li className="mb-4 text-[0.7em]">
                   <a href="https://www.facebook.com/adisripublications/" target="_blank" className="hover:underline">Facebook</a>
               </li>
-              <li className="mb-4">
+              <li className="mb-4 text-[0.7em]">
                   <a href="https://www.linkedin.com/company/adisri-publications?originalSubdomain=in" target="_blank" className="hover:underline">LinkedIn</a>
               </li>
-              <li className="mb-4">
+              <li className="mb-4 text-[0.7em]">
                   <Link to="/contact" className="hover:underline">Contact Us</Link>
               </li>
           </ul>

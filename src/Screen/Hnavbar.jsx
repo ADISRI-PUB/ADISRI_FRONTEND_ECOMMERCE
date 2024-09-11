@@ -143,7 +143,7 @@ function Hnavbar() {
         
           <Link
             to="/"
-            className="float-start     max-sm:w-[50%] block home-logo  "
+            className="float-start     max-sm:w-[50%] block home-logo  sm:w-[40%] "
           >
             <img
               className=" w-[60%]  relative left-2 "
@@ -154,13 +154,13 @@ function Hnavbar() {
 
          
 
-          <div className="w-[60%] flex text-[0.8vw] justify-evenly logg hide-visible2 text-gray-700  ">
+          <div className="w-[80%] flex text-[0.71vw] justify-evenly logg hide-visible2 text-gray-700  ">
             <NavLink
               to="/"
               className={({ isActive }) =>
                 isActive
-                  ? "bg-[#ff5f5f] rounded-lg  text-white px-12 py-3 transition-all duration-200 h-[90%] relative top-1"
-                  : "   px-12 py-3 transition-all duration-500 h-[90%] relative top-1 hover:bg-white "
+                  ? "bg-[#ff5f5f] rounded-full text-white px-[5.1em] py-[1em] transition-all duration-200 relative top-1"
+                  : "   px-[5.1em] py-[1em] transition-all duration-500 h-[90%] relative top-1 hover:bg-white rounded-full"
               }
             >
               <span className="relative  "> HOME</span>
@@ -172,8 +172,8 @@ function Hnavbar() {
               onMouseLeave={hide2}
               className={({ isActive }) =>
                 isActive
-                  ? "bg-[#ff5f5f] rounded-lg  text-white   px-8 py-3  transition-all duration-200 h-[90%] relative top-1"
-                  : "  px-12 py-3 transition-all duration-500 h-[90%] relative top-1 hover:bg-white  "
+                  ? "bg-[#ff5f5f] rounded-full  text-white p-[1em]   transition-all duration-200  relative top-1"
+                  : "  p-[1em]  transition-all duration-500 relative top-1 hover:bg-white rounded-full "
               }
             >
              <span className=""> PRE SCHOOL SOLUTIONS</span>
@@ -184,8 +184,8 @@ function Hnavbar() {
              onMouseLeave={hide3}
               className={({ isActive }) =>
                 isActive
-                  ? "bg-[#ff5f5f] rounded-lg  text-white   px-8 py-3  transition-all duration-200 h-[90%] relative top-1 "
-                  : "  px-12 py-3 transition-all duration-500 h-[90%] relative top-1 hover:bg-white "
+                  ? "bg-[#ff5f5f] rounded-full  text-white px-[1.9em]   p-[1em]  transition-all duration-200 h-[90%] relative top-1 "
+                  : "  px-[1.9em] p-[1em] transition-all duration-500 h-[90%] relative top-1 hover:bg-white rounded-full "
               }
             >
               <span className="relative  ">
@@ -203,26 +203,30 @@ function Hnavbar() {
               onMouseLeave={hide}
               className={({ isActive }) =>
                 isActive
-                  ? "text-nav-about  bg-[#ff5f5f] rounded-lg  text-white  px-12 py-3  transition-all duration-200 h-[90%] relative top-1 "
-                  : "  px-12 py-3 transition-all duration-500 h-[90%] relative top-1 hover:bg-white"
+                  ? "text-nav-about  bg-[#ff5f5f] rounded-full  text-white px-[3.1em] py-[1em]   transition-all duration-200 h-[90%] relative top-1 "
+                  : "   px-[3.1em] py-[1em]  transition-all duration-500 h-[90%] relative top-1 hover:bg-white rounded-full"
               }
             >
-              <span className="relative  ">ABOUT</span>
+              <span className="relative  "> ABOUT</span>
             </NavLink>
             <NavLink
               to="/contact"
+              onClick={removepopup}
+              onMouseEnter={show}
+              onMouseLeave={hide}
               className={({ isActive }) =>
                 isActive
-                  ? "bg-[#ff5f5f] rounded-lg  text-white   px-12 py-3  transition-all duration-200 h-[90%] relative top-1"
-                  : "   px-12 py-3 transition-all duration-500 h-[90%] relative top-1 hover:bg-white"
+                  ? "text-nav-about  bg-[#ff5f5f] rounded-full  text-white  px-[3.1em] py-[1em]  transition-all duration-200 h-[90%] relative top-1 "
+                  : "   px-[3.1em] py-[1em] transition-all duration-500 h-[90%] relative top-1 hover:bg-white rounded-full"
               }
             >
-              <span className="relative  "> CONTACT</span>
+                <span className="relative  "> CONTACT</span>
             </NavLink>
+          
           
           </div>
        
-          <div className="loginbutton   w-[20%]    hide-visible2 ">
+          <div className="loginbutton   w-[30%]   hide-visible2  ">
             <div className="  w-full justify-center   ">
               {flag ? (
                 <>
@@ -302,6 +306,7 @@ function Hnavbar() {
                                 googleLogout();
                                 dispatch(logout());
                                 setflag(false);
+                                home('/')
                               }}
                               className=" transition-all duration-200 p-2  flex space-x-1  "
                             >
