@@ -6,6 +6,7 @@ import { listProductsDetails } from "../actions/ProductsActions";
 import { addToCart, removeFromCart } from "../actions/CartActions";
 import { Helmet } from 'react-helmet';
 import Loader from "./Loader";
+import ViewPages from "./ViewPages";
 function SingleBookpage() {
   const dispatch = useDispatch();
   const history = useNavigate();
@@ -16,7 +17,7 @@ function SingleBookpage() {
   const [Quantity, setquantity] = useState(1);
   let { loading, error, product = [] } = productDetails;
   const [dynamic, setdynamicimage] = useState("");
-
+  const [preview2,setpreview2] =useState(false)
   const handleimage = (e) => {
     let img = e.target;
     document
@@ -45,11 +46,12 @@ function SingleBookpage() {
         <Loader />
       ) : (
         <>
+            
         {
           Object.keys(product).length? (
             <div
             key={product.Product_Id}
-            className="w-full min-h-screen flex gap-5"
+            className="w-full min-h-screen flex "
           >
              <div className="applications">
       <Helmet>
@@ -65,11 +67,21 @@ function SingleBookpage() {
         />
       </Helmet>
       </div>
-            <div className="font-sans  w-full  ">
+            <div className="font-sans  w-full relative z-0 ">
+              {
+   preview2?(
+<div className="  h-screen w-screen bg-black/50 absolute  z-50 m-auto ">
+    {
+      product?.Image && preview2 ?(<ViewPages Images ={product?.Image} pagevisiblity={setpreview2}/>):("")
+    }
+    </div>
+   ):("")
+                
+              }
               <div className="p-4 max-sm:p-1   mx-auto">
                 <div className="grid items-start gap-10 grid-cols-2 lg:grid-cols-5   p-6 rounded-lg ">
                   <div className="lg:col-span-2 max-sm:col-span-3   top-0 text-center sm:w-1/2 max-sm:w-3/4 max-sm:m-auto ">
-                    <div className="px-2 py-6 rounded-lg  relative bg-white">
+                    <div className="px-2 py-6 rounded-lg  relative shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] bg-[#FF5F5F]">
                       {
                   <img
                   id="frontpage"
@@ -80,10 +92,10 @@ function SingleBookpage() {
                 
                       }
                       
-                      <button
+                      {/* <button
                         type="button"
                         className="absolute top-4 right-4"
-                      ></button>
+                      ></button> */}
                     </div>
                     <div className="mt-6 flex  justify-center gap-6 mx-auto  ">
                       {
@@ -92,22 +104,54 @@ function SingleBookpage() {
                           {
 
                             product.Image.map((list,index)=>{
-                              return(
+                              if (index <= 1 ) {
+                                return(
 
-                                <div
-                                key={index}
-                                onClick={handleimage}
-                                className="w-20 h-16 flex items-center  justify-center rounded-lg p-4 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] cursor-pointer"
-                                >
-                              <img
-                                id="Dynamichange"
-                                src={list}
-                                alt="Product2"
-                                />
-    
-                            </div>
-                              )
+                                  <div
+                                  key={index}
+                                
+                                  className="w-20 h-24 flex items-center  justify-center rounded-xl mt-3 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] cursor-pointer "
+                                  >
+                                <img
+                                  id="Dynamichange"
+                                  onClick={handleimage}
+                                  src={list}
+                                  className="rounded-lg w-full h-full object-cover"
+                                  alt="Product2"
+                                  />
+      
+                              </div>
+                                )
+                              }
+                              else{
+                                if (index===2) {
+                                  return(
+                                    <div
+                                    key={index}
+                                    onClick={() => { setpreview2(true); }}
+                                    className="w-20 h-24 flex items-center justify-center  mt-3 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] cursor-pointer relative"
+                                  >
+                                    <img
+                                      id="Dynamichange"
+                                      src={list}
+                                      className="rounded-lg w-full h-full object-cover" // Ensure image covers the div fully
+                                      alt="Product2"
+                                    />
+                                    <div
+                                      className="absolute top-0 left-0 right-0 bottom-0 bg-black/40 rounded-xl text-white flex items-center justify-center font-bold text-xl"
+                                    >
+                                      +{product?.Image?.length - 2}
+                                    </div>
+                                  </div>
+                                    )
+                                }
+                               
+                              }
+
+                             
                             })
+                         
+                            
                        
                           }
                         </>
@@ -239,9 +283,10 @@ function SingleBookpage() {
           ):(<>
           </>)
         }
-     
+         
         </>
       )}
+ 
     </>
   );
 }

@@ -213,7 +213,7 @@ function WriteToUs() {
                   <p className="mt-2 text-sm ">
                     Our friendly team is here to help.
                   </p>
-                  <p className="mt-2 text-sm text-white">
+                  <p className="mt-2 text-sm text-white  ">
                     infoadisri@gmail.com
                   </p>
                 </div>

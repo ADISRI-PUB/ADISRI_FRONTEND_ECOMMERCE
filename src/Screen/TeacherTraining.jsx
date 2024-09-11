@@ -12,7 +12,7 @@ function TeacherTraining() {
   const [lastname, setlastname] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [subject, setSubject] = useState("");
+  const [subject, setSubject] = useState("For Teacher Training Program");
   const [message, setMessage] = useState("");
   const regex = /[6-9]{1}[0-9]{9}/;
   const onSubmit = async (event) => {
@@ -27,22 +27,20 @@ function TeacherTraining() {
 
         setTimeout(async()=>{
           const formData = new FormData(event.target);
-          // console.log(formData);
           
           formData.append("access_key", "229f2605-024b-4455-9837-6bbd8d888654");
           const response = await fetch("https://api.web3forms.com/submit", {
            method: "POST",
            body: formData
          });
-         const data = await response.json();
- 
+        const data = await response.json()
          if (data.success) {
           document.querySelector(".tracking-wide").textContent="sent !"
                setTimeout(()=>{
                 setEmail("");
                           setMessage("");
                           setPhone("");
-                          setSubject("");
+                         
                           setfirstname("");
                           setlastname("");
                           event.target.reset();
@@ -100,7 +98,7 @@ function TeacherTraining() {
           <div className="py-10  max-sm:py-4 w-2/3 max-sm:w-full m-auto">
             <h1 className="text-[2vw] text-center max-sm:text-lg text-[#293249]">Teacher Training Program</h1>
 
-            <p className="px-4 py-3 max-sm:px-2 text-xl max-sm:text-sm text-[#293249] ">
+            <p  className="px-4 py-3 max-sm:px-2 text-xl max-sm:text-sm text-[#293249] ">
               Adisri Publications is a rapidly growing organization which
               strongly focuses on the very necessary early childhood education
               and professional development of a child, parent as well as
@@ -263,12 +261,12 @@ function TeacherTraining() {
           </p>
           <button className="bg-[#FF5F5F] rounded-full p-3 block m-auto  text-black max-sm:text-xs   transition-all duration-400 hover:bg-[#FCE992]  " 
           >
-            <a
-              href="https://drive.google.com/file/d/1S28iwHGOFH85bA_c2fWmi8bCh3tV4MkL/view?usp=sharing"
-              download="TeachTraining.pdf"
-              target="_blank"
-              className="flex logg items-center space-x-3"
-            >
+         <a
+  href="https://drive.google.com/uc?export=download&id=16fC2oxuSHoemQD5P7br-_PZupnlseII_"
+  download="TeachTraining.pdf"
+
+  className="flex logg items-center space-x-3"
+>
               {" "}
              <span className=""> Download Brochure</span>
               <span className="">
@@ -392,10 +390,9 @@ function TeacherTraining() {
                               name="subject"
                               id="username"
                               required
+                              readOnly="true"
                               value={subject}
-                              onChange={(e) =>
-                                setSubject(e.target.value)
-                              }
+                             
                             />
                           </div>
                           <div className="w-full ">

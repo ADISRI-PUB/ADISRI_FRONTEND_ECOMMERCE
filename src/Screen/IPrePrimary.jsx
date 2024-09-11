@@ -6,10 +6,11 @@ import FilterTAb from "../Components/FilterTAb";
 import ProdcutsCard from "../Components/ProdcutsCard";
 import axios from "axios";
 import { listProducts } from "../actions/ProductsActions";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 import Loader from "../Components/Loader";
 import { Helmet } from 'react-helmet';
+import { Accordion, AccordionItem } from '@szhsin/react-accordion';
 const BASE_URL = import.meta.env.VITE_URL 
 function IPrePrimary() {
    
@@ -42,6 +43,7 @@ function IPrePrimary() {
 
   let data;
   useEffect(() => {
+    
     let flag = products;
     if (flag.length === 0) {
       dispatch(listProducts(''));
@@ -89,8 +91,92 @@ function IPrePrimary() {
     <>
  
   
-      <div className=" primary-sections  min-h-screen bg-[rgb(252, 209, 209)]">
-      <div className="applications">
+      <div className=" primary-sections   relative min-h-screen bg-[rgb(252, 209, 209)]">
+       
+      <div className="absolute z-10  w-[83%]  right-0 extratab">
+      <Accordion> 
+          <div className="flex justify-evenly w-[100%] flex-wrap  items-start relative ">
+          
+          <AccordionItem
+        header={({ state }) => (
+          <div className="accordion-header flex relative " >
+            <span className="px-[4.5vw]  p-3 bg-[#049A99] rounded-b-xl text-white relative z-10 close">Books & Copy</span>
+
+          </div>
+
+        )}
+      >
+        <div className="bg-white p-5  rounded-b-xl border-2 border-[#049A99]  -z-10 relative -top-3 space-y-3">
+         <Link className="left-0 font-normal  relative top-2  block m-auto text-center " to="/preprimary">Plain Copies</Link>
+         <Link className="left-0 font-normal relative top-2  block  text-center" to="/preprimary">A4 Size Grand Regsiter</Link>
+         <Link className="left-0 font-normal relative top-2  block  text-center" to="/preprimary">Plain Drawing Book A4 and A3</Link>
+         <Link className="left-0 font-normal relative top-2  block  text-center" to="/preprimary">Table Book</Link>
+         <Link className="left-0 font-normal relative top-2  block  text-center" to="/preprimary">Pattern Book</Link>
+         <Link className="left-0 font-normal relative top-2  block  text-center" to="/preprimary">Story Book</Link>
+         <Link className="left-0 font-normal relative top-2  block  text-center" to="/preprimary">Festival Book</Link>
+         <Link className="left-0 font-normal relative top-2  block  text-center" to="/preprimary">Holiday HomeWork</Link>
+         </div>
+            
+      </AccordionItem>
+      
+            
+          <AccordionItem
+        header={({ state }) => (
+          <div className="accordion-header flex ">
+            <span className="px-[4.5vw]  p-3 bg-[#049A99] rounded-b-xl text-white ">Staionary</span>
+
+          </div>
+
+        )}
+      >
+        <div className="bg-white p-5 rounded-b-xl border-2 border-[#049A99] -z-10 relative -top-3 space-y-3">
+         <Link className="left-0 font-normal  relative top-2  block m-auto text-center " to="/preprimary">School Diary</Link>
+         <Link className="left-0 font-normal relative top-2  block  text-center" to="/preprimary">Scrap Book</Link>
+       
+         
+         </div>
+            
+      </AccordionItem>
+          
+      <AccordionItem
+        header={({ state }) => (
+          <div className="accordion-header flex ">
+            <span className="px-[4.5vw]  p-3 bg-[#049A99] rounded-b-xl text-white ">Art & Craft</span>
+
+          </div>
+
+        )}
+      >
+        <div className="bg-white p-5 rounded-b-xl border-2 border-[#049A99] -z-10 relative -top-3 space-y-3">
+         <Link className="left-0 font-normal  relative top-2  block m-auto text-center " to="/preprimary"></Link>
+         <Link className="left-0 font-normal relative top-2  block  text-center" to="/preprimary">Carnival Kitset</Link>
+         <Link className="left-0 font-normal relative top-2  block  text-center" to="/preprimary">Jumbo Colouring Book</Link>
+         </div>
+            
+      </AccordionItem>
+            
+          <AccordionItem
+        header={({ state }) => (
+          <div className="accordion-header flex ">
+            <span className="  p-3 bg-[#049A99] rounded-b-xl text-white ">Toys & Educational Material</span>
+
+          </div>
+
+        )}
+      >
+        <div className="bg-white p-5 rounded-b-xl border-2 border-[#049A99] -z-10 relative -top-3 ">
+         <Link className="left-0 font-normal  relative top-2  block m-auto text-center " to="/preprimary">Toys</Link>
+         <Link className="left-0 font-normal relative top-2  block  text-center" to="/preprimary">Trophy Medal</Link>
+         
+         </div>
+            
+      </AccordionItem>
+          </div>
+          </Accordion>
+         
+      
+    
+        </div>
       <Helmet>
         <title>Play, Nursery, Pre-Primer, and Primer Books - Adisri Publications</title>
         <meta 
@@ -102,7 +188,7 @@ function IPrePrimary() {
           content="Play books, Nursery books, Pre-Primer books, Primer books, early education books, children's books, Adisri Publications" 
         />
       </Helmet>
-      </div>
+      
         {/* <div className=" tab-grid  bg-[] w-[83%] justify-items-center logg sm:mr-0 sm:ml-auto py-8">
             <div  className="px-10 py-3 bg-white   rounded-full   cursor-pointer   ">Books & Copy
 
@@ -113,6 +199,7 @@ function IPrePrimary() {
          
         </div> */}
       <div className='p-4 text-xl max-sm:text-[15px]    relative flex space-x-3 bg-[#049A99]    max-sm:w-full  sm:w-[17%]  text-white' >
+        
         <p className=" flex  space-x-5 "> <span> Filters</span> <button onClick={open} className=' transition-all duration-300 buttons sm:hidden max-sm:visible   w-full' >  
      <svg className='w-[15px] max-sm:w-[13px]' xmlns="http://www.w3.org/2000/svg"  viewBox="0 -960 960 960"  fill="#000000"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg>
      </button> </p> </div>
@@ -128,8 +215,10 @@ function IPrePrimary() {
               setApi={setApi}
             />
           </div>
-       
-          <div className="sm:w-[79%] sm:p-2 mx-auto   max-sm:w-full  card-container relative   ">
+          
+        <div className="sm:w-[79%] m-auto">
+        
+          <div className="sm:w-[100%]  sm:p-2 mx-auto   max-sm:w-full  card-container relative   ">
             {API === "" ? (
               Object.keys(products).length===0 ? (
               
@@ -183,6 +272,7 @@ function IPrePrimary() {
             }
               </>
             )}
+          </div>
           </div>
         </div>
           <div className="p-5 w-[83%] max-sm:w-full  ml-auto mr-0">

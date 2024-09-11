@@ -85,7 +85,7 @@ function FilterTAb({Class,Subject,setSubject ,setClass,API ,setApi}) {
   return (
     <>
      <div className='  sm:w-[100%]  filter-container '>  
-          <div className=" max-sm:bg-white  slide-bar leading-tight  min-h-screen max-h-screen   p-4 overflow-hidden relative max-sm:-translate-x-full  transition-all duration-400 " >
+          <div className=" max-sm:bg-white max-sm:text-black  slide-bar leading-tight  min-h-screen max-h-screen   p-4 overflow-hidden relative max-sm:-translate-x-full  transition-all duration-400 " >
       
           <div className=" transition-all duration-1000 text-lg   rounded-lg grid grid-col-2 logg relative " >
             <div className='flex  relative logg' >

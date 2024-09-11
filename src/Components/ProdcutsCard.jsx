@@ -27,10 +27,10 @@ function ProdcutsCard({product,id}) {
     
   
     <Link to={`/singlebook/${product.Product_Id}`}>
-    <div  className="mx-auto  sm:aspect-[4/9]   max-sm:mt-4 max-sm:w-4/5   transform overflow-hidden  relative  duration-300  max-sm:leading-snug ">
-      <div className='relative w-[90%] h-[58%] flex logg  m-auto justify-center  ' style={{perspective:'900px'}}>
+    <div  className="mx-auto  sm:aspect-[4/10]   max-sm:mt-4 max-sm:w-4/5   transform overflow-hidden  relative  duration-300  max-sm:leading-snug ">
+      <div className='relative w-[90%] h-[58%]  flex logg  m-auto justify-center  ' style={{perspective:'900px'}}>
   <div className=' sm:absolute image-card  w-full m-auto'>
-  <img className="w-[90%] m-auto " src={product.Image} alt="Product Image" />
+  <img className="w-[90%] max-sm:w-[130px]   m-auto " src={product.Image} alt="Product Image" />
 </div>
 </div>
   <div className="p-4 max-sm:p-2 relative">
