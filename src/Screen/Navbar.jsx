@@ -202,9 +202,9 @@ export default function Navbar({ menuopen }) {
         <div className=" transition-all duration-300 list-dropdown  w-[90%]  m-auto  ">
           <div>
             <div className=" p-2 leading-loose " onClick={opendropdown2}>
-              <p className="flex justify-between border-b-[2px] ">
+              <p className="flex justify-between border-b-[1px] ">
                 {" "}
-                <span className="font-semibold"> About us</span>{" "}
+                <span className=""> About us</span>{" "}
                 <svg
                   className="svg-open2 transition-all durartion-300"
                   xmlns="http://www.w3.org/2000/svg"
@@ -241,9 +241,9 @@ export default function Navbar({ menuopen }) {
           </div>
           <div>
             <div className=" p-2 leading-loose " onClick={opendropdown3}>
-              <p className="flex justify-between border-b-[2px] ">
+              <p className="flex justify-between border-b-[1px] ">
                 {" "}
-                <span className="font-semibold"> Career</span>{" "}
+                <span className=""> Career</span>{" "}
                 <svg
                   className="svg-open3 transition-all durartion-300"
                   xmlns="http://www.w3.org/2000/svg"
@@ -313,9 +313,9 @@ export default function Navbar({ menuopen }) {
 
           {
             flag ?(
-              <AccordionItem className="relative   " header={`More Options`} >
-              <Link className="left-0 font-normal p-2 relative top-2  " to="/myorders" onClick={menuopen}>My Orders</Link>
-              <p className="left-0 font-normal p-2 "  onClick={()=>{
+              <AccordionItem className="relative   block w-full" header={`More Options`} >
+              <Link className="left-0 font-normal p-2 relative top-2 border-b-[1px] block " to="/myorders" onClick={menuopen}>My Orders</Link>
+              <p className="left-0 font-normal p-2 border-b-[1px] mt-2 "  onClick={()=>{
                  logout()
                  menuopen()
               }} >Logout</p>

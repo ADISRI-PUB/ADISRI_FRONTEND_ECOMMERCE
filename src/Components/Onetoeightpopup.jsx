@@ -25,7 +25,7 @@ function Onetorightpopup() {
         
         <Link to='/onetoeight'>
           <p className=" transition-all duration-200 hover:bg-[#FF5F5F]  p-2  text-gray-950 hover:text-black  cursor-pointer">
-           All
+           All Books
           </p>
         </Link>
         <Link to='/teachertraining'>
@@ -33,12 +33,7 @@ function Onetorightpopup() {
             Teacher Training Program
           </p>
         </Link>
-        <div >
-          {" "}
-          <p className=" transition-all duration-200 hover:bg-[#FF5F5F]  p-2  text-gray-950 hover:text-black  cursor-pointer">
-            Free Activity Sheets
-          </p>
-        </div>
+       
       </div>
     </div>
   );

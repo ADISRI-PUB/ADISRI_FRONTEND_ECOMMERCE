@@ -2,13 +2,14 @@ import React, { useEffect, useRef, useState } from "react";
 import "../Css/IPrePrimary.css";
 import { useDispatch, useSelector } from "react-redux";
 import gsap from "gsap";
-import FilterTAb from "../Components/FilterTAb";
+import Filter1to8 from "../Components/Filter1to8";
 import ProdcutsCard from "../Components/ProdcutsCard";
 import axios from "axios";
 import { Helmet } from 'react-helmet';
 import {
   listonetoeight,
   listonetoeightDetails,
+  filterOnetoEightBook
 } from "../actions/ProductsActions";
 import { useNavigate } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
@@ -21,8 +22,11 @@ function Ionetoeight() {
   const dispatch = useDispatch();
   const ProductOnetoeight = useSelector((state) => state.ProductOnetoeight);
   const { error, loading, productonetoeight = [] } = ProductOnetoeight;
-  console.log(productonetoeight);
-  let [API, setApi] = useState("");
+  const ProductonetoeightFilter =useSelector((state) => state.ProductonetoeightFilter)
+  const {filterOnetoeight,api}=ProductonetoeightFilter
+   
+  // console.log(productonetoeight);
+  let [API, setApi] = useState(api);
   // let [loader, setLoader] = useState(true);
   const [Class, setClass] = useState([
     { id: 1, name: "1", isChecked: false },
@@ -39,7 +43,14 @@ function Ionetoeight() {
     { id: 10, name: "Hindi Vyakaran", isChecked: false },
     { id: 11, name: "Math", isChecked: false },
   ]);
-
+   useEffect(()=>{
+   
+     setFilterbook(filterOnetoeight.results)
+ 
+ 
+      
+        
+   },[filterOnetoeight])
   let data;
   useEffect(()=>{
     let flag = productonetoeight;
@@ -56,24 +67,16 @@ function Ionetoeight() {
     // fetching the data for filter option /////////////////////////////////////////////////////////
  
     const fetchData = async () => {
-      try {
-        data = await axios.get(`${BASE_URL}/data/products/onetoeight/?${API}`);
-        // console.log(data.data);
-        setFilterbook(data.data.results);
-      } catch (error) {
-        // setLoader(false);
-        console.log("cant get the data", error);
-      } finally {
-      }
+     dispatch(filterOnetoEightBook(API))
     };
-    if (!(API==='')) {  
+  
       fetchData();
-    }
+    
   }, [API]);
   useEffect(() => {
     console.log(productonetoeight);
     setBooks(productonetoeight.results)
-    console.log(books);
+    // console.log(books);
     
   }, [productonetoeight]);
   let count = 0;
@@ -144,7 +147,7 @@ function Ionetoeight() {
 
         <div className="flex   primary-sections   ">
           <div className="sm:w-[17%] max-sm:w-full max-sm:absolute max-sm:z-20 max-sm:-translate-x-full   primarysection1 bg-[#049A99]  ease-out transition-all duration-500 relative    max-sm:h-full text-white">
-            <FilterTAb
+            <Filter1to8
               Class={Class}
               setClass={setClass}
               setSubject={setSubject}
@@ -185,8 +188,8 @@ function Ionetoeight() {
               // </div>
               // </div>
               <>
-                {filterbook.length !== 0 ? (
-                  filterbook.map((product) => {
+                {filterbook?.length !== 0 ? (
+                  filterbook?.map((product) => {
                     return (
                       <div key={product.Product_Id} className=" max-sm:p-0 ">
                         <ProdcutsCard product={product} id={1} />

@@ -23,7 +23,7 @@ function CareersScreen() {
       ) : error ? (
         <p>{error}</p>
       ) : (
-        <div className=' career-section realtive '>
+        <div className=' min-h-screen realtive '>
           <div className="application">
       <Helmet>
         <title>Careers at Adisri Publications - Join Our Team</title>
@@ -63,21 +63,19 @@ function CareersScreen() {
 </svg> */}
           
           
-          <div className='space sm:h-36 max-sm:h-5 ' style={{backgroundColor:'#E3FEF7'}}>
-
-          </div>
-            <div className='working-with-container max-sm:text-xl  z-20 relative sm:leading-loose max-sm:leading-normal'>
+        
+            <div className='text-[3rem] text-center max-sm:text-xl  z-20 relative sm:leading-loose max-sm:leading-normal '>
+              <img src="careerimg.png" className='m-auto w-[20%] py-[2rem]' alt=""  />
            <h1>Working With Us !</h1>
            <p  className=' w-4/5 m-auto text-xs max-sm:w-full max-sm:p-2 sm:text-lg'>
-"At ADISRI Publications, we pride ourselves on fostering a dynamic and <b className='  rounded-xl sm:p-1'> supportive working environment </b> where creativity and innovation thrive. Joining our team means not only gaining access to exciting opportunities in the publishing industry but also enjoying a range of benefits designed to support your <b className=' rounded-xl sm:p-1 text2'> professional growth</b> and well-being. From competitive compensation packages to flexible work arrangements and ongoing learning opportunities, we are committed to nurturing talent and empowering our employees to reach their full potential."</p>
+"At ADISRI Publications, we pride ourselves on fostering a dynamic and <b className='  rounded-xl sm:p-1 bg-yellow-200'> supportive working environment </b> where creativity and innovation thrive. Joining our team means not only gaining access to exciting opportunities in the publishing industry but also enjoying a range of benefits designed to support your <b className=' rounded-xl sm:p-1 bg-yellow-200'> professional growth</b> and well-being. From competitive compensation packages to flexible work arrangements and ongoing learning opportunities, we are committed to nurturing talent and empowering our employees to reach their full potential."</p>
            </div>
            
-           <div className='p-3 opening-text text-center relative z-30  leading-loose '>
+           <div className='py-[2rem] text-[2rem] text-center relative z-30  leading-loose '>
 
             <h1>Current Opening </h1>
            </div>
-           <hr />
-           <br />
+           <hr />   <br />
         <div className="grid grid-cols-2 max-sm:grid-cols-1 gap-10 z-20 relative">
         
           {careers.map(career => (
@@ -88,6 +86,7 @@ function CareersScreen() {
         </div>
         </div>
       )}
+      <br />
     </div>
   );
 }

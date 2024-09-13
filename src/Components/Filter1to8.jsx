@@ -3,31 +3,28 @@ import gsap from 'gsap'
 import { Accordion, AccordionItem } from '@szhsin/react-accordion';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-function FilterTAb({Class,Subject,setSubject ,setClass,API ,setApi}) {
-  const ProductFilter = useSelector((state) => state.ProductFilter);
-
-  const { filterproducts,api  } = ProductFilter;
-  
+function Filter1to8({Class,Subject,setSubject ,setClass,API ,setApi}) {
+  const ProductonetoeightFilter =useSelector((state)=>state.ProductonetoeightFilter)
+  const {filterOnetoeight,api} = ProductonetoeightFilter
   const [PrevClass,setPrevClass] = useState(Class)
   const [PrevSubject,setPrevSubject] = useState(Subject)
   useEffect(()=>{
   
-    if (filterproducts.lenght!=0 && api!=='') {
-          
-      PrevClass.filter((e)=>{
-        if (api.includes(e.name)) {
-          e.isChecked=true
-        }
-        return e
-      })
-      PrevSubject.filter((e)=>{
+    if (filterOnetoeight.length!=0 && api!='') {
+        PrevClass.filter((e)=>{
           if (api.includes(e.name)) {
-            e.isChecked=true
+            e.isChecked
+            =true
           }
           return e
-      })
-      
-    }
+        })
+          PrevSubject.filter((e)=>{
+            if (api.includes(e.name)) {
+              e.isChecked=true
+            }
+           return e
+          })
+      }
   },[])
     useEffect(()=>{
       //   let temp1= document.querySelectorAll('.newclass')
@@ -54,17 +51,6 @@ function FilterTAb({Class,Subject,setSubject ,setClass,API ,setApi}) {
         //  duration:0.2,
         //  stagger:0.1 
         // })
-        if (window.innerWidth<=640) {
-          let svg =document.querySelectorAll('#drop-down-icon')
-                for (let index = 0; index <svg.length; index++) {
-                  if (window.innerWidth<640) {
-                     svg[index].setAttribute('fill',"#000")
-                   
-                    
-                  }
-                  
-                }
-        }
   
     },[])
  
@@ -206,44 +192,58 @@ function FilterTAb({Class,Subject,setSubject ,setClass,API ,setApi}) {
             <br />
            <AccordionItem
         header={({ state }) => (
-          <div className="accordion-header flex ">  <span className="px-3 ml-3 text-[0.8em]">Customize Corner
+          <div className="accordion-header flex ">
+            <span className="px-3 ml-3 text-[0.8em]">Books & Copy</span>
+            <span className={`arrow ${state.isExpanded ? 'expanded' : 'notexpended'} `}><svg id='drop-down-icon'  xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M480-360 280-560h400L480-360Z"/></svg>
+            </span>
+          </div>
+        )}
+      >
+        <div className=''>
+          <Link className=' relative ml-10 border-b-[1px] block text-[0.8em]'  to='#'>Plain Copies</Link>
+        </div>
+      </AccordionItem>
+        <br />
+           <AccordionItem
+        header={({ state }) => (
+          <div className="accordion-header flex ">  <span className="px-3 ml-3 text-[0.8em]">Staionary
 </span>
             <span className={`arrow ${state.isExpanded ? 'expanded' : 'notexpended'} `}><svg id='drop-down-icon'  xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M480-360 280-560h400L480-360Z"/></svg>
             </span>
           </div>
         )}
       >
-        {/* <div>
+        <div>
           <Link className=' relative ml-10 block border-b-[1px] text-[0.8em]'  to='#'>School Diary</Link>
-        </div> */}
+        </div>
       </AccordionItem>
       <br />
            <AccordionItem
         header={({ state }) => (
           <div className="accordion-header flex ">
-            <span className="px-3 ml-3 text-[0.8em]">Free Activity Sheet</span>
+            <span className="px-3 ml-3 text-[0.8em]">Art & Craft</span>
             <span className={`arrow ${state.isExpanded ? 'expanded' : 'notexpended'} `}><svg id='drop-down-icon'  xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M480-360 280-560h400L480-360Z"/></svg>
             </span>
           </div>
         )}
       >
-        {/* <div>
+        <div>
           <Link className=' relative ml-10 block border-b-[1px] text-[0.8em]'  to='#'>Carnival Kitset</Link>
-        </div> */}
+        </div>
       </AccordionItem>
       <br />
            <AccordionItem
         header={({ state }) => (
           <div className="accordion-header flex ">
-            <span className="px-3 ml-3 text-[0.8em]">Teacher Training</span>
+            <span className="px-3 ml-3 text-[0.8em]">Toys & Educational Material</span>
             <span className={`arrow ${state.isExpanded ? 'expanded' : 'notexpended'} `}><svg id='drop-down-icon'  xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill='#FFFFFF'><path d="M480-360 280-560h400L480-360Z"/></svg>
             </span>
           </div>
         )}
       >
-        {/* <div>
+        <div>
           <Link className=' relative ml-10 border-b-[1px] block text-[0.8em]'  to='#'>Toys</Link>
-        </div> */}
+        </div>
       </AccordionItem>
            </Accordion>
            </div>
@@ -254,4 +254,4 @@ function FilterTAb({Class,Subject,setSubject ,setClass,API ,setApi}) {
   )
 }
 
-export default FilterTAb
+export default Filter1to8

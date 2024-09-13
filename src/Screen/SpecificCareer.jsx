@@ -33,13 +33,13 @@ function SpecificCareer() {
   return (
     <>
     
-       <div className="flex justify-center items-center min-h-screen specific-section-career overflow-hidden">
+       <div className="flex justify-center items-center min-h-screen  overflow-hidden">
       
         <div className="absolute z-10 overflow-hidden  ">
         <svg
                   xmlns="http://www.w3.org/2000/svg"
                   xmlnsXlink="http://www.w3.org/1999/xlink"
-                  fill="#dcf0fa"
+                  fill="#FFFFFF"
                   version="1.1"
                   id="Capa_1"
                   width="30vw"
@@ -62,7 +62,7 @@ function SpecificCareer() {
           <p>{error}</p>
         ) : (
           
-          <div className="career-card  relative  rounded-lg p-6 text-white w-4/5 h-4/5">
+          <div className="bg-[#FCE992]  relative  rounded-lg p-6 text-white w-4/5 h-4/5">
             <div className="application">
       <Helmet>
         <title>{title}</title>
@@ -77,13 +77,13 @@ function SpecificCareer() {
         />
       </Helmet></div>
       
-            <h1 className="text-2xl font-semibold mb-4 relative z-20 ">{career.Job_Title}</h1>
-            <p className="text-white mb-2 relative z-20"><strong className="text-gray-500">Experience:</strong> {career.Experience}</p>
-            <p className="text-white mb-2 relative z-20"><strong className="text-gray-500">Location:</strong> {career.Location}</p>
-            <p className="text-white mb-2 relative z-20"><strong className="text-gray-500">Salary:</strong> {career.Salary}LPA</p>
-            <p className="text-white mb-2 relative z-20"><strong className="text-gray-500">Skills:</strong> {career.Skill}</p>
-            <p className="text-white mb-4 relative z-20"><strong className="text-gray-500">Send Resume:</strong> {career.Send_Resume}</p>
-            <Link to="/careers" style={{backgroundColor:"#50b8e7"}} className="hover:text-black text-white transition-all duration-200  rounded-full px-3 py-2">
+            <h1 className="text-2xl  text-[#FF5F5F] font-semibold mb-4 relative z-20 ">{career.Job_Title}</h1>
+            <p className="text-black mb-2 relative z-20"><strong className="text-gray-500">Experience:</strong> {career.Experience}</p>
+            <p className="text-black mb-2 relative z-20"><strong className="text-gray-500">Location:</strong> {career.Location}</p>
+            <p className="text-black mb-2 relative z-20"><strong className="text-gray-500">Salary:</strong> {career.Salary}LPA</p>
+            <p className="text-black mb-2 relative z-20"><strong className="text-gray-500">Skills:</strong> {career.Skill}</p>
+            <p className="text-black mb-4 relative z-20"><strong className="text-gray-500">Send Resume:</strong> {career.Send_Resume}</p>
+            <Link to="/careers"  className="hover:text-black bg-[#FF5F5F] text-white transition-all duration-200  rounded-full px-3 py-2">
               Back to Careers
             </Link>
           </div>

@@ -79,9 +79,9 @@ function SingleBookpage() {
                 
               }
               <div className="p-4 max-sm:p-1   mx-auto">
-                <div className="grid items-start gap-10 grid-cols-2 lg:grid-cols-5   p-6 rounded-lg ">
-                  <div className="lg:col-span-2 max-sm:col-span-3   top-0 text-center sm:w-1/2 max-sm:w-3/4 max-sm:m-auto ">
-                    <div className="px-2 py-6 rounded-lg  relative shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] bg-[#FF5F5F]">
+                <div className="grid items-start gap-10 grid-cols-2 lg:grid-cols-5   py-10 rounded-lg ">
+                  <div className="lg:col-span-2 max-sm:col-span-3   top-0 text-center sm:w-[60%] m-auto max-sm:w-3/4 max-sm:m-auto ">
+                    <div className="px-2 py-6 rounded-lg  relative shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)]">
                       {
                   <img
                   id="frontpage"
