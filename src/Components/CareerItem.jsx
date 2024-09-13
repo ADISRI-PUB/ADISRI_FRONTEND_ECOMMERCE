@@ -5,7 +5,7 @@ function CareerItem({ career }) {
   return (
     <>
     <div>
-    <div  className="rounded-md w-full  px-4 py-4 shadow-lg  transition transform duration-500 cursor-pointer items-section  ">
+    <div  className="rounded-md w-full  px-4 py-4 shadow-lg  transition transform duration-500 cursor-pointer bg-[#FCE992]  ">
       <div className="flex flex-col justify-start">
         <div className="flex justify-between items-center w-full">
           <div className="text-lg font-semibold text-bookmark-blue flex space-x-1 items-center mb-2">
@@ -24,7 +24,7 @@ function CareerItem({ career }) {
             </svg>
             <span className="job-title">{career.Job_Title}</span>
           </div>
-          <span className="bg-green-500 rounded-full  text-white job-title px-4 py-1 font-bold shadow-xl">
+          <span className="bg-[#FF5F5F] rounded-full  text-white job-title px-4 py-1 font-bold shadow-xl">
             In-office
           </span>
         </div>
@@ -45,7 +45,7 @@ function CareerItem({ career }) {
         </div>
         <div>
           <div className="mt-5">
-            <Link to={`/careers/${career.Carrer_Job_Id}`} className="mr-2 my-1 uppercase tracking-wider sm:px-2 sm:py-1  text-indigo-600 border-indigo-600 hover:bg-indigo-600 hover:text-white border text-sm max-sm:text-[0.5em] font-semibold rounded max-sm:p-1 transition transform duration-500 cursor-pointer">
+            <Link to={`/careers/${career.Carrer_Job_Id}`} className="mr-2 my-1 uppercase tracking-wider sm:px-2 sm:py-1  bg-[#FF5F5F]  hover:text-white border text-sm max-sm:text-[0.5em] font-semibold rounded max-sm:p-1 transition transform duration-500 cursor-pointer">
               Apply
             </Link>
           </div>

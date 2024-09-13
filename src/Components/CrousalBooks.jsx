@@ -64,7 +64,7 @@ export default function CrousalBooks() {
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 1000,
     initialSlide: 0,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
@@ -91,7 +91,7 @@ export default function CrousalBooks() {
     ],
   };
   return (
-    <div className="slider-container   p-4 max-sm:p-10 w-full">
+    <div className="slider-container   p-4  w-full">
       <div className="w-4/5 m-auto">
       <Slider {...settings}>
       <div className="h-[200px] relative " >

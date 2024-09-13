@@ -22,7 +22,7 @@ function PrePopup() {
         </p>
         <Link to="/preprimary">
           <p className=" transition-all duration-200 hover:bg-[#FF5F5F]  p-2  text-gray-950 hover:text-black  cursor-pointer">
-            All
+            All Books
           </p>
         </Link>
         <Link to="/playgroup">

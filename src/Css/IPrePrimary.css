@@ -1,22 +1,5 @@
 
-:root{
-    --bgprimarycolor:white;
-    --bgcontentprimarycolor:#FDF7E4;
-    --bgcontentprimarycolor2:#ffebc6;
-    --bgcontentprimary:#ffd992;
-}
-.primary-sections{
-    background-color: var(--bgprimarycolor);
-}
-.primarysection1{
-    background-color: var(--bgcontentprimarycolor);
-}
-.primarysection2{
-    background-color: var(--bgcontentprimarycolor);
-}
-.primary-card{
-    background-color: var(--bgcontentprimarycolor2);
-}
+
 .cart-button{
   background-color: white;
 }
@@ -45,6 +28,7 @@
   width: 33%;
   background-color: aqua;
 }
+/* this code contain grid layout for card compoent that contains card-container class */
 @media (min-width:1042px){
   .card-container{
     display: grid;
@@ -101,6 +85,7 @@
     grid-template-rows: auto;
    
   }
+  /* the preproimiary section contains three button to make it grid we used class tab grid */
    .tab-grid{
     display: grid;
     gap: 10px;
@@ -131,7 +116,9 @@
   min-height: 200px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
 }
-.image-card{
+
+  /* 3D effect for image hover in card of product */
+/* .image-card{
   transform-style: preserve-3d;
   perspective: 10px;
   transform: rotateY(20deg);
@@ -145,4 +132,4 @@
   transform: rotateY(0deg);
   transition: all;
   transition-duration: 300ms;
-}
+} */

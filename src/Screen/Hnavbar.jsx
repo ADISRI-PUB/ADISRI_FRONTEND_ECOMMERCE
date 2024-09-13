@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 import { getAllOrderDetails } from "../actions/OrderActions";
 import PrePopup from "../Components/PrePopup";
 import Onetorightpopup from "../Components/Onetoeightpopup";
+import homelog from '/ADISRI LOGO 2.png'
 function Hnavbar() {
   //kamal
   const [flag, setflag] = useState(false);
@@ -147,7 +148,7 @@ function Hnavbar() {
           >
             <img
               className=" w-[60%]  relative left-2 "
-              src="ADISRI LOGO 2.png"
+              src={homelog}
               alt="adisri logo"
             />
           </Link>
@@ -211,9 +212,7 @@ function Hnavbar() {
             </NavLink>
             <NavLink
               to="/contact"
-              onClick={removepopup}
-              onMouseEnter={show}
-              onMouseLeave={hide}
+             
               className={({ isActive }) =>
                 isActive
                   ? "text-nav-about  bg-[#ff5f5f] rounded-full  text-white  px-[3.1em] py-[1em]  transition-all duration-200 h-[90%] relative top-1 "
@@ -403,7 +402,7 @@ function Hnavbar() {
           <PopUp />
          
         </div>
-        <div className="fixed w-1/5 m-auto left-[50%] top-20  z-50 max-sm:hidden sm:visible">
+        <div className="fixed w-1/5 m-auto left-[47%] top-20  z-50 max-sm:hidden sm:visible">
           <Onetorightpopup />
          
         </div>

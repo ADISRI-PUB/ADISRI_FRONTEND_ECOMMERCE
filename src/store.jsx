@@ -10,7 +10,9 @@ import {
   productDetailsReducers,
   productListReducers,
   productListOnetoeightReducer,
-  productListDetailOnetoeightReducer
+  productListDetailOnetoeightReducer,
+  productFilterReducer,
+  productOnetoeightFilter
 } from "./reducers/ProductsReducers";
 import { cartReducer } from "./reducers/CartReducers";
 import { userReducer } from "./reducers/UserReducer";
@@ -30,6 +32,8 @@ const reducer = combineReducers({
   productDetails: productDetailsReducers,
   ProductOnetoeight:productListOnetoeightReducer,
   ProductsDonetoeight:productListDetailOnetoeightReducer,
+  ProductFilter: productFilterReducer,
+  ProductonetoeightFilter:productOnetoeightFilter,
   
   //CART
   cart: cartReducer,

@@ -45,44 +45,44 @@ export default function Crousal({slideshow}) {
   return (
     <div className="overflow-hidden  ">
     <Slider {...settings} className=" " >
-      <div className="w-full">
+     
       <img 
-      className="h-full w-full "
+      className="md:h-[80vh] "
             src="PLAYGROUP BANNER.jpg"
             alt=""
           />
-      </div>
+    
       <div>
       <img
-       className="h-full w-full"
+       className="md:h-[80vh]"
             src="UKG BANNER.jpg"
             alt=""
           />
       </div>
       <div>
       <img
-        className="h-full w-full"
+        className="md:h-[80vh]"
             src="NURSERY BANNER.jpg"
             alt=""
           />
       </div>
       <div>
       <img
-       className="h-full w-full"
+       className="md:h-[80vh]"
             src="banner 1-5 (I).jpg"
             alt=""
           />
       </div>
       <div>
       <img
-       className="h-full w-full"
+       className="md:h-[80vh]"
             src="LKG BANNER.jpg"
             alt=""
           />
       </div>
       <div>
       <img
-       className="h-full w-full"
+       className="md:h-[80vh]"
             src="banner 1-5 (II).jpg"
             alt=""
           />

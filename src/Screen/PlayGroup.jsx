@@ -50,11 +50,11 @@ function PlayGroup() {
       </Helmet>
 
         </div>
-                 <img className='fixed z-0  w-[30%] right-0 opacity-85  ' src="playimages.png " alt=""/>
                 <h1 className='text-center sm:text-[2.5vw] relative z-20 '>Exclusive Collection Of PlayGroup Books</h1>
+                 <img className='w-[20%] m-auto  ' src="PngItem_5171205.png" alt=""/>
                  <div className='w-4/5 m-auto py-5 text-lg text-center relative z-20'>
                      <p>
-         Our exclusive play school books stand out not only for their educational value but also for their ability to transform learning into an adventure. Each page is filled with <i className='p-1 bg-[#ff8989] rounded-lg '>interactive exercises, colorful visuals, and creative prompts</i> that encourage children to explore and express themselves. From foundational language skills in English and Hindi to the basics of Mathematics and Environmental Studies, our books are designed to nurture critical thinking and problem-solving abilities from an early age. The art and activity sections are crafted to stimulate creativity, while our carefully selected rhymes bring joy and rhythm to learning.
+         Our exclusive play school books stand out not only for their educational value but also for their ability to transform learning into an adventure. Each page is filled with interactive exercises, colorful visuals, and creative prompts that encourage children to explore and express themselves. From foundational language skills in English and Hindi to the basics of Mathematics and Environmental Studies, our books are designed to nurture critical thinking and problem-solving abilities from an early age. The art and activity sections are crafted to stimulate creativity, while our carefully selected rhymes bring joy and rhythm to learning.
          
          What sets our collection apart is the attention to detail in pedagogy, ensuring that every concept is introduced in a way that is both understandable and enjoyable for young learners. We understand that the early years are crucial, and that’s why our books are developed by experts in child education, combining years of research with innovative teaching methods. With our exclusive collection, you’re not just buying books; you’re investing in a learning experience that will shape your child’s future.</p>
                  </div>

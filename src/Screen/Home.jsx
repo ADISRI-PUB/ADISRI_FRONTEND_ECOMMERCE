@@ -41,7 +41,7 @@ export default function Home({ token }) {
     <>
       {/* <Hnavbar/> */}
 
-      <div className="home-area z-20 min-h-screen leading-snug bg-white">
+      <div className="home-area z-20 min-h-screen  bg-white">
         {/* <p className="welcome-text p-3 text-center  block ">Welcome To,</p> */}
         <div className="applications">
         <Helmet>
@@ -58,8 +58,9 @@ export default function Home({ token }) {
 
         </div>
 
-        <div className=" z-20 books-crousal-container  m-auto  w-full bg-white ">
-          <img className="w-full" src="BANNER  UPPER.jpg" alt="" />
+        <div className=" z-20 books-crousal-container  m-auto  w-full bg-white md:min-h-screen ">
+          <img className="block" src="BANNER  UPPER.jpg" alt="" />
+
           <Crousal />
         </div>
         <div className="sections1 bg-white ">
@@ -90,7 +91,7 @@ export default function Home({ token }) {
             </div> */}
             <div className="w-full bg-white">
               <div className=" preprimary-text max-sm:text-lg   text-center z-20 ">
-                Pre-Primary Books
+                Pre-School Books
               </div>
               <br /> 
               <div className="w-4/5 m-auto ">
@@ -132,10 +133,10 @@ export default function Home({ token }) {
         
             <div className="w-full leading-loose ">
               <div className="preprimary-text max-sm:text-lg text-center">
-                1<sup>st</sup> TO 8<sup>th</sup>
+              School Books
               </div>
               <div className="w-4/5 m-auto">
-              <br />
+           
                 <p className="pre-books-description max-sm:text-xs p-3 max-sm:p-0 leading-loose sm:text-center">
                 
 "Step into our bookstore, where each book is a doorway to a universe of imagination and discovery for young readers. Our carefully curated collection for 1st to 8th graders is a treasure chest brimming with stories that inspire, knowledge that empowers, and adventures that captivate. Whether you’re in search of thrilling tales that whisk you away to far-off lands, heartwarming stories that impart <span className="p-1 max-sm:p-0 bg-[#90d1d1] text-black rounded-lg"> life’s most valuable lessons </span>, or educational resources that turn learning into an exciting journey, you’ll find something extraordinary here. Immerse yourself in the magic of beloved classics, explore new worlds with innovative educational tools, and embark on journeys that kindle a lifelong love for reading. Join us in this literary odyssey, where every page is a gateway to infinite possibilities."

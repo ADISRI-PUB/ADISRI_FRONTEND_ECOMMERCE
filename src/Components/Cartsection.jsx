@@ -83,6 +83,7 @@ const handlecheckout = ()=>{
                       onClick={() => removeFromCartHandler(books.product)}
                     >
                       <svg
+                      className=""
                         xmlns="http://www.w3.org/2000/svg"
                         xmlnsXlink="http://www.w3.org/1999/xlink"
                         fill="#000000"
@@ -119,7 +120,7 @@ const handlecheckout = ()=>{
                             }}
                           >
                             <svg
-                              className="bg-white"
+                              className="bg-gray-200"
                               xmlns="http://www.w3.org/2000/svg"
                               height="24px"
                               viewBox="0 -960 960 960"
@@ -139,7 +140,7 @@ const handlecheckout = ()=>{
                             }}
                           >
                             <svg
-                              className="bg-white"
+                              className="bg-gray-200"
                               xmlns="http://www.w3.org/2000/svg"
                               height="24px"
                               viewBox="0 -960 960 960"
@@ -159,30 +160,32 @@ const handlecheckout = ()=>{
               })}
             </div>
             <div className="w-2/5 p-4  h-96 max-sm:w-full right-0  logg flex justify-center ">
-              <div className="cart-section2  bg-[#fff4c3] border-2 border-white  h-full grid grid-rows-4 w-full   ">
-                <h1 className="text-xl grid grid-cols-2  justify-center  m-auto">
+              <div className="cart-section2 p-5 border-l-[1px] ml-2  h-full grid grid-rows-4 w-full   ">
+                <div className=""> 
+                <h1 className="text-xl grid grid-cols-2  justify-center  m-auto  ">
                   {" "}
-                  <p className="  max-sm:text-sm"> Total MRP &nbsp;&nbsp; </p>
-                  <p className="max-sm:text-sm">:&#x20B9;{Price} </p>{" "}
+                  <p className="  max-sm:text-sm ml-auto mr-0"> Total MRP &nbsp;&nbsp; </p>
+                  <p className="max-sm:text-sm font-sans"> : &#x20B9;{Price}/- </p>{" "}
                 </h1>
-
+                </div>
+                <div className="">
                 <h1 className="text-lg max-sm:text-sm  grid grid-cols-2  justify-center m-auto ">
                   {" "}
-                  <p className=" "> Shipping &nbsp;&nbsp; </p>
-                  <p>:&#x20B9;50/-</p>{" "}
+                  <p className=" ml-auto mr-0"> Shipping<sup className="font-bold">*</sup> &nbsp;&nbsp; </p>
+                  <p className="font-sans"> : &#x20B9;{Price>=2000?"0":"50/-"}</p>{" "}
                 </h1>
-
+                </div>
               
-
-                <h1 className="text-xl max-sm:text-sm grid grid-cols-2  justify-center m-auto">
+              <div>
+                <h1 className="text-xl max-sm:text-sm  grid grid-cols-2  justify-center m-auto">
                   {" "}
-                  <p className=""> Grand Total &nbsp;&nbsp; </p>
-                  <p>:&#x20B9;{Price+50} </p>{" "}
+                  <p className="ml-auto mr-0"> Grand Total &nbsp;&nbsp; </p>
+                  <p className="font-sans">: &#x20B9;{Price>=2000?Price:Price+50}/- </p>{" "}
                 </h1>
-
+                </div>
                  <button
                  onClick ={handlecheckout}
-                  className="w-1/2 m-auto transition-all duration-300  overflow-hidden space-x-2 rounded-full text-center justify-center bg-[#FF5F5F] text-white cursor-pointer p-4 max-sm:p-2   flex">
+                  className="w-1/2 m-auto transition-all duration-300  overflow-hidden space-x-2 rounded-full text-center justify-center bg-[#FF5F5F] hover:bg-[#ff3737]  text-white cursor-pointer p-4 max-sm:p-2   flex">
                 
                   <span className=" max-sm:text-sm">Checkout</span>
                 </button>

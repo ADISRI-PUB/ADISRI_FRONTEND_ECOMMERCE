@@ -18,7 +18,15 @@ import {
 
     PRODUCTS_ONETOEIGHT_LIST_FAIL,
     PRODUCTS_ONETOEIGHT_LIST_REQUEST,
-    PRODUCTS_ONETOEIGHT_LIST_SUCCESS
+    PRODUCTS_ONETOEIGHT_LIST_SUCCESS,
+
+
+    PRODUCTS_FILTER_LIST_REQUEST,
+    PRODUCTS_FILTER_LIST_FAIL,
+    PRODUCTS_FILTER_LIST_SUCCESS,
+    PRODUCTS_ONETOEIGHT_FILTER_LIST_FAIL,
+    PRODUCTS_ONETOEIGHT_FILTER_LIST_SUCCESS,
+    PRODUCTS_ONETOEIGHT_FILTER_LIST_REQUEST
  } from '../constants/ProductsConstants'
 
 const BASE_URL = import.meta.env.VITE_URL
@@ -87,9 +95,30 @@ export const listonetoeightDetails=(id)=>async (dispatch)=>{
          try {
             dispatch({type:PRODUCTS_ONETOEIGHT_DETAILS_REQUEST})
             const {data} =await axios.get(`${BASE_URL}/data/products/onetoeight/${id}`)
-            console.log(data);
+            // console.log(data);
             dispatch({type:PRODUCTS_ONETOEIGHT_DETAILS_SUCCESS,payload:data})
          } catch (error) {
             dispatch({type:PRODUCTS_ONETOEIGHT_DETAILS_FAIL,payload:error.response && error.response.data.details ?error.response.data.detail:error.message})
          }
+}
+
+
+export const filterBook=(api)=>async(dispatch)=>{
+       try {
+           dispatch({type:PRODUCTS_FILTER_LIST_REQUEST})
+           const {data} =await axios.get(`${BASE_URL}/data/products/product/?${api}`)
+           dispatch({type: PRODUCTS_FILTER_LIST_SUCCESS,payload:{data,api}})
+       } catch (error) {
+        dispatch({type: PRODUCTS_FILTER_LIST_FAIL,payload:error.response && error.response.data.details ?error.response.data.details:error.message});
+       }
+}
+
+export const filterOnetoEightBook=(api)=>async(dispatch)=>{
+    try {
+        dispatch({type:PRODUCTS_ONETOEIGHT_FILTER_LIST_REQUEST})
+        const {data} = await axios.get(`${BASE_URL}/data/products/onetoeight/?${api}`);
+        dispatch({type: PRODUCTS_ONETOEIGHT_FILTER_LIST_SUCCESS,payload:{data,api}});
+    } catch (error) {
+        dispatch({type:PRODUCTS_ONETOEIGHT_FILTER_LIST_FAIL,payload:error.response && error.response.data.details?error.response.data.details:error.message})
+    }
 }

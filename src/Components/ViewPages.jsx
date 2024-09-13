@@ -36,7 +36,9 @@ function ViewPages({Images,pagevisiblity}) {
     //    const preview= document.querySelector('.preview')
     //   console.log(img.getAttribute('src'));
     setPreview(img.getAttribute('src'))
+ 
     sliderRef.current.slickGoTo(0);
+ 
 
     //    console.log(preview);
        
@@ -61,18 +63,18 @@ function ViewPages({Images,pagevisiblity}) {
   };
   return (
     <div className='relative w-[61%] max-sm:w-full m-auto  text-black bg-white  sm:top-[5%]'>
-        <svg onClick={()=>{pagevisiblity(false)}} className='absolute right-2 top-2  w-[40px] p-1 cursor-pointer rounded-full bg-[#FF5F5F]' xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"  fill="#000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+        <svg onClick={()=>{pagevisiblity(false)}} className='absolute right-2 top-2  w-[40px] max-sm:w-[20px] p-1 cursor-pointer rounded-full transition-all duration-300 hover:bg-[#FF5F5F]' xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"  fill="#000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
         <div className=''>
         <div className=' '>
   
-         <Slider  ref={sliderRef} {...settings} className=" w-1/4 max-sm:w-1/2  m-auto" >
+         <Slider  ref={sliderRef} {...settings} className=" w-[300px] max-sm:w-1/2  m-auto" >
      
            {
      // Iterate over the images array and map each image to a <img> element
              Images.map((image, index) => (
             
                 
-              index ===0? <img key={index} src={preview?preview:""} alt="slider-img" className="w-[80%] object-cover bg-white py-10 px-5 rounded-xl " />:<img key={index} src={image} alt="slider-img" className="w-[80%] object-cover bg-white py-10 px-5 rounded-xl preview" />
+              index ===0? <img key={index} src={preview?preview:""} alt="slider-img" className="w-[100%] object-cover  py-10  rounded-xl " />:<img key={index} src={image} alt="slider-img" className="w-[100%] object-cover bg-white py-10  rounded-xl preview" />
                  
             
                   
@@ -84,20 +86,20 @@ function ViewPages({Images,pagevisiblity}) {
     </Slider>
   
     </div>
-    <div className='flex   gap-5 gap-y-14 w-3/5 m-auto flex-wrap py-10 '>
+    <div className='flex   gap-5 max-sm:gap-3 gap-y-14 w-4/5 sm:justify-center max-sm:w-4/5  m-auto max-sm:justify-center flex-wrap py-10 '>
     {
         Images.map((image,index) =>{
             return(
                 <div
                 key={index}
            
-                className="w-20 h-16 max-sm:w-10 max-sm:h-14 flex items-center  justify-center rounded-lg     cursor-pointer bg-white  "
+                className="sm:w-[70px] h-16 max-sm:w-10 max-sm:h-14 flex items-center  justify-center rounded-lg     cursor-pointer bg-white  "
                 >
               <img
                 id="Dynamichange"
                 onClick={handleimage}
                 src={image}
-                className='shadow-[0_10px_20px_-5px_rgb(127,47,47,0.9)]'
+                className='border-[2px] '
                 alt="Product2"
                 />
 

@@ -94,7 +94,7 @@ export default function CrousalBooks2() {
     ],
   };
   return (
-    <div className="slider-container   p-4 max-sm:p-10 w-full">
+    <div className="slider-container   p-4  w-full">
       <div className="w-4/5 m-auto ">
       <Slider {...settings}>
       <div className="h-[200px] relative " >
@@ -104,7 +104,7 @@ export default function CrousalBooks2() {
           <div className="w-[100%] h-[100%] relative " style={{perspective:'900px'}}>
             <div className="image-card p-2 ">
               <img
-                className="        w-full"
+                className="        w-full"   
                 src="EVS ...3.jpg"
                 alt="Product Image"
               />
