@@ -8,27 +8,32 @@ function FilterTAb({Class,Subject,setSubject ,setClass,API ,setApi}) {
 
   const { filterproducts,api  } = ProductFilter;
   
-  const [PrevClass,setPrevClass] = useState(Class)
-  const [PrevSubject,setPrevSubject] = useState(Subject)
-  useEffect(()=>{
-  
-    if (filterproducts.lenght!=0 && api!=='') {
-          
-      PrevClass.filter((e)=>{
-        if (api.includes(e.name)) {
-          e.isChecked=true
-        }
-        return e
-      })
-      PrevSubject.filter((e)=>{
-          if (api.includes(e.name)) {
-            e.isChecked=true
-          }
-          return e
-      })
+  // Use local state to track previous Class and Subject selections
+  const [PrevClass, setPrevClass] = useState(Class); 
+  const [PrevSubject, setPrevSubject] = useState(Subject);
+
+  useEffect(() => {
+    // Check if filterproducts has items and API is not empty
+    if (filterproducts.length !== 0 && api !== '') {
       
+      // Update the previous class states with isChecked based on API
+      PrevClass.filter((e) => {
+        if (api.includes(e.name)) {
+          e.isChecked = true; // If the API includes the class name, mark it as checked
+        }
+        return e;
+      });
+
+      // Update the previous subject states with isChecked based on API
+      PrevSubject.filter((e) => {
+        if (api.includes(e.name)) {
+          e.isChecked = true; // If the API includes the subject name, mark it as checked
+        }
+        return e;
+      });
     }
-  },[])
+  }, [filterproducts, api, PrevClass, PrevSubject]);
+
     useEffect(()=>{
       //   let temp1= document.querySelectorAll('.newclass')
       //  let temp2 =document.querySelectorAll('.newclass2')
