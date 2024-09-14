@@ -1,54 +1,71 @@
 import React, { useEffect, useState } from "react";
-import { useSelector ,useDispatch} from "react-redux";
-import { Link ,useNavigate} from "react-router-dom";
-import { saveShippingAddress } from '../actions/CartActions'
-
-
+import { useSelector, useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { saveShippingAddress } from '../actions/CartActions';
 
 function Checkout() {
-  const history = useNavigate()
-  useEffect(()=>{
-    if (!localStorage.getItem('token')) {
-       history('/')
-    }
-    
- })
-  const cart = useSelector(state => state.cart)
-  const {shippingAddress} =cart
-  const [address, setaddress] = useState(shippingAddress.address);
-  const [city, setcity] = useState(shippingAddress.city);
-  const [postalcode, setpostalcode] = useState(shippingAddress.postalcode);
-  const [school, setschool] = useState(shippingAddress.school);
-  const [phone,setphone] = useState(shippingAddress.phone)
-  const [correctform,setCorrectform] =useState(true)
-  const dispatch = useDispatch()
- 
-  let data = useSelector((state) => state.cart.cartItems);
-  //  console.log(data);
-  const [Price, setPrice] = useState("");
+  // Use useNavigate hook for navigation
+  const history = useNavigate();
 
+  // Check if the user is logged in by looking for a token in localStorage
+  useEffect(() => {
+    if (!localStorage.getItem('token')) {
+      history('/'); // Redirect to home page if not logged in
+    }
+  }, []);
+
+  // Get cart details from the Redux store
+  const cart = useSelector(state => state.cart);
+  const { shippingAddress } = cart;
+
+  // State hooks to store form values
+  const [address, setAddress] = useState(shippingAddress.address);
+  const [city, setCity] = useState(shippingAddress.city);
+  const [postalcode, setPostalcode] = useState(shippingAddress.postalcode);
+  const [school, setSchool] = useState(shippingAddress.school);
+  const [phone, setPhone] = useState(shippingAddress.phone);
+
+  // State to track if the form is valid
+  const [correctform, setCorrectform] = useState(true);
+  
+  // Dispatch function to trigger Redux actions
+  const dispatch = useDispatch();
+
+  // Get cart items from the Redux store
+  let data = useSelector((state) => state.cart.cartItems);
+
+  // State to store the total price of the cart
+  const [Price, setPrice] = useState("");
+  
+  // State to track shipping cost, initially set to 50
   const [shipping, setShipping] = useState(50);
+
+  // Calculate total price and update shipping cost based on the total price
   useEffect(() => {
     let sum = 0;
     data.map((books) => {
       sum += books.price * books.qty;
     });
     setPrice(sum);
+
+    // Free shipping for orders over 2000
     if (sum >= 2000) {
       setShipping(0);
     }
-  }, []);
+  }, [data]);
 
+  // Handler function to create an order on form submission
   const createordershandler = (e) => {
-    e.preventDefault()
-     if (correctform) {
+    e.preventDefault(); // Prevent the form from submitting by default
 
-       dispatch(saveShippingAddress({address,city,postalcode,school,phone}))
-       history('/ordersummary')
-     }
-     else{
-        document.querySelector('.submitbutton').classList.replace('bg-[#FF5F5F]','bg-red-600')
-     }
+    if (correctform) {
+      // Save shipping address and navigate to the order summary page
+      dispatch(saveShippingAddress({ address, city, postalcode, school, phone }));
+      history('/ordersummary');
+    } else {
+      // Show an error by changing the button color if the form is invalid
+      document.querySelector('.submitbutton').classList.replace('bg-[#FF5F5F]', 'bg-red-600');
+    }
   };
   return (
     <div className="min-h-screen relative  overflow-hidden sm:flex bg-white/100  ">
