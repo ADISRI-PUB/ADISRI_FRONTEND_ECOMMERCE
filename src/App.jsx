@@ -42,7 +42,7 @@ function App({profile,logout}) {
   useEffect(()=>{
       //  document.querySelector('.cartsvg').classList.remove('carticons')
       //  document.querySelector('.cartsvg').classList.add('carticons')
-  },[])
+  },[]) 
     return (
     <> 
     <BrowserRouter>
@@ -116,3 +116,4 @@ function App({profile,logout}) {
 }
 
 export default App
+

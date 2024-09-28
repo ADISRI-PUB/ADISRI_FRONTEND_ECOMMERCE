@@ -12,7 +12,10 @@ import {
   productListOnetoeightReducer,
   productListDetailOnetoeightReducer,
   productFilterReducer,
-  productOnetoeightFilter
+  productOnetoeightFilter,
+  relatedBookReducer,
+  bookSeriesReducer,
+  productPamplatesFilterReducer,
 } from "./reducers/ProductsReducers";
 import { cartReducer } from "./reducers/CartReducers";
 import { userReducer } from "./reducers/UserReducer";
@@ -34,6 +37,9 @@ const reducer = combineReducers({
   ProductsDonetoeight:productListDetailOnetoeightReducer,
   ProductFilter: productFilterReducer,
   ProductonetoeightFilter:productOnetoeightFilter,
+  bookSeries:bookSeriesReducer,
+  relatedBook:relatedBookReducer,
+  pamplateBook:productPamplatesFilterReducer,
   
   //CART
   cart: cartReducer,

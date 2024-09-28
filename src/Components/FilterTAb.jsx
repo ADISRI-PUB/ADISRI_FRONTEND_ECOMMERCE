@@ -3,7 +3,8 @@ import gsap from 'gsap'
 import { Accordion, AccordionItem } from '@szhsin/react-accordion';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-function FilterTAb({Class,Subject,setSubject ,setClass,API ,setApi}) {
+function FilterTAb({Class,Subject,Pamplate,setPamplate,setSubject ,setClass,API ,setApi}) {
+
   const ProductFilter = useSelector((state) => state.ProductFilter);
 
   const { filterproducts,api  } = ProductFilter;
@@ -11,13 +12,20 @@ function FilterTAb({Class,Subject,setSubject ,setClass,API ,setApi}) {
   // Use local state to track previous Class and Subject selections
   const [PrevClass, setPrevClass] = useState(Class); 
   const [PrevSubject, setPrevSubject] = useState(Subject);
-
+  const [PrevPamplate, setPrevPamPlate] = useState(Pamplate);
   useEffect(() => {
     // Check if filterproducts has items and API is not empty
     if (filterproducts.length !== 0 && api !== '') {
       
       // Update the previous class states with isChecked based on API
       PrevClass.filter((e) => {
+        if (api.includes(e.name)) {
+          e.isChecked = true; // If the API includes the class name, mark it as checked
+        }
+        return e;
+      });
+
+      PrevPamplate.filter((e) => {
         if (api.includes(e.name)) {
           e.isChecked = true; // If the API includes the class name, mark it as checked
         }
@@ -32,7 +40,7 @@ function FilterTAb({Class,Subject,setSubject ,setClass,API ,setApi}) {
         return e;
       });
     }
-  }, [filterproducts, api, PrevClass, PrevSubject]);
+  }, [filterproducts, api, PrevClass, PrevSubject,PrevPamplate]);
 
     useEffect(()=>{
       //   let temp1= document.querySelectorAll('.newclass')
@@ -78,6 +86,8 @@ function FilterTAb({Class,Subject,setSubject ,setClass,API ,setApi}) {
       
       let newarr_subject =Subject
 
+      let newarr_pamplates=Pamplate
+
    
       newarr.filter((e) => {
        
@@ -100,6 +110,7 @@ function FilterTAb({Class,Subject,setSubject ,setClass,API ,setApi}) {
         }
         return e
       });
+
       newarr_subject.filter((e)=>{
         if (e.id == ids) {
          
@@ -124,8 +135,35 @@ function FilterTAb({Class,Subject,setSubject ,setClass,API ,setApi}) {
         }
         return e
       })
+
+      newarr_pamplates.filter((e)=>{
+        if (e.id == ids) {
+         
+            if (e.isChecked===false) {
+
+              setApi(API+=`&pamplates=${e.name}`)
+              
+              e.isChecked=true
+           
+            }
+            else{
+         
+              
+              if (API.includes(`&pamplates=${e.name}`)) {
+                let  temp = API.replace(`&pamplates=${e.name}`,'')
+                e.isChecked=false 
+                setApi(temp)
+          
+              }
+            }
+          
+        }
+        return e
+      })
+
       setPrevClass(newarr);
       setPrevSubject(newarr_subject)
+      setPrevPamPlate(newarr_pamplates)
 
       
       //  console.log(Class);
@@ -205,7 +243,34 @@ function FilterTAb({Class,Subject,setSubject ,setClass,API ,setApi}) {
           })}
           </div>
           </div>
+
+
+
+          <div className=" transition-all duration-1000 text-lg  rounded-lg grid grid-col-2 logg relative " >
+            <div className='flex  relative logg'>
+           <span className=' max-sm:text-sm  max-sm:p-3 font-semibold p-4'> Our Products</span>
+           </div>
+           <div className=' p-5 '>
+           {PrevPamplate.map((element) => {
+            return (
+              <div className="space-x-2 newclass2" key={element.id}>
+                <input
+                  type="checkbox"
+                  className='cursor-pointer'
+                  checked={element.isChecked}
+                  onChange={() => handleChange(element.id)}
+                  name={`${element.name}`}
+                  value={`${element.name}`}
+                  id={`${element.id}`}
+                />
+                <label  className="text-[1vw] max-sm:text-sm " htmlFor={`${element.id}`}>{element.name}</label>
+              </div>
+            );
+          })}
+          </div>
+          </div>
        <div className='hide-visible text-[1rem]'>
+        
            <div className=''> 
            <Accordion>
             <br />

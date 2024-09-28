@@ -54,12 +54,19 @@ function PrePopup() {
             Teacher Training Program
           </p>
         </Link>
+        
+        
         <div >
           {" "}
           <p className=" transition-all duration-200 hover:bg-[#FF5F5F]  p-2  text-gray-950 hover:text-black  cursor-pointer">
             Free Activity Sheets
           </p>
+
         </div>
+        <a href="https://drive.google.com/uc?export=download&id=11b4qOeirEa7_dFQaJpUKrUESOGVk_jwu" download="Sample_Requirements_form.pdf" >
+            
+  <p className="hover:bg-[#FF5F5F] p-2">Sample Requirements Form</p>
+</a>
       </div>
     </div>
   );
