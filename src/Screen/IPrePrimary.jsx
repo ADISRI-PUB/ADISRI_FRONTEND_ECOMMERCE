@@ -4,8 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import gsap from "gsap";
 import FilterTAb from "../Components/FilterTAb";
 import ProdcutsCard from "../Components/ProdcutsCard";
+import PamplatesCard from "../Components/PamplatesCard";
 import axios from "axios";
-import { listProducts, filterBook } from "../actions/ProductsActions";
+import { listProducts, filterBook ,filterPamplatesBook} from "../actions/ProductsActions";
 import { useNavigate, Link } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 import Loader from "../Components/Loader";
@@ -14,6 +15,7 @@ import { Accordion, AccordionItem } from "@szhsin/react-accordion";
 const BASE_URL = import.meta.env.VITE_URL;
 function IPrePrimary() {
   const [filterbook2, setFilterbook] = useState([]);
+  const [filterbook3, setFilterbook1] = useState([]);
   const history = useNavigate();
   const dispatch = useDispatch();
   const productsList = useSelector((state) => state.productList);
@@ -21,6 +23,11 @@ function IPrePrimary() {
   const ProductFilter = useSelector((state) => state.ProductFilter);
 
   const { filterproducts,api  } = ProductFilter;
+
+  const pamplateBook = useSelector((state) => state.pamplateBook);
+
+  const { Pamplatesfilterproducts,api1  } = pamplateBook;
+
 
   // console.log(filterbook2);
   
@@ -47,25 +54,64 @@ function IPrePrimary() {
     { id: 12, name: "Evs", isChecked: false },
     { id: 13, name: "Counting", isChecked: false },
   ]);
+  const [Pamplate, setPamplate] = useState([
+    { id: 14, name: "All In One For PreSchoolers", isChecked: false },
+    { id: 15, name: "All In One Book(Reading And Writing)", isChecked: false },
+    { id: 16, name: "Writing Notebooks of Hindi For Preschoolers", isChecked: false },
+    { id: 17, name: "Writing Notebooks of English For Preschoolers", isChecked: false },
+    { id: 18, name: "Writing Notebooks of Mathematics For Preschoolers", isChecked: false },
+    { id: 19, name: "Colouring Books For Preschoolers", isChecked: false },
+    { id: 20, name: "Patterns And Curves Playbook", isChecked: false },
+    { id: 21, name: "NUMBER BOOKS For Preschoolers", isChecked: false },
+    { id: 22, name: "Scrapbook & TimeTable Book For Preschoolers", isChecked: false },
+    { id: 23, name: "Jumbo Colouring Books For Preschoolers", isChecked: false },
+    { id: 24, name: "Complete Kit Of Books For Preschoolers", isChecked: false },
+    { id: 25, name: "Hindi Writing Books For Preschoolers", isChecked: false },
+    { id: 26, name: "Books of Mental Maths and Reasoning For Class 1 to 5", isChecked: false },
+    { id: 27, name: "Activity Based Worksheets For Class Pre-Nursery to 5", isChecked: false },
+    { id: 28, name: "Books Of Reasoning For Class 1 to 8", isChecked: false },
+    { id: 29, name: "A4 Writing Notebooks of Hindi, English And Maths", isChecked: false },
+    { id: 30, name: "Practical Notebooks for School Children", isChecked: false },
+    { id: 31, name: "Drawing Books For Schools Children", isChecked: false },
+    { id: 32, name: "ALMANACS For School Children", isChecked: false },
+    { id: 33, name: "English Activity Books For Preschoolers", isChecked: false },
+]);
 
   let data;
   useEffect(() => {
-    setFilterbook(filterproducts.results)
+    if (filterproducts?.results) {
+      setFilterbook(filterproducts.results);
+      setFilterbook1(null); // If filterbook changes, set filterbook1 to null
+    }
   }, [filterproducts]);
- 
+  
+  useEffect(() => {
+    if (Pamplatesfilterproducts) {
+      setFilterbook1(Pamplatesfilterproducts);
+      setFilterbook(null); // If filterbook1 changes, set filterbook to null
+    }
+  }, [Pamplatesfilterproducts]);
+
   useEffect(() => {
     let flag = products;
     if (flag.length === 0) {
       dispatch(listProducts(""));
     }
 
-    // fetching the data for filter option /////////////////////////////////////////////////////////
+
     if (error) {
       history("/error");
     }
    
     const fetchData = async () => {
-      dispatch(filterBook(API));
+      let filterapi=API
+      const myArray =filterapi.split("=")
+      if(myArray[0]==="&pamplates"){
+        dispatch(filterPamplatesBook(API))
+      }else{
+        dispatch(filterBook(API));
+      }
+      
     };
     
       fetchData();
@@ -92,70 +138,11 @@ function IPrePrimary() {
   };
   return (
     <>
-      <div className=" primary-sections   relative min-h-screen bg-[rgb(252, 209, 209)]">
+      <div className=" primary-sections   relative min-h-screen bg-[rgb(252, 209, 209)] ">
         <div className="absolute z-10  w-[83%]  right-0 extratab top-[2rem]">
           <Accordion>
             <div className="flex justify-evenly w-[100%] flex-wrap  items-start relative ">
-              {/* <AccordionItem
-                header={({ state }) => (
-                  <div className="accordion-header flex relative ">
-                    <span className="px-[4.5vw]  p-3 bg-[#049A99] rounded-lg text-white relative z-10 close">
-                      Books & Copy
-                    </span>
-                  </div>
-                )}
-              >
-                {/* <div className="bg-white p-5  rounded-b-xl border-2 border-[#049A99]  -z-10 relative -top-3 space-y-3">
-                  <Link
-                    className="left-0 font-normal  relative top-2  block m-auto text-center "
-                    to="/preprimary"
-                  >
-                    Plain Copies
-                  </Link>
-                  <Link
-                    className="left-0 font-normal relative top-2  block  text-center"
-                    to="/preprimary"
-                  >
-                    A4 Size Grand Regsiter
-                  </Link>
-                  <Link
-                    className="left-0 font-normal relative top-2  block  text-center"
-                    to="/preprimary"
-                  >
-                    Plain Drawing Book A4 and A3
-                  </Link>
-                  <Link
-                    className="left-0 font-normal relative top-2  block  text-center"
-                    to="/preprimary"
-                  >
-                    Table Book
-                  </Link>
-                  <Link
-                    className="left-0 font-normal relative top-2  block  text-center"
-                    to="/preprimary"
-                  >
-                    Pattern Book
-                  </Link>
-                  <Link
-                    className="left-0 font-normal relative top-2  block  text-center"
-                    to="/preprimary"
-                  >
-                    Story Book
-                  </Link>
-                  <Link
-                    className="left-0 font-normal relative top-2  block  text-center"
-                    to="/preprimary"
-                  >
-                    Festival Book
-                  </Link>
-                  <Link
-                    className="left-0 font-normal relative top-2  block  text-center"
-                    to="/preprimary"
-                  >
-                    Holiday HomeWork
-                  </Link>
-                </div> */}
-              {/* </AccordionItem>  */}
+              
 
               <AccordionItem
                 header={({ state }) => (
@@ -167,20 +154,7 @@ function IPrePrimary() {
                   </Link>
                 )}
               >
-                {/* <div className="bg-white p-5 rounded-b-xl border-2 border-[#049A99] -z-10 relative -top-3 space-y-3">
-                  <Link
-                    className="left-0 font-normal  relative top-2  block m-auto text-center "
-                    to="/preprimary"
-                  >
-                    School Diary
-                  </Link>
-                  <Link
-                    className="left-0 font-normal relative top-2  block  text-center"
-                    to="/preprimary"
-                  >
-                    Scrap Book
-                  </Link>
-                </div> */}
+               
               </AccordionItem>
 
               <AccordionItem
@@ -192,24 +166,7 @@ function IPrePrimary() {
                   </Link>
                 )}
               >
-                {/* <div className="bg-white p-5 rounded-b-xl border-2 border-[#049A99] -z-10 relative -top-3 space-y-3">
-                  <Link
-                    className="left-0 font-normal  relative top-2  block m-auto text-center "
-                    to="/preprimary"
-                  ></Link>
-                  <Link
-                    className="left-0 font-normal relative top-2  block  text-center"
-                    to="/preprimary"
-                  >
-                    Carnival Kitset
-                  </Link>
-                  <Link
-                    className="left-0 font-normal relative top-2  block  text-center"
-                    to="/preprimary"
-                  >
-                    Jumbo Colouring Book
-                  </Link>
-                </div> */}
+               
               </AccordionItem>
 
               <AccordionItem
@@ -221,20 +178,7 @@ function IPrePrimary() {
                   </Link>
                 )}
               >
-                {/* <div className="bg-white p-5 rounded-b-xl border-2 border-[#049A99] -z-10 relative space-y-3 -top-3 ">
-                  <Link
-                    className="left-0 font-normal  relative top-2  block m-auto text-center "
-                    to="/preprimary"
-                  >
-                    Toys
-                  </Link>
-                  <Link
-                    className="left-0 font-normal relative top-2  block  text-center"
-                    to="/preprimary"
-                  >
-                    Trophy Medal
-                  </Link>
-                </div> */}
+                
               </AccordionItem>
             </div>
           </Accordion>
@@ -253,16 +197,8 @@ function IPrePrimary() {
           />
         </Helmet>
 
-        {/* <div className=" tab-grid  bg-[] w-[83%] justify-items-center logg sm:mr-0 sm:ml-auto py-8">
-            <div  className="px-10 py-3 bg-white   rounded-full   cursor-pointer   ">Books & Copy
-
-            </div>
-            <h2  className="px-10 py-3 bg-white   rounded-full   cursor-pointer ">Stationary</h2>
-            <h2  className="px-10 py-3 bg-white   rounded-full   cursor-pointer ">Art & Craft Supply</h2>
-            <h2  className="px-10 py-3 bg-white   rounded-full   cursor-pointer  ">Toy & Educational Material</h2>
-         
-        </div> */}
-        <div className="p-4 text-xl max-sm:text-[15px]    relative flex space-x-3 bg-[#049A99]    max-sm:w-full  sm:w-[17%]  text-white">
+        
+        <div className="p-4 text-xl max-sm:text-[15px]    relative flex space-x-3 bg-[#049A99]    max-sm:w-full  sm:w-[17%]  text-white ">
           <p className=" flex  space-x-5 ">
             {" "}
             <span> Filters</span>{" "}
@@ -288,14 +224,20 @@ function IPrePrimary() {
               Class={Class}
               setClass={setClass}
               setSubject={setSubject}
+              setPamplate={setPamplate}
+              Pamplate={Pamplate}
               Subject={Subject}
               API={API}
               setApi={setApi}
             />
           </div>
  
-          <div className="sm:w-[79%] m-auto">
-            <div className="sm:w-[100%]  sm:p-2 mx-auto   max-sm:w-full  card-container relative top-[2rem]  ">
+          <div className="sm:w-[79%]  ">
+          <div
+    id="for_pamplates"
+    className={`sm:w-[100%] sm:p-2 mx-auto max-sm:w-full relative top-[2rem] ${
+      filterbook3?.length ? '' : 'card-container'
+    }`}>
               {API === ""  ? (
                 Object.keys(products).length === 0 ? (
                   <Loader />
@@ -313,35 +255,26 @@ function IPrePrimary() {
                   <Loader />
                 </>
               ) : (
-                // <div className=" grid grid-cols-1 sm:col-span-4 ">
-                // <div className="flex justify-center items-center">
-                //   <div
-                //     className="inline-block h-8 w-8 sm:h-20 sm:w-20 animate-spin rounded-full border-4 border-solid border-current border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite] "
-                //     role="status"
-                //   >
-                //     <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
-                //       Loading...
-                //     </span>
-                //   </div>
-                // </div>
-                // </div>
+                
                 <>
-                  {
-                  filterbook2?.length !== 0 ? (
-                    filterbook2?.map((product) => {
-                      return (
-                        <div key={product.Product_Id} className=" max-sm:p-0 ">
-                          <ProdcutsCard product={product} id={1} />
-                        </div>
-                      );
-                    })
-                    
-                  ) : (
-                    <div className=" col-span-6 w-[50%] m-auto items-center logg ">
-                      <img className="" src="Empty-pana.png" alt="" />
-                    </div>
-                  )}
-                </>
+                {filterbook2?.length ? (
+                  filterbook2.map((product) => (
+                    <ProdcutsCard key={product.Product_Id} product={product} id={1} />
+                  ))
+                  
+                ) : filterbook3?.length ? (
+
+                  
+                  filterbook3.map((pamplat) => (
+                                 
+                    <PamplatesCard key={pamplat.Pamplates_Id} pamplat={pamplat} id={1} />
+                  ))
+                ) : (
+                  <div className="col-span-6 w-[50%] m-auto logg bg-sky-300">
+                    <img src="Empty-pana.png" alt="No items found" />
+                  </div>
+                )}
+              </>
               )}
             </div>
           </div>
@@ -410,9 +343,7 @@ function IPrePrimary() {
         </div>
       </div>
     </>
-    //  <>
-    //  <h1>dfff</h1>
-    //  </>
+   
   );
 }
 

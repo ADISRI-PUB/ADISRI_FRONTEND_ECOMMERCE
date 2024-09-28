@@ -96,7 +96,7 @@ function TeacherTraining() {
       <div className="grid grid-cols-2 max-sm:grid-cols-1">
         <div className="">
           <div className="py-10  max-sm:py-4 w-2/3 max-sm:w-full m-auto">
-            <h1 className="text-[2vw] text-center max-sm:text-lg text-[#293249]">Teacher Training Program</h1>
+            <h1 className="text-[2vw] font-semibold text-center max-sm:text-lg text-[#293249]">Teacher Training Program</h1>
 
             <p  className="px-4 py-3 max-sm:px-2 text-xl max-sm:text-sm text-[#293249] ">
               Adisri Publications is a rapidly growing organization which
@@ -275,155 +275,10 @@ function TeacherTraining() {
             </a>
           </button>
           <br />
-          <h4 className="text-lg font-medium text-[#293249] px-5 max-sm:text-sm max-sm:py-5 w-full  " onClick={()=>{
-            document.querySelector('.formteachertraining').classList.toggle('hidden')
-          }}>For More About this Program <b className="cursor-pointer  p-2 text-sm bg-[#ff5f5f] text-white rounded-full max-sm:p-1"> Click Here</b></h4>
-         <div className={`formteachertraining max-w-[600px] m-auto relative  hidden`}>
-         <div className=" w-[100%] sm:max-w-[80%]  m-auto">
-                    <form
-                      id="Contact-us"
-                       onSubmit={onSubmit}
-                      className="rounded-lg  min-w-full"
-                    
-                    >
-                      
-                      <div className="">
-                        <div>
-                          {/* <h1 className="text-center text-2xl mb-6 text-white font-bold font-sans border-b-2 border-white">
-                    CONTACT FROM 
-                  </h1> */}
-                          <div className="grid sm:grid-cols-2 gap-10 max-sm:gap-2">
-                            <div>
-                              <label
-                                className="text-black font-semibold block sm:my-3 text-md"
-                                htmlFor="username"
-                              >
-                                First Name*
-                              </label>
-                              <input
-                                className="w-full  p-2 bg-transparent border-b-2 border-[#FF403D] text-black focus:outline-none"
-                                type="text"
-                                name="firstname"
-                                id="username"
-                                required
-                                value={firstname}
-                                onChange={(e) => setfirstname(e.target.value)}
-                              />
-                            </div>
-                            <div>
-                              <label
-                                className="text-black font-semibold block sm:my-3 text-md"
-                                htmlFor="username"
-                              >
-                                Last Name
-                              </label>
-                              <input
-                                className="w-full  p-2 bg-transparent border-b-2 border-[#FF403D] text-black focus:outline-none"
-                                type="text"
-                                name="lastname"
-                                id="username"
-                                value={lastname}
-                                onChange={(e) => {
-                                  setlastname(e.target.value);
-                                }}
-                              />
-                            </div>
-                          </div>
-                          <div className="grid sm:grid-cols-2 gap-10 max-sm:gap-5">
-                            <div>
-                              <label
-                                className="text-black font-semibold block my-3 text-md"
-                                htmlFor="username"
-                              >
-                                Email*
-                              </label>
-                              <input
-                                className="w-full  p-2 bg-transparent border-b-2 border-[#FF403D] text-black focus:outline-none"
-                                type="email"
-                                name="email"
-                                id="username"
-                                required
-                                value={email}
-                                onChange={(e) => {
-                                  setEmail(e.target.value);
-                                }}
-                              />
-                            </div>
-                            <div>
-                              <label
-                                className="text-black font-semibold block sm:my-3 text-md text"
-                                htmlFor="username"
-                              >
-                                Phone*
-                              </label>
-                              <input
-                                className="w-full  p-2 bg-transparent border-b-2 border-[#FF403D] text-black focus:outline-none"
-                                type="number"
-                                name="phone"
-                                id="username"
-                                required
-                                value={phone}
-                                onFocus={() => {
-                                  document
-                                    .querySelector(".text")
-                                    .classList.replace(
-                                      "text-[#FF403D]",
-                                      "text-black"
-                                    );
-                                }}
-                                onChange={(e) => {
-                                  setPhone(e.target.value);
-                                }}
-                              />
-                            </div>
-                          </div>
-                          <div>
-                            <label
-                              className="text-black font-semibold block my-3 text-md"
-                              htmlFor="username"
-                            >
-                              Subject
-                            </label>
-                            <input
-                              className="w-full  p-2 bg-transparent border-b-2 border-[#FF403D] text-black focus:outline-none"
-                              type="text"
-                              name="subject"
-                              id="username"
-                              required
-                              readOnly="true"
-                              value={subject}
-                             
-                            />
-                          </div>
-                          <div className="w-full ">
-                            <label
-                              className="text-black  font-semibold block my-3  text-md "
-                              htmlFor="username"
-                            >
-                              Message
-                            </label>
-                            <textarea
-                              className="w-full bg-transparent border-b-2 border-[#FF403D] text-black focus:outline-none"
-                              name="message"
-                              cols={"30"}
-                              rows={"5"}
-                              value={message}
-                              onChange={(e) => setMessage(e.target.value)}
-                            ></textarea>
-                          </div>
-                        </div>
-                      </div>
+          <br/>
 
-                      <button
-                         type="submit"
-                        className="w-full mt-6 transition-all  duration-200 bg-[#FF403D] hover:bg-[#ff6764] rounded-lg px-4 py-2 text-lg text-white tracking-wide font-semibold font-sans "
-                      >
-                        Send
-                      </button>
-                    </form>
-                  </div>
-             
-         </div>
+
+
           <h3 className="text-2xl py-10 font-medium text-[#293249] max-sm:text-lg">
             New Academic System According To NEP
           </h3>
@@ -706,6 +561,164 @@ function TeacherTraining() {
   </tbody>
 </table>
           </div>
+          <br/>
+          <br/>
+          
+          <h4 className="text-xl font-medium text-[#293249] px-5 max-sm:text-sm max-sm:py-8  w-full  "
+          //  onClick={()=>{
+          //   document.querySelector('.formteachertraining').classList.toggle('hidden')
+          // }}
+          >For More About this Program 
+          {/* <b className="cursor-pointer  p-2 text-sm bg-[#ff5f5f] text-white rounded-full max-sm:p-1"> Click Here</b> */}
+          </h4>
+         {/* <div className={`formteachertraining max-w-[600px] m-auto relative  hidden`}> */}
+
+         <div className=" w-[40%] sm:max-w-[80%]  m-auto">
+                    <form
+                      id="Contact-us"
+                       onSubmit={onSubmit}
+                      className="rounded-lg  min-w-full"
+                    
+                    >
+                      
+                      <div className="">
+                        <div>
+                          {/* <h1 className="text-center text-2xl mb-6 text-white font-bold font-sans border-b-2 border-white">
+                    CONTACT FROM 
+                  </h1> */}
+                          <div className="grid sm:grid-cols-2 gap-10 max-sm:gap-3">
+                            <div>
+                              <label
+                                className="text-black font-semibold block sm:my-3 text-md"
+                                htmlFor="username"
+                              >
+                                First Name*
+                              </label>
+                              <input
+                                className="w-full  p-2 bg-transparent border-b-2 border-[#FF403D] text-black focus:outline-none"
+                                type="text"
+                                name="firstname"
+                                id="username"
+                                required
+                                value={firstname}
+                                onChange={(e) => setfirstname(e.target.value)}
+                              />
+                            </div>
+                            <div>
+                              <label
+                                className="text-black font-semibold block sm:my-3 text-md"
+                                htmlFor="username"
+                              >
+                                Last Name
+                              </label>
+                              <input
+                                className="w-full  p-2 bg-transparent border-b-2 border-[#FF403D] text-black focus:outline-none"
+                                type="text"
+                                name="lastname"
+                                id="username"
+                                value={lastname}
+                                onChange={(e) => {
+                                  setlastname(e.target.value);
+                                }}
+                              />
+                            </div>
+                          </div>
+                          <div className="grid sm:grid-cols-2 gap-10 max-sm:gap-5">
+                            <div>
+                              <label
+                                className="text-black font-semibold block my-3 text-md"
+                                htmlFor="username"
+                              >
+                                Email*
+                              </label>
+                              <input
+                                className="w-full  p-2 bg-transparent border-b-2 border-[#FF403D] text-black focus:outline-none"
+                                type="email"
+                                name="email"
+                                id="username"
+                                required
+                                value={email}
+                                onChange={(e) => {
+                                  setEmail(e.target.value);
+                                }}
+                              />
+                            </div>
+                            <div>
+                              <label
+                                className="text-black font-semibold block sm:my-3 text-md text"
+                                htmlFor="username"
+                              >
+                                Phone*
+                              </label>
+                              <input
+                                className="w-full  p-2 bg-transparent border-b-2 border-[#FF403D] text-black focus:outline-none"
+                                type="number"
+                                name="phone"
+                                id="username"
+                                required
+                                value={phone}
+                                onFocus={() => {
+                                  document
+                                    .querySelector(".text")
+                                    .classList.replace(
+                                      "text-[#FF403D]",
+                                      "text-black"
+                                    );
+                                }}
+                                onChange={(e) => {
+                                  setPhone(e.target.value);
+                                }}
+                              />
+                            </div>
+                          </div>
+                          <div>
+                            <label
+                              className="text-black font-semibold block my-3 text-md"
+                              htmlFor="username"
+                            >
+                              Subject
+                            </label>
+                            <input
+                              className="w-full  p-2 bg-transparent border-b-2 border-[#FF403D] text-black focus:outline-none"
+                              type="text"
+                              name="subject"
+                              id="username"
+                              required
+                              readOnly="true"
+                              value={subject}
+                             
+                            />
+                          </div>
+                          <div className="w-full ">
+                            <label
+                              className="text-black  font-semibold block my-3  text-md "
+                              htmlFor="username"
+                            >
+                              Message
+                            </label>
+                            <textarea
+                              className="w-full bg-transparent border-b-2 border-[#FF403D] text-black focus:outline-none"
+                              name="message"
+                              cols={"30"}
+                              rows={"5"}
+                              value={message}
+                              onChange={(e) => setMessage(e.target.value)}
+                            ></textarea>
+                          </div>
+                        </div>
+                      </div>
+
+                      <button
+                         type="submit"
+                        className="w-full mt-6 transition-all  duration-200 bg-[#FF403D] hover:bg-[#ff6764] rounded-lg px-4 py-2 text-lg text-white tracking-wide font-semibold font-sans "
+                      >
+                        Send
+                      </button>
+                    </form>
+                  </div>
+                  <br/>
+             
+         {/* </div> */}
         
         
         </div>

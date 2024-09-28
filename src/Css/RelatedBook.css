@@ -1,0 +1,41 @@
+.related-books-container {
+    display: flex;
+    overflow-x: auto; 
+    gap: 1rem; 
+    padding: 1rem 0;
+  }
+  
+  .related-book-item {
+    max-width: 250px; 
+    flex-shrink: 0; 
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  .related-books-container::-webkit-scrollbar {
+    display: none; 
+  }
+  
+  .related-books-container {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+  }
+  
+  .centered-image {
+    max-width: 100%; /* Ensures image scales down to fit container */
+    height: auto; /* Maintains aspect ratio */
+  }
+  .relative {
+    position: relative;
+  }
+
+button {
+    cursor: pointer;
+  }
+
+  .related-books-container::-webkit-scrollbar {
+    display: none; 
+  }
+  

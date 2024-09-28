@@ -123,6 +123,7 @@ export default function Navbar({ menuopen }) {
               <Link to='/upperukg' className="left-0 font-normal p-2 ml-5  block   border-b-[1px] "  onClick={menuopen} >Upper (UKG)</Link>
               <Link to='/teachertraining' className="left-0 font-normal ml-5 p-2  block   border-b-[1px] "  onClick={menuopen} >Teacher Training Program</Link>
                   <Link to='/freeactivity' className="left-0 font-normal ml-5 p-2 block    border-b-[1px] "  onClick={menuopen} >Free Activity Sheets</Link>
+                  {/* <Link to='/freeactivity' className="left-0 font-normal ml-5 p-2 block    border-b-[1px] "  onClick={menuopen} >Free Activity Sheets</Link> */}
       </AccordionItem>
          {/* <AccordionItem className="px-6 tex-sm w-full block " header={`PRE SCHOOL SOLUTIONS`} >
               <Link className="left-0 font-normal p-2 relative top-2  block " to="/preprimary"onClick={menuopen} >PRE SCHOOL SOLUTIONS</Link>

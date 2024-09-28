@@ -39,7 +39,7 @@ export default function Footer(){
         </div> */}
         <div className="">
             <div className="m-auto w-max max-sm:w-full   ">
-            <h2 className="mb-6 text-2xl max-sm:text-sm font-semibold  text-red-400  font-sans">Adisri Books</h2>
+            <h2 className="mb-6 text-2xl max-sm:text-sm font-semibold  text-red-400  font-sans">Our Products</h2>
             <ul className="text-gray-800 text-2xl max-sm:text-xl   font-medium ">
                 <li className="mb-4 text-[0.5em] lg:text-[0.7em]">
                     <Link to='/preprimary' className=" hover:underline">PrePrimary Books</Link>

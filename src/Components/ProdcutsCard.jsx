@@ -22,15 +22,23 @@ function ProdcutsCard({product,id}) {
     }
  
   },[])
+  let product_name=product.Name
+  let url_product=product_name.replace(/\s+/g, "+") 
+  url_product = url_product + "+product_id+" + product.Product_Id;
+  
 
   return (
     
-  
-    <Link to={`/singlebook/${product.Product_Id}`}>
-    <div  className="mx-auto  sm:aspect-[4/10]   max-sm:mt-4 max-sm:w-4/5   transform overflow-hidden  relative  duration-300  max-sm:leading-snug ">
-      <div className='relative w-[90%] h-[58%]  flex logg  m-auto justify-center  ' style={{perspective:'900px'}}>
+     
+    <Link to={`/singlebook/${url_product}`}>
+
+
+    <div  className="mt-1  sm:aspect-[4/10]    max-sm:w-4/5   transform overflow-hidden  relative  duration-300  max-sm:leading-snug ">
+      <div className='relative w-[90%] h-[58%]  flex logg  m-auto   ' style={{perspective:'900px'}}>
   <div className=' sm:absolute image-card  w-full m-auto'>
-  <img className="w-[90%] max-sm:w-[130px]   m-auto " src={product.Image} alt="Product Image" />
+  <img className="w-[90%] max-sm:w-[130px] m-auto hover:scale-110 hover:transition-all   hover:ease-in-out hover:shadow-xl"
+  src={product.Image} 
+  alt="Product Image" />
 </div>
 </div>
   <div className="p-4 max-sm:p-2 relative">
@@ -42,7 +50,7 @@ function ProdcutsCard({product,id}) {
    <p className='text-[#4d6963] font-semibold max-sm:text-[8px] '>Paperback</p>
 
   </div>
-    <Link to={`/singlebook/${product.Product_Id}`}
+    <Link to={`/singlebook/${product.Name}`}
      className='relative'
     >  <button className='m-auto flex space-x-4 justify-center  max-sm:space-x-1  relative  logg   py-2 px-5 max-sm:px-2 rounded-full bg-[#FCE992] text-black  hover:svg-rotate'>
        <span className='sm:text-sm max-sm:text-[8px] font-semibold '>View Book</span>
@@ -51,6 +59,7 @@ function ProdcutsCard({product,id}) {
 
       </div>
 </div>
+
     </Link>
   
   )
